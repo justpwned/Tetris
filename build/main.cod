@@ -9,35 +9,10 @@
 INCLUDELIB LIBCMT
 INCLUDELIB OLDNAMES
 
-CONST	SEGMENT
-$SG30331 DB	'An SDL2 window', 00H
-	ORG $+1
-$SG30333 DB	'Could not create window: %s', 0aH, 00H
-	ORG $+3
-$SG30334 DB	'%x %x %x %x', 0aH, 00H
-CONST	ENDS
-PUBLIC	___local_stdio_printf_options
-PUBLIC	__vfprintf_l
-PUBLIC	_printf
 PUBLIC	??0Color@@QAE@EEEE@Z				; Color::Color
 PUBLIC	_wmain
-PUBLIC	?_OptionsStorage@?1??__local_stdio_printf_options@@9@4_KA ; `__local_stdio_printf_options'::`2'::_OptionsStorage
 PUBLIC	?Base@Palette@@2QBVColor@@B			; Palette::Base
 PUBLIC	?Light@Palette@@2QBVColor@@B			; Palette::Light
-EXTRN	_SDL_GetError:PROC
-EXTRN	_SDL_CreateWindow:PROC
-EXTRN	_SDL_DestroyWindow:PROC
-EXTRN	_SDL_PollEvent:PROC
-EXTRN	_SDL_Init:PROC
-EXTRN	_SDL_Quit:PROC
-EXTRN	___acrt_iob_func:PROC
-EXTRN	___stdio_common_vfprintf:PROC
-EXTRN	@__security_check_cookie@4:PROC
-EXTRN	___security_cookie:DWORD
-;	COMDAT ?_OptionsStorage@?1??__local_stdio_printf_options@@9@4_KA
-_BSS	SEGMENT
-?_OptionsStorage@?1??__local_stdio_printf_options@@9@4_KA DQ 01H DUP (?) ; `__local_stdio_printf_options'::`2'::_OptionsStorage
-_BSS	ENDS
 _BSS	SEGMENT
 ?Base@Palette@@2QBVColor@@B DD 08H DUP (?)		; Palette::Base
 ?Light@Palette@@2QBVColor@@B DD 08H DUP (?)		; Palette::Light
@@ -55,185 +30,22 @@ CRT$XCU	ENDS
 ; Function compile flags: /Odtp
 ; File c:\dev\tetris\src\main.cpp
 _TEXT	SEGMENT
-tv93 = -76						; size = 4
-_window$ = -72						; size = 4
-_base_color$ = -68					; size = 4
-_running$ = -61						; size = 1
-_e$1 = -60						; size = 56
-__$ArrayPad$ = -4					; size = 4
 _wmain	PROC
 
-; 7    : {
+; 8    : {
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
-  00003	83 ec 4c	 sub	 esp, 76			; 0000004cH
-  00006	a1 00 00 00 00	 mov	 eax, DWORD PTR ___security_cookie
-  0000b	33 c5		 xor	 eax, ebp
-  0000d	89 45 fc	 mov	 DWORD PTR __$ArrayPad$[ebp], eax
 
-; 8    :     SDL_Window *window;                    // Declare a pointer
 ; 9    :     
-; 10   :     SDL_Init(SDL_INIT_VIDEO);              // Initialize SDL2
+; 10   :     return 0;
 
-  00010	6a 20		 push	 32			; 00000020H
-  00012	e8 00 00 00 00	 call	 _SDL_Init
-  00017	83 c4 04	 add	 esp, 4
+  00003	33 c0		 xor	 eax, eax
 
-; 11   :     
-; 12   :     // Create an application window with the following settings:
-; 13   :     window = SDL_CreateWindow(
+; 11   : }
 
-  0001a	6a 02		 push	 2
-  0001c	68 e0 01 00 00	 push	 480			; 000001e0H
-  00021	68 80 02 00 00	 push	 640			; 00000280H
-  00026	68 00 00 ff 1f	 push	 536805376		; 1fff0000H
-  0002b	68 00 00 ff 1f	 push	 536805376		; 1fff0000H
-  00030	68 00 00 00 00	 push	 OFFSET $SG30331
-  00035	e8 00 00 00 00	 call	 _SDL_CreateWindow
-  0003a	83 c4 18	 add	 esp, 24			; 00000018H
-  0003d	89 45 b8	 mov	 DWORD PTR _window$[ebp], eax
-
-; 14   :         "An SDL2 window",                  // window title
-; 15   :         SDL_WINDOWPOS_UNDEFINED,           // initial x position
-; 16   :         SDL_WINDOWPOS_UNDEFINED,           // initial y position
-; 17   :         640,                               // width, in pixels
-; 18   :         480,                               // height, in pixels
-; 19   :         SDL_WINDOW_OPENGL                  // flags - see below
-; 20   :         );
-; 21   :     
-; 22   :     
-; 23   :     // Check that the window was successfully created
-; 24   :     if (window == NULL) {
-
-  00040	83 7d b8 00	 cmp	 DWORD PTR _window$[ebp], 0
-  00044	75 1a		 jne	 SHORT $LN8@wmain
-
-; 25   :         // In the case that the window could not be made...
-; 26   :         printf("Could not create window: %s\n", SDL_GetError());
-
-  00046	e8 00 00 00 00	 call	 _SDL_GetError
-  0004b	50		 push	 eax
-  0004c	68 00 00 00 00	 push	 OFFSET $SG30333
-  00051	e8 00 00 00 00	 call	 _printf
-  00056	83 c4 08	 add	 esp, 8
-
-; 27   :         return 1;
-
-  00059	b8 01 00 00 00	 mov	 eax, 1
-  0005e	eb 7a		 jmp	 SHORT $LN1@wmain
-$LN8@wmain:
-
-; 28   :     }
-; 29   :     
-; 30   :     Color base_color = Palette::Base[0];
-
-  00060	b8 04 00 00 00	 mov	 eax, 4
-  00065	6b c8 00	 imul	 ecx, eax, 0
-  00068	8b 91 00 00 00
-	00		 mov	 edx, DWORD PTR ?Base@Palette@@2QBVColor@@B[ecx]
-  0006e	89 55 bc	 mov	 DWORD PTR _base_color$[ebp], edx
-
-; 31   :     printf("%x %x %x %x\n", base_color.r, base_color.g, base_color.b, base_color.a);
-
-  00071	0f b6 45 bf	 movzx	 eax, BYTE PTR _base_color$[ebp+3]
-  00075	50		 push	 eax
-  00076	0f b6 4d be	 movzx	 ecx, BYTE PTR _base_color$[ebp+2]
-  0007a	51		 push	 ecx
-  0007b	0f b6 55 bd	 movzx	 edx, BYTE PTR _base_color$[ebp+1]
-  0007f	52		 push	 edx
-  00080	0f b6 45 bc	 movzx	 eax, BYTE PTR _base_color$[ebp]
-  00084	50		 push	 eax
-  00085	68 00 00 00 00	 push	 OFFSET $SG30334
-  0008a	e8 00 00 00 00	 call	 _printf
-  0008f	83 c4 14	 add	 esp, 20			; 00000014H
-
-; 32   :     
-; 33   :     // The window is open: could enter program loop here (see SDL_PollEvent())
-; 34   :     
-; 35   :     
-; 36   :     bool running = true;
-
-  00092	c6 45 c3 01	 mov	 BYTE PTR _running$[ebp], 1
-$LN2@wmain:
-
-; 37   :     while (running)
-
-  00096	0f b6 4d c3	 movzx	 ecx, BYTE PTR _running$[ebp]
-  0009a	85 c9		 test	 ecx, ecx
-  0009c	74 29		 je	 SHORT $LN3@wmain
-$LN4@wmain:
-
-; 38   :     {
-; 39   :         SDL_Event e;
-; 40   :         while (SDL_PollEvent(&e))
-
-  0009e	8d 55 c4	 lea	 edx, DWORD PTR _e$1[ebp]
-  000a1	52		 push	 edx
-  000a2	e8 00 00 00 00	 call	 _SDL_PollEvent
-  000a7	83 c4 04	 add	 esp, 4
-  000aa	85 c0		 test	 eax, eax
-  000ac	74 17		 je	 SHORT $LN5@wmain
-
-; 41   :         {
-; 42   :             switch (e.type)
-
-  000ae	8b 45 c4	 mov	 eax, DWORD PTR _e$1[ebp]
-  000b1	89 45 b4	 mov	 DWORD PTR tv93[ebp], eax
-  000b4	81 7d b4 00 01
-	00 00		 cmp	 DWORD PTR tv93[ebp], 256 ; 00000100H
-  000bb	74 02		 je	 SHORT $LN9@wmain
-  000bd	eb 04		 jmp	 SHORT $LN6@wmain
-$LN9@wmain:
-
-; 43   :             {
-; 44   :                 case SDL_QUIT:
-; 45   :                 {
-; 46   :                     running = false;
-
-  000bf	c6 45 c3 00	 mov	 BYTE PTR _running$[ebp], 0
-$LN6@wmain:
-
-; 47   :                 } break;
-; 48   :             }
-; 49   :         }
-
-  000c3	eb d9		 jmp	 SHORT $LN4@wmain
-$LN5@wmain:
-
-; 50   :     }
-
-  000c5	eb cf		 jmp	 SHORT $LN2@wmain
-$LN3@wmain:
-
-; 51   :     
-; 52   :     // Close and destroy the window
-; 53   :     SDL_DestroyWindow(window);
-
-  000c7	8b 4d b8	 mov	 ecx, DWORD PTR _window$[ebp]
-  000ca	51		 push	 ecx
-  000cb	e8 00 00 00 00	 call	 _SDL_DestroyWindow
-  000d0	83 c4 04	 add	 esp, 4
-
-; 54   :     
-; 55   :     // Clean up
-; 56   :     SDL_Quit();
-
-  000d3	e8 00 00 00 00	 call	 _SDL_Quit
-
-; 57   :     return 0;
-
-  000d8	33 c0		 xor	 eax, eax
-$LN1@wmain:
-
-; 58   : }
-
-  000da	8b 4d fc	 mov	 ecx, DWORD PTR __$ArrayPad$[ebp]
-  000dd	33 cd		 xor	 ecx, ebp
-  000df	e8 00 00 00 00	 call	 @__security_check_cookie@4
-  000e4	8b e5		 mov	 esp, ebp
-  000e6	5d		 pop	 ebp
-  000e7	c3		 ret	 0
+  00005	5d		 pop	 ebp
+  00006	c3		 ret	 0
 _wmain	ENDP
 _TEXT	ENDS
 ; Function compile flags: /Odtp
@@ -545,119 +357,5 @@ _a$ = 20						; size = 1
   0002f	5d		 pop	 ebp
   00030	c2 10 00	 ret	 16			; 00000010H
 ??0Color@@QAE@EEEE@Z ENDP				; Color::Color
-_TEXT	ENDS
-; Function compile flags: /Odtp
-; File c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h
-;	COMDAT _printf
-_TEXT	SEGMENT
-__Result$ = -8						; size = 4
-__ArgList$ = -4						; size = 4
-__Format$ = 8						; size = 4
-_printf	PROC						; COMDAT
-
-; 954  :     {
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	83 ec 08	 sub	 esp, 8
-
-; 955  :         int _Result;
-; 956  :         va_list _ArgList;
-; 957  :         __crt_va_start(_ArgList, _Format);
-
-  00006	8d 45 0c	 lea	 eax, DWORD PTR __Format$[ebp+4]
-  00009	89 45 fc	 mov	 DWORD PTR __ArgList$[ebp], eax
-
-; 958  :         _Result = _vfprintf_l(stdout, _Format, NULL, _ArgList);
-
-  0000c	8b 4d fc	 mov	 ecx, DWORD PTR __ArgList$[ebp]
-  0000f	51		 push	 ecx
-  00010	6a 00		 push	 0
-  00012	8b 55 08	 mov	 edx, DWORD PTR __Format$[ebp]
-  00015	52		 push	 edx
-  00016	6a 01		 push	 1
-  00018	e8 00 00 00 00	 call	 ___acrt_iob_func
-  0001d	83 c4 04	 add	 esp, 4
-  00020	50		 push	 eax
-  00021	e8 00 00 00 00	 call	 __vfprintf_l
-  00026	83 c4 10	 add	 esp, 16			; 00000010H
-  00029	89 45 f8	 mov	 DWORD PTR __Result$[ebp], eax
-
-; 959  :         __crt_va_end(_ArgList);
-
-  0002c	c7 45 fc 00 00
-	00 00		 mov	 DWORD PTR __ArgList$[ebp], 0
-
-; 960  :         return _Result;
-
-  00033	8b 45 f8	 mov	 eax, DWORD PTR __Result$[ebp]
-
-; 961  :     }
-
-  00036	8b e5		 mov	 esp, ebp
-  00038	5d		 pop	 ebp
-  00039	c3		 ret	 0
-_printf	ENDP
-_TEXT	ENDS
-; Function compile flags: /Odtp
-; File c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h
-;	COMDAT __vfprintf_l
-_TEXT	SEGMENT
-__Stream$ = 8						; size = 4
-__Format$ = 12						; size = 4
-__Locale$ = 16						; size = 4
-__ArgList$ = 20						; size = 4
-__vfprintf_l PROC					; COMDAT
-
-; 642  :     {
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-
-; 643  :         return __stdio_common_vfprintf(_CRT_INTERNAL_LOCAL_PRINTF_OPTIONS, _Stream, _Format, _Locale, _ArgList);
-
-  00003	8b 45 14	 mov	 eax, DWORD PTR __ArgList$[ebp]
-  00006	50		 push	 eax
-  00007	8b 4d 10	 mov	 ecx, DWORD PTR __Locale$[ebp]
-  0000a	51		 push	 ecx
-  0000b	8b 55 0c	 mov	 edx, DWORD PTR __Format$[ebp]
-  0000e	52		 push	 edx
-  0000f	8b 45 08	 mov	 eax, DWORD PTR __Stream$[ebp]
-  00012	50		 push	 eax
-  00013	e8 00 00 00 00	 call	 ___local_stdio_printf_options
-  00018	8b 48 04	 mov	 ecx, DWORD PTR [eax+4]
-  0001b	51		 push	 ecx
-  0001c	8b 10		 mov	 edx, DWORD PTR [eax]
-  0001e	52		 push	 edx
-  0001f	e8 00 00 00 00	 call	 ___stdio_common_vfprintf
-  00024	83 c4 18	 add	 esp, 24			; 00000018H
-
-; 644  :     }
-
-  00027	5d		 pop	 ebp
-  00028	c3		 ret	 0
-__vfprintf_l ENDP
-_TEXT	ENDS
-; Function compile flags: /Odtp
-; File c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\corecrt_stdio_config.h
-;	COMDAT ___local_stdio_printf_options
-_TEXT	SEGMENT
-___local_stdio_printf_options PROC			; COMDAT
-
-; 85   :     {
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-
-; 86   :         static unsigned __int64 _OptionsStorage;
-; 87   :         return &_OptionsStorage;
-
-  00003	b8 00 00 00 00	 mov	 eax, OFFSET ?_OptionsStorage@?1??__local_stdio_printf_options@@9@4_KA ; `__local_stdio_printf_options'::`2'::_OptionsStorage
-
-; 88   :     }
-
-  00008	5d		 pop	 ebp
-  00009	c3		 ret	 0
-___local_stdio_printf_options ENDP
 _TEXT	ENDS
 END
