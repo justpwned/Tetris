@@ -1,6 +1,8 @@
 #include "SDL.h"
 #include <stdio.h>
 
+#include "palette.h"
+
 int wmain() 
 {
     SDL_Window *window;                    // Declare a pointer
@@ -17,6 +19,7 @@ int wmain()
         SDL_WINDOW_OPENGL                  // flags - see below
         );
     
+    
     // Check that the window was successfully created
     if (window == NULL) {
         // In the case that the window could not be made...
@@ -24,9 +27,24 @@ int wmain()
         return 1;
     }
     
+    
     // The window is open: could enter program loop here (see SDL_PollEvent())
     
-    SDL_Delay(3000);  // Pause execution for 3000 milliseconds, for example
+    bool running = true;
+    while (running)
+    {
+        SDL_Event e;
+        while (SDL_PollEvent(&e))
+        {
+            switch (e.type)
+            {
+                case SDL_QUIT:
+                {
+                    running = false;
+                } break;
+            }
+        }
+    }
     
     // Close and destroy the window
     SDL_DestroyWindow(window);

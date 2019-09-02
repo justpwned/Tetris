@@ -1,6 +1,6 @@
 @echo off
 
-set DebugCompilerOptions=-Fetetris.exe -Oi -WX -W4 -EHsc -wd4100 -wd4189 -wd4201 -wd4505 -wd4456 -wd4996 -nologo -Zi -FAsc 
+set DebugCompilerOptions=-Fetetris.exe -Oi -WX -W4 -EHsc -wd4100 -wd4189 -wd4201 -wd4505 -wd4456 -wd4996 -wd4091 -nologo -Zi -FAsc 
 
 set ReleaseCompilerOptions=-O2 -WX -W4 -EHsc -wd4100 -wd4189 -wd4201 -wd4505 -wd4456 -wd4996 -nologo -FAsc
 

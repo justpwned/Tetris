@@ -1,3 +1,6 @@
+#ifndef UTILS_H
+#define UTILS_H
+
 #include <cstdint>
 
 #define local_persist static
@@ -20,3 +23,5 @@ typedef int64_t s64;
 
 typedef float f32;
 typedef double f64;
+
+#endif
