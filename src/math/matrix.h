@@ -24,6 +24,18 @@ namespace math
             m_data = std::vector<i32>(rows * cols);
         }
         
+        Matrix(i32 *data, i32 rows, i32 cols)
+            : Matrix(rows, cols)
+        {
+            for (i32 r = 0; r < rows; r++)
+            {
+                for (i32 c = 0; c < cols; c++)
+                {
+                    setValue(r, c, data[r * cols + c]);
+                }
+            }
+        }
+        
         inline i32 getCols() const
         {
             return m_cols;
