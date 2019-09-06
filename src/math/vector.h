@@ -3,8 +3,6 @@
 
 #include "../utils.h"
 
-// TODO(Kirill): Complete imlplmentation of this class
-
 namespace math
 {
     class Vector
@@ -41,7 +39,30 @@ namespace math
         {
             m_y = y;
         }
-        
+
+        inline Vector operator+(const Vector& other) const
+        {
+            return Vector(m_x + other.getX(), m_y + other.getY());
+        }
+
+        inline Vector& operator+=(const Vector& other)
+        {
+            m_x += other.getX();
+            m_y += other.getY();
+            return *this;
+        }
+
+        inline Vector operator-(const Vector& other) const
+        {
+            return Vector(m_x - other.getX(), m_y - other.getY());
+        }
+
+        inline Vector& operator+=(const Vector& other)
+        {
+            m_x -= other.getX();
+            m_y -= other.getY();
+            return *this;
+        }
     };
     
     typedef Vector vec2;

@@ -5,8 +5,6 @@
 #include <cassert>
 #include "utils.h"
 
-// TODO(Kirill): Test operator overloading, write * overloading
-
 namespace math
 {
     class Matrix
