@@ -1,10 +1,7 @@
 #ifndef UTILS_H
 #define UTILS_H
 
-#include <cstdint>
-
-#define local_persist static
-#define internal static
+#include <stdint.h>
 
 typedef uint8_t  u8;
 typedef uint16_t u16;
