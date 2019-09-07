@@ -3,19 +3,10 @@
 
 #include "game.hpp"
 
-Game* Game::s_Instance = nullptr;
+using namespace core;
+using namespace core::graphics;
 
-Game* Game::Instance()
-{
-    if (!s_Instance)
-    {
-        s_Instance = new Game();
-    }
-    
-    return s_Instance;
-}
-
-bool Game::Init(const char *t_title, i32 t_xPos, i32 t_yPos, i32 t_windowWidth, i32 t_windowHeight, const char *t_fontName, i32 t_fontSize)
+Game::Game(const char *t_title, i32 t_xPos, i32 t_yPos, i32 t_windowWidth, i32 t_windowHeight, const char *t_fontName, i32 t_fontSize)
 {
     if (!SDL_Init(SDL_INIT_EVERYTHING))
     {
@@ -39,19 +30,19 @@ bool Game::Init(const char *t_title, i32 t_xPos, i32 t_yPos, i32 t_windowWidth, 
             {
                 std::cerr << "Renderer could not be created. SDL error: " 
                     << SDL_GetError() << "\n";
-                return false;
+                exit(1);
             }
         }
         else
         {
             std::cerr << "Window could not be created. SDL error: " << SDL_GetError() << "\n";
-            return false;
+            exit(1);
         }
     }
     else
     {
         std::cerr << "Unable to intialize SDL. SDL error: " << SDL_GetError() << "\n";
-        return false;
+        exit(1);
     }
     
     if (!TTF_Init())
@@ -69,33 +60,26 @@ bool Game::Init(const char *t_title, i32 t_xPos, i32 t_yPos, i32 t_windowWidth, 
         {
             std::cerr << "Font " << t_fontName << "(" << t_fontSize 
                 << ") has not been loaded\n";
-            return false;
+            exit(1);
         }
     }
     
     else
     {
         std::cerr << "Unable to initialize SDL_TTF. SDL_TTF error: " << TTF_GetError() << "\n";
-        return false;
+        exit(1);
     }
     
     m_gameWidth = t_windowWidth;
     m_gameHeight = t_windowHeight;
     m_running = true;
     
+    m_graphics = Graphics(m_renderer);
+    
     m_game = {};
     m_input = {};
     
     srand((u32)time(NULL));
-    
-    return true;
-}
-
-bool Game::Init(const char *t_title, i32 t_windowWidth, i32 t_windowHeight, 
-                const char *t_fontName, i32 t_fontSize)
-{
-    return Init(t_title, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 
-                t_windowWidth, t_windowHeight, t_fontName, t_fontSize);
 }
 
 void Game::HandleEvents()

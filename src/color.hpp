@@ -3,30 +3,33 @@
 
 #include "utils.h"
 
-class Color
+namespace core
 {
-    public:
-    
-    u8 r;
-    u8 g;
-    u8 b;
-    u8 a;
-    
-    Color(u8 r, u8 g, u8 b, u8 a)
+    class Color
     {
-        this->r = r;
-        this->g = g;
-        this->b = b;
-        this->a = a;
-    }
-    
-    Color(u8 r, u8 g, u8 b)
-    {
-        this->r = r;
-        this->g = g;
-        this->b = b;
-        this->a = a;
-    }
-};
+        public:
+        
+        u8 r;
+        u8 g;
+        u8 b;
+        u8 a;
+        
+        Color(u8 r, u8 g, u8 b, u8 a)
+        {
+            this->r = r;
+            this->g = g;
+            this->b = b;
+            this->a = a;
+        }
+        
+        Color(u8 r, u8 g, u8 b)
+        {
+            this->r = r;
+            this->g = g;
+            this->b = b;
+            this->a = 255;
+        }
+    };
+}
 
 #endif

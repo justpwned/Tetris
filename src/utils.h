@@ -21,4 +21,13 @@ typedef int64_t s64;
 typedef float f32;
 typedef double f64;
 
+#define MAX(a, b) ((a) > (b) ? (a) : (b))
+#define MIN(a, b) ((a) < (b) ? (a) : (b))
+
+// Returns a random integer between min and max inclusively
+inline i32 random_int(i32 min, i32 max)
+{
+    return min + rand() / (RAND_MAX / (max - min + 1) + 1);
+}
+
 #endif
