@@ -74,9 +74,11 @@ Game::Game(const char *t_title, i32 t_xPos, i32 t_yPos, i32 t_windowWidth, i32 t
     m_gameHeight = t_windowHeight;
     m_running = true;
     
-    m_graphics = Graphics(m_renderer);
+    m_graphics = Graphics(getRenderer());
     
     m_game = {};
+    m_game.board.Init(BOARD_ROWS, BOARD_COLS, BOARD_VISIBLE_ROWS, BOARD_GRID_SIZE);
+    
     m_input = {};
     
     srand((u32)time(NULL));
@@ -112,25 +114,87 @@ void Game::HandleInput()
         m_input.right  = keyStates[SDL_SCANCODE_RIGHT];
         m_input.up     = keyStates[SDL_SCANCODE_UP];
         m_input.down   = keyStates[SDL_SCANCODE_DOWN];
-        m_input.a      = keyStates[SDL_SCANCODE_SPACE];
+        m_input.space  = keyStates[SDL_SCANCODE_SPACE];
+        m_input.enter  = keyStates[SDL_SCANCODE_RETURN];
         
         m_input.dleft  = m_input.left - prevInput.left;
         m_input.dright = m_input.right - prevInput.right;
         m_input.dup    = m_input.up - prevInput.up;
         m_input.ddown  = m_input.down - prevInput.down;
-        m_input.da     = m_input.a - prevInput.a;
+        m_input.dspace = m_input.space - prevInput.space;
+        m_input.denter = m_input.enter - prevInput.enter;
     }
+}
+
+void Game::UpdateGameStart()
+{
+    if (m_input.dup > 0)
+    {
+        ++m_game.startLevel;
+    }
+    
+    if (m_input.ddown > 0 && m_game.startLevel > 0)
+    {
+        --m_game.startLevel;
+    }
+    
+    if (m_input.denter > 0)
+    {
+        m_game.board.Clear();
+        m_game.level = m_game.startLevel;
+        m_game.lineCount = 0;
+        m_game.points = 0;
+        m_game.piece.Spawn();
+        m_game.phase = GAME_PHASE_PLAY;
+    }
+    
+}
+
+void Game::UpdateGamePlay()
+{
+    
+}
+
+void Game::UpdateGameLine()
+{
+    
+}
+
+void Game::UpdateGameOver()
+{
+    
 }
 
 void Game::Update()
 {
-    
+    switch (m_game.phase)
+    {
+        case GAME_PHASE_START:
+        {
+            UpdateGameStart();
+        } break;
+        
+        case GAME_PHASE_PLAY:
+        {
+            UpdateGamePlay();
+        } break;
+        
+        case GAME_PHASE_LINE:
+        {
+            UpdateGameLine();
+        } break;
+        
+        case GAME_PHASE_OVER:
+        {
+            UpdateGameOver();
+        } break;
+    }
 }
 
 void Game::Render()
 {
     SDL_SetRenderDrawColor(m_renderer, 100, 100, 100, 255);
-    SDL_RenderClear(m_renderer);
+    SDL_RenderClear(getRenderer());
     
     m_graphics.DrawText(m_font, "Hello there", 300, 100, TEXT_ALIGN_LEFT,
                         Color(255, 0, 0));
@@ -152,14 +216,14 @@ void Game::MainLoop()
         Update();
         Render();
         
-        SDL_RenderPresent(m_renderer);
+        SDL_RenderPresent(getRenderer());
     }
 }
 
 void Game::Clean()
 {
     std::cout << "Closing the game. Cleaning up all the mess...\n";
-    SDL_DestroyRenderer(m_renderer);
+    SDL_DestroyRenderer(getRenderer());
     SDL_DestroyWindow(m_window);
     TTF_CloseFont(m_font);
     TTF_Quit();

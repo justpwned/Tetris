@@ -19,6 +19,8 @@ namespace core
             
             public:
             
+            Matrix() {}
+            
             Matrix(i32 rows, i32 cols)
             {
                 m_rows = rows;
@@ -36,6 +38,19 @@ namespace core
                         setValue(r, c, data[r * cols + c]);
                     }
                 }
+            }
+            
+            void Resize(i32 rows, i32 cols)
+            {
+                m_rows = rows;
+                m_cols = cols;
+                m_data.resize(rows * cols);
+                m_data.clear();
+            }
+            
+            void Clear()
+            {
+                m_data.clear();
             }
             
             inline i32 getCols() const

@@ -24,6 +24,7 @@ typedef double f64;
 
 #define MAX(a, b) ((a) > (b) ? (a) : (b))
 #define MIN(a, b) ((a) < (b) ? (a) : (b))
+#define ARRAY_COUNT(x) (sizeof(x) / sizeof((x)[0]))
 
 // Returns a random integer between min and max inclusively
 inline i32 random_int(i32 min, i32 max)

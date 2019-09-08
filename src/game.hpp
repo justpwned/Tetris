@@ -1,10 +1,17 @@
-#ifndef GAME_H
-#define GAME_H
+#ifndef GAME_HPP
+#define GAME_HPP
 
 #include "SDL.h"
 #include "SDL_ttf.h"
 #include "graphics\graphics.hpp"
 #include "utils.h"
+#include "board.hpp"
+#include "piece.hpp"
+
+#define BOARD_COLS 10
+#define BOARD_ROWS 22
+#define BOARD_VISIBLE_ROWS 20
+#define BOARD_GRID_SIZE 30
 
 namespace core
 {
@@ -13,11 +20,17 @@ namespace core
         GAME_PHASE_START,
         GAME_PHASE_PLAY,
         GAME_PHASE_LINE,
-        GAME_PHASE_OVER
+        GAME_PHASE_OVER,
+        GAME_PHASE_TOTAL
     };
     
     struct GameState
     {
+        gameplay::Board board; //(BOARD_ROWS, BOARD_COLS, BOARD_VISIBLE_ROWS, BOARD_GRID_SIZE);
+        i32 lines[BOARD_ROWS]; // Move lines to board class later
+        
+        gameplay::Piece piece;
+        
         GamePhase phase;
         
         i32 startLevel;
@@ -36,13 +49,15 @@ namespace core
         u8 right;
         u8 up;
         u8 down;
-        u8 a;
+        u8 space;
+        u8 enter;
         
         i8 dleft;
         i8 dright;
         i8 dup;
         i8 ddown;
-        i8 da;
+        i8 dspace;
+        i8 denter;
     };
     
     class Game
@@ -61,6 +76,14 @@ namespace core
         TTF_Font *m_font;
         
         bool m_running;
+        
+        // Update methods
+        void UpdateGameStart();
+        void UpdateGamePlay();
+        void UpdateGameLine();
+        void UpdateGameOver();
+        
+        // Rendering methods
         
         public:
         
