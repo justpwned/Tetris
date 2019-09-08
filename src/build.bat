@@ -11,7 +11,7 @@ set IncludeDirectories=/I "..\dependencies\SDL2_ttf\include" /I "..\dependencies
 if not exist ..\build mkdir ..\build
 pushd ..\build
 
-set FilesToCompile=..\src\main.cpp ..\src\game.cpp
+set FilesToCompile=..\src\main.cpp ..\src\game.cpp ..\src\graphics\graphics.cpp
 
 REM Debug build
 cl %DebugCompilerOptions% %IncludeDirectories% %FilesToCompile% /link %LinkerOptions% 

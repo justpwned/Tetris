@@ -12,7 +12,7 @@ Game::Game(const char *t_title, i32 t_xPos, i32 t_yPos, i32 t_windowWidth, i32 t
     {
         std::cout << "SDL has been initialized successfully\n";
         
-        m_window = SDL_CreateWindow(t_title, t_xPos, t_yPos, t_windowHeight,
+        m_window = SDL_CreateWindow(t_title, t_xPos, t_yPos, t_windowWidth,
                                     t_windowHeight, SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN);
         
         if (m_window)
@@ -129,7 +129,17 @@ void Game::Update()
 
 void Game::Render()
 {
+    SDL_SetRenderDrawColor(m_renderer, 100, 100, 100, 255);
+    SDL_RenderClear(m_renderer);
     
+    m_graphics.DrawText(m_font, "Hello there", 300, 100, TEXT_ALIGN_LEFT,
+                        Color(255, 0, 0));
+    
+    m_graphics.DrawText(m_font, "Hello there", 300, 100, TEXT_ALIGN_CENTER,
+                        Color(0, 255, 0));
+    
+    m_graphics.DrawText(m_font, "Hello there", 300, 100, TEXT_ALIGN_RIGHT,
+                        Color(0, 0, 255));
 }
 
 void Game::MainLoop()
@@ -138,9 +148,6 @@ void Game::MainLoop()
     {
         HandleEvents();
         HandleInput();
-        
-        SDL_SetRenderDrawColor(m_renderer, 0, 0, 0, 0);
-        SDL_RenderClear(m_renderer);
         
         Update();
         Render();
@@ -154,6 +161,7 @@ void Game::Clean()
     std::cout << "Closing the game. Cleaning up all the mess...\n";
     SDL_DestroyRenderer(m_renderer);
     SDL_DestroyWindow(m_window);
+    TTF_CloseFont(m_font);
     TTF_Quit();
     SDL_Quit();
 }
