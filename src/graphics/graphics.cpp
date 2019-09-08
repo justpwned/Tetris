@@ -3,6 +3,18 @@
 using namespace core;
 using namespace core::graphics;
 
+Graphics* Graphics::s_instance = nullptr;
+
+Graphics* Graphics::Instance()
+{
+    if (!s_instance)
+    {
+        s_instance = new Graphics();
+    }
+    
+    return s_instance;
+}
+
 void Graphics::DrawFillRect(i32 t_x, i32 t_y, i32 t_width, i32 t_height, Color t_color)
 {
     SDL_Rect rect = { t_x, t_y, t_width, t_height };

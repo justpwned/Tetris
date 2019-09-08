@@ -1,6 +1,6 @@
 @echo off
 
-set DebugCompilerOptions=-Fetetris.exe -Oi -WX -W4 -EHsc -wd4100 -wd4189 -wd4201 -wd4505 -wd4456 -wd4996 -wd4091 -nologo -Zi -FAsc 
+set DebugCompilerOptions=-Fetetris.exe -Oi -WX -W4 -EHsc -wd4100 -wd4189 -wd4201 -wd4505 -wd4456 -wd4996 -wd4091 -wd4101 -nologo -Zi -FAsc 
 
 set ReleaseCompilerOptions=-O2 -WX -W4 -EHsc -wd4100 -wd4189 -wd4201 -wd4505 -wd4456 -wd4996 -nologo -FAsc
 
@@ -11,7 +11,7 @@ set IncludeDirectories=/I "..\dependencies\SDL2_ttf\include" /I "..\dependencies
 if not exist ..\build mkdir ..\build
 pushd ..\build
 
-set FilesToCompile=..\src\main.cpp ..\src\game.cpp ..\src\graphics\graphics.cpp
+set FilesToCompile=..\src\main.cpp ..\src\game.cpp ..\src\graphics\graphics.cpp ..\src\board.cpp ..\src\palette.cpp ..\src\tetromino.cpp ..\src\piece.cpp
 
 REM Debug build
 cl %DebugCompilerOptions% %IncludeDirectories% %FilesToCompile% /link %LinkerOptions% 

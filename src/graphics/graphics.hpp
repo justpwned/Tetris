@@ -24,12 +24,17 @@ namespace core
             i32 m_windowWidth;
             i32 m_windowHeight;
             
+            Graphics() {}
+            ~Graphics() {}
+            
+            static Graphics* s_instance;
+            
             public:
             
-            Graphics() {}
+            static Graphics* Instance();
             
-            Graphics(SDL_Renderer *t_renderer) 
-                : m_renderer(t_renderer) { }
+            inline void SetRenderer(SDL_Renderer *t_renderer) { m_renderer = t_renderer; }
+            inline SDL_Renderer* GetRenderer() const { return m_renderer; }
             
             void DrawFillRect(i32 t_x, i32 t_y, i32 t_width, i32 t_height, Color t_color);
             void DrawRect(i32 t_x, i32 t_y, i32 t_width, i32 t_height, Color t_color);

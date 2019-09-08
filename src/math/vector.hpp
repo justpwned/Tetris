@@ -22,22 +22,22 @@ namespace core
                 m_y = y;
             }
             
-            inline i32 getX() const 
+            inline i32 GetX() const 
             {
                 return m_x;
             }
             
-            inline void setX(i32 x)
+            inline void GetX(i32 x)
             {
                 m_x = x;
             }
             
-            inline i32 getY() const
+            inline i32 GetY() const
             {
                 return m_y;
             }
             
-            inline void setY(i32 y)
+            inline void GetY(i32 y)
             {
                 m_y = y;
             }

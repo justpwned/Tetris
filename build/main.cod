@@ -10,9 +10,9 @@ INCLUDELIB LIBCMT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG53162 DB	'novem.ttf', 00H
+$SG53268 DB	'novem.ttf', 00H
 	ORG $+2
-$SG53163 DB	'Tetris', 00H
+$SG53269 DB	'Tetris', 00H
 CONST	ENDS
 PUBLIC	?_Orphan_all@_Container_base0@std@@QAEXXZ	; std::_Container_base0::_Orphan_all
 PUBLIC	?_Adjust_manually_vector_aligned@std@@YAXAAPAXAAI@Z ; std::_Adjust_manually_vector_aligned
@@ -188,8 +188,8 @@ _TEXT	ENDS
 ; Function compile flags: /Odtp
 ; File c:\dev\tetris\src\main.cpp
 _TEXT	SEGMENT
-$T2 = -228						; size = 4
-_game$ = -224						; size = 208
+$T2 = -236						; size = 4
+_game$ = -232						; size = 216
 __$ArrayPad$ = -16					; size = 4
 __$EHRec$ = -12						; size = 12
 _argc$ = 8						; size = 4
@@ -205,8 +205,8 @@ _wmain	PROC
   0000a	64 a1 00 00 00
 	00		 mov	 eax, DWORD PTR fs:0
   00010	50		 push	 eax
-  00011	81 ec d8 00 00
-	00		 sub	 esp, 216		; 000000d8H
+  00011	81 ec e0 00 00
+	00		 sub	 esp, 224		; 000000e0H
   00017	a1 00 00 00 00	 mov	 eax, DWORD PTR ___security_cookie
   0001c	33 c5		 xor	 eax, ebp
   0001e	89 45 f0	 mov	 DWORD PTR __$ArrayPad$[ebp], eax
@@ -215,14 +215,14 @@ _wmain	PROC
   00025	64 a3 00 00 00
 	00		 mov	 DWORD PTR fs:0, eax
 
-; 8    :     Game game("Tetris", 600, 720, "novem.ttf", 24);
+; 8    :     Game game("Tetris", 300, 720, "novem.ttf", 24);
 
   0002b	6a 18		 push	 24			; 00000018H
-  0002d	68 00 00 00 00	 push	 OFFSET $SG53162
+  0002d	68 00 00 00 00	 push	 OFFSET $SG53268
   00032	68 d0 02 00 00	 push	 720			; 000002d0H
-  00037	68 58 02 00 00	 push	 600			; 00000258H
-  0003c	68 00 00 00 00	 push	 OFFSET $SG53163
-  00041	8d 8d 20 ff ff
+  00037	68 2c 01 00 00	 push	 300			; 0000012cH
+  0003c	68 00 00 00 00	 push	 OFFSET $SG53269
+  00041	8d 8d 18 ff ff
 	ff		 lea	 ecx, DWORD PTR _game$[ebp]
   00047	e8 00 00 00 00	 call	 ??0Game@core@@QAE@PBDHH0H@Z ; core::Game::Game
   0004c	c7 45 fc 00 00
@@ -230,27 +230,27 @@ _wmain	PROC
 
 ; 9    :     game.MainLoop();
 
-  00053	8d 8d 20 ff ff
+  00053	8d 8d 18 ff ff
 	ff		 lea	 ecx, DWORD PTR _game$[ebp]
   00059	e8 00 00 00 00	 call	 ?MainLoop@Game@core@@QAEXXZ ; core::Game::MainLoop
 
 ; 10   :     game.Clean();
 
-  0005e	8d 8d 20 ff ff
+  0005e	8d 8d 18 ff ff
 	ff		 lea	 ecx, DWORD PTR _game$[ebp]
   00064	e8 00 00 00 00	 call	 ?Clean@Game@core@@QAEXXZ ; core::Game::Clean
 
 ; 11   :     
 ; 12   :     return 0;
 
-  00069	c7 85 1c ff ff
+  00069	c7 85 14 ff ff
 	ff 00 00 00 00	 mov	 DWORD PTR $T2[ebp], 0
   00073	c7 45 fc ff ff
 	ff ff		 mov	 DWORD PTR __$EHRec$[ebp+8], -1
-  0007a	8d 8d 20 ff ff
+  0007a	8d 8d 18 ff ff
 	ff		 lea	 ecx, DWORD PTR _game$[ebp]
   00080	e8 00 00 00 00	 call	 ??1Game@core@@QAE@XZ
-  00085	8b 85 1c ff ff
+  00085	8b 85 14 ff ff
 	ff		 mov	 eax, DWORD PTR $T2[ebp]
 
 ; 13   : }
@@ -268,14 +268,14 @@ _wmain	PROC
 _TEXT	ENDS
 text$x	SEGMENT
 __unwindfunclet$_wmain$0:
-  00000	8d 8d 20 ff ff
+  00000	8d 8d 18 ff ff
 	ff		 lea	 ecx, DWORD PTR _game$[ebp]
   00006	e9 00 00 00 00	 jmp	 ??1Game@core@@QAE@XZ
 __ehhandler$_wmain:
   0000b	8b 54 24 08	 mov	 edx, DWORD PTR [esp+8]
   0000f	8d 42 0c	 lea	 eax, DWORD PTR [edx+12]
-  00012	8b 8a 24 ff ff
-	ff		 mov	 ecx, DWORD PTR [edx-220]
+  00012	8b 8a 1c ff ff
+	ff		 mov	 ecx, DWORD PTR [edx-228]
   00018	33 c8		 xor	 ecx, eax
   0001a	e8 00 00 00 00	 call	 @__security_check_cookie@4
   0001f	8b 4a fc	 mov	 ecx, DWORD PTR [edx-4]
@@ -296,7 +296,7 @@ _this$ = -4						; size = 4
   00003	51		 push	 ecx
   00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
   00007	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  0000a	83 c1 1c	 add	 ecx, 28			; 0000001cH
+  0000a	83 c1 10	 add	 ecx, 16			; 00000010H
   0000d	e8 00 00 00 00	 call	 ??1GameState@core@@QAE@XZ
   00012	8b e5		 mov	 esp, ebp
   00014	5d		 pop	 ebp
@@ -316,14 +316,14 @@ _t_fontSize$ = 24					; size = 4
 ??0Game@core@@QAE@PBDHH0H@Z PROC			; core::Game::Game, COMDAT
 ; _this$ = ecx
 
-; 94   :                    t_windowWidth, t_windowHeight, t_fontName, t_fontSize) {}
+; 93   :                    t_windowWidth, t_windowHeight, t_fontName, t_fontSize) {}
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
   00003	51		 push	 ecx
   00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
 
-; 93   :             : Game(t_title, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 
+; 92   :             : Game(t_title, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 
 
   00007	8b 45 18	 mov	 eax, DWORD PTR _t_fontSize$[ebp]
   0000a	50		 push	 eax
@@ -340,7 +340,7 @@ _t_fontSize$ = 24					; size = 4
   00025	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
   00028	e8 00 00 00 00	 call	 ??0Game@core@@QAE@PBDHHHH0H@Z ; core::Game::Game
 
-; 94   :                    t_windowWidth, t_windowHeight, t_fontName, t_fontSize) {}
+; 93   :                    t_windowWidth, t_windowHeight, t_fontName, t_fontSize) {}
 
   0002d	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
   00030	8b e5		 mov	 esp, ebp
@@ -376,7 +376,7 @@ _this$ = -4						; size = 4
   00003	51		 push	 ecx
   00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
   00007	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  0000a	83 c1 10	 add	 ecx, 16			; 00000010H
+  0000a	83 c1 14	 add	 ecx, 20			; 00000014H
   0000d	e8 00 00 00 00	 call	 ??1Matrix@math@core@@QAE@XZ
   00012	8b e5		 mov	 esp, ebp
   00014	5d		 pop	 ebp

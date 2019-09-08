@@ -2,6 +2,7 @@
 #include <time.h>
 
 #include "game.hpp"
+#include "palette.hpp"
 
 using namespace core;
 using namespace core::graphics;
@@ -74,7 +75,7 @@ Game::Game(const char *t_title, i32 t_xPos, i32 t_yPos, i32 t_windowWidth, i32 t
     m_gameHeight = t_windowHeight;
     m_running = true;
     
-    m_graphics = Graphics(getRenderer());
+    Graphics::Instance()->SetRenderer(m_renderer);
     
     m_game = {};
     m_game.board.Init(BOARD_ROWS, BOARD_COLS, BOARD_VISIBLE_ROWS, BOARD_GRID_SIZE);
@@ -144,7 +145,7 @@ void Game::UpdateGameStart()
         m_game.level = m_game.startLevel;
         m_game.lineCount = 0;
         m_game.points = 0;
-        m_game.piece.Spawn();
+        m_game.piece.SpawnNewPiece();
         m_game.phase = GAME_PHASE_PLAY;
     }
     
@@ -194,16 +195,36 @@ void Game::Update()
 void Game::Render()
 {
     SDL_SetRenderDrawColor(m_renderer, 100, 100, 100, 255);
-    SDL_RenderClear(getRenderer());
+    SDL_RenderClear(m_renderer);
     
-    m_graphics.DrawText(m_font, "Hello there", 300, 100, TEXT_ALIGN_LEFT,
-                        Color(255, 0, 0));
+    char buffer[4096];
     
-    m_graphics.DrawText(m_font, "Hello there", 300, 100, TEXT_ALIGN_CENTER,
-                        Color(0, 255, 0));
+    m_game.board.Draw(0, 0);
     
-    m_graphics.DrawText(m_font, "Hello there", 300, 100, TEXT_ALIGN_RIGHT,
-                        Color(0, 0, 255));
+    m_game.board.DrawCell(0, 0, 1, 0, 0, true);
+    
+    switch (m_game.phase)
+    {
+        case GAME_PHASE_START:
+        {
+            
+        } break;
+        
+        case GAME_PHASE_PLAY:
+        {
+            
+        } break;
+        
+        case GAME_PHASE_LINE:
+        {
+            
+        } break;
+        
+        case GAME_PHASE_OVER:
+        {
+            
+        } break;
+    }
 }
 
 void Game::MainLoop()
@@ -216,14 +237,14 @@ void Game::MainLoop()
         Update();
         Render();
         
-        SDL_RenderPresent(getRenderer());
+        SDL_RenderPresent(m_renderer);
     }
 }
 
 void Game::Clean()
 {
     std::cout << "Closing the game. Cleaning up all the mess...\n";
-    SDL_DestroyRenderer(getRenderer());
+    SDL_DestroyRenderer(m_renderer);
     SDL_DestroyWindow(m_window);
     TTF_CloseFont(m_font);
     TTF_Quit();

@@ -8,10 +8,10 @@
 #include "board.hpp"
 #include "piece.hpp"
 
-#define BOARD_COLS 10
-#define BOARD_ROWS 22
-#define BOARD_VISIBLE_ROWS 20
-#define BOARD_GRID_SIZE 30
+static const i32 BOARD_COLS = 10; // WIDTH
+static const i32 BOARD_ROWS = 22; // HEIGHT
+static const i32 BOARD_VISIBLE_ROWS = 20; // VISIBLE HEIGHT
+static const i32 BOARD_GRID_SIZE = 30;
 
 namespace core
 {
@@ -26,7 +26,7 @@ namespace core
     
     struct GameState
     {
-        gameplay::Board board; //(BOARD_ROWS, BOARD_COLS, BOARD_VISIBLE_ROWS, BOARD_GRID_SIZE);
+        gameplay::Board board;
         i32 lines[BOARD_ROWS]; // Move lines to board class later
         
         gameplay::Piece piece;
@@ -70,7 +70,6 @@ namespace core
         SDL_Window *m_window;
         SDL_Renderer *m_renderer;
         
-        graphics::Graphics m_graphics;
         GameState m_game;
         InputState m_input;
         TTF_Font *m_font;
@@ -105,7 +104,6 @@ namespace core
         inline bool Running()              const { return m_running; }
         inline i32 getGameWidth()          const { return m_gameWidth; }
         inline i32 getGameHeight()         const { return m_gameHeight; }
-        inline SDL_Renderer* getRenderer() const { return m_renderer; }
     };
 }
 

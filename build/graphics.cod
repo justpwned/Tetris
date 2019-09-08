@@ -9,9 +9,17 @@
 INCLUDELIB LIBCMT
 INCLUDELIB OLDNAMES
 
+PUBLIC	?s_instance@Graphics@graphics@core@@0PAV123@A	; core::graphics::Graphics::s_instance
+_BSS	SEGMENT
+?s_instance@Graphics@graphics@core@@0PAV123@A DD 01H DUP (?) ; core::graphics::Graphics::s_instance
+_BSS	ENDS
+PUBLIC	??0Graphics@graphics@core@@AAE@XZ		; core::graphics::Graphics::Graphics
+PUBLIC	?Instance@Graphics@graphics@core@@SAPAV123@XZ	; core::graphics::Graphics::Instance
 PUBLIC	?DrawFillRect@Graphics@graphics@core@@QAEXHHHHVColor@3@@Z ; core::graphics::Graphics::DrawFillRect
 PUBLIC	?DrawRect@Graphics@graphics@core@@QAEXHHHHVColor@3@@Z ; core::graphics::Graphics::DrawRect
 PUBLIC	?DrawText@Graphics@graphics@core@@QAEXPAU_TTF_Font@@PBDHHW4TextAlign@23@VColor@3@@Z ; core::graphics::Graphics::DrawText
+EXTRN	??2@YAPAXI@Z:PROC				; operator new
+EXTRN	??3@YAXPAXI@Z:PROC				; operator delete
 EXTRN	_SDL_FreeSurface:PROC
 EXTRN	_SDL_CreateTextureFromSurface:PROC
 EXTRN	_SDL_SetRenderDrawColor:PROC
@@ -21,7 +29,19 @@ EXTRN	_SDL_RenderCopy:PROC
 EXTRN	_SDL_DestroyTexture:PROC
 EXTRN	_TTF_RenderText_Blended:PROC
 EXTRN	@__security_check_cookie@4:PROC
+EXTRN	___CxxFrameHandler3:PROC
 EXTRN	___security_cookie:DWORD
+xdata$x	SEGMENT
+__unwindtable$?Instance@Graphics@graphics@core@@SAPAV123@XZ DD 0ffffffffH
+	DD	FLAT:__unwindfunclet$?Instance@Graphics@graphics@core@@SAPAV123@XZ$0
+__ehfuncinfo$?Instance@Graphics@graphics@core@@SAPAV123@XZ DD 019930522H
+	DD	01H
+	DD	FLAT:__unwindtable$?Instance@Graphics@graphics@core@@SAPAV123@XZ
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	01H
+xdata$x	ENDS
 ; Function compile flags: /Odtp
 ; File c:\dev\tetris\src\graphics\graphics.cpp
 _TEXT	SEGMENT
@@ -41,7 +61,7 @@ _t_color$ = 28						; size = 4
 ?DrawText@Graphics@graphics@core@@QAEXPAU_TTF_Font@@PBDHHW4TextAlign@23@VColor@3@@Z PROC ; core::graphics::Graphics::DrawText
 ; _this$ = ecx
 
-; 22   : {
+; 34   : {
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
@@ -51,7 +71,7 @@ _t_color$ = 28						; size = 4
   0000d	89 45 fc	 mov	 DWORD PTR __$ArrayPad$[ebp], eax
   00010	89 4d dc	 mov	 DWORD PTR _this$[ebp], ecx
 
-; 23   :     SDL_Color color = { t_color.r, t_color.g, t_color.b };
+; 35   :     SDL_Color color = { t_color.r, t_color.g, t_color.b };
 
   00013	8a 45 1c	 mov	 al, BYTE PTR _t_color$[ebp]
   00016	88 45 e4	 mov	 BYTE PTR _color$[ebp], al
@@ -62,7 +82,7 @@ _t_color$ = 28						; size = 4
   00025	33 c0		 xor	 eax, eax
   00027	88 45 e7	 mov	 BYTE PTR _color$[ebp+3], al
 
-; 24   :     SDL_Surface *textSurface = TTF_RenderText_Blended(t_font, t_text, color);
+; 36   :     SDL_Surface *textSurface = TTF_RenderText_Blended(t_font, t_text, color);
 
   0002a	8b 4d e4	 mov	 ecx, DWORD PTR _color$[ebp]
   0002d	51		 push	 ecx
@@ -74,7 +94,7 @@ _t_color$ = 28						; size = 4
   0003b	83 c4 0c	 add	 esp, 12			; 0000000cH
   0003e	89 45 e8	 mov	 DWORD PTR _textSurface$[ebp], eax
 
-; 25   :     SDL_Texture *textTexture = SDL_CreateTextureFromSurface(m_renderer, textSurface);
+; 37   :     SDL_Texture *textTexture = SDL_CreateTextureFromSurface(m_renderer, textSurface);
 
   00041	8b 4d e8	 mov	 ecx, DWORD PTR _textSurface$[ebp]
   00044	51		 push	 ecx
@@ -85,8 +105,8 @@ _t_color$ = 28						; size = 4
   00050	83 c4 08	 add	 esp, 8
   00053	89 45 d8	 mov	 DWORD PTR _textTexture$[ebp], eax
 
-; 26   :     
-; 27   :     SDL_Rect destRect = { t_x, t_y, textSurface->w, textSurface->h };
+; 38   :     
+; 39   :     SDL_Rect destRect = { t_x, t_y, textSurface->w, textSurface->h };
 
   00056	8b 4d 10	 mov	 ecx, DWORD PTR _t_x$[ebp]
   00059	89 4d ec	 mov	 DWORD PTR _destRect$[ebp], ecx
@@ -99,8 +119,8 @@ _t_color$ = 28						; size = 4
   0006e	8b 42 0c	 mov	 eax, DWORD PTR [edx+12]
   00071	89 45 f8	 mov	 DWORD PTR _destRect$[ebp+12], eax
 
-; 28   :     
-; 29   :     switch (t_alignment)
+; 40   :     
+; 41   :     switch (t_alignment)
 
   00074	8b 4d 18	 mov	 ecx, DWORD PTR _t_alignment$[ebp]
   00077	89 4d e0	 mov	 DWORD PTR tv77[ebp], ecx
@@ -113,23 +133,23 @@ _t_color$ = 28						; size = 4
   0008c	eb 29		 jmp	 SHORT $LN2@DrawText
 $LN4@DrawText:
 
-; 30   :     {
-; 31   :         case TEXT_ALIGN_LEFT:
-; 32   :         {
-; 33   :             destRect.x = t_x;
+; 42   :     {
+; 43   :         case TEXT_ALIGN_LEFT:
+; 44   :         {
+; 45   :             destRect.x = t_x;
 
   0008e	8b 55 10	 mov	 edx, DWORD PTR _t_x$[ebp]
   00091	89 55 ec	 mov	 DWORD PTR _destRect$[ebp], edx
 
-; 34   :         } break;
+; 46   :         } break;
 
   00094	eb 21		 jmp	 SHORT $LN2@DrawText
 $LN5@DrawText:
 
-; 35   :         
-; 36   :         case TEXT_ALIGN_CENTER:
-; 37   :         {
-; 38   :             destRect.x = t_x - textSurface->w / 2;
+; 47   :         
+; 48   :         case TEXT_ALIGN_CENTER:
+; 49   :         {
+; 50   :             destRect.x = t_x - textSurface->w / 2;
 
   00096	8b 45 e8	 mov	 eax, DWORD PTR _textSurface$[ebp]
   00099	8b 40 08	 mov	 eax, DWORD PTR [eax+8]
@@ -140,15 +160,15 @@ $LN5@DrawText:
   000a4	2b c8		 sub	 ecx, eax
   000a6	89 4d ec	 mov	 DWORD PTR _destRect$[ebp], ecx
 
-; 39   :         } break;
+; 51   :         } break;
 
   000a9	eb 0c		 jmp	 SHORT $LN2@DrawText
 $LN6@DrawText:
 
-; 40   :         
-; 41   :         case TEXT_ALIGN_RIGHT:
-; 42   :         {
-; 43   :             destRect.x = t_x - textSurface->w;
+; 52   :         
+; 53   :         case TEXT_ALIGN_RIGHT:
+; 54   :         {
+; 55   :             destRect.x = t_x - textSurface->w;
 
   000ab	8b 55 e8	 mov	 edx, DWORD PTR _textSurface$[ebp]
   000ae	8b 45 10	 mov	 eax, DWORD PTR _t_x$[ebp]
@@ -156,10 +176,10 @@ $LN6@DrawText:
   000b4	89 45 ec	 mov	 DWORD PTR _destRect$[ebp], eax
 $LN2@DrawText:
 
-; 44   :         } break;
-; 45   :     }
-; 46   :     
-; 47   :     SDL_RenderCopy(m_renderer, textTexture, 0, &destRect);
+; 56   :         } break;
+; 57   :     }
+; 58   :     
+; 59   :     SDL_RenderCopy(m_renderer, textTexture, 0, &destRect);
 
   000b7	8d 4d ec	 lea	 ecx, DWORD PTR _destRect$[ebp]
   000ba	51		 push	 ecx
@@ -172,22 +192,22 @@ $LN2@DrawText:
   000c7	e8 00 00 00 00	 call	 _SDL_RenderCopy
   000cc	83 c4 10	 add	 esp, 16			; 00000010H
 
-; 48   :     
-; 49   :     SDL_FreeSurface(textSurface);
+; 60   :     
+; 61   :     SDL_FreeSurface(textSurface);
 
   000cf	8b 55 e8	 mov	 edx, DWORD PTR _textSurface$[ebp]
   000d2	52		 push	 edx
   000d3	e8 00 00 00 00	 call	 _SDL_FreeSurface
   000d8	83 c4 04	 add	 esp, 4
 
-; 50   :     SDL_DestroyTexture(textTexture);
+; 62   :     SDL_DestroyTexture(textTexture);
 
   000db	8b 45 d8	 mov	 eax, DWORD PTR _textTexture$[ebp]
   000de	50		 push	 eax
   000df	e8 00 00 00 00	 call	 _SDL_DestroyTexture
   000e4	83 c4 04	 add	 esp, 4
 
-; 51   : }
+; 63   : }
 
   000e7	8b 4d fc	 mov	 ecx, DWORD PTR __$ArrayPad$[ebp]
   000ea	33 cd		 xor	 ecx, ebp
@@ -211,7 +231,7 @@ _t_color$ = 24						; size = 4
 ?DrawRect@Graphics@graphics@core@@QAEXHHHHVColor@3@@Z PROC ; core::graphics::Graphics::DrawRect
 ; _this$ = ecx
 
-; 14   : {
+; 26   : {
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
@@ -221,7 +241,7 @@ _t_color$ = 24						; size = 4
   0000d	89 45 fc	 mov	 DWORD PTR __$ArrayPad$[ebp], eax
   00010	89 4d e8	 mov	 DWORD PTR _this$[ebp], ecx
 
-; 15   :     SDL_Rect rect = { t_x, t_y, t_width, t_height };
+; 27   :     SDL_Rect rect = { t_x, t_y, t_width, t_height };
 
   00013	8b 45 08	 mov	 eax, DWORD PTR _t_x$[ebp]
   00016	89 45 ec	 mov	 DWORD PTR _rect$[ebp], eax
@@ -232,7 +252,7 @@ _t_color$ = 24						; size = 4
   00025	8b 45 14	 mov	 eax, DWORD PTR _t_height$[ebp]
   00028	89 45 f8	 mov	 DWORD PTR _rect$[ebp+12], eax
 
-; 16   :     SDL_SetRenderDrawColor(m_renderer, t_color.r, t_color.g, t_color.b, t_color.a);
+; 28   :     SDL_SetRenderDrawColor(m_renderer, t_color.r, t_color.g, t_color.b, t_color.a);
 
   0002b	0f b6 4d 1b	 movzx	 ecx, BYTE PTR _t_color$[ebp+3]
   0002f	51		 push	 ecx
@@ -248,7 +268,7 @@ _t_color$ = 24						; size = 4
   00045	e8 00 00 00 00	 call	 _SDL_SetRenderDrawColor
   0004a	83 c4 14	 add	 esp, 20			; 00000014H
 
-; 17   :     SDL_RenderDrawRect(m_renderer, &rect);
+; 29   :     SDL_RenderDrawRect(m_renderer, &rect);
 
   0004d	8d 4d ec	 lea	 ecx, DWORD PTR _rect$[ebp]
   00050	51		 push	 ecx
@@ -258,7 +278,7 @@ _t_color$ = 24						; size = 4
   00057	e8 00 00 00 00	 call	 _SDL_RenderDrawRect
   0005c	83 c4 08	 add	 esp, 8
 
-; 18   : }
+; 30   : }
 
   0005f	8b 4d fc	 mov	 ecx, DWORD PTR __$ArrayPad$[ebp]
   00062	33 cd		 xor	 ecx, ebp
@@ -282,7 +302,7 @@ _t_color$ = 24						; size = 4
 ?DrawFillRect@Graphics@graphics@core@@QAEXHHHHVColor@3@@Z PROC ; core::graphics::Graphics::DrawFillRect
 ; _this$ = ecx
 
-; 7    : {
+; 19   : {
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
@@ -292,7 +312,7 @@ _t_color$ = 24						; size = 4
   0000d	89 45 fc	 mov	 DWORD PTR __$ArrayPad$[ebp], eax
   00010	89 4d e8	 mov	 DWORD PTR _this$[ebp], ecx
 
-; 8    :     SDL_Rect rect = { t_x, t_y, t_width, t_height };
+; 20   :     SDL_Rect rect = { t_x, t_y, t_width, t_height };
 
   00013	8b 45 08	 mov	 eax, DWORD PTR _t_x$[ebp]
   00016	89 45 ec	 mov	 DWORD PTR _rect$[ebp], eax
@@ -303,7 +323,7 @@ _t_color$ = 24						; size = 4
   00025	8b 45 14	 mov	 eax, DWORD PTR _t_height$[ebp]
   00028	89 45 f8	 mov	 DWORD PTR _rect$[ebp+12], eax
 
-; 9    :     SDL_SetRenderDrawColor(m_renderer, t_color.r, t_color.g, t_color.b, t_color.a);
+; 21   :     SDL_SetRenderDrawColor(m_renderer, t_color.r, t_color.g, t_color.b, t_color.a);
 
   0002b	0f b6 4d 1b	 movzx	 ecx, BYTE PTR _t_color$[ebp+3]
   0002f	51		 push	 ecx
@@ -319,7 +339,7 @@ _t_color$ = 24						; size = 4
   00045	e8 00 00 00 00	 call	 _SDL_SetRenderDrawColor
   0004a	83 c4 14	 add	 esp, 20			; 00000014H
 
-; 10   :     SDL_RenderFillRect(m_renderer, &rect);
+; 22   :     SDL_RenderFillRect(m_renderer, &rect);
 
   0004d	8d 4d ec	 lea	 ecx, DWORD PTR _rect$[ebp]
   00050	51		 push	 ecx
@@ -329,7 +349,7 @@ _t_color$ = 24						; size = 4
   00057	e8 00 00 00 00	 call	 _SDL_RenderFillRect
   0005c	83 c4 08	 add	 esp, 8
 
-; 11   : }
+; 23   : }
 
   0005f	8b 4d fc	 mov	 ecx, DWORD PTR __$ArrayPad$[ebp]
   00062	33 cd		 xor	 ecx, ebp
@@ -338,5 +358,119 @@ _t_color$ = 24						; size = 4
   0006b	5d		 pop	 ebp
   0006c	c2 14 00	 ret	 20			; 00000014H
 ?DrawFillRect@Graphics@graphics@core@@QAEXHHHHVColor@3@@Z ENDP ; core::graphics::Graphics::DrawFillRect
+_TEXT	ENDS
+; Function compile flags: /Odtp
+; File c:\dev\tetris\src\graphics\graphics.cpp
+_TEXT	SEGMENT
+$T2 = -24						; size = 4
+tv76 = -20						; size = 4
+$T3 = -16						; size = 4
+__$EHRec$ = -12						; size = 12
+?Instance@Graphics@graphics@core@@SAPAV123@XZ PROC	; core::graphics::Graphics::Instance
+
+; 9    : {
+
+  00000	55		 push	 ebp
+  00001	8b ec		 mov	 ebp, esp
+  00003	6a ff		 push	 -1
+  00005	68 00 00 00 00	 push	 __ehhandler$?Instance@Graphics@graphics@core@@SAPAV123@XZ
+  0000a	64 a1 00 00 00
+	00		 mov	 eax, DWORD PTR fs:0
+  00010	50		 push	 eax
+  00011	83 ec 0c	 sub	 esp, 12			; 0000000cH
+  00014	a1 00 00 00 00	 mov	 eax, DWORD PTR ___security_cookie
+  00019	33 c5		 xor	 eax, ebp
+  0001b	50		 push	 eax
+  0001c	8d 45 f4	 lea	 eax, DWORD PTR __$EHRec$[ebp]
+  0001f	64 a3 00 00 00
+	00		 mov	 DWORD PTR fs:0, eax
+
+; 10   :     if (!s_instance)
+
+  00025	83 3d 00 00 00
+	00 00		 cmp	 DWORD PTR ?s_instance@Graphics@graphics@core@@0PAV123@A, 0 ; core::graphics::Graphics::s_instance
+  0002c	75 44		 jne	 SHORT $LN2@Instance
+
+; 11   :     {
+; 12   :         s_instance = new Graphics();
+
+  0002e	6a 0c		 push	 12			; 0000000cH
+  00030	e8 00 00 00 00	 call	 ??2@YAPAXI@Z		; operator new
+  00035	83 c4 04	 add	 esp, 4
+  00038	89 45 f0	 mov	 DWORD PTR $T3[ebp], eax
+  0003b	c7 45 fc 00 00
+	00 00		 mov	 DWORD PTR __$EHRec$[ebp+8], 0
+  00042	83 7d f0 00	 cmp	 DWORD PTR $T3[ebp], 0
+  00046	74 0d		 je	 SHORT $LN4@Instance
+  00048	8b 4d f0	 mov	 ecx, DWORD PTR $T3[ebp]
+  0004b	e8 00 00 00 00	 call	 ??0Graphics@graphics@core@@AAE@XZ ; core::graphics::Graphics::Graphics
+  00050	89 45 ec	 mov	 DWORD PTR tv76[ebp], eax
+  00053	eb 07		 jmp	 SHORT $LN5@Instance
+$LN4@Instance:
+  00055	c7 45 ec 00 00
+	00 00		 mov	 DWORD PTR tv76[ebp], 0
+$LN5@Instance:
+  0005c	8b 45 ec	 mov	 eax, DWORD PTR tv76[ebp]
+  0005f	89 45 e8	 mov	 DWORD PTR $T2[ebp], eax
+  00062	c7 45 fc ff ff
+	ff ff		 mov	 DWORD PTR __$EHRec$[ebp+8], -1
+  00069	8b 4d e8	 mov	 ecx, DWORD PTR $T2[ebp]
+  0006c	89 0d 00 00 00
+	00		 mov	 DWORD PTR ?s_instance@Graphics@graphics@core@@0PAV123@A, ecx ; core::graphics::Graphics::s_instance
+$LN2@Instance:
+
+; 13   :     }
+; 14   :     
+; 15   :     return s_instance;
+
+  00072	a1 00 00 00 00	 mov	 eax, DWORD PTR ?s_instance@Graphics@graphics@core@@0PAV123@A ; core::graphics::Graphics::s_instance
+
+; 16   : }
+
+  00077	8b 4d f4	 mov	 ecx, DWORD PTR __$EHRec$[ebp]
+  0007a	64 89 0d 00 00
+	00 00		 mov	 DWORD PTR fs:0, ecx
+  00081	59		 pop	 ecx
+  00082	8b e5		 mov	 esp, ebp
+  00084	5d		 pop	 ebp
+  00085	c3		 ret	 0
+_TEXT	ENDS
+text$x	SEGMENT
+__unwindfunclet$?Instance@Graphics@graphics@core@@SAPAV123@XZ$0:
+  00000	6a 0c		 push	 12			; 0000000cH
+  00002	8b 45 f0	 mov	 eax, DWORD PTR $T3[ebp]
+  00005	50		 push	 eax
+  00006	e8 00 00 00 00	 call	 ??3@YAXPAXI@Z		; operator delete
+  0000b	83 c4 08	 add	 esp, 8
+  0000e	c3		 ret	 0
+__ehhandler$?Instance@Graphics@graphics@core@@SAPAV123@XZ:
+  0000f	8b 54 24 08	 mov	 edx, DWORD PTR [esp+8]
+  00013	8d 42 0c	 lea	 eax, DWORD PTR [edx+12]
+  00016	8b 4a f0	 mov	 ecx, DWORD PTR [edx-16]
+  00019	33 c8		 xor	 ecx, eax
+  0001b	e8 00 00 00 00	 call	 @__security_check_cookie@4
+  00020	b8 00 00 00 00	 mov	 eax, OFFSET __ehfuncinfo$?Instance@Graphics@graphics@core@@SAPAV123@XZ
+  00025	e9 00 00 00 00	 jmp	 ___CxxFrameHandler3
+text$x	ENDS
+?Instance@Graphics@graphics@core@@SAPAV123@XZ ENDP	; core::graphics::Graphics::Instance
+; Function compile flags: /Odtp
+; File c:\dev\tetris\src\graphics\graphics.hpp
+;	COMDAT ??0Graphics@graphics@core@@AAE@XZ
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+??0Graphics@graphics@core@@AAE@XZ PROC			; core::graphics::Graphics::Graphics, COMDAT
+; _this$ = ecx
+
+; 27   :             Graphics() {}
+
+  00000	55		 push	 ebp
+  00001	8b ec		 mov	 ebp, esp
+  00003	51		 push	 ecx
+  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
+  00007	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
+  0000a	8b e5		 mov	 esp, ebp
+  0000c	5d		 pop	 ebp
+  0000d	c3		 ret	 0
+??0Graphics@graphics@core@@AAE@XZ ENDP			; core::graphics::Graphics::Graphics
 _TEXT	ENDS
 END

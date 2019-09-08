@@ -35,7 +35,7 @@ namespace core
                 {
                     for (i32 c = 0; c < cols; c++)
                     {
-                        setValue(r, c, data[r * cols + c]);
+                        SetValue(r, c, data[r * cols + c]);
                     }
                 }
             }
@@ -53,23 +53,23 @@ namespace core
                 m_data.clear();
             }
             
-            inline i32 getCols() const
+            inline i32 GetCols() const
             {
                 return m_cols;
             }
             
-            inline i32 getRows() const 
+            inline i32 GetRows() const 
             {
                 return m_rows;
             }
             
-            inline i32 getValue(i32 row, i32 col) const
+            inline i32 GetValue(i32 row, i32 col) const
             {
                 assert(row >= 0 && row < m_rows && col >=0 && col < m_cols);
                 return m_data[row * m_rows + col];
             }
             
-            inline void setValue(i32 row, i32 col, i32 value)
+            inline void SetValue(i32 row, i32 col, i32 value)
             {
                 assert(row >= 0 && row < m_rows && col >=0 && col < m_cols);
                 m_data[row * m_rows + col] = value;
@@ -84,7 +84,7 @@ namespace core
                 {
                     for (i32 x = 0; x < m_cols; x++)
                     {
-                        ret.setValue(y, x, getValue(y, x) + other.getValue(y, x));
+                        ret.SetValue(y, x, GetValue(y, x) + other.GetValue(y, x));
                     }
                 }
                 
@@ -99,7 +99,7 @@ namespace core
                 {
                     for (i32 x = 0; x < m_cols; x++)
                     {
-                        setValue(y, x, getValue(y, x) + other.getValue(y, x));
+                        SetValue(y, x, GetValue(y, x) + other.GetValue(y, x));
                     }
                 }
                 

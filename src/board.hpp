@@ -1,8 +1,10 @@
-#ifndef BOARD_H
-#define BOARD_H
+#ifndef BOARD_HPP
+#define BOARD_HPP
 
+#include "SDL.h"
 #include "utils.h"
 #include "math\matrix.hpp"
+#include "tetromino.hpp"
 
 namespace core
 {
@@ -11,6 +13,8 @@ namespace core
         class Board
         {
             private:
+            
+            SDL_Renderer *m_renderer;
             
             i32 m_boardRows;
             i32 m_boardCols;
@@ -26,21 +30,25 @@ namespace core
             
             Board() {}
             
-            void Init(i32 t_boardRows, i32 t_boardCols, i32 t_boardVisibleRows, i32 t_boardGridSize)
-            {
-                m_boardRows = t_boardRows;
-                m_boardCols = t_boardCols;
-                m_boardVisibleRows = t_boardVisibleRows;
-                m_boardGridSize = t_boardGridSize;
-                m_boardData.Resize(t_boardRows, t_boardCols);
-            }
+            void Init(i32 t_boardRows, i32 t_boardCols, i32 t_boardVisibleRows, i32 t_boardGridSize);
+            
+            void DrawCell(i32 t_row, i32 t_col, i32 t_value, i32 t_xOffset, i32 t_yOffset, bool t_outline = false);
+            
+            void DrawPiece(i32 t_xOffset, i32 t_yOffset, bool outline = false);
+            
+            void Draw(i32 t_xOffset, i32 t_yOffset);
             
             inline void Clear() { m_boardData.Clear(); }
             
-            inline i32 getBoardCols()        const { return m_boardCols; }
-            inline i32 getBoardRows()        const { return m_boardRows; }
-            inline i32 getBoardVisibleRows() const { return m_boardVisibleRows; }
-            inline i32 getBoardGridSize()    const { return m_boardGridSize; }
+            inline void SetCellValue(i32 t_row, i32 t_col, i32 t_value) 
+            { m_boardData.SetValue(t_row, t_col, t_value); }
+            
+            inline i32 GetCellValue(i32 t_row, i32 t_col) const { return m_boardData.GetValue(t_row, t_col); }
+            
+            inline i32 GetBoardCols()        const { return m_boardCols; }
+            inline i32 GetBoardRows()        const { return m_boardRows; }
+            inline i32 GetBoardVisibleRows() const { return m_boardVisibleRows; }
+            inline i32 GetBoardGridSize()    const { return m_boardGridSize; }
         };
     }
 }
