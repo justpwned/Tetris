@@ -14,9 +14,9 @@ namespace core
             const u8 *m_data;
             i32 m_side;
             
-            static const i32 s_numberOfTetrominos = 7;static const Tetromino s_tetrominos[Tetromino::s_numberOfTetrominos];
-            
             public:
+            
+            static const i32 s_numberOfTetrominos = 7;static const Tetromino s_tetrominos[Tetromino::s_numberOfTetrominos];
             
             Tetromino() {}
             

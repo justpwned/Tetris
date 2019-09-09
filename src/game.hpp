@@ -7,59 +7,10 @@
 #include "utils.h"
 #include "board.hpp"
 #include "piece.hpp"
-
-static const i32 BOARD_COLS = 10; // WIDTH
-static const i32 BOARD_ROWS = 22; // HEIGHT
-static const i32 BOARD_VISIBLE_ROWS = 20; // VISIBLE HEIGHT
-static const i32 BOARD_GRID_SIZE = 30;
+#include "game_utils.h"
 
 namespace core
 {
-    enum GamePhase
-    {
-        GAME_PHASE_START,
-        GAME_PHASE_PLAY,
-        GAME_PHASE_LINE,
-        GAME_PHASE_OVER,
-        GAME_PHASE_TOTAL
-    };
-    
-    struct GameState
-    {
-        gameplay::Board board;
-        i32 lines[BOARD_ROWS]; // Move lines to board class later
-        
-        gameplay::Piece piece;
-        
-        GamePhase phase;
-        
-        i32 startLevel;
-        i32 level;
-        i32 lineCount;
-        i32 points;
-        
-        i32 nextDropTime;
-        i32 highlightEndTime;
-        i32 time;
-    };
-    
-    struct InputState
-    {
-        u8 left;
-        u8 right;
-        u8 up;
-        u8 down;
-        u8 space;
-        u8 enter;
-        
-        i8 dleft;
-        i8 dright;
-        i8 dup;
-        i8 ddown;
-        i8 dspace;
-        i8 denter;
-    };
-    
     class Game
     {
         private:

@@ -66,13 +66,13 @@ namespace core
             inline i32 GetValue(i32 row, i32 col) const
             {
                 assert(row >= 0 && row < m_rows && col >=0 && col < m_cols);
-                return m_data[row * m_rows + col];
+                return m_data[row * m_cols + col];
             }
             
             inline void SetValue(i32 row, i32 col, i32 value)
             {
                 assert(row >= 0 && row < m_rows && col >=0 && col < m_cols);
-                m_data[row * m_rows + col] = value;
+                m_data[row * m_cols + col] = value;
             }
             
             inline Matrix operator+(const Matrix& other) const

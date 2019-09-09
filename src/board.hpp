@@ -28,15 +28,13 @@ namespace core
             // boardCols = boardWidth
             // boardRows = boardHeight
             
-            Board() {}
-            
-            void Init(i32 t_boardRows, i32 t_boardCols, i32 t_boardVisibleRows, i32 t_boardGridSize);
+            Board(i32 t_boardRows, i32 t_boardCols, i32 t_boardVisibleRows, i32 t_boardGridSize);
             
             void DrawCell(i32 t_row, i32 t_col, i32 t_value, i32 t_xOffset, i32 t_yOffset, bool t_outline = false);
             
             void DrawPiece(i32 t_xOffset, i32 t_yOffset, bool outline = false);
             
-            void Draw(i32 t_xOffset, i32 t_yOffset);
+            void DrawBoard(i32 t_xOffset, i32 t_yOffset);
             
             inline void Clear() { m_boardData.Clear(); }
             

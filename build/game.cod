@@ -10,42 +10,42 @@ INCLUDELIB LIBCMT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG53853 DB	'SDL has been initialized successfully', 0aH, 00H
+$SG53846 DB	'SDL has been initialized successfully', 0aH, 00H
 	ORG $+1
-$SG53856 DB	'SDL window has been created successfully', 0aH, 00H
+$SG53849 DB	'SDL window has been created successfully', 0aH, 00H
 	ORG $+2
-$SG53859 DB	'SDL renderer has been created successfully', 0aH, 00H
-$SG53860 DB	0aH, 00H
+$SG53852 DB	'SDL renderer has been created successfully', 0aH, 00H
+$SG53853 DB	0aH, 00H
 	ORG $+2
-$SG53861 DB	'Renderer could not be created. SDL error: ', 00H
+$SG53854 DB	'Renderer could not be created. SDL error: ', 00H
 	ORG $+1
-$SG53862 DB	0aH, 00H
+$SG53855 DB	0aH, 00H
 	ORG $+2
-$SG53863 DB	'Window could not be created. SDL error: ', 00H
+$SG53856 DB	'Window could not be created. SDL error: ', 00H
 	ORG $+3
-$SG53864 DB	0aH, 00H
+$SG53857 DB	0aH, 00H
 	ORG $+2
-$SG53865 DB	'Unable to intialize SDL. SDL error: ', 00H
+$SG53858 DB	'Unable to intialize SDL. SDL error: ', 00H
 	ORG $+3
-$SG53868 DB	'SDL_TTF has been initialized successfully', 0aH, 00H
+$SG53861 DB	'SDL_TTF has been initialized successfully', 0aH, 00H
 	ORG $+1
-$SG53871 DB	') has been loaded', 0aH, 00H
+$SG53864 DB	') has been loaded', 0aH, 00H
 	ORG $+1
-$SG53872 DB	'(', 00H
+$SG53865 DB	'(', 00H
 	ORG $+2
-$SG53873 DB	'Font ', 00H
+$SG53866 DB	'Font ', 00H
 	ORG $+2
-$SG53874 DB	') has not been loaded', 0aH, 00H
+$SG53867 DB	') has not been loaded', 0aH, 00H
 	ORG $+1
-$SG53875 DB	'(', 00H
+$SG53868 DB	'(', 00H
 	ORG $+2
-$SG53876 DB	'Font ', 00H
+$SG53869 DB	'Font ', 00H
 	ORG $+2
-$SG53877 DB	0aH, 00H
+$SG53870 DB	0aH, 00H
 	ORG $+2
-$SG53878 DB	'Unable to initialize SDL_TTF. SDL_TTF error: ', 00H
+$SG53871 DB	'Unable to initialize SDL_TTF. SDL_TTF error: ', 00H
 	ORG $+2
-$SG53976 DB	'Closing the game. Cleaning up all the mess...', 0aH, 00H
+$SG53937 DB	'Closing the game. Cleaning up all the mess...', 0aH, 00H
 CONST	ENDS
 PUBLIC	??2@YAPAXIPAX@Z					; operator new
 PUBLIC	_fabsl
@@ -69,7 +69,6 @@ PUBLIC	?to_int_type@?$char_traits@D@std@@SAHABD@Z	; std::char_traits<char>::to_i
 PUBLIC	?eq_int_type@?$char_traits@D@std@@SA_NABH0@Z	; std::char_traits<char>::eq_int_type
 PUBLIC	?eof@?$char_traits@D@std@@SAHXZ			; std::char_traits<char>::eof
 PUBLIC	?_Orphan_all@_Container_base0@std@@QAEXXZ	; std::_Container_base0::_Orphan_all
-PUBLIC	?_Swap_all@_Container_base0@std@@QAEXAAU12@@Z	; std::_Container_base0::_Swap_all
 PUBLIC	??$_Get_size_of_n@$00@std@@YAII@Z		; std::_Get_size_of_n<1>
 PUBLIC	?_Allocate@_Default_allocate_traits@std@@SAPAXI@Z ; std::_Default_allocate_traits::_Allocate
 PUBLIC	?_Adjust_manually_vector_aligned@std@@YAXAAPAXAAI@Z ; std::_Adjust_manually_vector_aligned
@@ -239,45 +238,18 @@ PUBLIC	?width@ios_base@std@@QBE_JXZ			; std::ios_base::width
 PUBLIC	?width@ios_base@std@@QAE_J_J@Z			; std::ios_base::width
 PUBLIC	?getloc@ios_base@std@@QBE?AVlocale@2@XZ		; std::ios_base::getloc
 PUBLIC	?SetRenderer@Graphics@graphics@core@@QAEXPAUSDL_Renderer@@@Z ; core::graphics::Graphics::SetRenderer
-PUBLIC	??0?$allocator@H@std@@QAE@XZ			; std::allocator<int>::allocator<int>
-PUBLIC	?deallocate@?$allocator@H@std@@QAEXQAHI@Z	; std::allocator<int>::deallocate
-PUBLIC	??0?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAE@XZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >
-PUBLIC	?_Move_alloc@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEXAAV?$allocator@H@2@@Z ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Move_alloc
 PUBLIC	?_Orphan_all@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEXXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Orphan_all
-PUBLIC	?_Swap_all@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEXAAV12@@Z ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Swap_all
 PUBLIC	?_Getal@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAV?$allocator@H@2@XZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Getal
 PUBLIC	?_Get_data@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAV?$_Vector_val@U?$_Simple_types@H@std@@@2@XZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Get_data
-PUBLIC	?_Get_data@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QBEABV?$_Vector_val@U?$_Simple_types@H@std@@@2@XZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Get_data
 PUBLIC	?_Myfirst@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAPAHXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Myfirst
-PUBLIC	?_Myfirst@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QBEABQAHXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Myfirst
 PUBLIC	?_Mylast@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAPAHXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Mylast
-PUBLIC	?_Myend@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAPAHXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Myend
-PUBLIC	?_Myend@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QBEABQAHXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Myend
-PUBLIC	??0?$_Vector_val@U?$_Simple_types@H@std@@@std@@QAE@XZ ; std::_Vector_val<std::_Simple_types<int> >::_Vector_val<std::_Simple_types<int> >
 PUBLIC	?_Get_first@?$_Compressed_pair@V?$allocator@H@std@@V?$_Vector_val@U?$_Simple_types@H@std@@@2@$00@std@@QAEAAV?$allocator@H@2@XZ ; std::_Compressed_pair<std::allocator<int>,std::_Vector_val<std::_Simple_types<int> >,1>::_Get_first
 PUBLIC	?_Get_second@?$_Compressed_pair@V?$allocator@H@std@@V?$_Vector_val@U?$_Simple_types@H@std@@@2@$00@std@@QAEAAV?$_Vector_val@U?$_Simple_types@H@std@@@2@XZ ; std::_Compressed_pair<std::allocator<int>,std::_Vector_val<std::_Simple_types<int> >,1>::_Get_second
-PUBLIC	?_Get_second@?$_Compressed_pair@V?$allocator@H@std@@V?$_Vector_val@U?$_Simple_types@H@std@@@2@$00@std@@QBEABV?$_Vector_val@U?$_Simple_types@H@std@@@2@XZ ; std::_Compressed_pair<std::allocator<int>,std::_Vector_val<std::_Simple_types<int> >,1>::_Get_second
-PUBLIC	??0?$vector@HV?$allocator@H@std@@@std@@QAE@XZ	; std::vector<int,std::allocator<int> >::vector<int,std::allocator<int> >
-PUBLIC	?_Move_from@?$vector@HV?$allocator@H@std@@@std@@AAEX$$QAV12@U?$integral_constant@_N$00@2@@Z ; std::vector<int,std::allocator<int> >::_Move_from
-PUBLIC	?_Move_assign_from@?$vector@HV?$allocator@H@std@@@std@@AAEX$$QAV12@U?$integral_constant@_N$00@2@@Z ; std::vector<int,std::allocator<int> >::_Move_assign_from
-PUBLIC	??4?$vector@HV?$allocator@H@std@@@std@@QAEAAV01@$$QAV01@@Z ; std::vector<int,std::allocator<int> >::operator=
-PUBLIC	??1?$vector@HV?$allocator@H@std@@@std@@QAE@XZ	; std::vector<int,std::allocator<int> >::~vector<int,std::allocator<int> >
 PUBLIC	?clear@?$vector@HV?$allocator@H@std@@@std@@QAEXXZ ; std::vector<int,std::allocator<int> >::clear
-PUBLIC	?capacity@?$vector@HV?$allocator@H@std@@@std@@QBEIXZ ; std::vector<int,std::allocator<int> >::capacity
 PUBLIC	?_Destroy@?$vector@HV?$allocator@H@std@@@std@@AAEXPAH0@Z ; std::vector<int,std::allocator<int> >::_Destroy
-PUBLIC	?_Tidy@?$vector@HV?$allocator@H@std@@@std@@AAEXXZ ; std::vector<int,std::allocator<int> >::_Tidy
-PUBLIC	??0Matrix@math@core@@QAE@XZ			; core::math::Matrix::Matrix
 PUBLIC	?Clear@Matrix@math@core@@QAEXXZ			; core::math::Matrix::Clear
-PUBLIC	??1Matrix@math@core@@QAE@XZ			; core::math::Matrix::~Matrix
-PUBLIC	??4Matrix@math@core@@QAEAAV012@$$QAV012@@Z	; core::math::Matrix::operator=
-PUBLIC	??0Board@gameplay@core@@QAE@XZ			; core::gameplay::Board::Board
 PUBLIC	?Clear@Board@gameplay@core@@QAEXXZ		; core::gameplay::Board::Clear
-PUBLIC	??1Board@gameplay@core@@QAE@XZ			; core::gameplay::Board::~Board
-PUBLIC	??4Board@gameplay@core@@QAEAAV012@$$QAV012@@Z	; core::gameplay::Board::operator=
-PUBLIC	??0Piece@gameplay@core@@QAE@XZ			; core::gameplay::Piece::Piece
-PUBLIC	??0GameState@core@@QAE@XZ			; core::GameState::GameState
-PUBLIC	??1GameState@core@@QAE@XZ			; core::GameState::~GameState
-PUBLIC	??4GameState@core@@QAEAAU01@$$QAU01@@Z		; core::GameState::operator=
+PUBLIC	??0Piece@gameplay@core@@QAE@PAVBoard@12@HHHH@Z	; core::gameplay::Piece::Piece
 PUBLIC	?UpdateGameStart@Game@core@@AAEXXZ		; core::Game::UpdateGameStart
 PUBLIC	?UpdateGamePlay@Game@core@@AAEXXZ		; core::Game::UpdateGamePlay
 PUBLIC	?UpdateGameLine@Game@core@@AAEXXZ		; core::Game::UpdateGameLine
@@ -300,9 +272,6 @@ PUBLIC	?_Osfx@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEXXZ ; std::basic_o
 PUBLIC	??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@H@Z ; std::basic_ostream<char,std::char_traits<char> >::operator<<
 PUBLIC	?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV12@XZ ; std::basic_ostream<char,std::char_traits<char> >::flush
 PUBLIC	??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
-PUBLIC	??$addressof@V?$vector@HV?$allocator@H@std@@@std@@@std@@YAPAV?$vector@HV?$allocator@H@std@@@0@AAV10@@Z ; std::addressof<std::vector<int,std::allocator<int> > >
-PUBLIC	??$move@AAV?$vector@HV?$allocator@H@std@@@std@@@std@@YA$$QAV?$vector@HV?$allocator@H@std@@@0@AAV10@@Z ; std::move<std::vector<int,std::allocator<int> > &>
-PUBLIC	??$move@AAV?$allocator@H@std@@@std@@YA$$QAV?$allocator@H@0@AAV10@@Z ; std::move<std::allocator<int> &>
 PUBLIC	??$_Unfancy@D@std@@YAPADPAD@Z			; std::_Unfancy<char>
 PUBLIC	??$move@AAV?$allocator@D@std@@@std@@YA$$QAV?$allocator@D@0@AAV10@@Z ; std::move<std::allocator<char> &>
 PUBLIC	??$?0V?$allocator@D@std@@X@?$_String_alloc@U?$_String_base_types@DV?$allocator@D@std@@@std@@@std@@QAE@$$QAV?$allocator@D@1@@Z ; std::_String_alloc<std::_String_base_types<char,std::allocator<char> > >::_String_alloc<std::_String_base_types<char,std::allocator<char> > ><std::allocator<char>,void>
@@ -355,8 +324,6 @@ PUBLIC	?do_falsename@?$numpunct@D@std@@MBE?AV?$basic_string@DU?$char_traits@D@st
 PUBLIC	?do_truename@?$numpunct@D@std@@MBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@XZ ; std::numpunct<char>::do_truename
 PUBLIC	?_Tidy@?$numpunct@D@std@@AAEXXZ			; std::numpunct<char>::_Tidy
 PUBLIC	??_G?$numpunct@D@std@@MAEPAXI@Z			; std::numpunct<char>::`scalar deleting destructor'
-PUBLIC	??$_Pocma@V?$allocator@H@std@@@std@@YAXAAV?$allocator@H@0@0@Z ; std::_Pocma<std::allocator<int> >
-PUBLIC	??$?0$$V@?$_Compressed_pair@V?$allocator@H@std@@V?$_Vector_val@U?$_Simple_types@H@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z ; std::_Compressed_pair<std::allocator<int>,std::_Vector_val<std::_Simple_types<int> >,1>::_Compressed_pair<std::allocator<int>,std::_Vector_val<std::_Simple_types<int> >,1><>
 PUBLIC	??$_Destroy_range@V?$allocator@H@std@@@std@@YAXPAH0AAV?$allocator@H@0@@Z ; std::_Destroy_range<std::allocator<int> >
 PUBLIC	??$?0$$V@?$_Compressed_pair@V?$allocator@D@std@@V?$_String_val@U?$_Simple_types@D@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z ; std::_Compressed_pair<std::allocator<char>,std::_String_val<std::_Simple_types<char> >,1>::_Compressed_pair<std::allocator<char>,std::_String_val<std::_Simple_types<char> >,1><>
 PUBLIC	??$addressof@PAD@std@@YAPAPADAAPAD@Z		; std::addressof<char *>
@@ -398,7 +365,6 @@ PUBLIC	??$?0U?$default_delete@V_Facet_base@std@@@std@@$0A@@?$unique_ptr@V_Facet_
 PUBLIC	??$_Immortalize_impl@V_Iostream_error_category@std@@@std@@YGHPAX0PAPAX@Z ; std::_Immortalize_impl<std::_Iostream_error_category>
 PUBLIC	??$forward@V?$allocator@D@std@@@std@@YA$$QAV?$allocator@D@0@AAV10@@Z ; std::forward<std::allocator<char> >
 PUBLIC	??$?0V?$allocator@D@std@@$$V@?$_Compressed_pair@V?$allocator@D@std@@V?$_String_val@U?$_Simple_types@D@std@@@2@$00@std@@QAE@U_One_then_variadic_args_t@1@$$QAV?$allocator@D@1@@Z ; std::_Compressed_pair<std::allocator<char>,std::_String_val<std::_Simple_types<char> >,1>::_Compressed_pair<std::allocator<char>,std::_String_val<std::_Simple_types<char> >,1><std::allocator<char> >
-PUBLIC	??$_Pocma@V?$allocator@H@std@@@std@@YAXAAV?$allocator@H@0@0U?$integral_constant@_N$00@0@@Z ; std::_Pocma<std::allocator<int> >
 PUBLIC	??$_Destroy_range1@V?$allocator@H@std@@@std@@YAXPAH0AAV?$allocator@H@0@U?$integral_constant@_N$00@0@@Z ; std::_Destroy_range1<std::allocator<int> >
 PUBLIC	??$forward@ABQAD@std@@YAABQADABQAD@Z		; std::forward<char * const &>
 PUBLIC	??$_Allocate_manually_vector_aligned@U_Default_allocate_traits@std@@@std@@YAPAXI@Z ; std::_Allocate_manually_vector_aligned<std::_Default_allocate_traits>
@@ -546,6 +512,8 @@ PUBLIC	??_R3?$numpunct@D@std@@8			; std::numpunct<char>::`RTTI Class Hierarchy D
 PUBLIC	??_R2?$numpunct@D@std@@8			; std::numpunct<char>::`RTTI Base Class Array'
 PUBLIC	??_R1A@?0A@EA@?$numpunct@D@std@@8		; std::numpunct<char>::`RTTI Base Class Descriptor at (0,-1,0,64)'
 PUBLIC	__real@4202a05f20000000
+PUBLIC	__real@447a0000
+PUBLIC	__xmm@41f00000000000000000000000000000
 PUBLIC	__xmm@7fffffffffffffff7fffffffffffffff
 EXTRN	__purecall:PROC
 EXTRN	??2@YAPAXI@Z:PROC				; operator new
@@ -602,6 +570,7 @@ EXTRN	_SDL_SetRenderDrawColor:PROC
 EXTRN	_SDL_RenderClear:PROC
 EXTRN	_SDL_RenderPresent:PROC
 EXTRN	_SDL_DestroyRenderer:PROC
+EXTRN	_SDL_GetTicks:PROC
 EXTRN	_SDL_Init:PROC
 EXTRN	_SDL_Quit:PROC
 EXTRN	_TTF_Init:PROC
@@ -609,10 +578,9 @@ EXTRN	_TTF_OpenFont:PROC
 EXTRN	_TTF_CloseFont:PROC
 EXTRN	_TTF_Quit:PROC
 EXTRN	?Instance@Graphics@graphics@core@@SAPAV123@XZ:PROC ; core::graphics::Graphics::Instance
-EXTRN	?Init@Board@gameplay@core@@QAEXHHHH@Z:PROC	; core::gameplay::Board::Init
-EXTRN	?DrawCell@Board@gameplay@core@@QAEXHHHHH_N@Z:PROC ; core::gameplay::Board::DrawCell
-EXTRN	?Draw@Board@gameplay@core@@QAEXHH@Z:PROC	; core::gameplay::Board::Draw
-EXTRN	?SpawnNewPiece@Piece@gameplay@core@@QAEXXZ:PROC	; core::gameplay::Piece::SpawnNewPiece
+EXTRN	??0Board@gameplay@core@@QAE@HHHH@Z:PROC		; core::gameplay::Board::Board
+EXTRN	?DrawBoard@Board@gameplay@core@@QAEXHH@Z:PROC	; core::gameplay::Board::DrawBoard
+EXTRN	?SpawnNewPiece@Piece@gameplay@core@@QAEXPAUGameState@@@Z:PROC ; core::gameplay::Piece::SpawnNewPiece
 EXTRN	??_E?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@MAEPAXI@Z:PROC ; std::num_put<char,std::ostreambuf_iterator<char,std::char_traits<char> > >::`vector deleting destructor'
 EXTRN	??_E?$numpunct@D@std@@MAEPAXI@Z:PROC		; std::numpunct<char>::`vector deleting destructor'
 EXTRN	@__security_check_cookie@4:PROC
@@ -668,6 +636,15 @@ CRT$XCU	ENDS
 CONST	SEGMENT
 __xmm@7fffffffffffffff7fffffffffffffff DB 0ffH, 0ffH, 0ffH, 0ffH, 0ffH, 0ffH
 	DB	0ffH, 07fH, 0ffH, 0ffH, 0ffH, 0ffH, 0ffH, 0ffH, 0ffH, 07fH
+CONST	ENDS
+;	COMDAT __xmm@41f00000000000000000000000000000
+CONST	SEGMENT
+__xmm@41f00000000000000000000000000000 DB 00H, 00H, 00H, 00H, 00H, 00H, 00H
+	DB	00H, 00H, 00H, 00H, 00H, 00H, 00H, 0f0H, 'A'
+CONST	ENDS
+;	COMDAT __real@447a0000
+CONST	SEGMENT
+__real@447a0000 DD 0447a0000r			; 1000
 CONST	ENDS
 ;	COMDAT __real@4202a05f20000000
 CONST	SEGMENT
@@ -1898,7 +1875,7 @@ xdata$x	ENDS
 xdata$x	SEGMENT
 __unwindtable$??0Game@core@@QAE@PBDHHHH0H@Z DD 0ffffffffH
 	DD	FLAT:__unwindfunclet$??0Game@core@@QAE@PBDHHHH0H@Z$0
-	DD	00H
+	DD	0ffffffffH
 	DD	FLAT:__unwindfunclet$??0Game@core@@QAE@PBDHHHH0H@Z$1
 __ehfuncinfo$??0Game@core@@QAE@PBDHHHH0H@Z DD 019930522H
 	DD	02H
@@ -1910,59 +1887,7 @@ __ehfuncinfo$??0Game@core@@QAE@PBDHHHH0H@Z DD 019930522H
 xdata$x	ENDS
 ;	COMDAT xdata$x
 xdata$x	SEGMENT
-__unwindtable$??0GameState@core@@QAE@XZ DD 0ffffffffH
-	DD	FLAT:__unwindfunclet$??0GameState@core@@QAE@XZ$0
-__ehfuncinfo$??0GameState@core@@QAE@XZ DD 019930522H
-	DD	01H
-	DD	FLAT:__unwindtable$??0GameState@core@@QAE@XZ
-	DD	2 DUP(00H)
-	DD	2 DUP(00H)
-	DD	00H
-	DD	01H
-xdata$x	ENDS
-;	COMDAT xdata$x
-xdata$x	SEGMENT
 __ehfuncinfo$?clear@?$vector@HV?$allocator@H@std@@@std@@QAEXXZ DD 019930522H
-	DD	00H
-	DD	00H
-	DD	2 DUP(00H)
-	DD	2 DUP(00H)
-	DD	00H
-	DD	05H
-xdata$x	ENDS
-;	COMDAT xdata$x
-xdata$x	SEGMENT
-__ehfuncinfo$??1?$vector@HV?$allocator@H@std@@@std@@QAE@XZ DD 019930522H
-	DD	00H
-	DD	00H
-	DD	2 DUP(00H)
-	DD	2 DUP(00H)
-	DD	00H
-	DD	05H
-xdata$x	ENDS
-;	COMDAT xdata$x
-xdata$x	SEGMENT
-__ehfuncinfo$??4?$vector@HV?$allocator@H@std@@@std@@QAEAAV01@$$QAV01@@Z DD 019930522H
-	DD	00H
-	DD	00H
-	DD	2 DUP(00H)
-	DD	2 DUP(00H)
-	DD	00H
-	DD	05H
-xdata$x	ENDS
-;	COMDAT xdata$x
-xdata$x	SEGMENT
-__ehfuncinfo$?_Move_from@?$vector@HV?$allocator@H@std@@@std@@AAEX$$QAV12@U?$integral_constant@_N$00@2@@Z DD 019930522H
-	DD	00H
-	DD	00H
-	DD	2 DUP(00H)
-	DD	2 DUP(00H)
-	DD	00H
-	DD	05H
-xdata$x	ENDS
-;	COMDAT xdata$x
-xdata$x	SEGMENT
-__ehfuncinfo$??0?$vector@HV?$allocator@H@std@@@std@@QAE@XZ DD 019930522H
 	DD	00H
 	DD	00H
 	DD	2 DUP(00H)
@@ -2719,33 +2644,6 @@ ___formal$ = 20						; size = 1
   00003	5d		 pop	 ebp
   00004	c3		 ret	 0
 ??$_Destroy_range1@V?$allocator@H@std@@@std@@YAXPAH0AAV?$allocator@H@0@U?$integral_constant@_N$00@0@@Z ENDP ; std::_Destroy_range1<std::allocator<int> >
-_TEXT	ENDS
-; Function compile flags: /Odtp
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xmemory0
-;	COMDAT ??$_Pocma@V?$allocator@H@std@@@std@@YAXAAV?$allocator@H@0@0U?$integral_constant@_N$00@0@@Z
-_TEXT	SEGMENT
-__Left$ = 8						; size = 4
-__Right$ = 12						; size = 4
-___formal$ = 16						; size = 1
-??$_Pocma@V?$allocator@H@std@@@std@@YAXAAV?$allocator@H@0@0U?$integral_constant@_N$00@0@@Z PROC ; std::_Pocma<std::allocator<int> >, COMDAT
-
-; 1088 : 	{	// propagate on container move assignment
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-
-; 1089 : 	_Left = _STD move(_Right);
-
-  00003	8b 45 0c	 mov	 eax, DWORD PTR __Right$[ebp]
-  00006	50		 push	 eax
-  00007	e8 00 00 00 00	 call	 ??$move@AAV?$allocator@H@std@@@std@@YA$$QAV?$allocator@H@0@AAV10@@Z ; std::move<std::allocator<int> &>
-  0000c	83 c4 04	 add	 esp, 4
-
-; 1090 : 	}
-
-  0000f	5d		 pop	 ebp
-  00010	c3		 ret	 0
-??$_Pocma@V?$allocator@H@std@@@std@@YAXAAV?$allocator@H@0@0U?$integral_constant@_N$00@0@@Z ENDP ; std::_Pocma<std::allocator<int> >
 _TEXT	ENDS
 ; Function compile flags: /Odtp
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xutility
@@ -5111,71 +5009,6 @@ __Al$ = 16						; size = 4
   00024	5d		 pop	 ebp
   00025	c3		 ret	 0
 ??$_Destroy_range@V?$allocator@H@std@@@std@@YAXPAH0AAV?$allocator@H@0@@Z ENDP ; std::_Destroy_range<std::allocator<int> >
-_TEXT	ENDS
-; Function compile flags: /Odtp
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xutility
-;	COMDAT ??$?0$$V@?$_Compressed_pair@V?$allocator@H@std@@V?$_Vector_val@U?$_Simple_types@H@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-___formal$ = 8						; size = 1
-??$?0$$V@?$_Compressed_pair@V?$allocator@H@std@@V?$_Vector_val@U?$_Simple_types@H@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z PROC ; std::_Compressed_pair<std::allocator<int>,std::_Vector_val<std::_Simple_types<int> >,1>::_Compressed_pair<std::allocator<int>,std::_Vector_val<std::_Simple_types<int> >,1><>, COMDAT
-; _this$ = ecx
-
-; 278  : 		{	// construct from forwarded values
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	51		 push	 ecx
-  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
-
-; 277  : 		: _Ty1(), _Myval2(_STD forward<_Other2>(_Val2)...)
-
-  00007	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  0000a	e8 00 00 00 00	 call	 ??0?$allocator@H@std@@QAE@XZ ; std::allocator<int>::allocator<int>
-  0000f	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  00012	e8 00 00 00 00	 call	 ??0?$_Vector_val@U?$_Simple_types@H@std@@@std@@QAE@XZ ; std::_Vector_val<std::_Simple_types<int> >::_Vector_val<std::_Simple_types<int> >
-
-; 279  : 		}
-
-  00017	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  0001a	8b e5		 mov	 esp, ebp
-  0001c	5d		 pop	 ebp
-  0001d	c2 04 00	 ret	 4
-??$?0$$V@?$_Compressed_pair@V?$allocator@H@std@@V?$_Vector_val@U?$_Simple_types@H@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z ENDP ; std::_Compressed_pair<std::allocator<int>,std::_Vector_val<std::_Simple_types<int> >,1>::_Compressed_pair<std::allocator<int>,std::_Vector_val<std::_Simple_types<int> >,1><>
-_TEXT	ENDS
-; Function compile flags: /Odtp
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xmemory0
-;	COMDAT ??$_Pocma@V?$allocator@H@std@@@std@@YAXAAV?$allocator@H@0@0@Z
-_TEXT	SEGMENT
-__Tag$ = -1						; size = 1
-__Left$ = 8						; size = 4
-__Right$ = 12						; size = 4
-??$_Pocma@V?$allocator@H@std@@@std@@YAXAAV?$allocator@H@0@0@Z PROC ; std::_Pocma<std::allocator<int> >, COMDAT
-
-; 1099 : 	{	// (maybe) propagate on container move assignment
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	51		 push	 ecx
-
-; 1100 : 	typename allocator_traits<_Alloc>::propagate_on_container_move_assignment _Tag;
-; 1101 : 	_Pocma(_Left, _Right, _Tag);
-
-  00004	0f b6 45 ff	 movzx	 eax, BYTE PTR __Tag$[ebp]
-  00008	50		 push	 eax
-  00009	8b 4d 0c	 mov	 ecx, DWORD PTR __Right$[ebp]
-  0000c	51		 push	 ecx
-  0000d	8b 55 08	 mov	 edx, DWORD PTR __Left$[ebp]
-  00010	52		 push	 edx
-  00011	e8 00 00 00 00	 call	 ??$_Pocma@V?$allocator@H@std@@@std@@YAXAAV?$allocator@H@0@0U?$integral_constant@_N$00@0@@Z ; std::_Pocma<std::allocator<int> >
-  00016	83 c4 0c	 add	 esp, 12			; 0000000cH
-
-; 1102 : 	}
-
-  00019	8b e5		 mov	 esp, ebp
-  0001b	5d		 pop	 ebp
-  0001c	c3		 ret	 0
-??$_Pocma@V?$allocator@H@std@@@std@@YAXAAV?$allocator@H@0@0@Z ENDP ; std::_Pocma<std::allocator<int> >
 _TEXT	ENDS
 ; Function compile flags: /Odtp
 ;	COMDAT ??_G?$numpunct@D@std@@MAEPAXI@Z
@@ -10547,72 +10380,6 @@ __Ptr$ = 8						; size = 4
 ??$_Unfancy@D@std@@YAPADPAD@Z ENDP			; std::_Unfancy<char>
 _TEXT	ENDS
 ; Function compile flags: /Odtp
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\type_traits
-;	COMDAT ??$move@AAV?$allocator@H@std@@@std@@YA$$QAV?$allocator@H@0@AAV10@@Z
-_TEXT	SEGMENT
-__Arg$ = 8						; size = 4
-??$move@AAV?$allocator@H@std@@@std@@YA$$QAV?$allocator@H@0@AAV10@@Z PROC ; std::move<std::allocator<int> &>, COMDAT
-
-; 1588 : 	{	// forward _Arg as movable
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-
-; 1589 : 	return (static_cast<remove_reference_t<_Ty>&&>(_Arg));
-
-  00003	8b 45 08	 mov	 eax, DWORD PTR __Arg$[ebp]
-
-; 1590 : 	}
-
-  00006	5d		 pop	 ebp
-  00007	c3		 ret	 0
-??$move@AAV?$allocator@H@std@@@std@@YA$$QAV?$allocator@H@0@AAV10@@Z ENDP ; std::move<std::allocator<int> &>
-_TEXT	ENDS
-; Function compile flags: /Odtp
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\type_traits
-;	COMDAT ??$move@AAV?$vector@HV?$allocator@H@std@@@std@@@std@@YA$$QAV?$vector@HV?$allocator@H@std@@@0@AAV10@@Z
-_TEXT	SEGMENT
-__Arg$ = 8						; size = 4
-??$move@AAV?$vector@HV?$allocator@H@std@@@std@@@std@@YA$$QAV?$vector@HV?$allocator@H@std@@@0@AAV10@@Z PROC ; std::move<std::vector<int,std::allocator<int> > &>, COMDAT
-
-; 1588 : 	{	// forward _Arg as movable
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-
-; 1589 : 	return (static_cast<remove_reference_t<_Ty>&&>(_Arg));
-
-  00003	8b 45 08	 mov	 eax, DWORD PTR __Arg$[ebp]
-
-; 1590 : 	}
-
-  00006	5d		 pop	 ebp
-  00007	c3		 ret	 0
-??$move@AAV?$vector@HV?$allocator@H@std@@@std@@@std@@YA$$QAV?$vector@HV?$allocator@H@std@@@0@AAV10@@Z ENDP ; std::move<std::vector<int,std::allocator<int> > &>
-_TEXT	ENDS
-; Function compile flags: /Odtp
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xstddef
-;	COMDAT ??$addressof@V?$vector@HV?$allocator@H@std@@@std@@@std@@YAPAV?$vector@HV?$allocator@H@std@@@0@AAV10@@Z
-_TEXT	SEGMENT
-__Val$ = 8						; size = 4
-??$addressof@V?$vector@HV?$allocator@H@std@@@std@@@std@@YAPAV?$vector@HV?$allocator@H@std@@@0@AAV10@@Z PROC ; std::addressof<std::vector<int,std::allocator<int> > >, COMDAT
-
-; 329  : 	{	// return address of _Val
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-
-; 330  : 	return (__builtin_addressof(_Val));
-
-  00003	8b 45 08	 mov	 eax, DWORD PTR __Val$[ebp]
-
-; 331  : 	}
-
-  00006	5d		 pop	 ebp
-  00007	c3		 ret	 0
-??$addressof@V?$vector@HV?$allocator@H@std@@@std@@@std@@YAPAV?$vector@HV?$allocator@H@std@@@0@AAV10@@Z ENDP ; std::addressof<std::vector<int,std::allocator<int> > >
-_TEXT	ENDS
-; Function compile flags: /Odtp
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\ostream
 ;	COMDAT ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z
 _TEXT	SEGMENT
@@ -11724,15 +11491,15 @@ _this$ = -4						; size = 4
 ?Running@Game@core@@QBE_NXZ PROC			; core::Game::Running, COMDAT
 ; _this$ = ecx
 
-; 104  :         inline bool Running()              const { return m_running; }
+; 55   :         inline bool Running()              const { return m_running; }
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
   00003	51		 push	 ecx
   00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
   00007	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  0000a	8a 80 d4 00 00
-	00		 mov	 al, BYTE PTR [eax+212]
+  0000a	8a 80 a0 00 00
+	00		 mov	 al, BYTE PTR [eax+160]
   00010	8b e5		 mov	 esp, ebp
   00012	5d		 pop	 ebp
   00013	c3		 ret	 0
@@ -11746,15 +11513,15 @@ _this$ = -4						; size = 4
 ?Quit@Game@core@@QAEXXZ PROC				; core::Game::Quit, COMDAT
 ; _this$ = ecx
 
-; 102  :         inline void Quit() { m_running = false; }
+; 53   :         inline void Quit() { m_running = false; }
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
   00003	51		 push	 ecx
   00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
   00007	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  0000a	c6 80 d4 00 00
-	00 00		 mov	 BYTE PTR [eax+212], 0
+  0000a	c6 80 a0 00 00
+	00 00		 mov	 BYTE PTR [eax+160], 0
   00011	8b e5		 mov	 esp, ebp
   00013	5d		 pop	 ebp
   00014	c3		 ret	 0
@@ -11767,21 +11534,21 @@ _this$ = -4						; size = 4
 ?Clean@Game@core@@QAEXXZ PROC				; core::Game::Clean
 ; _this$ = ecx
 
-; 245  : {
+; 248  : {
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
   00003	51		 push	 ecx
   00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
 
-; 246  :     std::cout << "Closing the game. Cleaning up all the mess...\n";
+; 249  :     std::cout << "Closing the game. Cleaning up all the mess...\n";
 
-  00007	68 00 00 00 00	 push	 OFFSET $SG53976
+  00007	68 00 00 00 00	 push	 OFFSET $SG53937
   0000c	68 00 00 00 00	 push	 OFFSET ?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cout
   00011	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
   00016	83 c4 08	 add	 esp, 8
 
-; 247  :     SDL_DestroyRenderer(m_renderer);
+; 250  :     SDL_DestroyRenderer(m_renderer);
 
   00019	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
   0001c	8b 48 0c	 mov	 ecx, DWORD PTR [eax+12]
@@ -11789,7 +11556,7 @@ _this$ = -4						; size = 4
   00020	e8 00 00 00 00	 call	 _SDL_DestroyRenderer
   00025	83 c4 04	 add	 esp, 4
 
-; 248  :     SDL_DestroyWindow(m_window);
+; 251  :     SDL_DestroyWindow(m_window);
 
   00028	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
   0002b	8b 42 08	 mov	 eax, DWORD PTR [edx+8]
@@ -11797,24 +11564,24 @@ _this$ = -4						; size = 4
   0002f	e8 00 00 00 00	 call	 _SDL_DestroyWindow
   00034	83 c4 04	 add	 esp, 4
 
-; 249  :     TTF_CloseFont(m_font);
+; 252  :     TTF_CloseFont(m_font);
 
   00037	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  0003a	8b 91 d0 00 00
-	00		 mov	 edx, DWORD PTR [ecx+208]
+  0003a	8b 91 9c 00 00
+	00		 mov	 edx, DWORD PTR [ecx+156]
   00040	52		 push	 edx
   00041	e8 00 00 00 00	 call	 _TTF_CloseFont
   00046	83 c4 04	 add	 esp, 4
 
-; 250  :     TTF_Quit();
+; 253  :     TTF_Quit();
 
   00049	e8 00 00 00 00	 call	 _TTF_Quit
 
-; 251  :     SDL_Quit();
+; 254  :     SDL_Quit();
 
   0004e	e8 00 00 00 00	 call	 _SDL_Quit
 
-; 252  : }
+; 255  : }
 
   00053	8b e5		 mov	 esp, ebp
   00055	5d		 pop	 ebp
@@ -11828,7 +11595,7 @@ _this$ = -4						; size = 4
 ?MainLoop@Game@core@@QAEXXZ PROC			; core::Game::MainLoop
 ; _this$ = ecx
 
-; 231  : {
+; 234  : {
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
@@ -11836,7 +11603,7 @@ _this$ = -4						; size = 4
   00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
 $LN2@MainLoop:
 
-; 232  :     while (Running())
+; 235  :     while (Running())
 
   00007	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
   0000a	e8 00 00 00 00	 call	 ?Running@Game@core@@QBE_NXZ ; core::Game::Running
@@ -11844,30 +11611,30 @@ $LN2@MainLoop:
   00012	85 c0		 test	 eax, eax
   00014	74 31		 je	 SHORT $LN1@MainLoop
 
-; 233  :     {
-; 234  :         HandleEvents();
+; 236  :     {
+; 237  :         HandleEvents();
 
   00016	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
   00019	e8 00 00 00 00	 call	 ?HandleEvents@Game@core@@QAEXXZ ; core::Game::HandleEvents
 
-; 235  :         HandleInput();
+; 238  :         HandleInput();
 
   0001e	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
   00021	e8 00 00 00 00	 call	 ?HandleInput@Game@core@@QAEXXZ ; core::Game::HandleInput
 
-; 236  :         
-; 237  :         Update();
+; 239  :         
+; 240  :         Update();
 
   00026	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
   00029	e8 00 00 00 00	 call	 ?Update@Game@core@@QAEXXZ ; core::Game::Update
 
-; 238  :         Render();
+; 241  :         Render();
 
   0002e	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
   00031	e8 00 00 00 00	 call	 ?Render@Game@core@@QAEXXZ ; core::Game::Render
 
-; 239  :         
-; 240  :         SDL_RenderPresent(m_renderer);
+; 242  :         
+; 243  :         SDL_RenderPresent(m_renderer);
 
   00036	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
   00039	8b 51 0c	 mov	 edx, DWORD PTR [ecx+12]
@@ -11875,12 +11642,12 @@ $LN2@MainLoop:
   0003d	e8 00 00 00 00	 call	 _SDL_RenderPresent
   00042	83 c4 04	 add	 esp, 4
 
-; 241  :     }
+; 244  :     }
 
   00045	eb c0		 jmp	 SHORT $LN2@MainLoop
 $LN1@MainLoop:
 
-; 242  : }
+; 245  : }
 
   00047	8b e5		 mov	 esp, ebp
   00049	5d		 pop	 ebp
@@ -11890,19 +11657,20 @@ _TEXT	ENDS
 ; Function compile flags: /Odtp
 ; File c:\dev\tetris\src\game.cpp
 _TEXT	SEGMENT
-tv88 = -8						; size = 4
+tv79 = -12						; size = 4
+_yMargin$ = -8						; size = 4
 _this$ = -4						; size = 4
 ?Render@Game@core@@QAEXXZ PROC				; core::Game::Render
 ; _this$ = ecx
 
-; 196  : {
+; 199  : {
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
-  00003	83 ec 08	 sub	 esp, 8
+  00003	83 ec 0c	 sub	 esp, 12			; 0000000cH
   00006	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
 
-; 197  :     SDL_SetRenderDrawColor(m_renderer, 100, 100, 100, 255);
+; 200  :     SDL_SetRenderDrawColor(m_renderer, 100, 100, 100, 255);
 
   00009	68 ff 00 00 00	 push	 255			; 000000ffH
   0000e	6a 64		 push	 100			; 00000064H
@@ -11914,7 +11682,7 @@ _this$ = -4						; size = 4
   0001b	e8 00 00 00 00	 call	 _SDL_SetRenderDrawColor
   00020	83 c4 14	 add	 esp, 20			; 00000014H
 
-; 198  :     SDL_RenderClear(m_renderer);
+; 201  :     SDL_RenderClear(m_renderer);
 
   00023	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
   00026	8b 42 0c	 mov	 eax, DWORD PTR [edx+12]
@@ -11922,64 +11690,57 @@ _this$ = -4						; size = 4
   0002a	e8 00 00 00 00	 call	 _SDL_RenderClear
   0002f	83 c4 04	 add	 esp, 4
 
-; 199  :     
-; 200  :     char buffer[4096];
-; 201  :     
-; 202  :     m_game.board.Draw(0, 0);
+; 202  :     
+; 203  :     char buffer[4096];
+; 204  :     
+; 205  :     i32 yMargin = (BOARD_ROWS - BOARD_VISIBLE_ROWS) * BOARD_GRID_SIZE;
 
-  00032	6a 00		 push	 0
-  00034	6a 00		 push	 0
-  00036	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  00039	83 c1 10	 add	 ecx, 16			; 00000010H
-  0003c	e8 00 00 00 00	 call	 ?Draw@Board@gameplay@core@@QAEXHH@Z ; core::gameplay::Board::Draw
+  00032	c7 45 f8 3c 00
+	00 00		 mov	 DWORD PTR _yMargin$[ebp], 60 ; 0000003cH
 
-; 203  :     
-; 204  :     m_game.board.DrawCell(0, 0, 1, 0, 0, true);
+; 206  :     
+; 207  :     m_game.board->DrawBoard(0, yMargin);
 
-  00041	6a 01		 push	 1
-  00043	6a 00		 push	 0
-  00045	6a 00		 push	 0
-  00047	6a 01		 push	 1
-  00049	6a 00		 push	 0
-  0004b	6a 00		 push	 0
-  0004d	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  00050	83 c1 10	 add	 ecx, 16			; 00000010H
-  00053	e8 00 00 00 00	 call	 ?DrawCell@Board@gameplay@core@@QAEXHHHHH_N@Z ; core::gameplay::Board::DrawCell
+  00039	8b 4d f8	 mov	 ecx, DWORD PTR _yMargin$[ebp]
+  0003c	51		 push	 ecx
+  0003d	6a 00		 push	 0
+  0003f	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
+  00042	8b 4a 10	 mov	 ecx, DWORD PTR [edx+16]
+  00045	e8 00 00 00 00	 call	 ?DrawBoard@Board@gameplay@core@@QAEXHH@Z ; core::gameplay::Board::DrawBoard
 
-; 205  :     
-; 206  :     switch (m_game.phase)
+; 208  :     
+; 209  :     switch (m_game.phase)
 
-  00058	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  0005b	8b 91 a4 00 00
-	00		 mov	 edx, DWORD PTR [ecx+164]
-  00061	89 55 f8	 mov	 DWORD PTR tv88[ebp], edx
+  0004a	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
+  0004d	8b 48 70	 mov	 ecx, DWORD PTR [eax+112]
+  00050	89 4d f4	 mov	 DWORD PTR tv79[ebp], ecx
 
-; 207  :     {
-; 208  :         case GAME_PHASE_START:
-; 209  :         {
-; 210  :             
-; 211  :         } break;
-; 212  :         
-; 213  :         case GAME_PHASE_PLAY:
-; 214  :         {
-; 215  :             
-; 216  :         } break;
-; 217  :         
-; 218  :         case GAME_PHASE_LINE:
-; 219  :         {
-; 220  :             
-; 221  :         } break;
-; 222  :         
-; 223  :         case GAME_PHASE_OVER:
-; 224  :         {
-; 225  :             
-; 226  :         } break;
-; 227  :     }
-; 228  : }
+; 210  :     {
+; 211  :         case GAME_PHASE_START:
+; 212  :         {
+; 213  :             
+; 214  :         } break;
+; 215  :         
+; 216  :         case GAME_PHASE_PLAY:
+; 217  :         {
+; 218  :             
+; 219  :         } break;
+; 220  :         
+; 221  :         case GAME_PHASE_LINE:
+; 222  :         {
+; 223  :             
+; 224  :         } break;
+; 225  :         
+; 226  :         case GAME_PHASE_OVER:
+; 227  :         {
+; 228  :             
+; 229  :         } break;
+; 230  :     }
+; 231  : }
 
-  00064	8b e5		 mov	 esp, ebp
-  00066	5d		 pop	 ebp
-  00067	c3		 ret	 0
+  00053	8b e5		 mov	 esp, ebp
+  00055	5d		 pop	 ebp
+  00056	c3		 ret	 0
 ?Render@Game@core@@QAEXXZ ENDP				; core::Game::Render
 _TEXT	ENDS
 ; Function compile flags: /Odtp
@@ -11990,87 +11751,85 @@ _this$ = -4						; size = 4
 ?Update@Game@core@@QAEXXZ PROC				; core::Game::Update
 ; _this$ = ecx
 
-; 170  : {
+; 173  : {
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
   00003	83 ec 08	 sub	 esp, 8
   00006	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
 
-; 171  :     switch (m_game.phase)
+; 174  :     switch (m_game.phase)
 
   00009	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  0000c	8b 88 a4 00 00
-	00		 mov	 ecx, DWORD PTR [eax+164]
-  00012	89 4d f8	 mov	 DWORD PTR tv66[ebp], ecx
-  00015	83 7d f8 03	 cmp	 DWORD PTR tv66[ebp], 3
-  00019	77 30		 ja	 SHORT $LN1@Update
-  0001b	8b 55 f8	 mov	 edx, DWORD PTR tv66[ebp]
-  0001e	ff 24 95 00 00
+  0000c	8b 48 70	 mov	 ecx, DWORD PTR [eax+112]
+  0000f	89 4d f8	 mov	 DWORD PTR tv66[ebp], ecx
+  00012	83 7d f8 03	 cmp	 DWORD PTR tv66[ebp], 3
+  00016	77 30		 ja	 SHORT $LN1@Update
+  00018	8b 55 f8	 mov	 edx, DWORD PTR tv66[ebp]
+  0001b	ff 24 95 00 00
 	00 00		 jmp	 DWORD PTR $LN9@Update[edx*4]
 $LN4@Update:
 
-; 172  :     {
-; 173  :         case GAME_PHASE_START:
-; 174  :         {
-; 175  :             UpdateGameStart();
+; 175  :     {
+; 176  :         case GAME_PHASE_START:
+; 177  :         {
+; 178  :             UpdateGameStart();
 
-  00025	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  00028	e8 00 00 00 00	 call	 ?UpdateGameStart@Game@core@@AAEXXZ ; core::Game::UpdateGameStart
+  00022	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  00025	e8 00 00 00 00	 call	 ?UpdateGameStart@Game@core@@AAEXXZ ; core::Game::UpdateGameStart
 
-; 176  :         } break;
+; 179  :         } break;
 
-  0002d	eb 1c		 jmp	 SHORT $LN1@Update
+  0002a	eb 1c		 jmp	 SHORT $LN1@Update
 $LN5@Update:
 
-; 177  :         
-; 178  :         case GAME_PHASE_PLAY:
-; 179  :         {
-; 180  :             UpdateGamePlay();
+; 180  :         
+; 181  :         case GAME_PHASE_PLAY:
+; 182  :         {
+; 183  :             UpdateGamePlay();
 
-  0002f	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  00032	e8 00 00 00 00	 call	 ?UpdateGamePlay@Game@core@@AAEXXZ ; core::Game::UpdateGamePlay
+  0002c	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  0002f	e8 00 00 00 00	 call	 ?UpdateGamePlay@Game@core@@AAEXXZ ; core::Game::UpdateGamePlay
 
-; 181  :         } break;
+; 184  :         } break;
 
-  00037	eb 12		 jmp	 SHORT $LN1@Update
+  00034	eb 12		 jmp	 SHORT $LN1@Update
 $LN6@Update:
 
-; 182  :         
-; 183  :         case GAME_PHASE_LINE:
-; 184  :         {
-; 185  :             UpdateGameLine();
+; 185  :         
+; 186  :         case GAME_PHASE_LINE:
+; 187  :         {
+; 188  :             UpdateGameLine();
 
-  00039	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  0003c	e8 00 00 00 00	 call	 ?UpdateGameLine@Game@core@@AAEXXZ ; core::Game::UpdateGameLine
+  00036	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  00039	e8 00 00 00 00	 call	 ?UpdateGameLine@Game@core@@AAEXXZ ; core::Game::UpdateGameLine
 
-; 186  :         } break;
+; 189  :         } break;
 
-  00041	eb 08		 jmp	 SHORT $LN1@Update
+  0003e	eb 08		 jmp	 SHORT $LN1@Update
 $LN7@Update:
 
-; 187  :         
-; 188  :         case GAME_PHASE_OVER:
-; 189  :         {
-; 190  :             UpdateGameOver();
+; 190  :         
+; 191  :         case GAME_PHASE_OVER:
+; 192  :         {
+; 193  :             UpdateGameOver();
 
-  00043	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  00046	e8 00 00 00 00	 call	 ?UpdateGameOver@Game@core@@AAEXXZ ; core::Game::UpdateGameOver
+  00040	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  00043	e8 00 00 00 00	 call	 ?UpdateGameOver@Game@core@@AAEXXZ ; core::Game::UpdateGameOver
 $LN1@Update:
 
-; 191  :         } break;
-; 192  :     }
-; 193  : }
+; 194  :         } break;
+; 195  :     }
+; 196  : }
 
-  0004b	8b e5		 mov	 esp, ebp
-  0004d	5d		 pop	 ebp
-  0004e	c3		 ret	 0
-  0004f	90		 npad	 1
+  00048	8b e5		 mov	 esp, ebp
+  0004a	5d		 pop	 ebp
+  0004b	c3		 ret	 0
 $LN9@Update:
-  00050	00 00 00 00	 DD	 $LN4@Update
-  00054	00 00 00 00	 DD	 $LN5@Update
-  00058	00 00 00 00	 DD	 $LN6@Update
-  0005c	00 00 00 00	 DD	 $LN7@Update
+  0004c	00 00 00 00	 DD	 $LN4@Update
+  00050	00 00 00 00	 DD	 $LN5@Update
+  00054	00 00 00 00	 DD	 $LN6@Update
+  00058	00 00 00 00	 DD	 $LN7@Update
 ?Update@Game@core@@QAEXXZ ENDP				; core::Game::Update
 _TEXT	ENDS
 ; Function compile flags: /Odtp
@@ -12084,7 +11843,7 @@ __$ArrayPad$ = -4					; size = 4
 ?HandleInput@Game@core@@QAEXXZ PROC			; core::Game::HandleInput
 ; _this$ = ecx
 
-; 101  : {
+; 104  : {
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
@@ -12094,8 +11853,8 @@ __$ArrayPad$ = -4					; size = 4
   0000d	89 45 fc	 mov	 DWORD PTR __$ArrayPad$[ebp], eax
   00010	89 4d ec	 mov	 DWORD PTR _this$[ebp], ecx
 
-; 102  :     i32 keyCount;
-; 103  :     const u8 *keyStates = SDL_GetKeyboardState(&keyCount);
+; 105  :     i32 keyCount;
+; 106  :     const u8 *keyStates = SDL_GetKeyboardState(&keyCount);
 
   00013	8d 45 e4	 lea	 eax, DWORD PTR _keyCount$[ebp]
   00016	50		 push	 eax
@@ -12103,15 +11862,15 @@ __$ArrayPad$ = -4					; size = 4
   0001c	83 c4 04	 add	 esp, 4
   0001f	89 45 e8	 mov	 DWORD PTR _keyStates$[ebp], eax
 
-; 104  :     
-; 105  :     if (keyStates)
+; 107  :     
+; 108  :     if (keyStates)
 
   00022	83 7d e8 00	 cmp	 DWORD PTR _keyStates$[ebp], 0
   00026	0f 84 55 01 00
 	00		 je	 $LN1@HandleInpu
 
-; 106  :     {
-; 107  :         if (keyStates[SDL_SCANCODE_ESCAPE])
+; 109  :     {
+; 110  :         if (keyStates[SDL_SCANCODE_ESCAPE])
 
   0002c	b9 01 00 00 00	 mov	 ecx, 1
   00031	6b d1 29	 imul	 edx, ecx, 41
@@ -12120,20 +11879,20 @@ __$ArrayPad$ = -4					; size = 4
   0003b	85 c9		 test	 ecx, ecx
   0003d	74 08		 je	 SHORT $LN3@HandleInpu
 
-; 108  :         {
-; 109  :             Quit();
+; 111  :         {
+; 112  :             Quit();
 
   0003f	8b 4d ec	 mov	 ecx, DWORD PTR _this$[ebp]
   00042	e8 00 00 00 00	 call	 ?Quit@Game@core@@QAEXXZ	; core::Game::Quit
 $LN3@HandleInpu:
 
-; 110  :         }
-; 111  :         
-; 112  :         InputState prevInput = m_input;
+; 113  :         }
+; 114  :         
+; 115  :         InputState prevInput = m_input;
 
   00047	8b 55 ec	 mov	 edx, DWORD PTR _this$[ebp]
-  0004a	81 c2 c4 00 00
-	00		 add	 edx, 196		; 000000c4H
+  0004a	81 c2 90 00 00
+	00		 add	 edx, 144		; 00000090H
   00050	8b 02		 mov	 eax, DWORD PTR [edx]
   00052	89 45 f0	 mov	 DWORD PTR _prevInput$1[ebp], eax
   00055	8b 4a 04	 mov	 ecx, DWORD PTR [edx+4]
@@ -12141,137 +11900,137 @@ $LN3@HandleInpu:
   0005b	8b 52 08	 mov	 edx, DWORD PTR [edx+8]
   0005e	89 55 f8	 mov	 DWORD PTR _prevInput$1[ebp+8], edx
 
-; 113  :         
-; 114  :         m_input.left   = keyStates[SDL_SCANCODE_LEFT];
+; 116  :         
+; 117  :         m_input.left   = keyStates[SDL_SCANCODE_LEFT];
 
   00061	b8 01 00 00 00	 mov	 eax, 1
   00066	6b c8 50	 imul	 ecx, eax, 80
   00069	8b 55 ec	 mov	 edx, DWORD PTR _this$[ebp]
   0006c	8b 45 e8	 mov	 eax, DWORD PTR _keyStates$[ebp]
   0006f	8a 0c 08	 mov	 cl, BYTE PTR [eax+ecx]
-  00072	88 8a c4 00 00
-	00		 mov	 BYTE PTR [edx+196], cl
+  00072	88 8a 90 00 00
+	00		 mov	 BYTE PTR [edx+144], cl
 
-; 115  :         m_input.right  = keyStates[SDL_SCANCODE_RIGHT];
+; 118  :         m_input.right  = keyStates[SDL_SCANCODE_RIGHT];
 
   00078	ba 01 00 00 00	 mov	 edx, 1
   0007d	6b c2 4f	 imul	 eax, edx, 79
   00080	8b 4d ec	 mov	 ecx, DWORD PTR _this$[ebp]
   00083	8b 55 e8	 mov	 edx, DWORD PTR _keyStates$[ebp]
   00086	8a 04 02	 mov	 al, BYTE PTR [edx+eax]
-  00089	88 81 c5 00 00
-	00		 mov	 BYTE PTR [ecx+197], al
+  00089	88 81 91 00 00
+	00		 mov	 BYTE PTR [ecx+145], al
 
-; 116  :         m_input.up     = keyStates[SDL_SCANCODE_UP];
+; 119  :         m_input.up     = keyStates[SDL_SCANCODE_UP];
 
   0008f	b9 01 00 00 00	 mov	 ecx, 1
   00094	6b d1 52	 imul	 edx, ecx, 82
   00097	8b 45 ec	 mov	 eax, DWORD PTR _this$[ebp]
   0009a	8b 4d e8	 mov	 ecx, DWORD PTR _keyStates$[ebp]
   0009d	8a 14 11	 mov	 dl, BYTE PTR [ecx+edx]
-  000a0	88 90 c6 00 00
-	00		 mov	 BYTE PTR [eax+198], dl
+  000a0	88 90 92 00 00
+	00		 mov	 BYTE PTR [eax+146], dl
 
-; 117  :         m_input.down   = keyStates[SDL_SCANCODE_DOWN];
+; 120  :         m_input.down   = keyStates[SDL_SCANCODE_DOWN];
 
   000a6	b8 01 00 00 00	 mov	 eax, 1
   000ab	6b c8 51	 imul	 ecx, eax, 81
   000ae	8b 55 ec	 mov	 edx, DWORD PTR _this$[ebp]
   000b1	8b 45 e8	 mov	 eax, DWORD PTR _keyStates$[ebp]
   000b4	8a 0c 08	 mov	 cl, BYTE PTR [eax+ecx]
-  000b7	88 8a c7 00 00
-	00		 mov	 BYTE PTR [edx+199], cl
+  000b7	88 8a 93 00 00
+	00		 mov	 BYTE PTR [edx+147], cl
 
-; 118  :         m_input.space  = keyStates[SDL_SCANCODE_SPACE];
+; 121  :         m_input.space  = keyStates[SDL_SCANCODE_SPACE];
 
   000bd	ba 01 00 00 00	 mov	 edx, 1
   000c2	6b c2 2c	 imul	 eax, edx, 44
   000c5	8b 4d ec	 mov	 ecx, DWORD PTR _this$[ebp]
   000c8	8b 55 e8	 mov	 edx, DWORD PTR _keyStates$[ebp]
   000cb	8a 04 02	 mov	 al, BYTE PTR [edx+eax]
-  000ce	88 81 c8 00 00
-	00		 mov	 BYTE PTR [ecx+200], al
+  000ce	88 81 94 00 00
+	00		 mov	 BYTE PTR [ecx+148], al
 
-; 119  :         m_input.enter  = keyStates[SDL_SCANCODE_RETURN];
+; 122  :         m_input.enter  = keyStates[SDL_SCANCODE_RETURN];
 
   000d4	b9 01 00 00 00	 mov	 ecx, 1
   000d9	6b d1 28	 imul	 edx, ecx, 40
   000dc	8b 45 ec	 mov	 eax, DWORD PTR _this$[ebp]
   000df	8b 4d e8	 mov	 ecx, DWORD PTR _keyStates$[ebp]
   000e2	8a 14 11	 mov	 dl, BYTE PTR [ecx+edx]
-  000e5	88 90 c9 00 00
-	00		 mov	 BYTE PTR [eax+201], dl
+  000e5	88 90 95 00 00
+	00		 mov	 BYTE PTR [eax+149], dl
 
-; 120  :         
-; 121  :         m_input.dleft  = m_input.left - prevInput.left;
+; 123  :         
+; 124  :         m_input.dleft  = m_input.left - prevInput.left;
 
   000eb	8b 45 ec	 mov	 eax, DWORD PTR _this$[ebp]
-  000ee	0f b6 88 c4 00
-	00 00		 movzx	 ecx, BYTE PTR [eax+196]
+  000ee	0f b6 88 90 00
+	00 00		 movzx	 ecx, BYTE PTR [eax+144]
   000f5	0f b6 55 f0	 movzx	 edx, BYTE PTR _prevInput$1[ebp]
   000f9	2b ca		 sub	 ecx, edx
   000fb	8b 45 ec	 mov	 eax, DWORD PTR _this$[ebp]
-  000fe	88 88 ca 00 00
-	00		 mov	 BYTE PTR [eax+202], cl
+  000fe	88 88 96 00 00
+	00		 mov	 BYTE PTR [eax+150], cl
 
-; 122  :         m_input.dright = m_input.right - prevInput.right;
+; 125  :         m_input.dright = m_input.right - prevInput.right;
 
   00104	8b 4d ec	 mov	 ecx, DWORD PTR _this$[ebp]
-  00107	0f b6 91 c5 00
-	00 00		 movzx	 edx, BYTE PTR [ecx+197]
+  00107	0f b6 91 91 00
+	00 00		 movzx	 edx, BYTE PTR [ecx+145]
   0010e	0f b6 45 f1	 movzx	 eax, BYTE PTR _prevInput$1[ebp+1]
   00112	2b d0		 sub	 edx, eax
   00114	8b 4d ec	 mov	 ecx, DWORD PTR _this$[ebp]
-  00117	88 91 cb 00 00
-	00		 mov	 BYTE PTR [ecx+203], dl
+  00117	88 91 97 00 00
+	00		 mov	 BYTE PTR [ecx+151], dl
 
-; 123  :         m_input.dup    = m_input.up - prevInput.up;
+; 126  :         m_input.dup    = m_input.up - prevInput.up;
 
   0011d	8b 55 ec	 mov	 edx, DWORD PTR _this$[ebp]
-  00120	0f b6 82 c6 00
-	00 00		 movzx	 eax, BYTE PTR [edx+198]
+  00120	0f b6 82 92 00
+	00 00		 movzx	 eax, BYTE PTR [edx+146]
   00127	0f b6 4d f2	 movzx	 ecx, BYTE PTR _prevInput$1[ebp+2]
   0012b	2b c1		 sub	 eax, ecx
   0012d	8b 55 ec	 mov	 edx, DWORD PTR _this$[ebp]
-  00130	88 82 cc 00 00
-	00		 mov	 BYTE PTR [edx+204], al
+  00130	88 82 98 00 00
+	00		 mov	 BYTE PTR [edx+152], al
 
-; 124  :         m_input.ddown  = m_input.down - prevInput.down;
+; 127  :         m_input.ddown  = m_input.down - prevInput.down;
 
   00136	8b 45 ec	 mov	 eax, DWORD PTR _this$[ebp]
-  00139	0f b6 88 c7 00
-	00 00		 movzx	 ecx, BYTE PTR [eax+199]
+  00139	0f b6 88 93 00
+	00 00		 movzx	 ecx, BYTE PTR [eax+147]
   00140	0f b6 55 f3	 movzx	 edx, BYTE PTR _prevInput$1[ebp+3]
   00144	2b ca		 sub	 ecx, edx
   00146	8b 45 ec	 mov	 eax, DWORD PTR _this$[ebp]
-  00149	88 88 cd 00 00
-	00		 mov	 BYTE PTR [eax+205], cl
+  00149	88 88 99 00 00
+	00		 mov	 BYTE PTR [eax+153], cl
 
-; 125  :         m_input.dspace = m_input.space - prevInput.space;
+; 128  :         m_input.dspace = m_input.space - prevInput.space;
 
   0014f	8b 4d ec	 mov	 ecx, DWORD PTR _this$[ebp]
-  00152	0f b6 91 c8 00
-	00 00		 movzx	 edx, BYTE PTR [ecx+200]
+  00152	0f b6 91 94 00
+	00 00		 movzx	 edx, BYTE PTR [ecx+148]
   00159	0f b6 45 f4	 movzx	 eax, BYTE PTR _prevInput$1[ebp+4]
   0015d	2b d0		 sub	 edx, eax
   0015f	8b 4d ec	 mov	 ecx, DWORD PTR _this$[ebp]
-  00162	88 91 ce 00 00
-	00		 mov	 BYTE PTR [ecx+206], dl
+  00162	88 91 9a 00 00
+	00		 mov	 BYTE PTR [ecx+154], dl
 
-; 126  :         m_input.denter = m_input.enter - prevInput.enter;
+; 129  :         m_input.denter = m_input.enter - prevInput.enter;
 
   00168	8b 55 ec	 mov	 edx, DWORD PTR _this$[ebp]
-  0016b	0f b6 82 c9 00
-	00 00		 movzx	 eax, BYTE PTR [edx+201]
+  0016b	0f b6 82 95 00
+	00 00		 movzx	 eax, BYTE PTR [edx+149]
   00172	0f b6 4d f5	 movzx	 ecx, BYTE PTR _prevInput$1[ebp+5]
   00176	2b c1		 sub	 eax, ecx
   00178	8b 55 ec	 mov	 edx, DWORD PTR _this$[ebp]
-  0017b	88 82 cf 00 00
-	00		 mov	 BYTE PTR [edx+207], al
+  0017b	88 82 9b 00 00
+	00		 mov	 BYTE PTR [edx+155], al
 $LN1@HandleInpu:
 
-; 127  :     }
-; 128  : }
+; 130  :     }
+; 131  : }
 
   00181	8b 4d fc	 mov	 ecx, DWORD PTR __$ArrayPad$[ebp]
   00184	33 cd		 xor	 ecx, ebp
@@ -12284,69 +12043,95 @@ _TEXT	ENDS
 ; Function compile flags: /Odtp
 ; File c:\dev\tetris\src\game.cpp
 _TEXT	SEGMENT
-_this$ = -64						; size = 4
+tv78 = -76						; size = 8
+_this$ = -68						; size = 4
+tv75 = -64						; size = 4
 _e$ = -60						; size = 56
 __$ArrayPad$ = -4					; size = 4
 ?HandleEvents@Game@core@@QAEXXZ PROC			; core::Game::HandleEvents
 ; _this$ = ecx
 
-; 89   : {
+; 90   : {
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
-  00003	83 ec 40	 sub	 esp, 64			; 00000040H
+  00003	83 ec 4c	 sub	 esp, 76			; 0000004cH
   00006	a1 00 00 00 00	 mov	 eax, DWORD PTR ___security_cookie
   0000b	33 c5		 xor	 eax, ebp
   0000d	89 45 fc	 mov	 DWORD PTR __$ArrayPad$[ebp], eax
-  00010	89 4d c0	 mov	 DWORD PTR _this$[ebp], ecx
+  00010	89 4d bc	 mov	 DWORD PTR _this$[ebp], ecx
+
+; 91   :     m_game.time = SDL_GetTicks() / 1000.0f;
+
+  00013	e8 00 00 00 00	 call	 _SDL_GetTicks
+  00018	89 45 c0	 mov	 DWORD PTR tv75[ebp], eax
+  0001b	f2 0f 2a 45 c0	 cvtsi2sd xmm0, DWORD PTR tv75[ebp]
+  00020	8b 45 c0	 mov	 eax, DWORD PTR tv75[ebp]
+  00023	c1 e8 1f	 shr	 eax, 31			; 0000001fH
+  00026	f2 0f 58 04 c5
+	00 00 00 00	 addsd	 xmm0, QWORD PTR __xmm@41f00000000000000000000000000000[eax*8]
+  0002f	f2 0f 11 45 b4	 movsd	 QWORD PTR tv78[ebp], xmm0
+  00034	f2 0f 5a 45 b4	 cvtsd2ss xmm0, QWORD PTR tv78[ebp]
+  00039	f3 0f 5e 05 00
+	00 00 00	 divss	 xmm0, DWORD PTR __real@447a0000
+  00041	8b 4d bc	 mov	 ecx, DWORD PTR _this$[ebp]
+  00044	f3 0f 11 81 8c
+	00 00 00	 movss	 DWORD PTR [ecx+140], xmm0
 $LN2@HandleEven:
 
-; 90   :     SDL_Event e;
-; 91   :     while (SDL_PollEvent(&e))
+; 92   :     
+; 93   :     SDL_Event e;
+; 94   :     while (SDL_PollEvent(&e))
 
-  00013	8d 45 c4	 lea	 eax, DWORD PTR _e$[ebp]
-  00016	50		 push	 eax
-  00017	e8 00 00 00 00	 call	 _SDL_PollEvent
-  0001c	83 c4 04	 add	 esp, 4
-  0001f	85 c0		 test	 eax, eax
-  00021	74 13		 je	 SHORT $LN1@HandleEven
+  0004c	8d 55 c4	 lea	 edx, DWORD PTR _e$[ebp]
+  0004f	52		 push	 edx
+  00050	e8 00 00 00 00	 call	 _SDL_PollEvent
+  00055	83 c4 04	 add	 esp, 4
+  00058	85 c0		 test	 eax, eax
+  0005a	74 13		 je	 SHORT $LN3@HandleEven
 
-; 92   :     {
-; 93   :         if (e.type == SDL_QUIT)
+; 95   :     {
+; 96   :         if (e.type == SDL_QUIT)
 
-  00023	81 7d c4 00 01
+  0005c	81 7d c4 00 01
 	00 00		 cmp	 DWORD PTR _e$[ebp], 256	; 00000100H
-  0002a	75 08		 jne	 SHORT $LN4@HandleEven
+  00063	75 08		 jne	 SHORT $LN4@HandleEven
 
-; 94   :         {
-; 95   :             Quit();
+; 97   :         {
+; 98   :             Quit();
 
-  0002c	8b 4d c0	 mov	 ecx, DWORD PTR _this$[ebp]
-  0002f	e8 00 00 00 00	 call	 ?Quit@Game@core@@QAEXXZ	; core::Game::Quit
+  00065	8b 4d bc	 mov	 ecx, DWORD PTR _this$[ebp]
+  00068	e8 00 00 00 00	 call	 ?Quit@Game@core@@QAEXXZ	; core::Game::Quit
 $LN4@HandleEven:
 
-; 96   :         }
-; 97   :     }
+; 99   :         }
+; 100  :     }
 
-  00034	eb dd		 jmp	 SHORT $LN2@HandleEven
-$LN1@HandleEven:
+  0006d	eb dd		 jmp	 SHORT $LN2@HandleEven
+$LN3@HandleEven:
 
-; 98   : }
+; 101  : }
 
-  00036	8b 4d fc	 mov	 ecx, DWORD PTR __$ArrayPad$[ebp]
-  00039	33 cd		 xor	 ecx, ebp
-  0003b	e8 00 00 00 00	 call	 @__security_check_cookie@4
-  00040	8b e5		 mov	 esp, ebp
-  00042	5d		 pop	 ebp
-  00043	c3		 ret	 0
+  0006f	8b 4d fc	 mov	 ecx, DWORD PTR __$ArrayPad$[ebp]
+  00072	33 cd		 xor	 ecx, ebp
+  00074	e8 00 00 00 00	 call	 @__security_check_cookie@4
+  00079	8b e5		 mov	 esp, ebp
+  0007b	5d		 pop	 ebp
+  0007c	c3		 ret	 0
 ?HandleEvents@Game@core@@QAEXXZ ENDP			; core::Game::HandleEvents
 _TEXT	ENDS
 ; Function compile flags: /Odtp
 ; File c:\dev\tetris\src\game.cpp
 _TEXT	SEGMENT
-_this$ = -212						; size = 4
-$T2 = -208						; size = 180
-$T3 = -28						; size = 12
+$T2 = -184						; size = 4
+$T3 = -180						; size = 4
+tv250 = -176						; size = 4
+$T4 = -172						; size = 4
+tv230 = -168						; size = 4
+$T5 = -164						; size = 4
+_this$ = -160						; size = 4
+$T6 = -156						; size = 128
+$T7 = -28						; size = 12
 __$ArrayPad$ = -16					; size = 4
 __$EHRec$ = -12						; size = 12
 _t_title$ = 8						; size = 4
@@ -12368,486 +12153,539 @@ _t_fontSize$ = 32					; size = 4
   0000a	64 a1 00 00 00
 	00		 mov	 eax, DWORD PTR fs:0
   00010	50		 push	 eax
-  00011	81 ec c8 00 00
-	00		 sub	 esp, 200		; 000000c8H
+  00011	81 ec ac 00 00
+	00		 sub	 esp, 172		; 000000acH
   00017	a1 00 00 00 00	 mov	 eax, DWORD PTR ___security_cookie
   0001c	33 c5		 xor	 eax, ebp
   0001e	89 45 f0	 mov	 DWORD PTR __$ArrayPad$[ebp], eax
-  00021	50		 push	 eax
-  00022	8d 45 f4	 lea	 eax, DWORD PTR __$EHRec$[ebp]
-  00025	64 a3 00 00 00
+  00021	56		 push	 esi
+  00022	57		 push	 edi
+  00023	50		 push	 eax
+  00024	8d 45 f4	 lea	 eax, DWORD PTR __$EHRec$[ebp]
+  00027	64 a3 00 00 00
 	00		 mov	 DWORD PTR fs:0, eax
-  0002b	89 8d 2c ff ff
+  0002d	89 8d 60 ff ff
 	ff		 mov	 DWORD PTR _this$[ebp], ecx
-  00031	8b 8d 2c ff ff
-	ff		 mov	 ecx, DWORD PTR _this$[ebp]
-  00037	83 c1 10	 add	 ecx, 16			; 00000010H
-  0003a	e8 00 00 00 00	 call	 ??0GameState@core@@QAE@XZ
-  0003f	c7 45 fc 00 00
-	00 00		 mov	 DWORD PTR __$EHRec$[ebp+8], 0
 
 ; 12   :     if (!SDL_Init(SDL_INIT_EVERYTHING))
 
-  00046	68 31 f2 00 00	 push	 62001			; 0000f231H
-  0004b	e8 00 00 00 00	 call	 _SDL_Init
-  00050	83 c4 04	 add	 esp, 4
-  00053	85 c0		 test	 eax, eax
-  00055	0f 85 0a 01 00
+  00033	68 31 f2 00 00	 push	 62001			; 0000f231H
+  00038	e8 00 00 00 00	 call	 _SDL_Init
+  0003d	83 c4 04	 add	 esp, 4
+  00040	85 c0		 test	 eax, eax
+  00042	0f 85 0a 01 00
 	00		 jne	 $LN2@Game
 
 ; 13   :     {
 ; 14   :         std::cout << "SDL has been initialized successfully\n";
 
-  0005b	68 00 00 00 00	 push	 OFFSET $SG53853
-  00060	68 00 00 00 00	 push	 OFFSET ?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cout
-  00065	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
-  0006a	83 c4 08	 add	 esp, 8
+  00048	68 00 00 00 00	 push	 OFFSET $SG53846
+  0004d	68 00 00 00 00	 push	 OFFSET ?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cout
+  00052	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
+  00057	83 c4 08	 add	 esp, 8
 
 ; 15   :         
 ; 16   :         m_window = SDL_CreateWindow(t_title, t_xPos, t_yPos, t_windowWidth,
 
-  0006d	6a 06		 push	 6
-  0006f	8b 45 18	 mov	 eax, DWORD PTR _t_windowHeight$[ebp]
-  00072	50		 push	 eax
-  00073	8b 4d 14	 mov	 ecx, DWORD PTR _t_windowWidth$[ebp]
-  00076	51		 push	 ecx
-  00077	8b 55 10	 mov	 edx, DWORD PTR _t_yPos$[ebp]
-  0007a	52		 push	 edx
-  0007b	8b 45 0c	 mov	 eax, DWORD PTR _t_xPos$[ebp]
-  0007e	50		 push	 eax
-  0007f	8b 4d 08	 mov	 ecx, DWORD PTR _t_title$[ebp]
-  00082	51		 push	 ecx
-  00083	e8 00 00 00 00	 call	 _SDL_CreateWindow
-  00088	83 c4 18	 add	 esp, 24			; 00000018H
-  0008b	8b 95 2c ff ff
+  0005a	6a 06		 push	 6
+  0005c	8b 45 18	 mov	 eax, DWORD PTR _t_windowHeight$[ebp]
+  0005f	50		 push	 eax
+  00060	8b 4d 14	 mov	 ecx, DWORD PTR _t_windowWidth$[ebp]
+  00063	51		 push	 ecx
+  00064	8b 55 10	 mov	 edx, DWORD PTR _t_yPos$[ebp]
+  00067	52		 push	 edx
+  00068	8b 45 0c	 mov	 eax, DWORD PTR _t_xPos$[ebp]
+  0006b	50		 push	 eax
+  0006c	8b 4d 08	 mov	 ecx, DWORD PTR _t_title$[ebp]
+  0006f	51		 push	 ecx
+  00070	e8 00 00 00 00	 call	 _SDL_CreateWindow
+  00075	83 c4 18	 add	 esp, 24			; 00000018H
+  00078	8b 95 60 ff ff
 	ff		 mov	 edx, DWORD PTR _this$[ebp]
-  00091	89 42 08	 mov	 DWORD PTR [edx+8], eax
+  0007e	89 42 08	 mov	 DWORD PTR [edx+8], eax
 
 ; 17   :                                     t_windowHeight, SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN);
 ; 18   :         
 ; 19   :         if (m_window)
 
-  00094	8b 85 2c ff ff
+  00081	8b 85 60 ff ff
 	ff		 mov	 eax, DWORD PTR _this$[ebp]
-  0009a	83 78 08 00	 cmp	 DWORD PTR [eax+8], 0
-  0009e	0f 84 89 00 00
+  00087	83 78 08 00	 cmp	 DWORD PTR [eax+8], 0
+  0008b	0f 84 89 00 00
 	00		 je	 $LN4@Game
 
 ; 20   :         {
 ; 21   :             std::cout << "SDL window has been created successfully\n";
 
-  000a4	68 00 00 00 00	 push	 OFFSET $SG53856
-  000a9	68 00 00 00 00	 push	 OFFSET ?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cout
-  000ae	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
-  000b3	83 c4 08	 add	 esp, 8
+  00091	68 00 00 00 00	 push	 OFFSET $SG53849
+  00096	68 00 00 00 00	 push	 OFFSET ?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cout
+  0009b	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
+  000a0	83 c4 08	 add	 esp, 8
 
 ; 22   :             
 ; 23   :             m_renderer = SDL_CreateRenderer(m_window, -1, 
 
-  000b6	6a 06		 push	 6
-  000b8	6a ff		 push	 -1
-  000ba	8b 8d 2c ff ff
+  000a3	6a 06		 push	 6
+  000a5	6a ff		 push	 -1
+  000a7	8b 8d 60 ff ff
 	ff		 mov	 ecx, DWORD PTR _this$[ebp]
-  000c0	8b 51 08	 mov	 edx, DWORD PTR [ecx+8]
-  000c3	52		 push	 edx
-  000c4	e8 00 00 00 00	 call	 _SDL_CreateRenderer
-  000c9	83 c4 0c	 add	 esp, 12			; 0000000cH
-  000cc	8b 8d 2c ff ff
+  000ad	8b 51 08	 mov	 edx, DWORD PTR [ecx+8]
+  000b0	52		 push	 edx
+  000b1	e8 00 00 00 00	 call	 _SDL_CreateRenderer
+  000b6	83 c4 0c	 add	 esp, 12			; 0000000cH
+  000b9	8b 8d 60 ff ff
 	ff		 mov	 ecx, DWORD PTR _this$[ebp]
-  000d2	89 41 0c	 mov	 DWORD PTR [ecx+12], eax
+  000bf	89 41 0c	 mov	 DWORD PTR [ecx+12], eax
 
 ; 24   :                                             SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 ; 25   :             
 ; 26   :             if (m_renderer)
 
-  000d5	8b 95 2c ff ff
+  000c2	8b 95 60 ff ff
 	ff		 mov	 edx, DWORD PTR _this$[ebp]
-  000db	83 7a 0c 00	 cmp	 DWORD PTR [edx+12], 0
-  000df	74 14		 je	 SHORT $LN6@Game
+  000c8	83 7a 0c 00	 cmp	 DWORD PTR [edx+12], 0
+  000cc	74 14		 je	 SHORT $LN6@Game
 
 ; 27   :             {
 ; 28   :                 std::cout << "SDL renderer has been created successfully\n";
 
-  000e1	68 00 00 00 00	 push	 OFFSET $SG53859
-  000e6	68 00 00 00 00	 push	 OFFSET ?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cout
-  000eb	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
-  000f0	83 c4 08	 add	 esp, 8
+  000ce	68 00 00 00 00	 push	 OFFSET $SG53852
+  000d3	68 00 00 00 00	 push	 OFFSET ?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cout
+  000d8	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
+  000dd	83 c4 08	 add	 esp, 8
 
 ; 29   :             }
 ; 30   :             else
 
-  000f3	eb 36		 jmp	 SHORT $LN7@Game
+  000e0	eb 36		 jmp	 SHORT $LN7@Game
 $LN6@Game:
 
 ; 31   :             {
 ; 32   :                 std::cerr << "Renderer could not be created. SDL error: " 
 
-  000f5	68 00 00 00 00	 push	 OFFSET $SG53860
-  000fa	e8 00 00 00 00	 call	 _SDL_GetError
+  000e2	68 00 00 00 00	 push	 OFFSET $SG53853
+  000e7	e8 00 00 00 00	 call	 _SDL_GetError
+  000ec	50		 push	 eax
+  000ed	68 00 00 00 00	 push	 OFFSET $SG53854
+  000f2	68 00 00 00 00	 push	 OFFSET ?cerr@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cerr
+  000f7	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
+  000fc	83 c4 08	 add	 esp, 8
   000ff	50		 push	 eax
-  00100	68 00 00 00 00	 push	 OFFSET $SG53861
-  00105	68 00 00 00 00	 push	 OFFSET ?cerr@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cerr
-  0010a	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
-  0010f	83 c4 08	 add	 esp, 8
-  00112	50		 push	 eax
-  00113	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
-  00118	83 c4 08	 add	 esp, 8
-  0011b	50		 push	 eax
-  0011c	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
-  00121	83 c4 08	 add	 esp, 8
+  00100	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
+  00105	83 c4 08	 add	 esp, 8
+  00108	50		 push	 eax
+  00109	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
+  0010e	83 c4 08	 add	 esp, 8
 
 ; 33   :                     << SDL_GetError() << "\n";
 ; 34   :                 exit(1);
 
-  00124	6a 01		 push	 1
-  00126	e8 00 00 00 00	 call	 _exit
+  00111	6a 01		 push	 1
+  00113	e8 00 00 00 00	 call	 _exit
 $LN7@Game:
 
 ; 35   :             }
 ; 36   :         }
 ; 37   :         else
 
-  0012b	eb 36		 jmp	 SHORT $LN5@Game
+  00118	eb 36		 jmp	 SHORT $LN5@Game
 $LN4@Game:
 
 ; 38   :         {
 ; 39   :             std::cerr << "Window could not be created. SDL error: " << SDL_GetError() << "\n";
 
-  0012d	68 00 00 00 00	 push	 OFFSET $SG53862
-  00132	e8 00 00 00 00	 call	 _SDL_GetError
+  0011a	68 00 00 00 00	 push	 OFFSET $SG53855
+  0011f	e8 00 00 00 00	 call	 _SDL_GetError
+  00124	50		 push	 eax
+  00125	68 00 00 00 00	 push	 OFFSET $SG53856
+  0012a	68 00 00 00 00	 push	 OFFSET ?cerr@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cerr
+  0012f	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
+  00134	83 c4 08	 add	 esp, 8
   00137	50		 push	 eax
-  00138	68 00 00 00 00	 push	 OFFSET $SG53863
-  0013d	68 00 00 00 00	 push	 OFFSET ?cerr@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cerr
-  00142	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
-  00147	83 c4 08	 add	 esp, 8
-  0014a	50		 push	 eax
-  0014b	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
-  00150	83 c4 08	 add	 esp, 8
-  00153	50		 push	 eax
-  00154	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
-  00159	83 c4 08	 add	 esp, 8
+  00138	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
+  0013d	83 c4 08	 add	 esp, 8
+  00140	50		 push	 eax
+  00141	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
+  00146	83 c4 08	 add	 esp, 8
 
 ; 40   :             exit(1);
 
-  0015c	6a 01		 push	 1
-  0015e	e8 00 00 00 00	 call	 _exit
+  00149	6a 01		 push	 1
+  0014b	e8 00 00 00 00	 call	 _exit
 $LN5@Game:
 
 ; 41   :         }
 ; 42   :     }
 ; 43   :     else
 
-  00163	eb 36		 jmp	 SHORT $LN3@Game
+  00150	eb 36		 jmp	 SHORT $LN3@Game
 $LN2@Game:
 
 ; 44   :     {
 ; 45   :         std::cerr << "Unable to intialize SDL. SDL error: " << SDL_GetError() << "\n";
 
-  00165	68 00 00 00 00	 push	 OFFSET $SG53864
-  0016a	e8 00 00 00 00	 call	 _SDL_GetError
+  00152	68 00 00 00 00	 push	 OFFSET $SG53857
+  00157	e8 00 00 00 00	 call	 _SDL_GetError
+  0015c	50		 push	 eax
+  0015d	68 00 00 00 00	 push	 OFFSET $SG53858
+  00162	68 00 00 00 00	 push	 OFFSET ?cerr@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cerr
+  00167	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
+  0016c	83 c4 08	 add	 esp, 8
   0016f	50		 push	 eax
-  00170	68 00 00 00 00	 push	 OFFSET $SG53865
-  00175	68 00 00 00 00	 push	 OFFSET ?cerr@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cerr
-  0017a	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
-  0017f	83 c4 08	 add	 esp, 8
-  00182	50		 push	 eax
-  00183	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
-  00188	83 c4 08	 add	 esp, 8
-  0018b	50		 push	 eax
-  0018c	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
-  00191	83 c4 08	 add	 esp, 8
+  00170	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
+  00175	83 c4 08	 add	 esp, 8
+  00178	50		 push	 eax
+  00179	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
+  0017e	83 c4 08	 add	 esp, 8
 
 ; 46   :         exit(1);
 
-  00194	6a 01		 push	 1
-  00196	e8 00 00 00 00	 call	 _exit
+  00181	6a 01		 push	 1
+  00183	e8 00 00 00 00	 call	 _exit
 $LN3@Game:
 
 ; 47   :     }
 ; 48   :     
 ; 49   :     if (!TTF_Init())
 
-  0019b	e8 00 00 00 00	 call	 _TTF_Init
-  001a0	85 c0		 test	 eax, eax
-  001a2	0f 85 d4 00 00
+  00188	e8 00 00 00 00	 call	 _TTF_Init
+  0018d	85 c0		 test	 eax, eax
+  0018f	0f 85 d4 00 00
 	00		 jne	 $LN8@Game
 
 ; 50   :     {
 ; 51   :         std::cout << "SDL_TTF has been initialized successfully\n";
 
-  001a8	68 00 00 00 00	 push	 OFFSET $SG53868
-  001ad	68 00 00 00 00	 push	 OFFSET ?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cout
-  001b2	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
-  001b7	83 c4 08	 add	 esp, 8
+  00195	68 00 00 00 00	 push	 OFFSET $SG53861
+  0019a	68 00 00 00 00	 push	 OFFSET ?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cout
+  0019f	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
+  001a4	83 c4 08	 add	 esp, 8
 
 ; 52   :         
 ; 53   :         m_font = TTF_OpenFont(t_fontName, t_fontSize);
 
-  001ba	8b 45 20	 mov	 eax, DWORD PTR _t_fontSize$[ebp]
-  001bd	50		 push	 eax
-  001be	8b 4d 1c	 mov	 ecx, DWORD PTR _t_fontName$[ebp]
-  001c1	51		 push	 ecx
-  001c2	e8 00 00 00 00	 call	 _TTF_OpenFont
-  001c7	83 c4 08	 add	 esp, 8
-  001ca	8b 95 2c ff ff
+  001a7	8b 45 20	 mov	 eax, DWORD PTR _t_fontSize$[ebp]
+  001aa	50		 push	 eax
+  001ab	8b 4d 1c	 mov	 ecx, DWORD PTR _t_fontName$[ebp]
+  001ae	51		 push	 ecx
+  001af	e8 00 00 00 00	 call	 _TTF_OpenFont
+  001b4	83 c4 08	 add	 esp, 8
+  001b7	8b 95 60 ff ff
 	ff		 mov	 edx, DWORD PTR _this$[ebp]
-  001d0	89 82 d0 00 00
-	00		 mov	 DWORD PTR [edx+208], eax
+  001bd	89 82 9c 00 00
+	00		 mov	 DWORD PTR [edx+156], eax
 
 ; 54   :         
 ; 55   :         if (m_font)
 
-  001d6	8b 85 2c ff ff
+  001c3	8b 85 60 ff ff
 	ff		 mov	 eax, DWORD PTR _this$[ebp]
-  001dc	83 b8 d0 00 00
-	00 00		 cmp	 DWORD PTR [eax+208], 0
-  001e3	74 48		 je	 SHORT $LN10@Game
+  001c9	83 b8 9c 00 00
+	00 00		 cmp	 DWORD PTR [eax+156], 0
+  001d0	74 48		 je	 SHORT $LN10@Game
 
 ; 56   :         {
 ; 57   :             std::cout << "Font " << t_fontName << "(" << t_fontSize 
 
-  001e5	68 00 00 00 00	 push	 OFFSET $SG53871
-  001ea	8b 4d 20	 mov	 ecx, DWORD PTR _t_fontSize$[ebp]
-  001ed	51		 push	 ecx
-  001ee	68 00 00 00 00	 push	 OFFSET $SG53872
-  001f3	8b 55 1c	 mov	 edx, DWORD PTR _t_fontName$[ebp]
-  001f6	52		 push	 edx
-  001f7	68 00 00 00 00	 push	 OFFSET $SG53873
-  001fc	68 00 00 00 00	 push	 OFFSET ?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cout
-  00201	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
-  00206	83 c4 08	 add	 esp, 8
-  00209	50		 push	 eax
-  0020a	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
-  0020f	83 c4 08	 add	 esp, 8
-  00212	50		 push	 eax
-  00213	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
-  00218	83 c4 08	 add	 esp, 8
-  0021b	8b c8		 mov	 ecx, eax
-  0021d	e8 00 00 00 00	 call	 ??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@H@Z ; std::basic_ostream<char,std::char_traits<char> >::operator<<
-  00222	50		 push	 eax
-  00223	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
-  00228	83 c4 08	 add	 esp, 8
+  001d2	68 00 00 00 00	 push	 OFFSET $SG53864
+  001d7	8b 4d 20	 mov	 ecx, DWORD PTR _t_fontSize$[ebp]
+  001da	51		 push	 ecx
+  001db	68 00 00 00 00	 push	 OFFSET $SG53865
+  001e0	8b 55 1c	 mov	 edx, DWORD PTR _t_fontName$[ebp]
+  001e3	52		 push	 edx
+  001e4	68 00 00 00 00	 push	 OFFSET $SG53866
+  001e9	68 00 00 00 00	 push	 OFFSET ?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cout
+  001ee	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
+  001f3	83 c4 08	 add	 esp, 8
+  001f6	50		 push	 eax
+  001f7	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
+  001fc	83 c4 08	 add	 esp, 8
+  001ff	50		 push	 eax
+  00200	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
+  00205	83 c4 08	 add	 esp, 8
+  00208	8b c8		 mov	 ecx, eax
+  0020a	e8 00 00 00 00	 call	 ??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@H@Z ; std::basic_ostream<char,std::char_traits<char> >::operator<<
+  0020f	50		 push	 eax
+  00210	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
+  00215	83 c4 08	 add	 esp, 8
 
 ; 58   :                 << ") has been loaded\n";
 ; 59   :         }
 ; 60   :         else
 
-  0022b	eb 4d		 jmp	 SHORT $LN11@Game
+  00218	eb 4d		 jmp	 SHORT $LN11@Game
 $LN10@Game:
 
 ; 61   :         {
 ; 62   :             std::cerr << "Font " << t_fontName << "(" << t_fontSize 
 
-  0022d	68 00 00 00 00	 push	 OFFSET $SG53874
-  00232	8b 45 20	 mov	 eax, DWORD PTR _t_fontSize$[ebp]
-  00235	50		 push	 eax
-  00236	68 00 00 00 00	 push	 OFFSET $SG53875
-  0023b	8b 4d 1c	 mov	 ecx, DWORD PTR _t_fontName$[ebp]
-  0023e	51		 push	 ecx
-  0023f	68 00 00 00 00	 push	 OFFSET $SG53876
-  00244	68 00 00 00 00	 push	 OFFSET ?cerr@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cerr
-  00249	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
-  0024e	83 c4 08	 add	 esp, 8
-  00251	50		 push	 eax
-  00252	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
-  00257	83 c4 08	 add	 esp, 8
-  0025a	50		 push	 eax
-  0025b	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
-  00260	83 c4 08	 add	 esp, 8
-  00263	8b c8		 mov	 ecx, eax
-  00265	e8 00 00 00 00	 call	 ??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@H@Z ; std::basic_ostream<char,std::char_traits<char> >::operator<<
-  0026a	50		 push	 eax
-  0026b	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
-  00270	83 c4 08	 add	 esp, 8
+  0021a	68 00 00 00 00	 push	 OFFSET $SG53867
+  0021f	8b 45 20	 mov	 eax, DWORD PTR _t_fontSize$[ebp]
+  00222	50		 push	 eax
+  00223	68 00 00 00 00	 push	 OFFSET $SG53868
+  00228	8b 4d 1c	 mov	 ecx, DWORD PTR _t_fontName$[ebp]
+  0022b	51		 push	 ecx
+  0022c	68 00 00 00 00	 push	 OFFSET $SG53869
+  00231	68 00 00 00 00	 push	 OFFSET ?cerr@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cerr
+  00236	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
+  0023b	83 c4 08	 add	 esp, 8
+  0023e	50		 push	 eax
+  0023f	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
+  00244	83 c4 08	 add	 esp, 8
+  00247	50		 push	 eax
+  00248	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
+  0024d	83 c4 08	 add	 esp, 8
+  00250	8b c8		 mov	 ecx, eax
+  00252	e8 00 00 00 00	 call	 ??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@H@Z ; std::basic_ostream<char,std::char_traits<char> >::operator<<
+  00257	50		 push	 eax
+  00258	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
+  0025d	83 c4 08	 add	 esp, 8
 
 ; 63   :                 << ") has not been loaded\n";
 ; 64   :             exit(1);
 
-  00273	6a 01		 push	 1
-  00275	e8 00 00 00 00	 call	 _exit
+  00260	6a 01		 push	 1
+  00262	e8 00 00 00 00	 call	 _exit
 $LN11@Game:
 
 ; 65   :         }
 ; 66   :     }
-; 67   :     
-; 68   :     else
+; 67   :     else
 
-  0027a	eb 36		 jmp	 SHORT $LN9@Game
+  00267	eb 36		 jmp	 SHORT $LN9@Game
 $LN8@Game:
 
-; 69   :     {
-; 70   :         std::cerr << "Unable to initialize SDL_TTF. SDL_TTF error: " << TTF_GetError() << "\n";
+; 68   :     {
+; 69   :         std::cerr << "Unable to initialize SDL_TTF. SDL_TTF error: " << TTF_GetError() << "\n";
 
-  0027c	68 00 00 00 00	 push	 OFFSET $SG53877
-  00281	e8 00 00 00 00	 call	 _SDL_GetError
+  00269	68 00 00 00 00	 push	 OFFSET $SG53870
+  0026e	e8 00 00 00 00	 call	 _SDL_GetError
+  00273	50		 push	 eax
+  00274	68 00 00 00 00	 push	 OFFSET $SG53871
+  00279	68 00 00 00 00	 push	 OFFSET ?cerr@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cerr
+  0027e	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
+  00283	83 c4 08	 add	 esp, 8
   00286	50		 push	 eax
-  00287	68 00 00 00 00	 push	 OFFSET $SG53878
-  0028c	68 00 00 00 00	 push	 OFFSET ?cerr@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cerr
-  00291	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
-  00296	83 c4 08	 add	 esp, 8
-  00299	50		 push	 eax
-  0029a	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
-  0029f	83 c4 08	 add	 esp, 8
-  002a2	50		 push	 eax
-  002a3	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
-  002a8	83 c4 08	 add	 esp, 8
+  00287	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
+  0028c	83 c4 08	 add	 esp, 8
+  0028f	50		 push	 eax
+  00290	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
+  00295	83 c4 08	 add	 esp, 8
 
-; 71   :         exit(1);
+; 70   :         exit(1);
 
-  002ab	6a 01		 push	 1
-  002ad	e8 00 00 00 00	 call	 _exit
+  00298	6a 01		 push	 1
+  0029a	e8 00 00 00 00	 call	 _exit
 $LN9@Game:
 
-; 72   :     }
-; 73   :     
-; 74   :     m_gameWidth = t_windowWidth;
+; 71   :     }
+; 72   :     
+; 73   :     m_gameWidth = t_windowWidth;
 
-  002b2	8b 95 2c ff ff
+  0029f	8b 95 60 ff ff
 	ff		 mov	 edx, DWORD PTR _this$[ebp]
-  002b8	8b 45 14	 mov	 eax, DWORD PTR _t_windowWidth$[ebp]
-  002bb	89 02		 mov	 DWORD PTR [edx], eax
+  002a5	8b 45 14	 mov	 eax, DWORD PTR _t_windowWidth$[ebp]
+  002a8	89 02		 mov	 DWORD PTR [edx], eax
 
-; 75   :     m_gameHeight = t_windowHeight;
+; 74   :     m_gameHeight = t_windowHeight;
 
-  002bd	8b 8d 2c ff ff
+  002aa	8b 8d 60 ff ff
 	ff		 mov	 ecx, DWORD PTR _this$[ebp]
-  002c3	8b 55 18	 mov	 edx, DWORD PTR _t_windowHeight$[ebp]
-  002c6	89 51 04	 mov	 DWORD PTR [ecx+4], edx
+  002b0	8b 55 18	 mov	 edx, DWORD PTR _t_windowHeight$[ebp]
+  002b3	89 51 04	 mov	 DWORD PTR [ecx+4], edx
 
-; 76   :     m_running = true;
+; 75   :     m_running = true;
 
-  002c9	8b 85 2c ff ff
+  002b6	8b 85 60 ff ff
 	ff		 mov	 eax, DWORD PTR _this$[ebp]
-  002cf	c6 80 d4 00 00
-	00 01		 mov	 BYTE PTR [eax+212], 1
+  002bc	c6 80 a0 00 00
+	00 01		 mov	 BYTE PTR [eax+160], 1
 
-; 77   :     
-; 78   :     Graphics::Instance()->SetRenderer(m_renderer);
+; 76   :     
+; 77   :     Graphics::Instance()->SetRenderer(m_renderer);
 
-  002d6	8b 8d 2c ff ff
+  002c3	8b 8d 60 ff ff
 	ff		 mov	 ecx, DWORD PTR _this$[ebp]
-  002dc	8b 51 0c	 mov	 edx, DWORD PTR [ecx+12]
-  002df	52		 push	 edx
-  002e0	e8 00 00 00 00	 call	 ?Instance@Graphics@graphics@core@@SAPAV123@XZ ; core::graphics::Graphics::Instance
-  002e5	8b c8		 mov	 ecx, eax
-  002e7	e8 00 00 00 00	 call	 ?SetRenderer@Graphics@graphics@core@@QAEXPAUSDL_Renderer@@@Z ; core::graphics::Graphics::SetRenderer
+  002c9	8b 51 0c	 mov	 edx, DWORD PTR [ecx+12]
+  002cc	52		 push	 edx
+  002cd	e8 00 00 00 00	 call	 ?Instance@Graphics@graphics@core@@SAPAV123@XZ ; core::graphics::Graphics::Instance
+  002d2	8b c8		 mov	 ecx, eax
+  002d4	e8 00 00 00 00	 call	 ?SetRenderer@Graphics@graphics@core@@QAEXPAUSDL_Renderer@@@Z ; core::graphics::Graphics::SetRenderer
 
-; 79   :     
-; 80   :     m_game = {};
+; 78   :     
+; 79   :     m_game = {};
 
-  002ec	33 c0		 xor	 eax, eax
-  002ee	89 45 c4	 mov	 DWORD PTR $T2[ebp+148], eax
-  002f1	89 45 c8	 mov	 DWORD PTR $T2[ebp+152], eax
-  002f4	89 45 cc	 mov	 DWORD PTR $T2[ebp+156], eax
-  002f7	89 45 d0	 mov	 DWORD PTR $T2[ebp+160], eax
-  002fa	89 45 d4	 mov	 DWORD PTR $T2[ebp+164], eax
-  002fd	89 45 d8	 mov	 DWORD PTR $T2[ebp+168], eax
-  00300	89 45 dc	 mov	 DWORD PTR $T2[ebp+172], eax
-  00303	89 45 e0	 mov	 DWORD PTR $T2[ebp+176], eax
-  00306	8d 8d 30 ff ff
-	ff		 lea	 ecx, DWORD PTR $T2[ebp]
-  0030c	e8 00 00 00 00	 call	 ??0Board@gameplay@core@@QAE@XZ ; core::gameplay::Board::Board
-  00311	c6 45 fc 01	 mov	 BYTE PTR __$EHRec$[ebp+8], 1
-  00315	6a 58		 push	 88			; 00000058H
-  00317	6a 00		 push	 0
-  00319	8d 8d 58 ff ff
-	ff		 lea	 ecx, DWORD PTR $T2[ebp+40]
-  0031f	51		 push	 ecx
-  00320	e8 00 00 00 00	 call	 _memset
-  00325	83 c4 0c	 add	 esp, 12			; 0000000cH
-  00328	8d 4d b0	 lea	 ecx, DWORD PTR $T2[ebp+128]
-  0032b	e8 00 00 00 00	 call	 ??0Piece@gameplay@core@@QAE@XZ ; core::gameplay::Piece::Piece
-  00330	c6 45 fc 00	 mov	 BYTE PTR __$EHRec$[ebp+8], 0
-  00334	8d 95 30 ff ff
-	ff		 lea	 edx, DWORD PTR $T2[ebp]
-  0033a	52		 push	 edx
-  0033b	8b 8d 2c ff ff
-	ff		 mov	 ecx, DWORD PTR _this$[ebp]
-  00341	83 c1 10	 add	 ecx, 16			; 00000010H
-  00344	e8 00 00 00 00	 call	 ??4GameState@core@@QAEAAU01@$$QAU01@@Z
-  00349	8d 8d 30 ff ff
-	ff		 lea	 ecx, DWORD PTR $T2[ebp]
-  0034f	e8 00 00 00 00	 call	 ??1GameState@core@@QAE@XZ
+  002d9	68 80 00 00 00	 push	 128			; 00000080H
+  002de	6a 00		 push	 0
+  002e0	8d 85 64 ff ff
+	ff		 lea	 eax, DWORD PTR $T6[ebp]
+  002e6	50		 push	 eax
+  002e7	e8 00 00 00 00	 call	 _memset
+  002ec	83 c4 0c	 add	 esp, 12			; 0000000cH
+  002ef	8b bd 60 ff ff
+	ff		 mov	 edi, DWORD PTR _this$[ebp]
+  002f5	83 c7 10	 add	 edi, 16			; 00000010H
+  002f8	b9 20 00 00 00	 mov	 ecx, 32			; 00000020H
+  002fd	8d b5 64 ff ff
+	ff		 lea	 esi, DWORD PTR $T6[ebp]
+  00303	f3 a5		 rep movsd
 
-; 81   :     m_game.board.Init(BOARD_ROWS, BOARD_COLS, BOARD_VISIBLE_ROWS, BOARD_GRID_SIZE);
+; 80   :     m_game.board = new gameplay::Board(BOARD_ROWS, BOARD_COLS, BOARD_VISIBLE_ROWS, BOARD_GRID_SIZE);
 
-  00354	6a 1e		 push	 30			; 0000001eH
-  00356	6a 14		 push	 20			; 00000014H
-  00358	6a 0a		 push	 10			; 0000000aH
-  0035a	6a 16		 push	 22			; 00000016H
-  0035c	8b 8d 2c ff ff
-	ff		 mov	 ecx, DWORD PTR _this$[ebp]
-  00362	83 c1 10	 add	 ecx, 16			; 00000010H
-  00365	e8 00 00 00 00	 call	 ?Init@Board@gameplay@core@@QAEXHHHH@Z ; core::gameplay::Board::Init
-
-; 82   :     
-; 83   :     m_input = {};
-
-  0036a	33 c0		 xor	 eax, eax
-  0036c	89 45 e4	 mov	 DWORD PTR $T3[ebp], eax
-  0036f	89 45 e8	 mov	 DWORD PTR $T3[ebp+4], eax
-  00372	89 45 ec	 mov	 DWORD PTR $T3[ebp+8], eax
-  00375	8b 8d 2c ff ff
-	ff		 mov	 ecx, DWORD PTR _this$[ebp]
-  0037b	81 c1 c4 00 00
-	00		 add	 ecx, 196		; 000000c4H
-  00381	8b 55 e4	 mov	 edx, DWORD PTR $T3[ebp]
-  00384	89 11		 mov	 DWORD PTR [ecx], edx
-  00386	8b 45 e8	 mov	 eax, DWORD PTR $T3[ebp+4]
-  00389	89 41 04	 mov	 DWORD PTR [ecx+4], eax
-  0038c	8b 55 ec	 mov	 edx, DWORD PTR $T3[ebp+8]
-  0038f	89 51 08	 mov	 DWORD PTR [ecx+8], edx
-
-; 84   :     
-; 85   :     srand((u32)time(NULL));
-
-  00392	6a 00		 push	 0
-  00394	e8 00 00 00 00	 call	 _time
-  00399	83 c4 04	 add	 esp, 4
-  0039c	50		 push	 eax
-  0039d	e8 00 00 00 00	 call	 _srand
-  003a2	83 c4 04	 add	 esp, 4
-
-; 86   : }
-
-  003a5	c7 45 fc ff ff
+  00305	6a 28		 push	 40			; 00000028H
+  00307	e8 00 00 00 00	 call	 ??2@YAPAXI@Z		; operator new
+  0030c	83 c4 04	 add	 esp, 4
+  0030f	89 85 5c ff ff
+	ff		 mov	 DWORD PTR $T5[ebp], eax
+  00315	c7 45 fc 00 00
+	00 00		 mov	 DWORD PTR __$EHRec$[ebp+8], 0
+  0031c	83 bd 5c ff ff
+	ff 00		 cmp	 DWORD PTR $T5[ebp], 0
+  00323	74 1b		 je	 SHORT $LN13@Game
+  00325	6a 1e		 push	 30			; 0000001eH
+  00327	6a 14		 push	 20			; 00000014H
+  00329	6a 0a		 push	 10			; 0000000aH
+  0032b	6a 16		 push	 22			; 00000016H
+  0032d	8b 8d 5c ff ff
+	ff		 mov	 ecx, DWORD PTR $T5[ebp]
+  00333	e8 00 00 00 00	 call	 ??0Board@gameplay@core@@QAE@HHHH@Z ; core::gameplay::Board::Board
+  00338	89 85 58 ff ff
+	ff		 mov	 DWORD PTR tv230[ebp], eax
+  0033e	eb 0a		 jmp	 SHORT $LN14@Game
+$LN13@Game:
+  00340	c7 85 58 ff ff
+	ff 00 00 00 00	 mov	 DWORD PTR tv230[ebp], 0
+$LN14@Game:
+  0034a	8b 8d 58 ff ff
+	ff		 mov	 ecx, DWORD PTR tv230[ebp]
+  00350	89 8d 4c ff ff
+	ff		 mov	 DWORD PTR $T3[ebp], ecx
+  00356	c7 45 fc ff ff
 	ff ff		 mov	 DWORD PTR __$EHRec$[ebp+8], -1
-  003ac	8b 85 2c ff ff
+  0035d	8b 95 60 ff ff
+	ff		 mov	 edx, DWORD PTR _this$[ebp]
+  00363	8b 85 4c ff ff
+	ff		 mov	 eax, DWORD PTR $T3[ebp]
+  00369	89 42 10	 mov	 DWORD PTR [edx+16], eax
+
+; 81   :     
+; 82   :     m_game.piece = new gameplay::Piece(m_game.board, 0, 0, 0, 0);
+
+  0036c	6a 14		 push	 20			; 00000014H
+  0036e	e8 00 00 00 00	 call	 ??2@YAPAXI@Z		; operator new
+  00373	83 c4 04	 add	 esp, 4
+  00376	89 85 54 ff ff
+	ff		 mov	 DWORD PTR $T4[ebp], eax
+  0037c	c7 45 fc 01 00
+	00 00		 mov	 DWORD PTR __$EHRec$[ebp+8], 1
+  00383	83 bd 54 ff ff
+	ff 00		 cmp	 DWORD PTR $T4[ebp], 0
+  0038a	74 25		 je	 SHORT $LN15@Game
+  0038c	6a 00		 push	 0
+  0038e	6a 00		 push	 0
+  00390	6a 00		 push	 0
+  00392	6a 00		 push	 0
+  00394	8b 8d 60 ff ff
+	ff		 mov	 ecx, DWORD PTR _this$[ebp]
+  0039a	8b 51 10	 mov	 edx, DWORD PTR [ecx+16]
+  0039d	52		 push	 edx
+  0039e	8b 8d 54 ff ff
+	ff		 mov	 ecx, DWORD PTR $T4[ebp]
+  003a4	e8 00 00 00 00	 call	 ??0Piece@gameplay@core@@QAE@PAVBoard@12@HHHH@Z ; core::gameplay::Piece::Piece
+  003a9	89 85 50 ff ff
+	ff		 mov	 DWORD PTR tv250[ebp], eax
+  003af	eb 0a		 jmp	 SHORT $LN16@Game
+$LN15@Game:
+  003b1	c7 85 50 ff ff
+	ff 00 00 00 00	 mov	 DWORD PTR tv250[ebp], 0
+$LN16@Game:
+  003bb	8b 85 50 ff ff
+	ff		 mov	 eax, DWORD PTR tv250[ebp]
+  003c1	89 85 48 ff ff
+	ff		 mov	 DWORD PTR $T2[ebp], eax
+  003c7	c7 45 fc ff ff
+	ff ff		 mov	 DWORD PTR __$EHRec$[ebp+8], -1
+  003ce	8b 8d 60 ff ff
+	ff		 mov	 ecx, DWORD PTR _this$[ebp]
+  003d4	8b 95 48 ff ff
+	ff		 mov	 edx, DWORD PTR $T2[ebp]
+  003da	89 51 6c	 mov	 DWORD PTR [ecx+108], edx
+
+; 83   :     
+; 84   :     m_input = {};
+
+  003dd	33 c0		 xor	 eax, eax
+  003df	89 45 e4	 mov	 DWORD PTR $T7[ebp], eax
+  003e2	89 45 e8	 mov	 DWORD PTR $T7[ebp+4], eax
+  003e5	89 45 ec	 mov	 DWORD PTR $T7[ebp+8], eax
+  003e8	8b 8d 60 ff ff
+	ff		 mov	 ecx, DWORD PTR _this$[ebp]
+  003ee	81 c1 90 00 00
+	00		 add	 ecx, 144		; 00000090H
+  003f4	8b 55 e4	 mov	 edx, DWORD PTR $T7[ebp]
+  003f7	89 11		 mov	 DWORD PTR [ecx], edx
+  003f9	8b 45 e8	 mov	 eax, DWORD PTR $T7[ebp+4]
+  003fc	89 41 04	 mov	 DWORD PTR [ecx+4], eax
+  003ff	8b 55 ec	 mov	 edx, DWORD PTR $T7[ebp+8]
+  00402	89 51 08	 mov	 DWORD PTR [ecx+8], edx
+
+; 85   :     
+; 86   :     srand((u32)time(NULL));
+
+  00405	6a 00		 push	 0
+  00407	e8 00 00 00 00	 call	 _time
+  0040c	83 c4 04	 add	 esp, 4
+  0040f	50		 push	 eax
+  00410	e8 00 00 00 00	 call	 _srand
+  00415	83 c4 04	 add	 esp, 4
+
+; 87   : }
+
+  00418	8b 85 60 ff ff
 	ff		 mov	 eax, DWORD PTR _this$[ebp]
 $LN12@Game:
-  003b2	8b 4d f4	 mov	 ecx, DWORD PTR __$EHRec$[ebp]
-  003b5	64 89 0d 00 00
+  0041e	8b 4d f4	 mov	 ecx, DWORD PTR __$EHRec$[ebp]
+  00421	64 89 0d 00 00
 	00 00		 mov	 DWORD PTR fs:0, ecx
-  003bc	59		 pop	 ecx
-  003bd	8b 4d f0	 mov	 ecx, DWORD PTR __$ArrayPad$[ebp]
-  003c0	33 cd		 xor	 ecx, ebp
-  003c2	e8 00 00 00 00	 call	 @__security_check_cookie@4
-  003c7	8b e5		 mov	 esp, ebp
-  003c9	5d		 pop	 ebp
-  003ca	c2 1c 00	 ret	 28			; 0000001cH
+  00428	59		 pop	 ecx
+  00429	5f		 pop	 edi
+  0042a	5e		 pop	 esi
+  0042b	8b 4d f0	 mov	 ecx, DWORD PTR __$ArrayPad$[ebp]
+  0042e	33 cd		 xor	 ecx, ebp
+  00430	e8 00 00 00 00	 call	 @__security_check_cookie@4
+  00435	8b e5		 mov	 esp, ebp
+  00437	5d		 pop	 ebp
+  00438	c2 1c 00	 ret	 28			; 0000001cH
 _TEXT	ENDS
 text$x	SEGMENT
 __unwindfunclet$??0Game@core@@QAE@PBDHHHH0H@Z$0:
-  00000	8b 8d 2c ff ff
-	ff		 mov	 ecx, DWORD PTR _this$[ebp]
-  00006	83 c1 10	 add	 ecx, 16			; 00000010H
-  00009	e9 00 00 00 00	 jmp	 ??1GameState@core@@QAE@XZ
+  00000	6a 28		 push	 40			; 00000028H
+  00002	8b 85 5c ff ff
+	ff		 mov	 eax, DWORD PTR $T5[ebp]
+  00008	50		 push	 eax
+  00009	e8 00 00 00 00	 call	 ??3@YAXPAXI@Z		; operator delete
+  0000e	83 c4 08	 add	 esp, 8
+  00011	c3		 ret	 0
 __unwindfunclet$??0Game@core@@QAE@PBDHHHH0H@Z$1:
-  0000e	8d 8d 30 ff ff
-	ff		 lea	 ecx, DWORD PTR $T2[ebp]
-  00014	e9 00 00 00 00	 jmp	 ??1Board@gameplay@core@@QAE@XZ
+  00012	6a 14		 push	 20			; 00000014H
+  00014	8b 85 54 ff ff
+	ff		 mov	 eax, DWORD PTR $T4[ebp]
+  0001a	50		 push	 eax
+  0001b	e8 00 00 00 00	 call	 ??3@YAXPAXI@Z		; operator delete
+  00020	83 c4 08	 add	 esp, 8
+  00023	c3		 ret	 0
 __ehhandler$??0Game@core@@QAE@PBDHHHH0H@Z:
-  00019	8b 54 24 08	 mov	 edx, DWORD PTR [esp+8]
-  0001d	8d 42 0c	 lea	 eax, DWORD PTR [edx+12]
-  00020	8b 8a 34 ff ff
-	ff		 mov	 ecx, DWORD PTR [edx-204]
-  00026	33 c8		 xor	 ecx, eax
-  00028	e8 00 00 00 00	 call	 @__security_check_cookie@4
-  0002d	8b 4a fc	 mov	 ecx, DWORD PTR [edx-4]
-  00030	33 c8		 xor	 ecx, eax
-  00032	e8 00 00 00 00	 call	 @__security_check_cookie@4
-  00037	b8 00 00 00 00	 mov	 eax, OFFSET __ehfuncinfo$??0Game@core@@QAE@PBDHHHH0H@Z
-  0003c	e9 00 00 00 00	 jmp	 ___CxxFrameHandler3
+  00024	8b 54 24 08	 mov	 edx, DWORD PTR [esp+8]
+  00028	8d 42 0c	 lea	 eax, DWORD PTR [edx+12]
+  0002b	8b 8a 48 ff ff
+	ff		 mov	 ecx, DWORD PTR [edx-184]
+  00031	33 c8		 xor	 ecx, eax
+  00033	e8 00 00 00 00	 call	 @__security_check_cookie@4
+  00038	8b 4a fc	 mov	 ecx, DWORD PTR [edx-4]
+  0003b	33 c8		 xor	 ecx, eax
+  0003d	e8 00 00 00 00	 call	 @__security_check_cookie@4
+  00042	b8 00 00 00 00	 mov	 eax, OFFSET __ehfuncinfo$??0Game@core@@QAE@PBDHHHH0H@Z
+  00047	e9 00 00 00 00	 jmp	 ___CxxFrameHandler3
 text$x	ENDS
 ??0Game@core@@QAE@PBDHHHH0H@Z ENDP			; core::Game::Game
 ; Function compile flags: /Odtp
@@ -12857,15 +12695,15 @@ _this$ = -4						; size = 4
 ?UpdateGameOver@Game@core@@AAEXXZ PROC			; core::Game::UpdateGameOver
 ; _this$ = ecx
 
-; 165  : {
+; 168  : {
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
   00003	51		 push	 ecx
   00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
 
-; 166  :     
-; 167  : }
+; 169  :     
+; 170  : }
 
   00007	8b e5		 mov	 esp, ebp
   00009	5d		 pop	 ebp
@@ -12879,15 +12717,15 @@ _this$ = -4						; size = 4
 ?UpdateGameLine@Game@core@@AAEXXZ PROC			; core::Game::UpdateGameLine
 ; _this$ = ecx
 
-; 160  : {
+; 163  : {
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
   00003	51		 push	 ecx
   00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
 
-; 161  :     
-; 162  : }
+; 164  :     
+; 165  : }
 
   00007	8b e5		 mov	 esp, ebp
   00009	5d		 pop	 ebp
@@ -12901,15 +12739,15 @@ _this$ = -4						; size = 4
 ?UpdateGamePlay@Game@core@@AAEXXZ PROC			; core::Game::UpdateGamePlay
 ; _this$ = ecx
 
-; 155  : {
+; 158  : {
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
   00003	51		 push	 ecx
   00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
 
-; 156  :     
-; 157  : }
+; 159  :     
+; 160  : }
 
   00007	8b e5		 mov	 esp, ebp
   00009	5d		 pop	 ebp
@@ -12923,378 +12761,157 @@ _this$ = -4						; size = 4
 ?UpdateGameStart@Game@core@@AAEXXZ PROC			; core::Game::UpdateGameStart
 ; _this$ = ecx
 
-; 131  : {
+; 134  : {
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
   00003	51		 push	 ecx
   00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
 
-; 132  :     if (m_input.dup > 0)
+; 135  :     if (m_input.dup > 0)
 
   00007	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  0000a	0f be 88 cc 00
-	00 00		 movsx	 ecx, BYTE PTR [eax+204]
+  0000a	0f be 88 98 00
+	00 00		 movsx	 ecx, BYTE PTR [eax+152]
   00011	85 c9		 test	 ecx, ecx
-  00013	7e 15		 jle	 SHORT $LN2@UpdateGame
+  00013	7e 0f		 jle	 SHORT $LN2@UpdateGame
 
-; 133  :     {
-; 134  :         ++m_game.startLevel;
+; 136  :     {
+; 137  :         ++m_game.startLevel;
 
   00015	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
-  00018	8b 82 a8 00 00
-	00		 mov	 eax, DWORD PTR [edx+168]
-  0001e	83 c0 01	 add	 eax, 1
-  00021	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  00024	89 81 a8 00 00
-	00		 mov	 DWORD PTR [ecx+168], eax
+  00018	8b 42 74	 mov	 eax, DWORD PTR [edx+116]
+  0001b	83 c0 01	 add	 eax, 1
+  0001e	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  00021	89 41 74	 mov	 DWORD PTR [ecx+116], eax
 $LN2@UpdateGame:
 
-; 135  :     }
-; 136  :     
-; 137  :     if (m_input.ddown > 0 && m_game.startLevel > 0)
+; 138  :     }
+; 139  :     
+; 140  :     if (m_input.ddown > 0 && m_game.startLevel > 0)
 
-  0002a	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
-  0002d	0f be 82 cd 00
-	00 00		 movsx	 eax, BYTE PTR [edx+205]
-  00034	85 c0		 test	 eax, eax
-  00036	7e 21		 jle	 SHORT $LN3@UpdateGame
-  00038	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  0003b	83 b9 a8 00 00
-	00 00		 cmp	 DWORD PTR [ecx+168], 0
-  00042	7e 15		 jle	 SHORT $LN3@UpdateGame
+  00024	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
+  00027	0f be 82 99 00
+	00 00		 movsx	 eax, BYTE PTR [edx+153]
+  0002e	85 c0		 test	 eax, eax
+  00030	7e 18		 jle	 SHORT $LN3@UpdateGame
+  00032	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  00035	83 79 74 00	 cmp	 DWORD PTR [ecx+116], 0
+  00039	7e 0f		 jle	 SHORT $LN3@UpdateGame
 
-; 138  :     {
-; 139  :         --m_game.startLevel;
+; 141  :     {
+; 142  :         --m_game.startLevel;
 
-  00044	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
-  00047	8b 82 a8 00 00
-	00		 mov	 eax, DWORD PTR [edx+168]
-  0004d	83 e8 01	 sub	 eax, 1
-  00050	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  00053	89 81 a8 00 00
-	00		 mov	 DWORD PTR [ecx+168], eax
+  0003b	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
+  0003e	8b 42 74	 mov	 eax, DWORD PTR [edx+116]
+  00041	83 e8 01	 sub	 eax, 1
+  00044	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  00047	89 41 74	 mov	 DWORD PTR [ecx+116], eax
 $LN3@UpdateGame:
 
-; 140  :     }
-; 141  :     
-; 142  :     if (m_input.denter > 0)
+; 143  :     }
+; 144  :     
+; 145  :     if (m_input.denter > 0)
 
-  00059	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
-  0005c	0f be 82 cf 00
-	00 00		 movsx	 eax, BYTE PTR [edx+207]
-  00063	85 c0		 test	 eax, eax
-  00065	7e 52		 jle	 SHORT $LN1@UpdateGame
+  0004a	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
+  0004d	0f be 82 9b 00
+	00 00		 movsx	 eax, BYTE PTR [edx+155]
+  00054	85 c0		 test	 eax, eax
+  00056	7e 4a		 jle	 SHORT $LN1@UpdateGame
 
-; 143  :     {
-; 144  :         m_game.board.Clear();
+; 146  :     {
+; 147  :         m_game.board->Clear();
 
-  00067	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  0006a	83 c1 10	 add	 ecx, 16			; 00000010H
-  0006d	e8 00 00 00 00	 call	 ?Clear@Board@gameplay@core@@QAEXXZ ; core::gameplay::Board::Clear
+  00058	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  0005b	8b 49 10	 mov	 ecx, DWORD PTR [ecx+16]
+  0005e	e8 00 00 00 00	 call	 ?Clear@Board@gameplay@core@@QAEXXZ ; core::gameplay::Board::Clear
 
-; 145  :         m_game.level = m_game.startLevel;
+; 148  :         m_game.level = m_game.startLevel;
 
-  00072	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  00075	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
-  00078	8b 82 a8 00 00
-	00		 mov	 eax, DWORD PTR [edx+168]
-  0007e	89 81 ac 00 00
-	00		 mov	 DWORD PTR [ecx+172], eax
+  00063	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
+  00066	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
+  00069	8b 48 74	 mov	 ecx, DWORD PTR [eax+116]
+  0006c	89 4a 78	 mov	 DWORD PTR [edx+120], ecx
 
-; 146  :         m_game.lineCount = 0;
+; 149  :         m_game.lineCount = 0;
 
-  00084	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  00087	c7 81 b0 00 00
-	00 00 00 00 00	 mov	 DWORD PTR [ecx+176], 0
+  0006f	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
+  00072	c7 42 7c 00 00
+	00 00		 mov	 DWORD PTR [edx+124], 0
 
-; 147  :         m_game.points = 0;
+; 150  :         m_game.points = 0;
 
-  00091	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
-  00094	c7 82 b4 00 00
-	00 00 00 00 00	 mov	 DWORD PTR [edx+180], 0
+  00079	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
+  0007c	c7 80 80 00 00
+	00 00 00 00 00	 mov	 DWORD PTR [eax+128], 0
 
-; 148  :         m_game.piece.SpawnNewPiece();
+; 151  :         m_game.piece->SpawnNewPiece(&m_game);
 
-  0009e	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  000a1	81 c1 90 00 00
-	00		 add	 ecx, 144		; 00000090H
-  000a7	e8 00 00 00 00	 call	 ?SpawnNewPiece@Piece@gameplay@core@@QAEXXZ ; core::gameplay::Piece::SpawnNewPiece
+  00086	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  00089	83 c1 10	 add	 ecx, 16			; 00000010H
+  0008c	51		 push	 ecx
+  0008d	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
+  00090	8b 4a 6c	 mov	 ecx, DWORD PTR [edx+108]
+  00093	e8 00 00 00 00	 call	 ?SpawnNewPiece@Piece@gameplay@core@@QAEXPAUGameState@@@Z ; core::gameplay::Piece::SpawnNewPiece
 
-; 149  :         m_game.phase = GAME_PHASE_PLAY;
+; 152  :         m_game.phase = GAME_PHASE_PLAY;
 
-  000ac	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  000af	c7 80 a4 00 00
-	00 01 00 00 00	 mov	 DWORD PTR [eax+164], 1
+  00098	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
+  0009b	c7 40 70 01 00
+	00 00		 mov	 DWORD PTR [eax+112], 1
 $LN1@UpdateGame:
 
-; 150  :     }
-; 151  :     
-; 152  : }
+; 153  :     }
+; 154  :     
+; 155  : }
 
-  000b9	8b e5		 mov	 esp, ebp
-  000bb	5d		 pop	 ebp
-  000bc	c3		 ret	 0
+  000a2	8b e5		 mov	 esp, ebp
+  000a4	5d		 pop	 ebp
+  000a5	c3		 ret	 0
 ?UpdateGameStart@Game@core@@AAEXXZ ENDP			; core::Game::UpdateGameStart
 _TEXT	ENDS
 ; Function compile flags: /Odtp
-;	COMDAT ??4GameState@core@@QAEAAU01@$$QAU01@@Z
-_TEXT	SEGMENT
-_$S1$1 = -8						; size = 4
-_this$ = -4						; size = 4
-___that$ = 8						; size = 4
-??4GameState@core@@QAEAAU01@$$QAU01@@Z PROC		; core::GameState::operator=, COMDAT
-; _this$ = ecx
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	83 ec 08	 sub	 esp, 8
-  00006	56		 push	 esi
-  00007	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
-  0000a	8b 45 08	 mov	 eax, DWORD PTR ___that$[ebp]
-  0000d	50		 push	 eax
-  0000e	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  00011	e8 00 00 00 00	 call	 ??4Board@gameplay@core@@QAEAAV012@$$QAV012@@Z
-  00016	c7 45 f8 00 00
-	00 00		 mov	 DWORD PTR _$S1$1[ebp], 0
-  0001d	eb 09		 jmp	 SHORT $LN4@operator
-$LN2@operator:
-  0001f	8b 4d f8	 mov	 ecx, DWORD PTR _$S1$1[ebp]
-  00022	83 c1 01	 add	 ecx, 1
-  00025	89 4d f8	 mov	 DWORD PTR _$S1$1[ebp], ecx
-$LN4@operator:
-  00028	83 7d f8 16	 cmp	 DWORD PTR _$S1$1[ebp], 22 ; 00000016H
-  0002c	73 16		 jae	 SHORT $LN3@operator
-  0002e	8b 55 f8	 mov	 edx, DWORD PTR _$S1$1[ebp]
-  00031	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  00034	8b 4d f8	 mov	 ecx, DWORD PTR _$S1$1[ebp]
-  00037	8b 75 08	 mov	 esi, DWORD PTR ___that$[ebp]
-  0003a	8b 4c 8e 28	 mov	 ecx, DWORD PTR [esi+ecx*4+40]
-  0003e	89 4c 90 28	 mov	 DWORD PTR [eax+edx*4+40], ecx
-  00042	eb db		 jmp	 SHORT $LN2@operator
-$LN3@operator:
-  00044	8b 55 08	 mov	 edx, DWORD PTR ___that$[ebp]
-  00047	81 c2 80 00 00
-	00		 add	 edx, 128		; 00000080H
-  0004d	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  00050	05 80 00 00 00	 add	 eax, 128		; 00000080H
-  00055	8b 0a		 mov	 ecx, DWORD PTR [edx]
-  00057	89 08		 mov	 DWORD PTR [eax], ecx
-  00059	8b 4a 04	 mov	 ecx, DWORD PTR [edx+4]
-  0005c	89 48 04	 mov	 DWORD PTR [eax+4], ecx
-  0005f	8b 4a 08	 mov	 ecx, DWORD PTR [edx+8]
-  00062	89 48 08	 mov	 DWORD PTR [eax+8], ecx
-  00065	8b 4a 0c	 mov	 ecx, DWORD PTR [edx+12]
-  00068	89 48 0c	 mov	 DWORD PTR [eax+12], ecx
-  0006b	8b 52 10	 mov	 edx, DWORD PTR [edx+16]
-  0006e	89 50 10	 mov	 DWORD PTR [eax+16], edx
-  00071	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  00074	8b 4d 08	 mov	 ecx, DWORD PTR ___that$[ebp]
-  00077	8b 91 94 00 00
-	00		 mov	 edx, DWORD PTR [ecx+148]
-  0007d	89 90 94 00 00
-	00		 mov	 DWORD PTR [eax+148], edx
-  00083	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  00086	8b 4d 08	 mov	 ecx, DWORD PTR ___that$[ebp]
-  00089	8b 91 98 00 00
-	00		 mov	 edx, DWORD PTR [ecx+152]
-  0008f	89 90 98 00 00
-	00		 mov	 DWORD PTR [eax+152], edx
-  00095	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  00098	8b 4d 08	 mov	 ecx, DWORD PTR ___that$[ebp]
-  0009b	8b 91 9c 00 00
-	00		 mov	 edx, DWORD PTR [ecx+156]
-  000a1	89 90 9c 00 00
-	00		 mov	 DWORD PTR [eax+156], edx
-  000a7	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  000aa	8b 4d 08	 mov	 ecx, DWORD PTR ___that$[ebp]
-  000ad	8b 91 a0 00 00
-	00		 mov	 edx, DWORD PTR [ecx+160]
-  000b3	89 90 a0 00 00
-	00		 mov	 DWORD PTR [eax+160], edx
-  000b9	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  000bc	8b 4d 08	 mov	 ecx, DWORD PTR ___that$[ebp]
-  000bf	8b 91 a4 00 00
-	00		 mov	 edx, DWORD PTR [ecx+164]
-  000c5	89 90 a4 00 00
-	00		 mov	 DWORD PTR [eax+164], edx
-  000cb	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  000ce	8b 4d 08	 mov	 ecx, DWORD PTR ___that$[ebp]
-  000d1	8b 91 a8 00 00
-	00		 mov	 edx, DWORD PTR [ecx+168]
-  000d7	89 90 a8 00 00
-	00		 mov	 DWORD PTR [eax+168], edx
-  000dd	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  000e0	8b 4d 08	 mov	 ecx, DWORD PTR ___that$[ebp]
-  000e3	8b 91 ac 00 00
-	00		 mov	 edx, DWORD PTR [ecx+172]
-  000e9	89 90 ac 00 00
-	00		 mov	 DWORD PTR [eax+172], edx
-  000ef	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  000f2	8b 4d 08	 mov	 ecx, DWORD PTR ___that$[ebp]
-  000f5	8b 91 b0 00 00
-	00		 mov	 edx, DWORD PTR [ecx+176]
-  000fb	89 90 b0 00 00
-	00		 mov	 DWORD PTR [eax+176], edx
-  00101	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  00104	5e		 pop	 esi
-  00105	8b e5		 mov	 esp, ebp
-  00107	5d		 pop	 ebp
-  00108	c2 04 00	 ret	 4
-??4GameState@core@@QAEAAU01@$$QAU01@@Z ENDP		; core::GameState::operator=
-_TEXT	ENDS
-; Function compile flags: /Odtp
-;	COMDAT ??1GameState@core@@QAE@XZ
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-??1GameState@core@@QAE@XZ PROC				; core::GameState::~GameState, COMDAT
-; _this$ = ecx
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	51		 push	 ecx
-  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
-  00007	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  0000a	e8 00 00 00 00	 call	 ??1Board@gameplay@core@@QAE@XZ
-  0000f	8b e5		 mov	 esp, ebp
-  00011	5d		 pop	 ebp
-  00012	c3		 ret	 0
-??1GameState@core@@QAE@XZ ENDP				; core::GameState::~GameState
-_TEXT	ENDS
-; Function compile flags: /Odtp
-;	COMDAT ??0GameState@core@@QAE@XZ
-_TEXT	SEGMENT
-_this$ = -16						; size = 4
-__$EHRec$ = -12						; size = 12
-??0GameState@core@@QAE@XZ PROC				; core::GameState::GameState, COMDAT
-; _this$ = ecx
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	6a ff		 push	 -1
-  00005	68 00 00 00 00	 push	 __ehhandler$??0GameState@core@@QAE@XZ
-  0000a	64 a1 00 00 00
-	00		 mov	 eax, DWORD PTR fs:0
-  00010	50		 push	 eax
-  00011	51		 push	 ecx
-  00012	a1 00 00 00 00	 mov	 eax, DWORD PTR ___security_cookie
-  00017	33 c5		 xor	 eax, ebp
-  00019	50		 push	 eax
-  0001a	8d 45 f4	 lea	 eax, DWORD PTR __$EHRec$[ebp]
-  0001d	64 a3 00 00 00
-	00		 mov	 DWORD PTR fs:0, eax
-  00023	89 4d f0	 mov	 DWORD PTR _this$[ebp], ecx
-  00026	8b 4d f0	 mov	 ecx, DWORD PTR _this$[ebp]
-  00029	e8 00 00 00 00	 call	 ??0Board@gameplay@core@@QAE@XZ ; core::gameplay::Board::Board
-  0002e	c7 45 fc 00 00
-	00 00		 mov	 DWORD PTR __$EHRec$[ebp+8], 0
-  00035	8b 4d f0	 mov	 ecx, DWORD PTR _this$[ebp]
-  00038	81 c1 80 00 00
-	00		 add	 ecx, 128		; 00000080H
-  0003e	e8 00 00 00 00	 call	 ??0Piece@gameplay@core@@QAE@XZ ; core::gameplay::Piece::Piece
-  00043	c7 45 fc ff ff
-	ff ff		 mov	 DWORD PTR __$EHRec$[ebp+8], -1
-  0004a	8b 45 f0	 mov	 eax, DWORD PTR _this$[ebp]
-  0004d	8b 4d f4	 mov	 ecx, DWORD PTR __$EHRec$[ebp]
-  00050	64 89 0d 00 00
-	00 00		 mov	 DWORD PTR fs:0, ecx
-  00057	59		 pop	 ecx
-  00058	8b e5		 mov	 esp, ebp
-  0005a	5d		 pop	 ebp
-  0005b	c3		 ret	 0
-_TEXT	ENDS
-;	COMDAT text$x
-text$x	SEGMENT
-__unwindfunclet$??0GameState@core@@QAE@XZ$0:
-  00000	8b 4d f0	 mov	 ecx, DWORD PTR _this$[ebp]
-  00003	e9 00 00 00 00	 jmp	 ??1Board@gameplay@core@@QAE@XZ
-__ehhandler$??0GameState@core@@QAE@XZ:
-  00008	8b 54 24 08	 mov	 edx, DWORD PTR [esp+8]
-  0000c	8d 42 0c	 lea	 eax, DWORD PTR [edx+12]
-  0000f	8b 4a f8	 mov	 ecx, DWORD PTR [edx-8]
-  00012	33 c8		 xor	 ecx, eax
-  00014	e8 00 00 00 00	 call	 @__security_check_cookie@4
-  00019	b8 00 00 00 00	 mov	 eax, OFFSET __ehfuncinfo$??0GameState@core@@QAE@XZ
-  0001e	e9 00 00 00 00	 jmp	 ___CxxFrameHandler3
-text$x	ENDS
-??0GameState@core@@QAE@XZ ENDP				; core::GameState::GameState
-; Function compile flags: /Odtp
 ; File c:\dev\tetris\src\piece.hpp
-;	COMDAT ??0Piece@gameplay@core@@QAE@XZ
+;	COMDAT ??0Piece@gameplay@core@@QAE@PAVBoard@12@HHHH@Z
 _TEXT	SEGMENT
 _this$ = -4						; size = 4
-??0Piece@gameplay@core@@QAE@XZ PROC			; core::gameplay::Piece::Piece, COMDAT
+_t_board$ = 8						; size = 4
+_t_tetrominoIndex$ = 12					; size = 4
+_t_rowOffset$ = 16					; size = 4
+_t_colOffset$ = 20					; size = 4
+_t_rotation$ = 24					; size = 4
+??0Piece@gameplay@core@@QAE@PAVBoard@12@HHHH@Z PROC	; core::gameplay::Piece::Piece, COMDAT
 ; _this$ = ecx
 
-; 24   :             Piece() {}
+; 27   :             Piece(Board *t_board, i32 t_tetrominoIndex, i32 t_rowOffset, i32 t_colOffset, i32 t_rotation)
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
   00003	51		 push	 ecx
   00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
+
+; 28   :                 : m_board(t_board), m_tetrominoIndex(t_tetrominoIndex), m_rowOffset(t_rowOffset), m_colOffset(t_colOffset), m_rotation(t_rotation) {}
+
   00007	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  0000a	8b e5		 mov	 esp, ebp
-  0000c	5d		 pop	 ebp
-  0000d	c3		 ret	 0
-??0Piece@gameplay@core@@QAE@XZ ENDP			; core::gameplay::Piece::Piece
-_TEXT	ENDS
-; Function compile flags: /Odtp
-;	COMDAT ??4Board@gameplay@core@@QAEAAV012@$$QAV012@@Z
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-___that$ = 8						; size = 4
-??4Board@gameplay@core@@QAEAAV012@$$QAV012@@Z PROC	; core::gameplay::Board::operator=, COMDAT
-; _this$ = ecx
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	51		 push	 ecx
-  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
-  00007	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  0000a	8b 4d 08	 mov	 ecx, DWORD PTR ___that$[ebp]
-  0000d	8b 11		 mov	 edx, DWORD PTR [ecx]
-  0000f	89 10		 mov	 DWORD PTR [eax], edx
-  00011	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  00014	8b 4d 08	 mov	 ecx, DWORD PTR ___that$[ebp]
-  00017	8b 51 04	 mov	 edx, DWORD PTR [ecx+4]
-  0001a	89 50 04	 mov	 DWORD PTR [eax+4], edx
-  0001d	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  00020	8b 4d 08	 mov	 ecx, DWORD PTR ___that$[ebp]
-  00023	8b 51 08	 mov	 edx, DWORD PTR [ecx+8]
-  00026	89 50 08	 mov	 DWORD PTR [eax+8], edx
-  00029	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  0002c	8b 4d 08	 mov	 ecx, DWORD PTR ___that$[ebp]
-  0002f	8b 51 0c	 mov	 edx, DWORD PTR [ecx+12]
-  00032	89 50 0c	 mov	 DWORD PTR [eax+12], edx
-  00035	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  00038	8b 4d 08	 mov	 ecx, DWORD PTR ___that$[ebp]
-  0003b	8b 51 10	 mov	 edx, DWORD PTR [ecx+16]
-  0003e	89 50 10	 mov	 DWORD PTR [eax+16], edx
-  00041	8b 45 08	 mov	 eax, DWORD PTR ___that$[ebp]
-  00044	83 c0 14	 add	 eax, 20			; 00000014H
-  00047	50		 push	 eax
-  00048	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  0004b	83 c1 14	 add	 ecx, 20			; 00000014H
-  0004e	e8 00 00 00 00	 call	 ??4Matrix@math@core@@QAEAAV012@$$QAV012@@Z
-  00053	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  00056	8b e5		 mov	 esp, ebp
-  00058	5d		 pop	 ebp
-  00059	c2 04 00	 ret	 4
-??4Board@gameplay@core@@QAEAAV012@$$QAV012@@Z ENDP	; core::gameplay::Board::operator=
-_TEXT	ENDS
-; Function compile flags: /Odtp
-;	COMDAT ??1Board@gameplay@core@@QAE@XZ
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-??1Board@gameplay@core@@QAE@XZ PROC			; core::gameplay::Board::~Board, COMDAT
-; _this$ = ecx
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	51		 push	 ecx
-  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
-  00007	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  0000a	83 c1 14	 add	 ecx, 20			; 00000014H
-  0000d	e8 00 00 00 00	 call	 ??1Matrix@math@core@@QAE@XZ
-  00012	8b e5		 mov	 esp, ebp
-  00014	5d		 pop	 ebp
-  00015	c3		 ret	 0
-??1Board@gameplay@core@@QAE@XZ ENDP			; core::gameplay::Board::~Board
+  0000a	8b 4d 08	 mov	 ecx, DWORD PTR _t_board$[ebp]
+  0000d	89 08		 mov	 DWORD PTR [eax], ecx
+  0000f	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
+  00012	8b 45 0c	 mov	 eax, DWORD PTR _t_tetrominoIndex$[ebp]
+  00015	89 42 04	 mov	 DWORD PTR [edx+4], eax
+  00018	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  0001b	8b 55 10	 mov	 edx, DWORD PTR _t_rowOffset$[ebp]
+  0001e	89 51 08	 mov	 DWORD PTR [ecx+8], edx
+  00021	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
+  00024	8b 4d 14	 mov	 ecx, DWORD PTR _t_colOffset$[ebp]
+  00027	89 48 0c	 mov	 DWORD PTR [eax+12], ecx
+  0002a	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
+  0002d	8b 45 18	 mov	 eax, DWORD PTR _t_rotation$[ebp]
+  00030	89 42 10	 mov	 DWORD PTR [edx+16], eax
+  00033	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
+  00036	8b e5		 mov	 esp, ebp
+  00038	5d		 pop	 ebp
+  00039	c2 14 00	 ret	 20			; 00000014H
+??0Piece@gameplay@core@@QAE@PAVBoard@12@HHHH@Z ENDP	; core::gameplay::Piece::Piece
 _TEXT	ENDS
 ; Function compile flags: /Odtp
 ; File c:\dev\tetris\src\board.hpp
@@ -13304,7 +12921,7 @@ _this$ = -4						; size = 4
 ?Clear@Board@gameplay@core@@QAEXXZ PROC			; core::gameplay::Board::Clear, COMDAT
 ; _this$ = ecx
 
-; 41   :             inline void Clear() { m_boardData.Clear(); }
+; 39   :             inline void Clear() { m_boardData.Clear(); }
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
@@ -13317,78 +12934,6 @@ _this$ = -4						; size = 4
   00014	5d		 pop	 ebp
   00015	c3		 ret	 0
 ?Clear@Board@gameplay@core@@QAEXXZ ENDP			; core::gameplay::Board::Clear
-_TEXT	ENDS
-; Function compile flags: /Odtp
-; File c:\dev\tetris\src\board.hpp
-;	COMDAT ??0Board@gameplay@core@@QAE@XZ
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-??0Board@gameplay@core@@QAE@XZ PROC			; core::gameplay::Board::Board, COMDAT
-; _this$ = ecx
-
-; 31   :             Board() {}
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	51		 push	 ecx
-  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
-  00007	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  0000a	83 c1 14	 add	 ecx, 20			; 00000014H
-  0000d	e8 00 00 00 00	 call	 ??0Matrix@math@core@@QAE@XZ ; core::math::Matrix::Matrix
-  00012	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  00015	8b e5		 mov	 esp, ebp
-  00017	5d		 pop	 ebp
-  00018	c3		 ret	 0
-??0Board@gameplay@core@@QAE@XZ ENDP			; core::gameplay::Board::Board
-_TEXT	ENDS
-; Function compile flags: /Odtp
-;	COMDAT ??4Matrix@math@core@@QAEAAV012@$$QAV012@@Z
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-___that$ = 8						; size = 4
-??4Matrix@math@core@@QAEAAV012@$$QAV012@@Z PROC		; core::math::Matrix::operator=, COMDAT
-; _this$ = ecx
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	51		 push	 ecx
-  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
-  00007	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  0000a	8b 4d 08	 mov	 ecx, DWORD PTR ___that$[ebp]
-  0000d	8b 11		 mov	 edx, DWORD PTR [ecx]
-  0000f	89 10		 mov	 DWORD PTR [eax], edx
-  00011	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  00014	8b 4d 08	 mov	 ecx, DWORD PTR ___that$[ebp]
-  00017	8b 51 04	 mov	 edx, DWORD PTR [ecx+4]
-  0001a	89 50 04	 mov	 DWORD PTR [eax+4], edx
-  0001d	8b 45 08	 mov	 eax, DWORD PTR ___that$[ebp]
-  00020	83 c0 08	 add	 eax, 8
-  00023	50		 push	 eax
-  00024	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  00027	83 c1 08	 add	 ecx, 8
-  0002a	e8 00 00 00 00	 call	 ??4?$vector@HV?$allocator@H@std@@@std@@QAEAAV01@$$QAV01@@Z ; std::vector<int,std::allocator<int> >::operator=
-  0002f	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  00032	8b e5		 mov	 esp, ebp
-  00034	5d		 pop	 ebp
-  00035	c2 04 00	 ret	 4
-??4Matrix@math@core@@QAEAAV012@$$QAV012@@Z ENDP		; core::math::Matrix::operator=
-_TEXT	ENDS
-; Function compile flags: /Odtp
-;	COMDAT ??1Matrix@math@core@@QAE@XZ
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-??1Matrix@math@core@@QAE@XZ PROC			; core::math::Matrix::~Matrix, COMDAT
-; _this$ = ecx
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	51		 push	 ecx
-  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
-  00007	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  0000a	83 c1 08	 add	 ecx, 8
-  0000d	e8 00 00 00 00	 call	 ??1?$vector@HV?$allocator@H@std@@@std@@QAE@XZ ; std::vector<int,std::allocator<int> >::~vector<int,std::allocator<int> >
-  00012	8b e5		 mov	 esp, ebp
-  00014	5d		 pop	 ebp
-  00015	c3		 ret	 0
-??1Matrix@math@core@@QAE@XZ ENDP			; core::math::Matrix::~Matrix
 _TEXT	ENDS
 ; Function compile flags: /Odtp
 ; File c:\dev\tetris\src\math\matrix.hpp
@@ -13417,116 +12962,6 @@ _this$ = -4						; size = 4
   00014	5d		 pop	 ebp
   00015	c3		 ret	 0
 ?Clear@Matrix@math@core@@QAEXXZ ENDP			; core::math::Matrix::Clear
-_TEXT	ENDS
-; Function compile flags: /Odtp
-; File c:\dev\tetris\src\math\matrix.hpp
-;	COMDAT ??0Matrix@math@core@@QAE@XZ
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-??0Matrix@math@core@@QAE@XZ PROC			; core::math::Matrix::Matrix, COMDAT
-; _this$ = ecx
-
-; 22   :             Matrix() {}
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	51		 push	 ecx
-  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
-  00007	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  0000a	83 c1 08	 add	 ecx, 8
-  0000d	e8 00 00 00 00	 call	 ??0?$vector@HV?$allocator@H@std@@@std@@QAE@XZ ; std::vector<int,std::allocator<int> >::vector<int,std::allocator<int> >
-  00012	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  00015	8b e5		 mov	 esp, ebp
-  00017	5d		 pop	 ebp
-  00018	c3		 ret	 0
-??0Matrix@math@core@@QAE@XZ ENDP			; core::math::Matrix::Matrix
-_TEXT	ENDS
-; Function compile flags: /Odtp
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector
-;	COMDAT ?_Tidy@?$vector@HV?$allocator@H@std@@@std@@AAEXXZ
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-?_Tidy@?$vector@HV?$allocator@H@std@@@std@@AAEXXZ PROC	; std::vector<int,std::allocator<int> >::_Tidy, COMDAT
-; _this$ = ecx
-
-; 1910 : 		{	// free all storage
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	51		 push	 ecx
-  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
-
-; 1911 : 		this->_Orphan_all();
-
-  00007	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  0000a	e8 00 00 00 00	 call	 ?_Orphan_all@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEXXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Orphan_all
-
-; 1912 : 
-; 1913 : 		if (this->_Myfirst() != pointer())
-
-  0000f	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  00012	e8 00 00 00 00	 call	 ?_Myfirst@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAPAHXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Myfirst
-  00017	83 38 00	 cmp	 DWORD PTR [eax], 0
-  0001a	74 6b		 je	 SHORT $LN1@Tidy
-
-; 1914 : 			{	// destroy and deallocate old array
-; 1915 : 			_Destroy(this->_Myfirst(), this->_Mylast());
-
-  0001c	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  0001f	e8 00 00 00 00	 call	 ?_Mylast@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAPAHXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Mylast
-  00024	8b 00		 mov	 eax, DWORD PTR [eax]
-  00026	50		 push	 eax
-  00027	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  0002a	e8 00 00 00 00	 call	 ?_Myfirst@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAPAHXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Myfirst
-  0002f	8b 08		 mov	 ecx, DWORD PTR [eax]
-  00031	51		 push	 ecx
-  00032	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  00035	e8 00 00 00 00	 call	 ?_Destroy@?$vector@HV?$allocator@H@std@@@std@@AAEXPAH0@Z ; std::vector<int,std::allocator<int> >::_Destroy
-
-; 1916 : 			this->_Getal().deallocate(this->_Myfirst(), capacity());
-
-  0003a	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  0003d	e8 00 00 00 00	 call	 ?capacity@?$vector@HV?$allocator@H@std@@@std@@QBEIXZ ; std::vector<int,std::allocator<int> >::capacity
-  00042	50		 push	 eax
-  00043	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  00046	e8 00 00 00 00	 call	 ?_Myfirst@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAPAHXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Myfirst
-  0004b	8b 10		 mov	 edx, DWORD PTR [eax]
-  0004d	52		 push	 edx
-  0004e	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  00051	e8 00 00 00 00	 call	 ?_Getal@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAV?$allocator@H@2@XZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Getal
-  00056	8b c8		 mov	 ecx, eax
-  00058	e8 00 00 00 00	 call	 ?deallocate@?$allocator@H@std@@QAEXQAHI@Z ; std::allocator<int>::deallocate
-
-; 1917 : 
-; 1918 : 			this->_Myfirst() = pointer();
-
-  0005d	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  00060	e8 00 00 00 00	 call	 ?_Myfirst@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAPAHXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Myfirst
-  00065	c7 00 00 00 00
-	00		 mov	 DWORD PTR [eax], 0
-
-; 1919 : 			this->_Mylast() = pointer();
-
-  0006b	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  0006e	e8 00 00 00 00	 call	 ?_Mylast@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAPAHXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Mylast
-  00073	c7 00 00 00 00
-	00		 mov	 DWORD PTR [eax], 0
-
-; 1920 : 			this->_Myend() = pointer();
-
-  00079	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  0007c	e8 00 00 00 00	 call	 ?_Myend@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAPAHXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Myend
-  00081	c7 00 00 00 00
-	00		 mov	 DWORD PTR [eax], 0
-$LN1@Tidy:
-
-; 1921 : 			}
-; 1922 : 		}
-
-  00087	8b e5		 mov	 esp, ebp
-  00089	5d		 pop	 ebp
-  0008a	c3		 ret	 0
-?_Tidy@?$vector@HV?$allocator@H@std@@@std@@AAEXXZ ENDP	; std::vector<int,std::allocator<int> >::_Tidy
 _TEXT	ENDS
 ; Function compile flags: /Odtp
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector
@@ -13563,42 +12998,6 @@ __Last$ = 12						; size = 4
   00022	5d		 pop	 ebp
   00023	c2 08 00	 ret	 8
 ?_Destroy@?$vector@HV?$allocator@H@std@@@std@@AAEXPAH0@Z ENDP ; std::vector<int,std::allocator<int> >::_Destroy
-_TEXT	ENDS
-; Function compile flags: /Odtp
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector
-;	COMDAT ?capacity@?$vector@HV?$allocator@H@std@@@std@@QBEIXZ
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-?capacity@?$vector@HV?$allocator@H@std@@@std@@QBEIXZ PROC ; std::vector<int,std::allocator<int> >::capacity, COMDAT
-; _this$ = ecx
-
-; 1714 : 		{	// return current length of allocated storage
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	51		 push	 ecx
-  00004	56		 push	 esi
-  00005	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
-
-; 1715 : 		return (static_cast<size_type>(this->_Myend() - this->_Myfirst()));
-
-  00008	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  0000b	e8 00 00 00 00	 call	 ?_Myend@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QBEABQAHXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Myend
-  00010	8b f0		 mov	 esi, eax
-  00012	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  00015	e8 00 00 00 00	 call	 ?_Myfirst@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QBEABQAHXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Myfirst
-  0001a	8b 0e		 mov	 ecx, DWORD PTR [esi]
-  0001c	2b 08		 sub	 ecx, DWORD PTR [eax]
-  0001e	c1 f9 02	 sar	 ecx, 2
-  00021	8b c1		 mov	 eax, ecx
-
-; 1716 : 		}
-
-  00023	5e		 pop	 esi
-  00024	8b e5		 mov	 esp, ebp
-  00026	5d		 pop	 ebp
-  00027	c3		 ret	 0
-?capacity@?$vector@HV?$allocator@H@std@@@std@@QBEIXZ ENDP ; std::vector<int,std::allocator<int> >::capacity
 _TEXT	ENDS
 ; Function compile flags: /Odtp
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector
@@ -13680,400 +13079,6 @@ __ehhandler$?clear@?$vector@HV?$allocator@H@std@@@std@@QAEXXZ:
 text$x	ENDS
 ?clear@?$vector@HV?$allocator@H@std@@@std@@QAEXXZ ENDP	; std::vector<int,std::allocator<int> >::clear
 ; Function compile flags: /Odtp
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector
-;	COMDAT ??1?$vector@HV?$allocator@H@std@@@std@@QAE@XZ
-_TEXT	SEGMENT
-_this$ = -16						; size = 4
-__$EHRec$ = -12						; size = 12
-??1?$vector@HV?$allocator@H@std@@@std@@QAE@XZ PROC	; std::vector<int,std::allocator<int> >::~vector<int,std::allocator<int> >, COMDAT
-; _this$ = ecx
-
-; 893  : 		{	// destroy the object
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	6a ff		 push	 -1
-  00005	68 00 00 00 00	 push	 __ehhandler$??1?$vector@HV?$allocator@H@std@@@std@@QAE@XZ
-  0000a	64 a1 00 00 00
-	00		 mov	 eax, DWORD PTR fs:0
-  00010	50		 push	 eax
-  00011	51		 push	 ecx
-  00012	a1 00 00 00 00	 mov	 eax, DWORD PTR ___security_cookie
-  00017	33 c5		 xor	 eax, ebp
-  00019	50		 push	 eax
-  0001a	8d 45 f4	 lea	 eax, DWORD PTR __$EHRec$[ebp]
-  0001d	64 a3 00 00 00
-	00		 mov	 DWORD PTR fs:0, eax
-  00023	89 4d f0	 mov	 DWORD PTR _this$[ebp], ecx
-
-; 894  : 		_Tidy();
-
-  00026	8b 4d f0	 mov	 ecx, DWORD PTR _this$[ebp]
-  00029	e8 00 00 00 00	 call	 ?_Tidy@?$vector@HV?$allocator@H@std@@@std@@AAEXXZ ; std::vector<int,std::allocator<int> >::_Tidy
-
-; 895  : 		}
-
-  0002e	8b 4d f4	 mov	 ecx, DWORD PTR __$EHRec$[ebp]
-  00031	64 89 0d 00 00
-	00 00		 mov	 DWORD PTR fs:0, ecx
-  00038	59		 pop	 ecx
-  00039	8b e5		 mov	 esp, ebp
-  0003b	5d		 pop	 ebp
-  0003c	c3		 ret	 0
-_TEXT	ENDS
-;	COMDAT text$x
-text$x	SEGMENT
-__ehhandler$??1?$vector@HV?$allocator@H@std@@@std@@QAE@XZ:
-  00000	8b 54 24 08	 mov	 edx, DWORD PTR [esp+8]
-  00004	8d 42 0c	 lea	 eax, DWORD PTR [edx+12]
-  00007	8b 4a f8	 mov	 ecx, DWORD PTR [edx-8]
-  0000a	33 c8		 xor	 ecx, eax
-  0000c	e8 00 00 00 00	 call	 @__security_check_cookie@4
-  00011	b8 00 00 00 00	 mov	 eax, OFFSET __ehfuncinfo$??1?$vector@HV?$allocator@H@std@@@std@@QAE@XZ
-  00016	e9 00 00 00 00	 jmp	 ___CxxFrameHandler3
-text$x	ENDS
-??1?$vector@HV?$allocator@H@std@@@std@@QAE@XZ ENDP	; std::vector<int,std::allocator<int> >::~vector<int,std::allocator<int> >
-; Function compile flags: /Odtp
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector
-;	COMDAT ??4?$vector@HV?$allocator@H@std@@@std@@QAEAAV01@$$QAV01@@Z
-_TEXT	SEGMENT
-_this$ = -20						; size = 4
-$T2 = -13						; size = 1
-__$EHRec$ = -12						; size = 12
-__Right$ = 8						; size = 4
-??4?$vector@HV?$allocator@H@std@@@std@@QAEAAV01@$$QAV01@@Z PROC ; std::vector<int,std::allocator<int> >::operator=, COMDAT
-; _this$ = ecx
-
-; 875  : 		{	// assign by moving _Right
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	6a ff		 push	 -1
-  00005	68 00 00 00 00	 push	 __ehhandler$??4?$vector@HV?$allocator@H@std@@@std@@QAEAAV01@$$QAV01@@Z
-  0000a	64 a1 00 00 00
-	00		 mov	 eax, DWORD PTR fs:0
-  00010	50		 push	 eax
-  00011	83 ec 08	 sub	 esp, 8
-  00014	a1 00 00 00 00	 mov	 eax, DWORD PTR ___security_cookie
-  00019	33 c5		 xor	 eax, ebp
-  0001b	50		 push	 eax
-  0001c	8d 45 f4	 lea	 eax, DWORD PTR __$EHRec$[ebp]
-  0001f	64 a3 00 00 00
-	00		 mov	 DWORD PTR fs:0, eax
-  00025	89 4d ec	 mov	 DWORD PTR _this$[ebp], ecx
-
-; 876  : 		if (this != _STD addressof(_Right))
-
-  00028	8b 45 08	 mov	 eax, DWORD PTR __Right$[ebp]
-  0002b	50		 push	 eax
-  0002c	e8 00 00 00 00	 call	 ??$addressof@V?$vector@HV?$allocator@H@std@@@std@@@std@@YAPAV?$vector@HV?$allocator@H@std@@@0@AAV10@@Z ; std::addressof<std::vector<int,std::allocator<int> > >
-  00031	83 c4 04	 add	 esp, 4
-  00034	39 45 ec	 cmp	 DWORD PTR _this$[ebp], eax
-  00037	74 41		 je	 SHORT $LN2@operator
-
-; 877  : 			{	// different, assign it
-; 878  : #pragma warning(push)
-; 879  : #pragma warning(disable: 4127)	// conditional expression is constant
-; 880  : 			if (_Always_equal_after_move<_Alty>
-; 881  : 				|| this->_Getal() == _Right._Getal())
-
-  00039	b9 01 00 00 00	 mov	 ecx, 1
-  0003e	85 c9		 test	 ecx, ecx
-  00040	74 08		 je	 SHORT $LN3@operator
-
-; 882  : 				{	// will steal _Right's contents (also, POCMA non-equal must reload array)
-; 883  : 				_Tidy();
-
-  00042	8b 4d ec	 mov	 ecx, DWORD PTR _this$[ebp]
-  00045	e8 00 00 00 00	 call	 ?_Tidy@?$vector@HV?$allocator@H@std@@@std@@AAEXXZ ; std::vector<int,std::allocator<int> >::_Tidy
-$LN3@operator:
-
-; 884  : 				}
-; 885  : #pragma warning(pop)
-; 886  : 			this->_Move_alloc(_Right._Getal());
-
-  0004a	8b 4d 08	 mov	 ecx, DWORD PTR __Right$[ebp]
-  0004d	e8 00 00 00 00	 call	 ?_Getal@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAV?$allocator@H@2@XZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Getal
-  00052	50		 push	 eax
-  00053	8b 4d ec	 mov	 ecx, DWORD PTR _this$[ebp]
-  00056	e8 00 00 00 00	 call	 ?_Move_alloc@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEXAAV?$allocator@H@2@@Z ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Move_alloc
-
-; 887  : 			_Move_assign_from(_STD move(_Right), bool_constant<_Always_equal_after_move<_Alty>>{});
-
-  0005b	33 d2		 xor	 edx, edx
-  0005d	88 55 f3	 mov	 BYTE PTR $T2[ebp], dl
-  00060	0f b6 45 f3	 movzx	 eax, BYTE PTR $T2[ebp]
-  00064	50		 push	 eax
-  00065	8b 4d 08	 mov	 ecx, DWORD PTR __Right$[ebp]
-  00068	51		 push	 ecx
-  00069	e8 00 00 00 00	 call	 ??$move@AAV?$vector@HV?$allocator@H@std@@@std@@@std@@YA$$QAV?$vector@HV?$allocator@H@std@@@0@AAV10@@Z ; std::move<std::vector<int,std::allocator<int> > &>
-  0006e	83 c4 04	 add	 esp, 4
-  00071	50		 push	 eax
-  00072	8b 4d ec	 mov	 ecx, DWORD PTR _this$[ebp]
-  00075	e8 00 00 00 00	 call	 ?_Move_assign_from@?$vector@HV?$allocator@H@std@@@std@@AAEX$$QAV12@U?$integral_constant@_N$00@2@@Z ; std::vector<int,std::allocator<int> >::_Move_assign_from
-$LN2@operator:
-
-; 888  : 			}
-; 889  : 		return (*this);
-
-  0007a	8b 45 ec	 mov	 eax, DWORD PTR _this$[ebp]
-
-; 890  : 		}
-
-  0007d	8b 4d f4	 mov	 ecx, DWORD PTR __$EHRec$[ebp]
-  00080	64 89 0d 00 00
-	00 00		 mov	 DWORD PTR fs:0, ecx
-  00087	59		 pop	 ecx
-  00088	8b e5		 mov	 esp, ebp
-  0008a	5d		 pop	 ebp
-  0008b	c2 04 00	 ret	 4
-_TEXT	ENDS
-;	COMDAT text$x
-text$x	SEGMENT
-__ehhandler$??4?$vector@HV?$allocator@H@std@@@std@@QAEAAV01@$$QAV01@@Z:
-  00000	8b 54 24 08	 mov	 edx, DWORD PTR [esp+8]
-  00004	8d 42 0c	 lea	 eax, DWORD PTR [edx+12]
-  00007	8b 4a f4	 mov	 ecx, DWORD PTR [edx-12]
-  0000a	33 c8		 xor	 ecx, eax
-  0000c	e8 00 00 00 00	 call	 @__security_check_cookie@4
-  00011	b8 00 00 00 00	 mov	 eax, OFFSET __ehfuncinfo$??4?$vector@HV?$allocator@H@std@@@std@@QAEAAV01@$$QAV01@@Z
-  00016	e9 00 00 00 00	 jmp	 ___CxxFrameHandler3
-text$x	ENDS
-??4?$vector@HV?$allocator@H@std@@@std@@QAEAAV01@$$QAV01@@Z ENDP ; std::vector<int,std::allocator<int> >::operator=
-; Function compile flags: /Odtp
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector
-;	COMDAT ?_Move_assign_from@?$vector@HV?$allocator@H@std@@@std@@AAEX$$QAV12@U?$integral_constant@_N$00@2@@Z
-_TEXT	SEGMENT
-_this$ = -8						; size = 4
-$T1 = -1						; size = 1
-__Right$ = 8						; size = 4
-___formal$ = 12						; size = 1
-?_Move_assign_from@?$vector@HV?$allocator@H@std@@@std@@AAEX$$QAV12@U?$integral_constant@_N$00@2@@Z PROC ; std::vector<int,std::allocator<int> >::_Move_assign_from, COMDAT
-; _this$ = ecx
-
-; 817  : 		{	// move from _Right, stealing its contents
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	83 ec 08	 sub	 esp, 8
-  00006	89 4d f8	 mov	 DWORD PTR _this$[ebp], ecx
-
-; 818  : 		_Move_from(_STD move(_Right), true_type{});
-
-  00009	33 c0		 xor	 eax, eax
-  0000b	88 45 ff	 mov	 BYTE PTR $T1[ebp], al
-  0000e	0f b6 4d ff	 movzx	 ecx, BYTE PTR $T1[ebp]
-  00012	51		 push	 ecx
-  00013	8b 55 08	 mov	 edx, DWORD PTR __Right$[ebp]
-  00016	52		 push	 edx
-  00017	e8 00 00 00 00	 call	 ??$move@AAV?$vector@HV?$allocator@H@std@@@std@@@std@@YA$$QAV?$vector@HV?$allocator@H@std@@@0@AAV10@@Z ; std::move<std::vector<int,std::allocator<int> > &>
-  0001c	83 c4 04	 add	 esp, 4
-  0001f	50		 push	 eax
-  00020	8b 4d f8	 mov	 ecx, DWORD PTR _this$[ebp]
-  00023	e8 00 00 00 00	 call	 ?_Move_from@?$vector@HV?$allocator@H@std@@@std@@AAEX$$QAV12@U?$integral_constant@_N$00@2@@Z ; std::vector<int,std::allocator<int> >::_Move_from
-
-; 819  : 		}
-
-  00028	8b e5		 mov	 esp, ebp
-  0002a	5d		 pop	 ebp
-  0002b	c2 08 00	 ret	 8
-?_Move_assign_from@?$vector@HV?$allocator@H@std@@@std@@AAEX$$QAV12@U?$integral_constant@_N$00@2@@Z ENDP ; std::vector<int,std::allocator<int> >::_Move_assign_from
-_TEXT	ENDS
-; Function compile flags: /Odtp
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector
-;	COMDAT ?_Move_from@?$vector@HV?$allocator@H@std@@@std@@AAEX$$QAV12@U?$integral_constant@_N$00@2@@Z
-_TEXT	SEGMENT
-_this$ = -16						; size = 4
-__$EHRec$ = -12						; size = 12
-__Right$ = 8						; size = 4
-___formal$ = 12						; size = 1
-?_Move_from@?$vector@HV?$allocator@H@std@@@std@@AAEX$$QAV12@U?$integral_constant@_N$00@2@@Z PROC ; std::vector<int,std::allocator<int> >::_Move_from, COMDAT
-; _this$ = ecx
-
-; 762  : 		{	// move from _Right, stealing its contents
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	6a ff		 push	 -1
-  00005	68 00 00 00 00	 push	 __ehhandler$?_Move_from@?$vector@HV?$allocator@H@std@@@std@@AAEX$$QAV12@U?$integral_constant@_N$00@2@@Z
-  0000a	64 a1 00 00 00
-	00		 mov	 eax, DWORD PTR fs:0
-  00010	50		 push	 eax
-  00011	51		 push	 ecx
-  00012	56		 push	 esi
-  00013	a1 00 00 00 00	 mov	 eax, DWORD PTR ___security_cookie
-  00018	33 c5		 xor	 eax, ebp
-  0001a	50		 push	 eax
-  0001b	8d 45 f4	 lea	 eax, DWORD PTR __$EHRec$[ebp]
-  0001e	64 a3 00 00 00
-	00		 mov	 DWORD PTR fs:0, eax
-  00024	89 4d f0	 mov	 DWORD PTR _this$[ebp], ecx
-
-; 763  : 		this->_Swap_all(_Right);
-
-  00027	8b 45 08	 mov	 eax, DWORD PTR __Right$[ebp]
-  0002a	50		 push	 eax
-  0002b	8b 4d f0	 mov	 ecx, DWORD PTR _this$[ebp]
-  0002e	e8 00 00 00 00	 call	 ?_Swap_all@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEXAAV12@@Z ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Swap_all
-
-; 764  : 
-; 765  : 		this->_Myfirst() = _Right._Myfirst();
-
-  00033	8b 4d 08	 mov	 ecx, DWORD PTR __Right$[ebp]
-  00036	e8 00 00 00 00	 call	 ?_Myfirst@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAPAHXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Myfirst
-  0003b	8b f0		 mov	 esi, eax
-  0003d	8b 4d f0	 mov	 ecx, DWORD PTR _this$[ebp]
-  00040	e8 00 00 00 00	 call	 ?_Myfirst@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAPAHXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Myfirst
-  00045	8b 0e		 mov	 ecx, DWORD PTR [esi]
-  00047	89 08		 mov	 DWORD PTR [eax], ecx
-
-; 766  : 		this->_Mylast() = _Right._Mylast();
-
-  00049	8b 4d 08	 mov	 ecx, DWORD PTR __Right$[ebp]
-  0004c	e8 00 00 00 00	 call	 ?_Mylast@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAPAHXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Mylast
-  00051	8b f0		 mov	 esi, eax
-  00053	8b 4d f0	 mov	 ecx, DWORD PTR _this$[ebp]
-  00056	e8 00 00 00 00	 call	 ?_Mylast@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAPAHXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Mylast
-  0005b	8b 16		 mov	 edx, DWORD PTR [esi]
-  0005d	89 10		 mov	 DWORD PTR [eax], edx
-
-; 767  : 		this->_Myend() = _Right._Myend();
-
-  0005f	8b 4d 08	 mov	 ecx, DWORD PTR __Right$[ebp]
-  00062	e8 00 00 00 00	 call	 ?_Myend@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAPAHXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Myend
-  00067	8b f0		 mov	 esi, eax
-  00069	8b 4d f0	 mov	 ecx, DWORD PTR _this$[ebp]
-  0006c	e8 00 00 00 00	 call	 ?_Myend@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAPAHXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Myend
-  00071	8b 0e		 mov	 ecx, DWORD PTR [esi]
-  00073	89 08		 mov	 DWORD PTR [eax], ecx
-
-; 768  : 
-; 769  : 		_Right._Myfirst() = pointer();
-
-  00075	8b 4d 08	 mov	 ecx, DWORD PTR __Right$[ebp]
-  00078	e8 00 00 00 00	 call	 ?_Myfirst@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAPAHXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Myfirst
-  0007d	c7 00 00 00 00
-	00		 mov	 DWORD PTR [eax], 0
-
-; 770  : 		_Right._Mylast() = pointer();
-
-  00083	8b 4d 08	 mov	 ecx, DWORD PTR __Right$[ebp]
-  00086	e8 00 00 00 00	 call	 ?_Mylast@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAPAHXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Mylast
-  0008b	c7 00 00 00 00
-	00		 mov	 DWORD PTR [eax], 0
-
-; 771  : 		_Right._Myend() = pointer();
-
-  00091	8b 4d 08	 mov	 ecx, DWORD PTR __Right$[ebp]
-  00094	e8 00 00 00 00	 call	 ?_Myend@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAPAHXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Myend
-  00099	c7 00 00 00 00
-	00		 mov	 DWORD PTR [eax], 0
-
-; 772  : 		}
-
-  0009f	8b 4d f4	 mov	 ecx, DWORD PTR __$EHRec$[ebp]
-  000a2	64 89 0d 00 00
-	00 00		 mov	 DWORD PTR fs:0, ecx
-  000a9	59		 pop	 ecx
-  000aa	5e		 pop	 esi
-  000ab	8b e5		 mov	 esp, ebp
-  000ad	5d		 pop	 ebp
-  000ae	c2 08 00	 ret	 8
-_TEXT	ENDS
-;	COMDAT text$x
-text$x	SEGMENT
-__ehhandler$?_Move_from@?$vector@HV?$allocator@H@std@@@std@@AAEX$$QAV12@U?$integral_constant@_N$00@2@@Z:
-  00000	8b 54 24 08	 mov	 edx, DWORD PTR [esp+8]
-  00004	8d 42 0c	 lea	 eax, DWORD PTR [edx+12]
-  00007	8b 4a f4	 mov	 ecx, DWORD PTR [edx-12]
-  0000a	33 c8		 xor	 ecx, eax
-  0000c	e8 00 00 00 00	 call	 @__security_check_cookie@4
-  00011	b8 00 00 00 00	 mov	 eax, OFFSET __ehfuncinfo$?_Move_from@?$vector@HV?$allocator@H@std@@@std@@AAEX$$QAV12@U?$integral_constant@_N$00@2@@Z
-  00016	e9 00 00 00 00	 jmp	 ___CxxFrameHandler3
-text$x	ENDS
-?_Move_from@?$vector@HV?$allocator@H@std@@@std@@AAEX$$QAV12@U?$integral_constant@_N$00@2@@Z ENDP ; std::vector<int,std::allocator<int> >::_Move_from
-; Function compile flags: /Odtp
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector
-;	COMDAT ??0?$vector@HV?$allocator@H@std@@@std@@QAE@XZ
-_TEXT	SEGMENT
-_this$ = -16						; size = 4
-__$EHRec$ = -12						; size = 12
-??0?$vector@HV?$allocator@H@std@@@std@@QAE@XZ PROC	; std::vector<int,std::allocator<int> >::vector<int,std::allocator<int> >, COMDAT
-; _this$ = ecx
-
-; 651  : 		{	// construct empty vector
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	6a ff		 push	 -1
-  00005	68 00 00 00 00	 push	 __ehhandler$??0?$vector@HV?$allocator@H@std@@@std@@QAE@XZ
-  0000a	64 a1 00 00 00
-	00		 mov	 eax, DWORD PTR fs:0
-  00010	50		 push	 eax
-  00011	51		 push	 ecx
-  00012	a1 00 00 00 00	 mov	 eax, DWORD PTR ___security_cookie
-  00017	33 c5		 xor	 eax, ebp
-  00019	50		 push	 eax
-  0001a	8d 45 f4	 lea	 eax, DWORD PTR __$EHRec$[ebp]
-  0001d	64 a3 00 00 00
-	00		 mov	 DWORD PTR fs:0, eax
-  00023	89 4d f0	 mov	 DWORD PTR _this$[ebp], ecx
-
-; 650  : 		: _Mybase()
-
-  00026	8b 4d f0	 mov	 ecx, DWORD PTR _this$[ebp]
-  00029	e8 00 00 00 00	 call	 ??0?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAE@XZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >
-
-; 652  : 		}
-
-  0002e	8b 45 f0	 mov	 eax, DWORD PTR _this$[ebp]
-  00031	8b 4d f4	 mov	 ecx, DWORD PTR __$EHRec$[ebp]
-  00034	64 89 0d 00 00
-	00 00		 mov	 DWORD PTR fs:0, ecx
-  0003b	59		 pop	 ecx
-  0003c	8b e5		 mov	 esp, ebp
-  0003e	5d		 pop	 ebp
-  0003f	c3		 ret	 0
-_TEXT	ENDS
-;	COMDAT text$x
-text$x	SEGMENT
-__ehhandler$??0?$vector@HV?$allocator@H@std@@@std@@QAE@XZ:
-  00000	8b 54 24 08	 mov	 edx, DWORD PTR [esp+8]
-  00004	8d 42 0c	 lea	 eax, DWORD PTR [edx+12]
-  00007	8b 4a f8	 mov	 ecx, DWORD PTR [edx-8]
-  0000a	33 c8		 xor	 ecx, eax
-  0000c	e8 00 00 00 00	 call	 @__security_check_cookie@4
-  00011	b8 00 00 00 00	 mov	 eax, OFFSET __ehfuncinfo$??0?$vector@HV?$allocator@H@std@@@std@@QAE@XZ
-  00016	e9 00 00 00 00	 jmp	 ___CxxFrameHandler3
-text$x	ENDS
-??0?$vector@HV?$allocator@H@std@@@std@@QAE@XZ ENDP	; std::vector<int,std::allocator<int> >::vector<int,std::allocator<int> >
-; Function compile flags: /Odtp
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xutility
-;	COMDAT ?_Get_second@?$_Compressed_pair@V?$allocator@H@std@@V?$_Vector_val@U?$_Simple_types@H@std@@@2@$00@std@@QBEABV?$_Vector_val@U?$_Simple_types@H@std@@@2@XZ
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-?_Get_second@?$_Compressed_pair@V?$allocator@H@std@@V?$_Vector_val@U?$_Simple_types@H@std@@@2@$00@std@@QBEABV?$_Vector_val@U?$_Simple_types@H@std@@@2@XZ PROC ; std::_Compressed_pair<std::allocator<int>,std::_Vector_val<std::_Simple_types<int> >,1>::_Get_second, COMDAT
-; _this$ = ecx
-
-; 306  : 		{	// return const reference to second
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	51		 push	 ecx
-  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
-
-; 307  : 		return (_Myval2);
-
-  00007	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-
-; 308  : 		}
-
-  0000a	8b e5		 mov	 esp, ebp
-  0000c	5d		 pop	 ebp
-  0000d	c3		 ret	 0
-?_Get_second@?$_Compressed_pair@V?$allocator@H@std@@V?$_Vector_val@U?$_Simple_types@H@std@@@2@$00@std@@QBEABV?$_Vector_val@U?$_Simple_types@H@std@@@2@XZ ENDP ; std::_Compressed_pair<std::allocator<int>,std::_Vector_val<std::_Simple_types<int> >,1>::_Get_second
-_TEXT	ENDS
-; Function compile flags: /Odtp
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xutility
 ;	COMDAT ?_Get_second@?$_Compressed_pair@V?$allocator@H@std@@V?$_Vector_val@U?$_Simple_types@H@std@@@2@$00@std@@QAEAAV?$_Vector_val@U?$_Simple_types@H@std@@@2@XZ
 _TEXT	SEGMENT
@@ -14127,103 +13132,6 @@ _this$ = -4						; size = 4
 _TEXT	ENDS
 ; Function compile flags: /Odtp
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector
-;	COMDAT ??0?$_Vector_val@U?$_Simple_types@H@std@@@std@@QAE@XZ
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-??0?$_Vector_val@U?$_Simple_types@H@std@@@std@@QAE@XZ PROC ; std::_Vector_val<std::_Simple_types<int> >::_Vector_val<std::_Simple_types<int> >, COMDAT
-; _this$ = ecx
-
-; 392  : 		{	// initialize values
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	51		 push	 ecx
-  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
-
-; 389  : 		: _Myfirst(),
-
-  00007	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  0000a	c7 00 00 00 00
-	00		 mov	 DWORD PTR [eax], 0
-
-; 390  : 		_Mylast(),
-
-  00010	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  00013	c7 41 04 00 00
-	00 00		 mov	 DWORD PTR [ecx+4], 0
-
-; 391  : 		_Myend()
-
-  0001a	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
-  0001d	c7 42 08 00 00
-	00 00		 mov	 DWORD PTR [edx+8], 0
-
-; 393  : 		}
-
-  00024	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  00027	8b e5		 mov	 esp, ebp
-  00029	5d		 pop	 ebp
-  0002a	c3		 ret	 0
-??0?$_Vector_val@U?$_Simple_types@H@std@@@std@@QAE@XZ ENDP ; std::_Vector_val<std::_Simple_types<int> >::_Vector_val<std::_Simple_types<int> >
-_TEXT	ENDS
-; Function compile flags: /Odtp
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector
-;	COMDAT ?_Myend@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QBEABQAHXZ
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-?_Myend@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QBEABQAHXZ PROC ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Myend, COMDAT
-; _this$ = ecx
-
-; 600  : 		{	// return const reference to _Myend
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	51		 push	 ecx
-  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
-
-; 601  : 		return (_Get_data()._Myend);
-
-  00007	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  0000a	e8 00 00 00 00	 call	 ?_Get_data@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QBEABV?$_Vector_val@U?$_Simple_types@H@std@@@2@XZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Get_data
-  0000f	83 c0 08	 add	 eax, 8
-
-; 602  : 		}
-
-  00012	8b e5		 mov	 esp, ebp
-  00014	5d		 pop	 ebp
-  00015	c3		 ret	 0
-?_Myend@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QBEABQAHXZ ENDP ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Myend
-_TEXT	ENDS
-; Function compile flags: /Odtp
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector
-;	COMDAT ?_Myend@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAPAHXZ
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-?_Myend@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAPAHXZ PROC ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Myend, COMDAT
-; _this$ = ecx
-
-; 595  : 		{	// return reference to _Myend
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	51		 push	 ecx
-  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
-
-; 596  : 		return (_Get_data()._Myend);
-
-  00007	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  0000a	e8 00 00 00 00	 call	 ?_Get_data@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAV?$_Vector_val@U?$_Simple_types@H@std@@@2@XZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Get_data
-  0000f	83 c0 08	 add	 eax, 8
-
-; 597  : 		}
-
-  00012	8b e5		 mov	 esp, ebp
-  00014	5d		 pop	 ebp
-  00015	c3		 ret	 0
-?_Myend@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAPAHXZ ENDP ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Myend
-_TEXT	ENDS
-; Function compile flags: /Odtp
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector
 ;	COMDAT ?_Mylast@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAPAHXZ
 _TEXT	SEGMENT
 _this$ = -4						; size = 4
@@ -14252,33 +13160,6 @@ _this$ = -4						; size = 4
 _TEXT	ENDS
 ; Function compile flags: /Odtp
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector
-;	COMDAT ?_Myfirst@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QBEABQAHXZ
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-?_Myfirst@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QBEABQAHXZ PROC ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Myfirst, COMDAT
-; _this$ = ecx
-
-; 580  : 		{	// return const reference to _Myfirst
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	51		 push	 ecx
-  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
-
-; 581  : 		return (_Get_data()._Myfirst);
-
-  00007	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  0000a	e8 00 00 00 00	 call	 ?_Get_data@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QBEABV?$_Vector_val@U?$_Simple_types@H@std@@@2@XZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Get_data
-
-; 582  : 		}
-
-  0000f	8b e5		 mov	 esp, ebp
-  00011	5d		 pop	 ebp
-  00012	c3		 ret	 0
-?_Myfirst@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QBEABQAHXZ ENDP ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Myfirst
-_TEXT	ENDS
-; Function compile flags: /Odtp
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector
 ;	COMDAT ?_Myfirst@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAPAHXZ
 _TEXT	SEGMENT
 _this$ = -4						; size = 4
@@ -14303,33 +13184,6 @@ _this$ = -4						; size = 4
   00011	5d		 pop	 ebp
   00012	c3		 ret	 0
 ?_Myfirst@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAPAHXZ ENDP ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Myfirst
-_TEXT	ENDS
-; Function compile flags: /Odtp
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector
-;	COMDAT ?_Get_data@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QBEABV?$_Vector_val@U?$_Simple_types@H@std@@@2@XZ
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-?_Get_data@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QBEABV?$_Vector_val@U?$_Simple_types@H@std@@@2@XZ PROC ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Get_data, COMDAT
-; _this$ = ecx
-
-; 559  : 		{	// return const reference to _Vector_val
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	51		 push	 ecx
-  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
-
-; 560  : 		return (_Mypair._Get_second());
-
-  00007	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  0000a	e8 00 00 00 00	 call	 ?_Get_second@?$_Compressed_pair@V?$allocator@H@std@@V?$_Vector_val@U?$_Simple_types@H@std@@@2@$00@std@@QBEABV?$_Vector_val@U?$_Simple_types@H@std@@@2@XZ ; std::_Compressed_pair<std::allocator<int>,std::_Vector_val<std::_Simple_types<int> >,1>::_Get_second
-
-; 561  : 		}
-
-  0000f	8b e5		 mov	 esp, ebp
-  00011	5d		 pop	 ebp
-  00012	c3		 ret	 0
-?_Get_data@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QBEABV?$_Vector_val@U?$_Simple_types@H@std@@@2@XZ ENDP ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Get_data
 _TEXT	ENDS
 ; Function compile flags: /Odtp
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector
@@ -14387,39 +13241,6 @@ _this$ = -4						; size = 4
 _TEXT	ENDS
 ; Function compile flags: /Odtp
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector
-;	COMDAT ?_Swap_all@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEXAAV12@@Z
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-__Right$ = 8						; size = 4
-?_Swap_all@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEXAAV12@@Z PROC ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Swap_all, COMDAT
-; _this$ = ecx
-
-; 539  : 		{	// swap all iterators
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	51		 push	 ecx
-  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
-
-; 540  : 		_Get_data()._Swap_all(_Right._Get_data());
-
-  00007	8b 4d 08	 mov	 ecx, DWORD PTR __Right$[ebp]
-  0000a	e8 00 00 00 00	 call	 ?_Get_data@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAV?$_Vector_val@U?$_Simple_types@H@std@@@2@XZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Get_data
-  0000f	50		 push	 eax
-  00010	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  00013	e8 00 00 00 00	 call	 ?_Get_data@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAV?$_Vector_val@U?$_Simple_types@H@std@@@2@XZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Get_data
-  00018	8b c8		 mov	 ecx, eax
-  0001a	e8 00 00 00 00	 call	 ?_Swap_all@_Container_base0@std@@QAEXAAU12@@Z ; std::_Container_base0::_Swap_all
-
-; 541  : 		}
-
-  0001f	8b e5		 mov	 esp, ebp
-  00021	5d		 pop	 ebp
-  00022	c2 04 00	 ret	 4
-?_Swap_all@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEXAAV12@@Z ENDP ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Swap_all
-_TEXT	ENDS
-; Function compile flags: /Odtp
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector
 ;	COMDAT ?_Orphan_all@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEXXZ
 _TEXT	SEGMENT
 _this$ = -4						; size = 4
@@ -14446,129 +13267,6 @@ _this$ = -4						; size = 4
   00018	5d		 pop	 ebp
   00019	c3		 ret	 0
 ?_Orphan_all@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEXXZ ENDP ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Orphan_all
-_TEXT	ENDS
-; Function compile flags: /Odtp
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector
-;	COMDAT ?_Move_alloc@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEXAAV?$allocator@H@2@@Z
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-__Al$ = 8						; size = 4
-?_Move_alloc@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEXAAV?$allocator@H@2@@Z PROC ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Move_alloc, COMDAT
-; _this$ = ecx
-
-; 439  : 		{	// replace old allocator
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	51		 push	 ecx
-  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
-
-; 440  : 		_Pocma(_Getal(), _Al);
-
-  00007	8b 45 08	 mov	 eax, DWORD PTR __Al$[ebp]
-  0000a	50		 push	 eax
-  0000b	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  0000e	e8 00 00 00 00	 call	 ?_Getal@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAV?$allocator@H@2@XZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Getal
-  00013	50		 push	 eax
-  00014	e8 00 00 00 00	 call	 ??$_Pocma@V?$allocator@H@std@@@std@@YAXAAV?$allocator@H@0@0@Z ; std::_Pocma<std::allocator<int> >
-  00019	83 c4 08	 add	 esp, 8
-
-; 441  : 		}
-
-  0001c	8b e5		 mov	 esp, ebp
-  0001e	5d		 pop	 ebp
-  0001f	c2 04 00	 ret	 4
-?_Move_alloc@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEXAAV?$allocator@H@2@@Z ENDP ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Move_alloc
-_TEXT	ENDS
-; Function compile flags: /Odtp
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector
-;	COMDAT ??0?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAE@XZ
-_TEXT	SEGMENT
-_this$ = -8						; size = 4
-$T1 = -1						; size = 1
-??0?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAE@XZ PROC ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >, COMDAT
-; _this$ = ecx
-
-; 422  : 		{	// default construct allocator
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	83 ec 08	 sub	 esp, 8
-  00006	89 4d f8	 mov	 DWORD PTR _this$[ebp], ecx
-
-; 421  : 		: _Mypair(_Zero_then_variadic_args_t())
-
-  00009	0f b6 45 ff	 movzx	 eax, BYTE PTR $T1[ebp]
-  0000d	50		 push	 eax
-  0000e	8b 4d f8	 mov	 ecx, DWORD PTR _this$[ebp]
-  00011	e8 00 00 00 00	 call	 ??$?0$$V@?$_Compressed_pair@V?$allocator@H@std@@V?$_Vector_val@U?$_Simple_types@H@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z ; std::_Compressed_pair<std::allocator<int>,std::_Vector_val<std::_Simple_types<int> >,1>::_Compressed_pair<std::allocator<int>,std::_Vector_val<std::_Simple_types<int> >,1><>
-
-; 423  : 		}
-
-  00016	8b 45 f8	 mov	 eax, DWORD PTR _this$[ebp]
-  00019	8b e5		 mov	 esp, ebp
-  0001b	5d		 pop	 ebp
-  0001c	c3		 ret	 0
-??0?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAE@XZ ENDP ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >
-_TEXT	ENDS
-; Function compile flags: /Odtp
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xmemory0
-;	COMDAT ?deallocate@?$allocator@H@std@@QAEXQAHI@Z
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-__Ptr$ = 8						; size = 4
-__Count$ = 12						; size = 4
-?deallocate@?$allocator@H@std@@QAEXQAHI@Z PROC		; std::allocator<int>::deallocate, COMDAT
-; _this$ = ecx
-
-; 990  : 		{	// deallocate object at _Ptr
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	51		 push	 ecx
-  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
-
-; 991  : 		// no overflow check on the following multiply; we assume _Allocate did that check
-; 992  : 		_Deallocate<_New_alignof<_Ty>>(_Ptr, sizeof(_Ty) * _Count);
-
-  00007	8b 45 0c	 mov	 eax, DWORD PTR __Count$[ebp]
-  0000a	c1 e0 02	 shl	 eax, 2
-  0000d	50		 push	 eax
-  0000e	8b 4d 08	 mov	 ecx, DWORD PTR __Ptr$[ebp]
-  00011	51		 push	 ecx
-  00012	e8 00 00 00 00	 call	 ??$_Deallocate@$07$0A@@std@@YAXPAXI@Z ; std::_Deallocate<8,0>
-  00017	83 c4 08	 add	 esp, 8
-
-; 993  : 		}
-
-  0001a	8b e5		 mov	 esp, ebp
-  0001c	5d		 pop	 ebp
-  0001d	c2 08 00	 ret	 8
-?deallocate@?$allocator@H@std@@QAEXQAHI@Z ENDP		; std::allocator<int>::deallocate
-_TEXT	ENDS
-; Function compile flags: /Odtp
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xmemory0
-;	COMDAT ??0?$allocator@H@std@@QAE@XZ
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-??0?$allocator@H@std@@QAE@XZ PROC			; std::allocator<int>::allocator<int>, COMDAT
-; _this$ = ecx
-
-; 979  : 	constexpr allocator() noexcept
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	51		 push	 ecx
-  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
-
-; 980  : 		{	// construct default allocator (do nothing)
-; 981  : 		}
-
-  00007	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  0000a	8b e5		 mov	 esp, ebp
-  0000c	5d		 pop	 ebp
-  0000d	c3		 ret	 0
-??0?$allocator@H@std@@QAE@XZ ENDP			; std::allocator<int>::allocator<int>
 _TEXT	ENDS
 ; Function compile flags: /Odtp
 ; File c:\dev\tetris\src\graphics\graphics.hpp
@@ -22461,29 +21159,6 @@ __Count$ = 8						; size = 4
   00006	5d		 pop	 ebp
   00007	c3		 ret	 0
 ??$_Get_size_of_n@$00@std@@YAII@Z ENDP			; std::_Get_size_of_n<1>
-_TEXT	ENDS
-; Function compile flags: /Odtp
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xutility
-;	COMDAT ?_Swap_all@_Container_base0@std@@QAEXAAU12@@Z
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-___formal$ = 8						; size = 4
-?_Swap_all@_Container_base0@std@@QAEXAAU12@@Z PROC	; std::_Container_base0::_Swap_all, COMDAT
-; _this$ = ecx
-
-; 46   : 		{	// swap all iterators
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	51		 push	 ecx
-  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
-
-; 47   : 		}
-
-  00007	8b e5		 mov	 esp, ebp
-  00009	5d		 pop	 ebp
-  0000a	c2 04 00	 ret	 4
-?_Swap_all@_Container_base0@std@@QAEXAAU12@@Z ENDP	; std::_Container_base0::_Swap_all
 _TEXT	ENDS
 ; Function compile flags: /Odtp
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xutility

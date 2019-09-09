@@ -82,18 +82,18 @@ CONST	SEGMENT
 CONST	ENDS
 PUBLIC	??0Tetromino@gameplay@core@@QAE@PBEH@Z		; core::gameplay::Tetromino::Tetromino
 PUBLIC	?GetValue@Tetromino@gameplay@core@@QAEEHHH@Z	; core::gameplay::Tetromino::GetValue
-PUBLIC	?s_tetrominos@Tetromino@gameplay@core@@0QBV123@B ; core::gameplay::Tetromino::s_tetrominos
+PUBLIC	?s_tetrominos@Tetromino@gameplay@core@@2QBV123@B ; core::gameplay::Tetromino::s_tetrominos
 _BSS	SEGMENT
-?s_tetrominos@Tetromino@gameplay@core@@0QBV123@B DQ 07H DUP (?) ; core::gameplay::Tetromino::s_tetrominos
+?s_tetrominos@Tetromino@gameplay@core@@2QBV123@B DQ 07H DUP (?) ; core::gameplay::Tetromino::s_tetrominos
 _BSS	ENDS
 CRT$XCU	SEGMENT
-??s_tetrominos$initializer$@Tetromino@gameplay@core@@0P6AXXZA@@3P6AXXZA DD FLAT:??__E?s_tetrominos@Tetromino@gameplay@core@@0QBV123@B@@YAXXZ ; ??s_tetrominos$initializer$@Tetromino@gameplay@core@@0P6AXXZA@@3P6AXXZA
+??s_tetrominos$initializer$@Tetromino@gameplay@core@@2P6AXXZA@@3P6AXXZA DD FLAT:??__E?s_tetrominos@Tetromino@gameplay@core@@2QBV123@B@@YAXXZ ; ??s_tetrominos$initializer$@Tetromino@gameplay@core@@2P6AXXZA@@3P6AXXZA
 CRT$XCU	ENDS
 ; Function compile flags: /Odtp
 ; File c:\dev\tetris\src\tetromino.cpp
-;	COMDAT ??__E?s_tetrominos@Tetromino@gameplay@core@@0QBV123@B@@YAXXZ
+;	COMDAT ??__E?s_tetrominos@Tetromino@gameplay@core@@2QBV123@B@@YAXXZ
 text$di	SEGMENT
-??__E?s_tetrominos@Tetromino@gameplay@core@@0QBV123@B@@YAXXZ PROC ; `dynamic initializer for 'core::gameplay::Tetromino::s_tetrominos'', COMDAT
+??__E?s_tetrominos@Tetromino@gameplay@core@@2QBV123@B@@YAXXZ PROC ; `dynamic initializer for 'core::gameplay::Tetromino::s_tetrominos'', COMDAT
 
 ; 55   : };
 
@@ -104,53 +104,53 @@ text$di	SEGMENT
 
   00003	6a 04		 push	 4
   00005	68 00 00 00 00	 push	 OFFSET ?TETROMINO_1@@3QBEB
-  0000a	b9 00 00 00 00	 mov	 ecx, OFFSET ?s_tetrominos@Tetromino@gameplay@core@@0QBV123@B ; core::gameplay::Tetromino::s_tetrominos
+  0000a	b9 00 00 00 00	 mov	 ecx, OFFSET ?s_tetrominos@Tetromino@gameplay@core@@2QBV123@B ; core::gameplay::Tetromino::s_tetrominos
   0000f	e8 00 00 00 00	 call	 ??0Tetromino@gameplay@core@@QAE@PBEH@Z ; core::gameplay::Tetromino::Tetromino
 
 ; 49   :     Tetromino(TETROMINO_2, 2),
 
   00014	6a 02		 push	 2
   00016	68 00 00 00 00	 push	 OFFSET ?TETROMINO_2@@3QBEB
-  0001b	b9 08 00 00 00	 mov	 ecx, OFFSET ?s_tetrominos@Tetromino@gameplay@core@@0QBV123@B+8
+  0001b	b9 08 00 00 00	 mov	 ecx, OFFSET ?s_tetrominos@Tetromino@gameplay@core@@2QBV123@B+8
   00020	e8 00 00 00 00	 call	 ??0Tetromino@gameplay@core@@QAE@PBEH@Z ; core::gameplay::Tetromino::Tetromino
 
 ; 50   :     Tetromino(TETROMINO_3, 3),
 
   00025	6a 03		 push	 3
   00027	68 00 00 00 00	 push	 OFFSET ?TETROMINO_3@@3QBEB
-  0002c	b9 10 00 00 00	 mov	 ecx, OFFSET ?s_tetrominos@Tetromino@gameplay@core@@0QBV123@B+16
+  0002c	b9 10 00 00 00	 mov	 ecx, OFFSET ?s_tetrominos@Tetromino@gameplay@core@@2QBV123@B+16
   00031	e8 00 00 00 00	 call	 ??0Tetromino@gameplay@core@@QAE@PBEH@Z ; core::gameplay::Tetromino::Tetromino
 
 ; 51   :     Tetromino(TETROMINO_4, 3),
 
   00036	6a 03		 push	 3
   00038	68 00 00 00 00	 push	 OFFSET ?TETROMINO_4@@3QBEB
-  0003d	b9 18 00 00 00	 mov	 ecx, OFFSET ?s_tetrominos@Tetromino@gameplay@core@@0QBV123@B+24
+  0003d	b9 18 00 00 00	 mov	 ecx, OFFSET ?s_tetrominos@Tetromino@gameplay@core@@2QBV123@B+24
   00042	e8 00 00 00 00	 call	 ??0Tetromino@gameplay@core@@QAE@PBEH@Z ; core::gameplay::Tetromino::Tetromino
 
 ; 52   :     Tetromino(TETROMINO_5, 3),
 
   00047	6a 03		 push	 3
   00049	68 00 00 00 00	 push	 OFFSET ?TETROMINO_5@@3QBEB
-  0004e	b9 20 00 00 00	 mov	 ecx, OFFSET ?s_tetrominos@Tetromino@gameplay@core@@0QBV123@B+32
+  0004e	b9 20 00 00 00	 mov	 ecx, OFFSET ?s_tetrominos@Tetromino@gameplay@core@@2QBV123@B+32
   00053	e8 00 00 00 00	 call	 ??0Tetromino@gameplay@core@@QAE@PBEH@Z ; core::gameplay::Tetromino::Tetromino
 
 ; 53   :     Tetromino(TETROMINO_6, 3),
 
   00058	6a 03		 push	 3
   0005a	68 00 00 00 00	 push	 OFFSET ?TETROMINO_6@@3QBEB
-  0005f	b9 28 00 00 00	 mov	 ecx, OFFSET ?s_tetrominos@Tetromino@gameplay@core@@0QBV123@B+40
+  0005f	b9 28 00 00 00	 mov	 ecx, OFFSET ?s_tetrominos@Tetromino@gameplay@core@@2QBV123@B+40
   00064	e8 00 00 00 00	 call	 ??0Tetromino@gameplay@core@@QAE@PBEH@Z ; core::gameplay::Tetromino::Tetromino
 
 ; 54   :     Tetromino(TETROMINO_7, 3),
 
   00069	6a 03		 push	 3
   0006b	68 00 00 00 00	 push	 OFFSET ?TETROMINO_7@@3QBEB
-  00070	b9 30 00 00 00	 mov	 ecx, OFFSET ?s_tetrominos@Tetromino@gameplay@core@@0QBV123@B+48
+  00070	b9 30 00 00 00	 mov	 ecx, OFFSET ?s_tetrominos@Tetromino@gameplay@core@@2QBV123@B+48
   00075	e8 00 00 00 00	 call	 ??0Tetromino@gameplay@core@@QAE@PBEH@Z ; core::gameplay::Tetromino::Tetromino
   0007a	5d		 pop	 ebp
   0007b	c3		 ret	 0
-??__E?s_tetrominos@Tetromino@gameplay@core@@0QBV123@B@@YAXXZ ENDP ; `dynamic initializer for 'core::gameplay::Tetromino::s_tetrominos''
+??__E?s_tetrominos@Tetromino@gameplay@core@@2QBV123@B@@YAXXZ ENDP ; `dynamic initializer for 'core::gameplay::Tetromino::s_tetrominos''
 text$di	ENDS
 ; Function compile flags: /Odtp
 ; File c:\dev\tetris\src\tetromino.cpp

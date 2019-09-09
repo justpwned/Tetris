@@ -13,9 +13,11 @@ PUBLIC	?max@?$numeric_limits@H@std@@SAHXZ		; std::numeric_limits<int>::max
 PUBLIC	?_Orphan_all@_Container_base0@std@@QAEXXZ	; std::_Container_base0::_Orphan_all
 PUBLIC	?_Allocate@_Default_allocate_traits@std@@SAPAXI@Z ; std::_Default_allocate_traits::_Allocate
 PUBLIC	?_Adjust_manually_vector_aligned@std@@YAXAAPAXAAI@Z ; std::_Adjust_manually_vector_aligned
+PUBLIC	??0?$allocator@H@std@@QAE@XZ			; std::allocator<int>::allocator<int>
 PUBLIC	?deallocate@?$allocator@H@std@@QAEXQAHI@Z	; std::allocator<int>::deallocate
 PUBLIC	?allocate@?$allocator@H@std@@QAEPAHI@Z		; std::allocator<int>::allocate
 PUBLIC	?max_size@?$_Default_allocator_traits@V?$allocator@H@std@@@std@@SAIABV?$allocator@H@2@@Z ; std::_Default_allocator_traits<std::allocator<int> >::max_size
+PUBLIC	??0?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAE@XZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >
 PUBLIC	?_Orphan_all@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEXXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Orphan_all
 PUBLIC	?_Getal@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAV?$allocator@H@2@XZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Getal
 PUBLIC	?_Getal@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QBEABV?$allocator@H@2@XZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Getal
@@ -27,31 +29,40 @@ PUBLIC	?_Mylast@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@s
 PUBLIC	?_Mylast@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QBEABQAHXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Mylast
 PUBLIC	?_Myend@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAPAHXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Myend
 PUBLIC	?_Myend@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QBEABQAHXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Myend
+PUBLIC	??0?$_Vector_val@U?$_Simple_types@H@std@@@std@@QAE@XZ ; std::_Vector_val<std::_Simple_types<int> >::_Vector_val<std::_Simple_types<int> >
 PUBLIC	?_Get_first@?$_Compressed_pair@V?$allocator@H@std@@V?$_Vector_val@U?$_Simple_types@H@std@@@2@$00@std@@QAEAAV?$allocator@H@2@XZ ; std::_Compressed_pair<std::allocator<int>,std::_Vector_val<std::_Simple_types<int> >,1>::_Get_first
 PUBLIC	?_Get_first@?$_Compressed_pair@V?$allocator@H@std@@V?$_Vector_val@U?$_Simple_types@H@std@@@2@$00@std@@QBEABV?$allocator@H@2@XZ ; std::_Compressed_pair<std::allocator<int>,std::_Vector_val<std::_Simple_types<int> >,1>::_Get_first
 PUBLIC	?_Get_second@?$_Compressed_pair@V?$allocator@H@std@@V?$_Vector_val@U?$_Simple_types@H@std@@@2@$00@std@@QAEAAV?$_Vector_val@U?$_Simple_types@H@std@@@2@XZ ; std::_Compressed_pair<std::allocator<int>,std::_Vector_val<std::_Simple_types<int> >,1>::_Get_second
 PUBLIC	?_Get_second@?$_Compressed_pair@V?$allocator@H@std@@V?$_Vector_val@U?$_Simple_types@H@std@@@2@$00@std@@QBEABV?$_Vector_val@U?$_Simple_types@H@std@@@2@XZ ; std::_Compressed_pair<std::allocator<int>,std::_Vector_val<std::_Simple_types<int> >,1>::_Get_second
+PUBLIC	??0?$vector@HV?$allocator@H@std@@@std@@QAE@XZ	; std::vector<int,std::allocator<int> >::vector<int,std::allocator<int> >
+PUBLIC	??1?$vector@HV?$allocator@H@std@@@std@@QAE@XZ	; std::vector<int,std::allocator<int> >::~vector<int,std::allocator<int> >
 PUBLIC	?resize@?$vector@HV?$allocator@H@std@@@std@@QAEXI@Z ; std::vector<int,std::allocator<int> >::resize
 PUBLIC	?clear@?$vector@HV?$allocator@H@std@@@std@@QAEXXZ ; std::vector<int,std::allocator<int> >::clear
 PUBLIC	?size@?$vector@HV?$allocator@H@std@@@std@@QBEIXZ ; std::vector<int,std::allocator<int> >::size
 PUBLIC	?max_size@?$vector@HV?$allocator@H@std@@@std@@QBEIXZ ; std::vector<int,std::allocator<int> >::max_size
 PUBLIC	?capacity@?$vector@HV?$allocator@H@std@@@std@@QBEIXZ ; std::vector<int,std::allocator<int> >::capacity
+PUBLIC	??A?$vector@HV?$allocator@H@std@@@std@@QBEABHI@Z ; std::vector<int,std::allocator<int> >::operator[]
 PUBLIC	?_Udefault@?$vector@HV?$allocator@H@std@@@std@@AAEPAHPAHI@Z ; std::vector<int,std::allocator<int> >::_Udefault
 PUBLIC	?_Umove_if_noexcept1@?$vector@HV?$allocator@H@std@@@std@@AAEXPAH00U?$integral_constant@_N$00@2@@Z ; std::vector<int,std::allocator<int> >::_Umove_if_noexcept1
 PUBLIC	?_Umove_if_noexcept@?$vector@HV?$allocator@H@std@@@std@@AAEXPAH00@Z ; std::vector<int,std::allocator<int> >::_Umove_if_noexcept
 PUBLIC	?_Destroy@?$vector@HV?$allocator@H@std@@@std@@AAEXPAH0@Z ; std::vector<int,std::allocator<int> >::_Destroy
 PUBLIC	?_Calculate_growth@?$vector@HV?$allocator@H@std@@@std@@ABEII@Z ; std::vector<int,std::allocator<int> >::_Calculate_growth
 PUBLIC	?_Change_array@?$vector@HV?$allocator@H@std@@@std@@AAEXQAHII@Z ; std::vector<int,std::allocator<int> >::_Change_array
+PUBLIC	?_Tidy@?$vector@HV?$allocator@H@std@@@std@@AAEXXZ ; std::vector<int,std::allocator<int> >::_Tidy
 PUBLIC	?_Xlength@?$vector@HV?$allocator@H@std@@@std@@CAXXZ ; std::vector<int,std::allocator<int> >::_Xlength
 PUBLIC	?_Orphan_range@?$vector@HV?$allocator@H@std@@@std@@ABEXPAH0@Z ; std::vector<int,std::allocator<int> >::_Orphan_range
+PUBLIC	??0Matrix@math@core@@QAE@XZ			; core::math::Matrix::Matrix
 PUBLIC	?Resize@Matrix@math@core@@QAEXHH@Z		; core::math::Matrix::Resize
-PUBLIC	?Init@Board@gameplay@core@@QAEXHHHH@Z		; core::gameplay::Board::Init
+PUBLIC	?GetValue@Matrix@math@core@@QBEHHH@Z		; core::math::Matrix::GetValue
+PUBLIC	??1Matrix@math@core@@QAE@XZ			; core::math::Matrix::~Matrix
+PUBLIC	??0Board@gameplay@core@@QAE@HHHH@Z		; core::gameplay::Board::Board
 PUBLIC	?DrawCell@Board@gameplay@core@@QAEXHHHHH_N@Z	; core::gameplay::Board::DrawCell
-PUBLIC	?DrawPiece@Board@gameplay@core@@QAEXHH_N@Z	; core::gameplay::Board::DrawPiece
-PUBLIC	?Draw@Board@gameplay@core@@QAEXHH@Z		; core::gameplay::Board::Draw
+PUBLIC	?DrawBoard@Board@gameplay@core@@QAEXHH@Z	; core::gameplay::Board::DrawBoard
+PUBLIC	?GetCellValue@Board@gameplay@core@@QBEHHH@Z	; core::gameplay::Board::GetCellValue
 PUBLIC	??R<lambda_4f2fd6a84b983411848f0e0333d0ea32>@@QBEPAHPAHI@Z ; <lambda_4f2fd6a84b983411848f0e0333d0ea32>::operator()
 PUBLIC	??0<lambda_4f2fd6a84b983411848f0e0333d0ea32>@@QAE@QAV?$vector@HV?$allocator@H@std@@@std@@@Z ; <lambda_4f2fd6a84b983411848f0e0333d0ea32>::<lambda_4f2fd6a84b983411848f0e0333d0ea32>
 PUBLIC	??$_Resize@V<lambda_4f2fd6a84b983411848f0e0333d0ea32>@@@?$vector@HV?$allocator@H@std@@@std@@AAEXIV<lambda_4f2fd6a84b983411848f0e0333d0ea32>@@@Z ; std::vector<int,std::allocator<int> >::_Resize<<lambda_4f2fd6a84b983411848f0e0333d0ea32> >
+PUBLIC	??$?0$$V@?$_Compressed_pair@V?$allocator@H@std@@V?$_Vector_val@U?$_Simple_types@H@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z ; std::_Compressed_pair<std::allocator<int>,std::_Vector_val<std::_Simple_types<int> >,1>::_Compressed_pair<std::allocator<int>,std::_Vector_val<std::_Simple_types<int> >,1><>
 PUBLIC	??$_Destroy_range@V?$allocator@H@std@@@std@@YAXPAH0AAV?$allocator@H@0@@Z ; std::_Destroy_range<std::allocator<int> >
 PUBLIC	??$_Uninitialized_value_construct_n@PAHIV?$allocator@H@std@@@std@@YAPAHPAHIAAV?$allocator@H@0@@Z ; std::_Uninitialized_value_construct_n<int *,unsigned int,std::allocator<int> >
 PUBLIC	??$_Min_value@I@std@@YAABIABI0@Z		; std::_Min_value<unsigned int>
@@ -71,11 +82,14 @@ PUBLIC	??$_Ptr_move_cat@HH@std@@YA?AU_Really_trivial_ptr_iterator_tag@0@ABQAH0@Z
 PUBLIC	??$_Uninitialized_move_al_unchecked@HHV?$allocator@H@std@@@std@@YAPAHQAH00AAV?$allocator@H@0@U_Really_trivial_ptr_iterator_tag@0@U?$integral_constant@_N$00@0@@Z ; std::_Uninitialized_move_al_unchecked<int,int,std::allocator<int> >
 PUBLIC	??$_Seek_wrapped@H@std@@YAXAAPAHQAH@Z		; std::_Seek_wrapped<int>
 PUBLIC	??$_Copy_memmove@PAHPAH@std@@YAPAHPAH00@Z	; std::_Copy_memmove<int *,int *>
+PUBLIC	??_C@_1EE@HDIKHOLG@?$AAc?$AA?3?$AA?2?$AAd?$AAe?$AAv?$AA?2?$AAt?$AAe?$AAt?$AAr?$AAi?$AAs?$AA?2?$AAs@ ; `string'
+PUBLIC	??_C@_1GI@GGOBNHPI@?$AAr?$AAo?$AAw?$AA?5?$AA?$DO?$AA?$DN?$AA?5?$AA0?$AA?5?$AA?$CG?$AA?$CG?$AA?5?$AAr?$AAo?$AAw@ ; `string'
 PUBLIC	??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long@	; `string'
 EXTRN	??2@YAPAXI@Z:PROC				; operator new
 EXTRN	??3@YAXPAXI@Z:PROC				; operator delete
 EXTRN	__invalid_parameter_noinfo_noreturn:PROC
 EXTRN	?_Xlength_error@std@@YAXPBD@Z:PROC		; std::_Xlength_error
+EXTRN	__wassert:PROC
 EXTRN	?Instance@Graphics@graphics@core@@SAPAV123@XZ:PROC ; core::graphics::Graphics::Instance
 EXTRN	?DrawFillRect@Graphics@graphics@core@@QAEXHHHHVColor@3@@Z:PROC ; core::graphics::Graphics::DrawFillRect
 EXTRN	?DrawRect@Graphics@graphics@core@@QAEXHHHHVColor@3@@Z:PROC ; core::graphics::Graphics::DrawRect
@@ -91,6 +105,28 @@ EXTRN	___security_cookie:DWORD
 ;	COMDAT ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long@
 CONST	SEGMENT
 ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long@ DB 'vector<T> too long', 00H ; `string'
+CONST	ENDS
+;	COMDAT ??_C@_1GI@GGOBNHPI@?$AAr?$AAo?$AAw?$AA?5?$AA?$DO?$AA?$DN?$AA?5?$AA0?$AA?5?$AA?$CG?$AA?$CG?$AA?5?$AAr?$AAo?$AAw@
+CONST	SEGMENT
+??_C@_1GI@GGOBNHPI@?$AAr?$AAo?$AAw?$AA?5?$AA?$DO?$AA?$DN?$AA?5?$AA0?$AA?5?$AA?$CG?$AA?$CG?$AA?5?$AAr?$AAo?$AAw@ DB 'r'
+	DB	00H, 'o', 00H, 'w', 00H, ' ', 00H, '>', 00H, '=', 00H, ' ', 00H
+	DB	'0', 00H, ' ', 00H, '&', 00H, '&', 00H, ' ', 00H, 'r', 00H, 'o'
+	DB	00H, 'w', 00H, ' ', 00H, '<', 00H, ' ', 00H, 'm', 00H, '_', 00H
+	DB	'r', 00H, 'o', 00H, 'w', 00H, 's', 00H, ' ', 00H, '&', 00H, '&'
+	DB	00H, ' ', 00H, 'c', 00H, 'o', 00H, 'l', 00H, ' ', 00H, '>', 00H
+	DB	'=', 00H, '0', 00H, ' ', 00H, '&', 00H, '&', 00H, ' ', 00H, 'c'
+	DB	00H, 'o', 00H, 'l', 00H, ' ', 00H, '<', 00H, ' ', 00H, 'm', 00H
+	DB	'_', 00H, 'c', 00H, 'o', 00H, 'l', 00H, 's', 00H, 00H, 00H ; `string'
+CONST	ENDS
+;	COMDAT ??_C@_1EE@HDIKHOLG@?$AAc?$AA?3?$AA?2?$AAd?$AAe?$AAv?$AA?2?$AAt?$AAe?$AAt?$AAr?$AAi?$AAs?$AA?2?$AAs@
+CONST	SEGMENT
+??_C@_1EE@HDIKHOLG@?$AAc?$AA?3?$AA?2?$AAd?$AAe?$AAv?$AA?2?$AAt?$AAe?$AAt?$AAr?$AAi?$AAs?$AA?2?$AAs@ DB 'c'
+	DB	00H, ':', 00H, '\', 00H, 'd', 00H, 'e', 00H, 'v', 00H, '\', 00H
+	DB	't', 00H, 'e', 00H, 't', 00H, 'r', 00H, 'i', 00H, 's', 00H, '\'
+	DB	00H, 's', 00H, 'r', 00H, 'c', 00H, '\', 00H, 'm', 00H, 'a', 00H
+	DB	't', 00H, 'h', 00H, '\', 00H, 'm', 00H, 'a', 00H, 't', 00H, 'r'
+	DB	00H, 'i', 00H, 'x', 00H, '.', 00H, 'h', 00H, 'p', 00H, 'p', 00H
+	DB	00H, 00H					; `string'
 CONST	ENDS
 ;	COMDAT xdata$x
 xdata$x	SEGMENT
@@ -116,9 +152,40 @@ __ehfuncinfo$??$_Resize@V<lambda_4f2fd6a84b983411848f0e0333d0ea32>@@@?$vector@HV
 	DD	00H
 	DD	01H
 xdata$x	ENDS
+xdata$x	SEGMENT
+__unwindtable$??0Board@gameplay@core@@QAE@HHHH@Z DD 0ffffffffH
+	DD	FLAT:__unwindfunclet$??0Board@gameplay@core@@QAE@HHHH@Z$0
+__ehfuncinfo$??0Board@gameplay@core@@QAE@HHHH@Z DD 019930522H
+	DD	01H
+	DD	FLAT:__unwindtable$??0Board@gameplay@core@@QAE@HHHH@Z
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	01H
+xdata$x	ENDS
 ;	COMDAT xdata$x
 xdata$x	SEGMENT
 __ehfuncinfo$?clear@?$vector@HV?$allocator@H@std@@@std@@QAEXXZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$??1?$vector@HV?$allocator@H@std@@@std@@QAE@XZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$??0?$vector@HV?$allocator@H@std@@@std@@QAE@XZ DD 019930522H
 	DD	00H
 	DD	00H
 	DD	2 DUP(00H)
@@ -957,6 +1024,37 @@ __Al$ = 16						; size = 4
 ??$_Destroy_range@V?$allocator@H@std@@@std@@YAXPAH0AAV?$allocator@H@0@@Z ENDP ; std::_Destroy_range<std::allocator<int> >
 _TEXT	ENDS
 ; Function compile flags: /Odtp
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xutility
+;	COMDAT ??$?0$$V@?$_Compressed_pair@V?$allocator@H@std@@V?$_Vector_val@U?$_Simple_types@H@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+___formal$ = 8						; size = 1
+??$?0$$V@?$_Compressed_pair@V?$allocator@H@std@@V?$_Vector_val@U?$_Simple_types@H@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z PROC ; std::_Compressed_pair<std::allocator<int>,std::_Vector_val<std::_Simple_types<int> >,1>::_Compressed_pair<std::allocator<int>,std::_Vector_val<std::_Simple_types<int> >,1><>, COMDAT
+; _this$ = ecx
+
+; 278  : 		{	// construct from forwarded values
+
+  00000	55		 push	 ebp
+  00001	8b ec		 mov	 ebp, esp
+  00003	51		 push	 ecx
+  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
+
+; 277  : 		: _Ty1(), _Myval2(_STD forward<_Other2>(_Val2)...)
+
+  00007	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  0000a	e8 00 00 00 00	 call	 ??0?$allocator@H@std@@QAE@XZ ; std::allocator<int>::allocator<int>
+  0000f	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  00012	e8 00 00 00 00	 call	 ??0?$_Vector_val@U?$_Simple_types@H@std@@@std@@QAE@XZ ; std::_Vector_val<std::_Simple_types<int> >::_Vector_val<std::_Simple_types<int> >
+
+; 279  : 		}
+
+  00017	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
+  0001a	8b e5		 mov	 esp, ebp
+  0001c	5d		 pop	 ebp
+  0001d	c2 04 00	 ret	 4
+??$?0$$V@?$_Compressed_pair@V?$allocator@H@std@@V?$_Vector_val@U?$_Simple_types@H@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z ENDP ; std::_Compressed_pair<std::allocator<int>,std::_Vector_val<std::_Simple_types<int> >,1>::_Compressed_pair<std::allocator<int>,std::_Vector_val<std::_Simple_types<int> >,1><>
+_TEXT	ENDS
+; Function compile flags: /Odtp
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector
 ;	COMDAT ??$_Resize@V<lambda_4f2fd6a84b983411848f0e0333d0ea32>@@@?$vector@HV?$allocator@H@std@@@std@@AAEXIV<lambda_4f2fd6a84b983411848f0e0333d0ea32>@@@Z
 _TEXT	SEGMENT
@@ -1335,53 +1433,160 @@ __Count$ = 12						; size = 4
 ??R<lambda_4f2fd6a84b983411848f0e0333d0ea32>@@QBEPAHPAHI@Z ENDP ; <lambda_4f2fd6a84b983411848f0e0333d0ea32>::operator()
 _TEXT	ENDS
 ; Function compile flags: /Odtp
+; File c:\dev\tetris\src\board.hpp
+;	COMDAT ?GetCellValue@Board@gameplay@core@@QBEHHH@Z
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+_t_row$ = 8						; size = 4
+_t_col$ = 12						; size = 4
+?GetCellValue@Board@gameplay@core@@QBEHHH@Z PROC	; core::gameplay::Board::GetCellValue, COMDAT
+; _this$ = ecx
+
+; 44   :             inline i32 GetCellValue(i32 t_row, i32 t_col) const { return m_boardData.GetValue(t_row, t_col); }
+
+  00000	55		 push	 ebp
+  00001	8b ec		 mov	 ebp, esp
+  00003	51		 push	 ecx
+  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
+  00007	8b 45 0c	 mov	 eax, DWORD PTR _t_col$[ebp]
+  0000a	50		 push	 eax
+  0000b	8b 4d 08	 mov	 ecx, DWORD PTR _t_row$[ebp]
+  0000e	51		 push	 ecx
+  0000f	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  00012	83 c1 14	 add	 ecx, 20			; 00000014H
+  00015	e8 00 00 00 00	 call	 ?GetValue@Matrix@math@core@@QBEHHH@Z ; core::math::Matrix::GetValue
+  0001a	8b e5		 mov	 esp, ebp
+  0001c	5d		 pop	 ebp
+  0001d	c2 08 00	 ret	 8
+?GetCellValue@Board@gameplay@core@@QBEHHH@Z ENDP	; core::gameplay::Board::GetCellValue
+_TEXT	ENDS
+; Function compile flags: /Odtp
 ; File c:\dev\tetris\src\board.cpp
 _TEXT	SEGMENT
+_value$1 = -16						; size = 4
+_row$2 = -12						; size = 4
+_col$3 = -8						; size = 4
 _this$ = -4						; size = 4
 _t_xOffset$ = 8						; size = 4
 _t_yOffset$ = 12					; size = 4
-?Draw@Board@gameplay@core@@QAEXHH@Z PROC		; core::gameplay::Board::Draw
+?DrawBoard@Board@gameplay@core@@QAEXHH@Z PROC		; core::gameplay::Board::DrawBoard
 ; _this$ = ecx
 
 ; 42   : {
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
-  00003	51		 push	 ecx
-  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
+  00003	83 ec 10	 sub	 esp, 16			; 00000010H
+  00006	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
 
-; 43   :     
-; 44   : }
+; 43   :     Graphics::Instance()->DrawFillRect(t_xOffset, t_yOffset, m_boardCols * m_boardGridSize, m_boardRows * m_boardGridSize, Palette::s_base[0]);
 
-  00007	8b e5		 mov	 esp, ebp
-  00009	5d		 pop	 ebp
-  0000a	c2 08 00	 ret	 8
-?Draw@Board@gameplay@core@@QAEXHH@Z ENDP		; core::gameplay::Board::Draw
-_TEXT	ENDS
-; Function compile flags: /Odtp
-; File c:\dev\tetris\src\board.cpp
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-_t_xOffset$ = 8						; size = 4
-_t_yOffset$ = 12					; size = 4
-_outline$ = 16						; size = 1
-?DrawPiece@Board@gameplay@core@@QAEXHH_N@Z PROC		; core::gameplay::Board::DrawPiece
-; _this$ = ecx
+  00009	b8 04 00 00 00	 mov	 eax, 4
+  0000e	6b c8 00	 imul	 ecx, eax, 0
+  00011	8b 91 00 00 00
+	00		 mov	 edx, DWORD PTR ?s_base@Palette@core@@2QBVColor@2@B[ecx]
+  00017	52		 push	 edx
+  00018	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
+  0001b	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  0001e	8b 50 04	 mov	 edx, DWORD PTR [eax+4]
+  00021	0f af 51 10	 imul	 edx, DWORD PTR [ecx+16]
+  00025	52		 push	 edx
+  00026	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
+  00029	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  0002c	8b 50 08	 mov	 edx, DWORD PTR [eax+8]
+  0002f	0f af 51 10	 imul	 edx, DWORD PTR [ecx+16]
+  00033	52		 push	 edx
+  00034	8b 45 0c	 mov	 eax, DWORD PTR _t_yOffset$[ebp]
+  00037	50		 push	 eax
+  00038	8b 4d 08	 mov	 ecx, DWORD PTR _t_xOffset$[ebp]
+  0003b	51		 push	 ecx
+  0003c	e8 00 00 00 00	 call	 ?Instance@Graphics@graphics@core@@SAPAV123@XZ ; core::graphics::Graphics::Instance
+  00041	8b c8		 mov	 ecx, eax
+  00043	e8 00 00 00 00	 call	 ?DrawFillRect@Graphics@graphics@core@@QAEXHHHHVColor@3@@Z ; core::graphics::Graphics::DrawFillRect
 
-; 47   : {
+; 44   :     
+; 45   :     for (i32 row = 0; row < m_boardRows; ++row)
 
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	51		 push	 ecx
-  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
+  00048	c7 45 f4 00 00
+	00 00		 mov	 DWORD PTR _row$2[ebp], 0
+  0004f	eb 09		 jmp	 SHORT $LN4@DrawBoard
+$LN2@DrawBoard:
+  00051	8b 55 f4	 mov	 edx, DWORD PTR _row$2[ebp]
+  00054	83 c2 01	 add	 edx, 1
+  00057	89 55 f4	 mov	 DWORD PTR _row$2[ebp], edx
+$LN4@DrawBoard:
+  0005a	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
+  0005d	8b 4d f4	 mov	 ecx, DWORD PTR _row$2[ebp]
+  00060	3b 48 04	 cmp	 ecx, DWORD PTR [eax+4]
+  00063	7d 58		 jge	 SHORT $LN1@DrawBoard
 
-; 48   :     
-; 49   : }
+; 46   :     {
+; 47   :         for (i32 col = 0; col < m_boardCols; ++col)
 
-  00007	8b e5		 mov	 esp, ebp
-  00009	5d		 pop	 ebp
-  0000a	c2 0c 00	 ret	 12			; 0000000cH
-?DrawPiece@Board@gameplay@core@@QAEXHH_N@Z ENDP		; core::gameplay::Board::DrawPiece
+  00065	c7 45 f8 00 00
+	00 00		 mov	 DWORD PTR _col$3[ebp], 0
+  0006c	eb 09		 jmp	 SHORT $LN7@DrawBoard
+$LN5@DrawBoard:
+  0006e	8b 55 f8	 mov	 edx, DWORD PTR _col$3[ebp]
+  00071	83 c2 01	 add	 edx, 1
+  00074	89 55 f8	 mov	 DWORD PTR _col$3[ebp], edx
+$LN7@DrawBoard:
+  00077	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
+  0007a	8b 4d f8	 mov	 ecx, DWORD PTR _col$3[ebp]
+  0007d	3b 48 08	 cmp	 ecx, DWORD PTR [eax+8]
+  00080	7d 39		 jge	 SHORT $LN6@DrawBoard
+
+; 48   :         {
+; 49   :             i32 value = GetCellValue(row, col);
+
+  00082	8b 55 f8	 mov	 edx, DWORD PTR _col$3[ebp]
+  00085	52		 push	 edx
+  00086	8b 45 f4	 mov	 eax, DWORD PTR _row$2[ebp]
+  00089	50		 push	 eax
+  0008a	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  0008d	e8 00 00 00 00	 call	 ?GetCellValue@Board@gameplay@core@@QBEHHH@Z ; core::gameplay::Board::GetCellValue
+  00092	89 45 f0	 mov	 DWORD PTR _value$1[ebp], eax
+
+; 50   :             if (value)
+
+  00095	83 7d f0 00	 cmp	 DWORD PTR _value$1[ebp], 0
+  00099	74 1e		 je	 SHORT $LN8@DrawBoard
+
+; 51   :             {
+; 52   :                 DrawCell(row, col, value, t_xOffset, t_yOffset);
+
+  0009b	6a 00		 push	 0
+  0009d	8b 4d 0c	 mov	 ecx, DWORD PTR _t_yOffset$[ebp]
+  000a0	51		 push	 ecx
+  000a1	8b 55 08	 mov	 edx, DWORD PTR _t_xOffset$[ebp]
+  000a4	52		 push	 edx
+  000a5	8b 45 f0	 mov	 eax, DWORD PTR _value$1[ebp]
+  000a8	50		 push	 eax
+  000a9	8b 4d f8	 mov	 ecx, DWORD PTR _col$3[ebp]
+  000ac	51		 push	 ecx
+  000ad	8b 55 f4	 mov	 edx, DWORD PTR _row$2[ebp]
+  000b0	52		 push	 edx
+  000b1	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  000b4	e8 00 00 00 00	 call	 ?DrawCell@Board@gameplay@core@@QAEXHHHHH_N@Z ; core::gameplay::Board::DrawCell
+$LN8@DrawBoard:
+
+; 53   :             }
+; 54   :         }
+
+  000b9	eb b3		 jmp	 SHORT $LN5@DrawBoard
+$LN6@DrawBoard:
+
+; 55   :     }
+
+  000bb	eb 94		 jmp	 SHORT $LN2@DrawBoard
+$LN1@DrawBoard:
+
+; 56   : }
+
+  000bd	8b e5		 mov	 esp, ebp
+  000bf	5d		 pop	 ebp
+  000c0	c2 08 00	 ret	 8
+?DrawBoard@Board@gameplay@core@@QAEXHH@Z ENDP		; core::gameplay::Board::DrawBoard
 _TEXT	ENDS
 ; Function compile flags: /Odtp
 ; File c:\dev\tetris\src\board.cpp
@@ -1568,61 +1773,175 @@ _TEXT	ENDS
 ; Function compile flags: /Odtp
 ; File c:\dev\tetris\src\board.cpp
 _TEXT	SEGMENT
-_this$ = -4						; size = 4
+_this$ = -16						; size = 4
+__$EHRec$ = -12						; size = 12
 _t_boardRows$ = 8					; size = 4
 _t_boardCols$ = 12					; size = 4
 _t_boardVisibleRows$ = 16				; size = 4
 _t_boardGridSize$ = 20					; size = 4
-?Init@Board@gameplay@core@@QAEXHHHH@Z PROC		; core::gameplay::Board::Init
+??0Board@gameplay@core@@QAE@HHHH@Z PROC			; core::gameplay::Board::Board
 ; _this$ = ecx
 
 ; 10   : {
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
-  00003	51		 push	 ecx
-  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
+  00003	6a ff		 push	 -1
+  00005	68 00 00 00 00	 push	 __ehhandler$??0Board@gameplay@core@@QAE@HHHH@Z
+  0000a	64 a1 00 00 00
+	00		 mov	 eax, DWORD PTR fs:0
+  00010	50		 push	 eax
+  00011	51		 push	 ecx
+  00012	a1 00 00 00 00	 mov	 eax, DWORD PTR ___security_cookie
+  00017	33 c5		 xor	 eax, ebp
+  00019	50		 push	 eax
+  0001a	8d 45 f4	 lea	 eax, DWORD PTR __$EHRec$[ebp]
+  0001d	64 a3 00 00 00
+	00		 mov	 DWORD PTR fs:0, eax
+  00023	89 4d f0	 mov	 DWORD PTR _this$[ebp], ecx
+  00026	8b 4d f0	 mov	 ecx, DWORD PTR _this$[ebp]
+  00029	83 c1 14	 add	 ecx, 20			; 00000014H
+  0002c	e8 00 00 00 00	 call	 ??0Matrix@math@core@@QAE@XZ ; core::math::Matrix::Matrix
+  00031	c7 45 fc 00 00
+	00 00		 mov	 DWORD PTR __$EHRec$[ebp+8], 0
 
 ; 11   :     m_boardRows = t_boardRows;
 
-  00007	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  0000a	8b 4d 08	 mov	 ecx, DWORD PTR _t_boardRows$[ebp]
-  0000d	89 48 04	 mov	 DWORD PTR [eax+4], ecx
+  00038	8b 45 f0	 mov	 eax, DWORD PTR _this$[ebp]
+  0003b	8b 4d 08	 mov	 ecx, DWORD PTR _t_boardRows$[ebp]
+  0003e	89 48 04	 mov	 DWORD PTR [eax+4], ecx
 
 ; 12   :     m_boardCols = t_boardCols;
 
-  00010	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
-  00013	8b 45 0c	 mov	 eax, DWORD PTR _t_boardCols$[ebp]
-  00016	89 42 08	 mov	 DWORD PTR [edx+8], eax
+  00041	8b 55 f0	 mov	 edx, DWORD PTR _this$[ebp]
+  00044	8b 45 0c	 mov	 eax, DWORD PTR _t_boardCols$[ebp]
+  00047	89 42 08	 mov	 DWORD PTR [edx+8], eax
 
 ; 13   :     m_boardVisibleRows = t_boardVisibleRows;
 
-  00019	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  0001c	8b 55 10	 mov	 edx, DWORD PTR _t_boardVisibleRows$[ebp]
-  0001f	89 51 0c	 mov	 DWORD PTR [ecx+12], edx
+  0004a	8b 4d f0	 mov	 ecx, DWORD PTR _this$[ebp]
+  0004d	8b 55 10	 mov	 edx, DWORD PTR _t_boardVisibleRows$[ebp]
+  00050	89 51 0c	 mov	 DWORD PTR [ecx+12], edx
 
 ; 14   :     m_boardGridSize = t_boardGridSize;
 
-  00022	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  00025	8b 4d 14	 mov	 ecx, DWORD PTR _t_boardGridSize$[ebp]
-  00028	89 48 10	 mov	 DWORD PTR [eax+16], ecx
+  00053	8b 45 f0	 mov	 eax, DWORD PTR _this$[ebp]
+  00056	8b 4d 14	 mov	 ecx, DWORD PTR _t_boardGridSize$[ebp]
+  00059	89 48 10	 mov	 DWORD PTR [eax+16], ecx
 
 ; 15   :     m_boardData.Resize(t_boardRows, t_boardCols);
 
-  0002b	8b 55 0c	 mov	 edx, DWORD PTR _t_boardCols$[ebp]
-  0002e	52		 push	 edx
-  0002f	8b 45 08	 mov	 eax, DWORD PTR _t_boardRows$[ebp]
-  00032	50		 push	 eax
-  00033	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  00036	83 c1 14	 add	 ecx, 20			; 00000014H
-  00039	e8 00 00 00 00	 call	 ?Resize@Matrix@math@core@@QAEXHH@Z ; core::math::Matrix::Resize
+  0005c	8b 55 0c	 mov	 edx, DWORD PTR _t_boardCols$[ebp]
+  0005f	52		 push	 edx
+  00060	8b 45 08	 mov	 eax, DWORD PTR _t_boardRows$[ebp]
+  00063	50		 push	 eax
+  00064	8b 4d f0	 mov	 ecx, DWORD PTR _this$[ebp]
+  00067	83 c1 14	 add	 ecx, 20			; 00000014H
+  0006a	e8 00 00 00 00	 call	 ?Resize@Matrix@math@core@@QAEXHH@Z ; core::math::Matrix::Resize
 
 ; 16   : }
 
-  0003e	8b e5		 mov	 esp, ebp
-  00040	5d		 pop	 ebp
-  00041	c2 10 00	 ret	 16			; 00000010H
-?Init@Board@gameplay@core@@QAEXHHHH@Z ENDP		; core::gameplay::Board::Init
+  0006f	c7 45 fc ff ff
+	ff ff		 mov	 DWORD PTR __$EHRec$[ebp+8], -1
+  00076	8b 45 f0	 mov	 eax, DWORD PTR _this$[ebp]
+  00079	8b 4d f4	 mov	 ecx, DWORD PTR __$EHRec$[ebp]
+  0007c	64 89 0d 00 00
+	00 00		 mov	 DWORD PTR fs:0, ecx
+  00083	59		 pop	 ecx
+  00084	8b e5		 mov	 esp, ebp
+  00086	5d		 pop	 ebp
+  00087	c2 10 00	 ret	 16			; 00000010H
+_TEXT	ENDS
+text$x	SEGMENT
+__unwindfunclet$??0Board@gameplay@core@@QAE@HHHH@Z$0:
+  00000	8b 4d f0	 mov	 ecx, DWORD PTR _this$[ebp]
+  00003	83 c1 14	 add	 ecx, 20			; 00000014H
+  00006	e9 00 00 00 00	 jmp	 ??1Matrix@math@core@@QAE@XZ
+__ehhandler$??0Board@gameplay@core@@QAE@HHHH@Z:
+  0000b	8b 54 24 08	 mov	 edx, DWORD PTR [esp+8]
+  0000f	8d 42 0c	 lea	 eax, DWORD PTR [edx+12]
+  00012	8b 4a f8	 mov	 ecx, DWORD PTR [edx-8]
+  00015	33 c8		 xor	 ecx, eax
+  00017	e8 00 00 00 00	 call	 @__security_check_cookie@4
+  0001c	b8 00 00 00 00	 mov	 eax, OFFSET __ehfuncinfo$??0Board@gameplay@core@@QAE@HHHH@Z
+  00021	e9 00 00 00 00	 jmp	 ___CxxFrameHandler3
+text$x	ENDS
+??0Board@gameplay@core@@QAE@HHHH@Z ENDP			; core::gameplay::Board::Board
+; Function compile flags: /Odtp
+;	COMDAT ??1Matrix@math@core@@QAE@XZ
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+??1Matrix@math@core@@QAE@XZ PROC			; core::math::Matrix::~Matrix, COMDAT
+; _this$ = ecx
+  00000	55		 push	 ebp
+  00001	8b ec		 mov	 ebp, esp
+  00003	51		 push	 ecx
+  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
+  00007	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  0000a	83 c1 08	 add	 ecx, 8
+  0000d	e8 00 00 00 00	 call	 ??1?$vector@HV?$allocator@H@std@@@std@@QAE@XZ ; std::vector<int,std::allocator<int> >::~vector<int,std::allocator<int> >
+  00012	8b e5		 mov	 esp, ebp
+  00014	5d		 pop	 ebp
+  00015	c3		 ret	 0
+??1Matrix@math@core@@QAE@XZ ENDP			; core::math::Matrix::~Matrix
+_TEXT	ENDS
+; Function compile flags: /Odtp
+; File c:\dev\tetris\src\math\matrix.hpp
+;	COMDAT ?GetValue@Matrix@math@core@@QBEHHH@Z
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+_row$ = 8						; size = 4
+_col$ = 12						; size = 4
+?GetValue@Matrix@math@core@@QBEHHH@Z PROC		; core::math::Matrix::GetValue, COMDAT
+; _this$ = ecx
+
+; 67   :             {
+
+  00000	55		 push	 ebp
+  00001	8b ec		 mov	 ebp, esp
+  00003	51		 push	 ecx
+  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
+
+; 68   :                 assert(row >= 0 && row < m_rows && col >=0 && col < m_cols);
+
+  00007	83 7d 08 00	 cmp	 DWORD PTR _row$[ebp], 0
+  0000b	7c 1b		 jl	 SHORT $LN3@GetValue
+  0000d	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
+  00010	8b 4d 08	 mov	 ecx, DWORD PTR _row$[ebp]
+  00013	3b 08		 cmp	 ecx, DWORD PTR [eax]
+  00015	7d 11		 jge	 SHORT $LN3@GetValue
+  00017	83 7d 0c 00	 cmp	 DWORD PTR _col$[ebp], 0
+  0001b	7c 0b		 jl	 SHORT $LN3@GetValue
+  0001d	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
+  00020	8b 45 0c	 mov	 eax, DWORD PTR _col$[ebp]
+  00023	3b 42 04	 cmp	 eax, DWORD PTR [edx+4]
+  00026	7c 14		 jl	 SHORT $LN4@GetValue
+$LN3@GetValue:
+  00028	6a 44		 push	 68			; 00000044H
+  0002a	68 00 00 00 00	 push	 OFFSET ??_C@_1EE@HDIKHOLG@?$AAc?$AA?3?$AA?2?$AAd?$AAe?$AAv?$AA?2?$AAt?$AAe?$AAt?$AAr?$AAi?$AAs?$AA?2?$AAs@
+  0002f	68 00 00 00 00	 push	 OFFSET ??_C@_1GI@GGOBNHPI@?$AAr?$AAo?$AAw?$AA?5?$AA?$DO?$AA?$DN?$AA?5?$AA0?$AA?5?$AA?$CG?$AA?$CG?$AA?5?$AAr?$AAo?$AAw@
+  00034	e8 00 00 00 00	 call	 __wassert
+  00039	83 c4 0c	 add	 esp, 12			; 0000000cH
+$LN4@GetValue:
+
+; 69   :                 return m_data[row * m_cols + col];
+
+  0003c	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
+  0003f	8b 45 08	 mov	 eax, DWORD PTR _row$[ebp]
+  00042	0f af 42 04	 imul	 eax, DWORD PTR [edx+4]
+  00046	03 45 0c	 add	 eax, DWORD PTR _col$[ebp]
+  00049	50		 push	 eax
+  0004a	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  0004d	83 c1 08	 add	 ecx, 8
+  00050	e8 00 00 00 00	 call	 ??A?$vector@HV?$allocator@H@std@@@std@@QBEABHI@Z ; std::vector<int,std::allocator<int> >::operator[]
+  00055	8b 00		 mov	 eax, DWORD PTR [eax]
+
+; 70   :             }
+
+  00057	8b e5		 mov	 esp, ebp
+  00059	5d		 pop	 ebp
+  0005a	c2 08 00	 ret	 8
+?GetValue@Matrix@math@core@@QBEHHH@Z ENDP		; core::math::Matrix::GetValue
 _TEXT	ENDS
 ; Function compile flags: /Odtp
 ; File c:\dev\tetris\src\math\matrix.hpp
@@ -1676,6 +1995,29 @@ _cols$ = 12						; size = 4
 ?Resize@Matrix@math@core@@QAEXHH@Z ENDP			; core::math::Matrix::Resize
 _TEXT	ENDS
 ; Function compile flags: /Odtp
+; File c:\dev\tetris\src\math\matrix.hpp
+;	COMDAT ??0Matrix@math@core@@QAE@XZ
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+??0Matrix@math@core@@QAE@XZ PROC			; core::math::Matrix::Matrix, COMDAT
+; _this$ = ecx
+
+; 22   :             Matrix() {}
+
+  00000	55		 push	 ebp
+  00001	8b ec		 mov	 ebp, esp
+  00003	51		 push	 ecx
+  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
+  00007	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  0000a	83 c1 08	 add	 ecx, 8
+  0000d	e8 00 00 00 00	 call	 ??0?$vector@HV?$allocator@H@std@@@std@@QAE@XZ ; std::vector<int,std::allocator<int> >::vector<int,std::allocator<int> >
+  00012	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
+  00015	8b e5		 mov	 esp, ebp
+  00017	5d		 pop	 ebp
+  00018	c3		 ret	 0
+??0Matrix@math@core@@QAE@XZ ENDP			; core::math::Matrix::Matrix
+_TEXT	ENDS
+; Function compile flags: /Odtp
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector
 ;	COMDAT ?_Orphan_range@?$vector@HV?$allocator@H@std@@@std@@ABEXPAH0@Z
 _TEXT	SEGMENT
@@ -1721,6 +2063,93 @@ $LN2@Xlength:
   0000d	5d		 pop	 ebp
   0000e	c3		 ret	 0
 ?_Xlength@?$vector@HV?$allocator@H@std@@@std@@CAXXZ ENDP ; std::vector<int,std::allocator<int> >::_Xlength
+_TEXT	ENDS
+; Function compile flags: /Odtp
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector
+;	COMDAT ?_Tidy@?$vector@HV?$allocator@H@std@@@std@@AAEXXZ
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+?_Tidy@?$vector@HV?$allocator@H@std@@@std@@AAEXXZ PROC	; std::vector<int,std::allocator<int> >::_Tidy, COMDAT
+; _this$ = ecx
+
+; 1910 : 		{	// free all storage
+
+  00000	55		 push	 ebp
+  00001	8b ec		 mov	 ebp, esp
+  00003	51		 push	 ecx
+  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
+
+; 1911 : 		this->_Orphan_all();
+
+  00007	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  0000a	e8 00 00 00 00	 call	 ?_Orphan_all@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEXXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Orphan_all
+
+; 1912 : 
+; 1913 : 		if (this->_Myfirst() != pointer())
+
+  0000f	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  00012	e8 00 00 00 00	 call	 ?_Myfirst@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAPAHXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Myfirst
+  00017	83 38 00	 cmp	 DWORD PTR [eax], 0
+  0001a	74 6b		 je	 SHORT $LN1@Tidy
+
+; 1914 : 			{	// destroy and deallocate old array
+; 1915 : 			_Destroy(this->_Myfirst(), this->_Mylast());
+
+  0001c	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  0001f	e8 00 00 00 00	 call	 ?_Mylast@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAPAHXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Mylast
+  00024	8b 00		 mov	 eax, DWORD PTR [eax]
+  00026	50		 push	 eax
+  00027	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  0002a	e8 00 00 00 00	 call	 ?_Myfirst@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAPAHXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Myfirst
+  0002f	8b 08		 mov	 ecx, DWORD PTR [eax]
+  00031	51		 push	 ecx
+  00032	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  00035	e8 00 00 00 00	 call	 ?_Destroy@?$vector@HV?$allocator@H@std@@@std@@AAEXPAH0@Z ; std::vector<int,std::allocator<int> >::_Destroy
+
+; 1916 : 			this->_Getal().deallocate(this->_Myfirst(), capacity());
+
+  0003a	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  0003d	e8 00 00 00 00	 call	 ?capacity@?$vector@HV?$allocator@H@std@@@std@@QBEIXZ ; std::vector<int,std::allocator<int> >::capacity
+  00042	50		 push	 eax
+  00043	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  00046	e8 00 00 00 00	 call	 ?_Myfirst@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAPAHXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Myfirst
+  0004b	8b 10		 mov	 edx, DWORD PTR [eax]
+  0004d	52		 push	 edx
+  0004e	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  00051	e8 00 00 00 00	 call	 ?_Getal@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAV?$allocator@H@2@XZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Getal
+  00056	8b c8		 mov	 ecx, eax
+  00058	e8 00 00 00 00	 call	 ?deallocate@?$allocator@H@std@@QAEXQAHI@Z ; std::allocator<int>::deallocate
+
+; 1917 : 
+; 1918 : 			this->_Myfirst() = pointer();
+
+  0005d	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  00060	e8 00 00 00 00	 call	 ?_Myfirst@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAPAHXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Myfirst
+  00065	c7 00 00 00 00
+	00		 mov	 DWORD PTR [eax], 0
+
+; 1919 : 			this->_Mylast() = pointer();
+
+  0006b	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  0006e	e8 00 00 00 00	 call	 ?_Mylast@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAPAHXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Mylast
+  00073	c7 00 00 00 00
+	00		 mov	 DWORD PTR [eax], 0
+
+; 1920 : 			this->_Myend() = pointer();
+
+  00079	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  0007c	e8 00 00 00 00	 call	 ?_Myend@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAPAHXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Myend
+  00081	c7 00 00 00 00
+	00		 mov	 DWORD PTR [eax], 0
+$LN1@Tidy:
+
+; 1921 : 			}
+; 1922 : 		}
+
+  00087	8b e5		 mov	 esp, ebp
+  00089	5d		 pop	 ebp
+  0008a	c3		 ret	 0
+?_Tidy@?$vector@HV?$allocator@H@std@@@std@@AAEXXZ ENDP	; std::vector<int,std::allocator<int> >::_Tidy
 _TEXT	ENDS
 ; Function compile flags: /Odtp
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector
@@ -2053,6 +2482,41 @@ __Count$ = 12						; size = 4
 _TEXT	ENDS
 ; Function compile flags: /Odtp
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector
+;	COMDAT ??A?$vector@HV?$allocator@H@std@@@std@@QBEABHI@Z
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+__Pos$ = 8						; size = 4
+??A?$vector@HV?$allocator@H@std@@@std@@QBEABHI@Z PROC	; std::vector<int,std::allocator<int> >::operator[], COMDAT
+; _this$ = ecx
+
+; 1740 : 		{	// subscript nonmutable sequence
+
+  00000	55		 push	 ebp
+  00001	8b ec		 mov	 ebp, esp
+  00003	51		 push	 ecx
+  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
+
+; 1741 :  #if _ITERATOR_DEBUG_LEVEL != 0
+; 1742 : 		_STL_VERIFY(_Pos < size(), "vector subscript out of range");
+; 1743 :  #endif /* _ITERATOR_DEBUG_LEVEL != 0 */
+; 1744 : 
+; 1745 : 		return (this->_Myfirst()[_Pos]);
+
+  00007	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  0000a	e8 00 00 00 00	 call	 ?_Myfirst@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QBEABQAHXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Myfirst
+  0000f	8b 00		 mov	 eax, DWORD PTR [eax]
+  00011	8b 4d 08	 mov	 ecx, DWORD PTR __Pos$[ebp]
+  00014	8d 04 88	 lea	 eax, DWORD PTR [eax+ecx*4]
+
+; 1746 : 		}
+
+  00017	8b e5		 mov	 esp, ebp
+  00019	5d		 pop	 ebp
+  0001a	c2 04 00	 ret	 4
+??A?$vector@HV?$allocator@H@std@@@std@@QBEABHI@Z ENDP	; std::vector<int,std::allocator<int> >::operator[]
+_TEXT	ENDS
+; Function compile flags: /Odtp
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector
 ;	COMDAT ?capacity@?$vector@HV?$allocator@H@std@@@std@@QBEIXZ
 _TEXT	SEGMENT
 _this$ = -4						; size = 4
@@ -2290,6 +2754,115 @@ __Newsize$ = 8						; size = 4
 ?resize@?$vector@HV?$allocator@H@std@@@std@@QAEXI@Z ENDP ; std::vector<int,std::allocator<int> >::resize
 _TEXT	ENDS
 ; Function compile flags: /Odtp
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector
+;	COMDAT ??1?$vector@HV?$allocator@H@std@@@std@@QAE@XZ
+_TEXT	SEGMENT
+_this$ = -16						; size = 4
+__$EHRec$ = -12						; size = 12
+??1?$vector@HV?$allocator@H@std@@@std@@QAE@XZ PROC	; std::vector<int,std::allocator<int> >::~vector<int,std::allocator<int> >, COMDAT
+; _this$ = ecx
+
+; 893  : 		{	// destroy the object
+
+  00000	55		 push	 ebp
+  00001	8b ec		 mov	 ebp, esp
+  00003	6a ff		 push	 -1
+  00005	68 00 00 00 00	 push	 __ehhandler$??1?$vector@HV?$allocator@H@std@@@std@@QAE@XZ
+  0000a	64 a1 00 00 00
+	00		 mov	 eax, DWORD PTR fs:0
+  00010	50		 push	 eax
+  00011	51		 push	 ecx
+  00012	a1 00 00 00 00	 mov	 eax, DWORD PTR ___security_cookie
+  00017	33 c5		 xor	 eax, ebp
+  00019	50		 push	 eax
+  0001a	8d 45 f4	 lea	 eax, DWORD PTR __$EHRec$[ebp]
+  0001d	64 a3 00 00 00
+	00		 mov	 DWORD PTR fs:0, eax
+  00023	89 4d f0	 mov	 DWORD PTR _this$[ebp], ecx
+
+; 894  : 		_Tidy();
+
+  00026	8b 4d f0	 mov	 ecx, DWORD PTR _this$[ebp]
+  00029	e8 00 00 00 00	 call	 ?_Tidy@?$vector@HV?$allocator@H@std@@@std@@AAEXXZ ; std::vector<int,std::allocator<int> >::_Tidy
+
+; 895  : 		}
+
+  0002e	8b 4d f4	 mov	 ecx, DWORD PTR __$EHRec$[ebp]
+  00031	64 89 0d 00 00
+	00 00		 mov	 DWORD PTR fs:0, ecx
+  00038	59		 pop	 ecx
+  00039	8b e5		 mov	 esp, ebp
+  0003b	5d		 pop	 ebp
+  0003c	c3		 ret	 0
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$??1?$vector@HV?$allocator@H@std@@@std@@QAE@XZ:
+  00000	8b 54 24 08	 mov	 edx, DWORD PTR [esp+8]
+  00004	8d 42 0c	 lea	 eax, DWORD PTR [edx+12]
+  00007	8b 4a f8	 mov	 ecx, DWORD PTR [edx-8]
+  0000a	33 c8		 xor	 ecx, eax
+  0000c	e8 00 00 00 00	 call	 @__security_check_cookie@4
+  00011	b8 00 00 00 00	 mov	 eax, OFFSET __ehfuncinfo$??1?$vector@HV?$allocator@H@std@@@std@@QAE@XZ
+  00016	e9 00 00 00 00	 jmp	 ___CxxFrameHandler3
+text$x	ENDS
+??1?$vector@HV?$allocator@H@std@@@std@@QAE@XZ ENDP	; std::vector<int,std::allocator<int> >::~vector<int,std::allocator<int> >
+; Function compile flags: /Odtp
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector
+;	COMDAT ??0?$vector@HV?$allocator@H@std@@@std@@QAE@XZ
+_TEXT	SEGMENT
+_this$ = -16						; size = 4
+__$EHRec$ = -12						; size = 12
+??0?$vector@HV?$allocator@H@std@@@std@@QAE@XZ PROC	; std::vector<int,std::allocator<int> >::vector<int,std::allocator<int> >, COMDAT
+; _this$ = ecx
+
+; 651  : 		{	// construct empty vector
+
+  00000	55		 push	 ebp
+  00001	8b ec		 mov	 ebp, esp
+  00003	6a ff		 push	 -1
+  00005	68 00 00 00 00	 push	 __ehhandler$??0?$vector@HV?$allocator@H@std@@@std@@QAE@XZ
+  0000a	64 a1 00 00 00
+	00		 mov	 eax, DWORD PTR fs:0
+  00010	50		 push	 eax
+  00011	51		 push	 ecx
+  00012	a1 00 00 00 00	 mov	 eax, DWORD PTR ___security_cookie
+  00017	33 c5		 xor	 eax, ebp
+  00019	50		 push	 eax
+  0001a	8d 45 f4	 lea	 eax, DWORD PTR __$EHRec$[ebp]
+  0001d	64 a3 00 00 00
+	00		 mov	 DWORD PTR fs:0, eax
+  00023	89 4d f0	 mov	 DWORD PTR _this$[ebp], ecx
+
+; 650  : 		: _Mybase()
+
+  00026	8b 4d f0	 mov	 ecx, DWORD PTR _this$[ebp]
+  00029	e8 00 00 00 00	 call	 ??0?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAE@XZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >
+
+; 652  : 		}
+
+  0002e	8b 45 f0	 mov	 eax, DWORD PTR _this$[ebp]
+  00031	8b 4d f4	 mov	 ecx, DWORD PTR __$EHRec$[ebp]
+  00034	64 89 0d 00 00
+	00 00		 mov	 DWORD PTR fs:0, ecx
+  0003b	59		 pop	 ecx
+  0003c	8b e5		 mov	 esp, ebp
+  0003e	5d		 pop	 ebp
+  0003f	c3		 ret	 0
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$??0?$vector@HV?$allocator@H@std@@@std@@QAE@XZ:
+  00000	8b 54 24 08	 mov	 edx, DWORD PTR [esp+8]
+  00004	8d 42 0c	 lea	 eax, DWORD PTR [edx+12]
+  00007	8b 4a f8	 mov	 ecx, DWORD PTR [edx-8]
+  0000a	33 c8		 xor	 ecx, eax
+  0000c	e8 00 00 00 00	 call	 @__security_check_cookie@4
+  00011	b8 00 00 00 00	 mov	 eax, OFFSET __ehfuncinfo$??0?$vector@HV?$allocator@H@std@@@std@@QAE@XZ
+  00016	e9 00 00 00 00	 jmp	 ___CxxFrameHandler3
+text$x	ENDS
+??0?$vector@HV?$allocator@H@std@@@std@@QAE@XZ ENDP	; std::vector<int,std::allocator<int> >::vector<int,std::allocator<int> >
+; Function compile flags: /Odtp
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xutility
 ;	COMDAT ?_Get_second@?$_Compressed_pair@V?$allocator@H@std@@V?$_Vector_val@U?$_Simple_types@H@std@@@2@$00@std@@QBEABV?$_Vector_val@U?$_Simple_types@H@std@@@2@XZ
 _TEXT	SEGMENT
@@ -2392,6 +2965,47 @@ _this$ = -4						; size = 4
   0000c	5d		 pop	 ebp
   0000d	c3		 ret	 0
 ?_Get_first@?$_Compressed_pair@V?$allocator@H@std@@V?$_Vector_val@U?$_Simple_types@H@std@@@2@$00@std@@QAEAAV?$allocator@H@2@XZ ENDP ; std::_Compressed_pair<std::allocator<int>,std::_Vector_val<std::_Simple_types<int> >,1>::_Get_first
+_TEXT	ENDS
+; Function compile flags: /Odtp
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector
+;	COMDAT ??0?$_Vector_val@U?$_Simple_types@H@std@@@std@@QAE@XZ
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+??0?$_Vector_val@U?$_Simple_types@H@std@@@std@@QAE@XZ PROC ; std::_Vector_val<std::_Simple_types<int> >::_Vector_val<std::_Simple_types<int> >, COMDAT
+; _this$ = ecx
+
+; 392  : 		{	// initialize values
+
+  00000	55		 push	 ebp
+  00001	8b ec		 mov	 ebp, esp
+  00003	51		 push	 ecx
+  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
+
+; 389  : 		: _Myfirst(),
+
+  00007	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
+  0000a	c7 00 00 00 00
+	00		 mov	 DWORD PTR [eax], 0
+
+; 390  : 		_Mylast(),
+
+  00010	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  00013	c7 41 04 00 00
+	00 00		 mov	 DWORD PTR [ecx+4], 0
+
+; 391  : 		_Myend()
+
+  0001a	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
+  0001d	c7 42 08 00 00
+	00 00		 mov	 DWORD PTR [edx+8], 0
+
+; 393  : 		}
+
+  00024	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
+  00027	8b e5		 mov	 esp, ebp
+  00029	5d		 pop	 ebp
+  0002a	c3		 ret	 0
+??0?$_Vector_val@U?$_Simple_types@H@std@@@std@@QAE@XZ ENDP ; std::_Vector_val<std::_Simple_types<int> >::_Vector_val<std::_Simple_types<int> >
 _TEXT	ENDS
 ; Function compile flags: /Odtp
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector
@@ -2697,6 +3311,37 @@ _this$ = -4						; size = 4
 ?_Orphan_all@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEXXZ ENDP ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Orphan_all
 _TEXT	ENDS
 ; Function compile flags: /Odtp
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector
+;	COMDAT ??0?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAE@XZ
+_TEXT	SEGMENT
+_this$ = -8						; size = 4
+$T1 = -1						; size = 1
+??0?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAE@XZ PROC ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >, COMDAT
+; _this$ = ecx
+
+; 422  : 		{	// default construct allocator
+
+  00000	55		 push	 ebp
+  00001	8b ec		 mov	 ebp, esp
+  00003	83 ec 08	 sub	 esp, 8
+  00006	89 4d f8	 mov	 DWORD PTR _this$[ebp], ecx
+
+; 421  : 		: _Mypair(_Zero_then_variadic_args_t())
+
+  00009	0f b6 45 ff	 movzx	 eax, BYTE PTR $T1[ebp]
+  0000d	50		 push	 eax
+  0000e	8b 4d f8	 mov	 ecx, DWORD PTR _this$[ebp]
+  00011	e8 00 00 00 00	 call	 ??$?0$$V@?$_Compressed_pair@V?$allocator@H@std@@V?$_Vector_val@U?$_Simple_types@H@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z ; std::_Compressed_pair<std::allocator<int>,std::_Vector_val<std::_Simple_types<int> >,1>::_Compressed_pair<std::allocator<int>,std::_Vector_val<std::_Simple_types<int> >,1><>
+
+; 423  : 		}
+
+  00016	8b 45 f8	 mov	 eax, DWORD PTR _this$[ebp]
+  00019	8b e5		 mov	 esp, ebp
+  0001b	5d		 pop	 ebp
+  0001c	c3		 ret	 0
+??0?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAE@XZ ENDP ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >
+_TEXT	ENDS
+; Function compile flags: /Odtp
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xmemory0
 ;	COMDAT ?max_size@?$_Default_allocator_traits@V?$allocator@H@std@@@std@@SAIABV?$allocator@H@2@@Z
 _TEXT	SEGMENT
@@ -2785,6 +3430,30 @@ __Count$ = 12						; size = 4
   0001c	5d		 pop	 ebp
   0001d	c2 08 00	 ret	 8
 ?deallocate@?$allocator@H@std@@QAEXQAHI@Z ENDP		; std::allocator<int>::deallocate
+_TEXT	ENDS
+; Function compile flags: /Odtp
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xmemory0
+;	COMDAT ??0?$allocator@H@std@@QAE@XZ
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+??0?$allocator@H@std@@QAE@XZ PROC			; std::allocator<int>::allocator<int>, COMDAT
+; _this$ = ecx
+
+; 979  : 	constexpr allocator() noexcept
+
+  00000	55		 push	 ebp
+  00001	8b ec		 mov	 ebp, esp
+  00003	51		 push	 ecx
+  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
+
+; 980  : 		{	// construct default allocator (do nothing)
+; 981  : 		}
+
+  00007	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
+  0000a	8b e5		 mov	 esp, ebp
+  0000c	5d		 pop	 ebp
+  0000d	c3		 ret	 0
+??0?$allocator@H@std@@QAE@XZ ENDP			; std::allocator<int>::allocator<int>
 _TEXT	ENDS
 ; Function compile flags: /Odtp
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xmemory0

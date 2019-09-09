@@ -6,7 +6,7 @@ using namespace core;
 using namespace core::gameplay;
 using namespace core::graphics;
 
-void Board::Init(i32 t_boardRows, i32 t_boardCols, i32 t_boardVisibleRows, i32 t_boardGridSize)
+Board::Board(i32 t_boardRows, i32 t_boardCols, i32 t_boardVisibleRows, i32 t_boardGridSize)
 {
     m_boardRows = t_boardRows;
     m_boardCols = t_boardCols;
@@ -38,12 +38,19 @@ void Board::DrawCell(i32 t_row, i32 t_col, i32 t_value, i32 t_xOffset, i32 t_yOf
     }
 }
 
-void Board::Draw(i32 t_xOffset, i32 t_yOffset)
+void Board::DrawBoard(i32 t_xOffset, i32 t_yOffset)
 {
+    Graphics::Instance()->DrawFillRect(t_xOffset, t_yOffset, m_boardCols * m_boardGridSize, m_boardRows * m_boardGridSize, Palette::s_base[0]);
     
-}
-
-void Board::DrawPiece(i32 t_xOffset, i32 t_yOffset, bool outline)
-{
-    
+    for (i32 row = 0; row < m_boardRows; ++row)
+    {
+        for (i32 col = 0; col < m_boardCols; ++col)
+        {
+            i32 value = GetCellValue(row, col);
+            if (value)
+            {
+                DrawCell(row, col, value, t_xOffset, t_yOffset);
+            }
+        }
+    }
 }

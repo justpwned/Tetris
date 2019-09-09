@@ -64,7 +64,6 @@ Game::Game(const char *t_title, i32 t_xPos, i32 t_yPos, i32 t_windowWidth, i32 t
             exit(1);
         }
     }
-    
     else
     {
         std::cerr << "Unable to initialize SDL_TTF. SDL_TTF error: " << TTF_GetError() << "\n";
@@ -78,7 +77,9 @@ Game::Game(const char *t_title, i32 t_xPos, i32 t_yPos, i32 t_windowWidth, i32 t
     Graphics::Instance()->SetRenderer(m_renderer);
     
     m_game = {};
-    m_game.board.Init(BOARD_ROWS, BOARD_COLS, BOARD_VISIBLE_ROWS, BOARD_GRID_SIZE);
+    m_game.board = new gameplay::Board(BOARD_ROWS, BOARD_COLS, BOARD_VISIBLE_ROWS, BOARD_GRID_SIZE);
+    
+    m_game.piece = new gameplay::Piece(m_game.board, 0, 0, 0, 0);
     
     m_input = {};
     
@@ -87,6 +88,8 @@ Game::Game(const char *t_title, i32 t_xPos, i32 t_yPos, i32 t_windowWidth, i32 t
 
 void Game::HandleEvents()
 {
+    m_game.time = SDL_GetTicks() / 1000.0f;
+    
     SDL_Event e;
     while (SDL_PollEvent(&e))
     {
@@ -141,11 +144,11 @@ void Game::UpdateGameStart()
     
     if (m_input.denter > 0)
     {
-        m_game.board.Clear();
+        m_game.board->Clear();
         m_game.level = m_game.startLevel;
         m_game.lineCount = 0;
         m_game.points = 0;
-        m_game.piece.SpawnNewPiece();
+        m_game.piece->SpawnNewPiece(&m_game);
         m_game.phase = GAME_PHASE_PLAY;
     }
     
@@ -199,9 +202,9 @@ void Game::Render()
     
     char buffer[4096];
     
-    m_game.board.Draw(0, 0);
+    i32 yMargin = (BOARD_ROWS - BOARD_VISIBLE_ROWS) * BOARD_GRID_SIZE;
     
-    m_game.board.DrawCell(0, 0, 1, 0, 0, true);
+    m_game.board->DrawBoard(0, yMargin);
     
     switch (m_game.phase)
     {

@@ -9,27 +9,409 @@
 INCLUDELIB LIBCMT
 INCLUDELIB OLDNAMES
 
-PUBLIC	?SpawnNewPiece@Piece@gameplay@core@@QAEXXZ	; core::gameplay::Piece::SpawnNewPiece
+CONST	SEGMENT
+?FRAMES_PER_DROP@@3QBHB DD 030H				; FRAMES_PER_DROP
+	DD	02bH
+	DD	026H
+	DD	021H
+	DD	01cH
+	DD	017H
+	DD	012H
+	DD	0dH
+	DD	08H
+	DD	06H
+	DD	05H
+	DD	05H
+	DD	05H
+	DD	04H
+	DD	04H
+	DD	04H
+	DD	03H
+	DD	03H
+	DD	03H
+	DD	02H
+	DD	02H
+	DD	02H
+	DD	02H
+	DD	02H
+	DD	02H
+	DD	02H
+	DD	02H
+	DD	02H
+	DD	02H
+	DD	01H
+CONST	ENDS
+PUBLIC	?random_int@@YAHHH@Z				; random_int
+PUBLIC	?GetSide@Tetromino@gameplay@core@@QBEHXZ	; core::gameplay::Tetromino::GetSide
+PUBLIC	?GetBoardCols@Board@gameplay@core@@QBEHXZ	; core::gameplay::Board::GetBoardCols
+PUBLIC	?IsPieceValid@Piece@gameplay@core@@QAE_NXZ	; core::gameplay::Piece::IsPieceValid
+PUBLIC	?GetTimeToNextDrop@Piece@gameplay@core@@QAEMH@Z	; core::gameplay::Piece::GetTimeToNextDrop
+PUBLIC	?SpawnNewPiece@Piece@gameplay@core@@QAEXPAUGameState@@@Z ; core::gameplay::Piece::SpawnNewPiece
+PUBLIC	?DrawPiece@Piece@gameplay@core@@QAEXHH_N@Z	; core::gameplay::Piece::DrawPiece
+PUBLIC	__real@3c888889
+EXTRN	_rand:PROC
+EXTRN	?GetValue@Tetromino@gameplay@core@@QAEEHHH@Z:PROC ; core::gameplay::Tetromino::GetValue
+EXTRN	?DrawCell@Board@gameplay@core@@QAEXHHHHH_N@Z:PROC ; core::gameplay::Board::DrawCell
+EXTRN	?s_tetrominos@Tetromino@gameplay@core@@2QBV123@B:BYTE ; core::gameplay::Tetromino::s_tetrominos
+EXTRN	__fltused:DWORD
+;	COMDAT __real@3c888889
+CONST	SEGMENT
+__real@3c888889 DD 03c888889r			; 0.0166667
+CONST	ENDS
+; Function compile flags: /Odtp
+; File c:\dev\tetris\src\piece.cpp
+_TEXT	SEGMENT
+_tetromino$ = -24					; size = 8
+_value$1 = -16						; size = 4
+_this$ = -12						; size = 4
+_row$2 = -8						; size = 4
+_col$3 = -4						; size = 4
+_t_xOffset$ = 8						; size = 4
+_t_yOffset$ = 12					; size = 4
+_outline$ = 16						; size = 1
+?DrawPiece@Piece@gameplay@core@@QAEXHH_N@Z PROC		; core::gameplay::Piece::DrawPiece
+; _this$ = ecx
+
+; 60   : {
+
+  00000	55		 push	 ebp
+  00001	8b ec		 mov	 ebp, esp
+  00003	83 ec 18	 sub	 esp, 24			; 00000018H
+  00006	89 4d f4	 mov	 DWORD PTR _this$[ebp], ecx
+
+; 61   :     Tetromino tetromino = Tetromino::s_tetrominos[m_tetrominoIndex];
+
+  00009	8b 45 f4	 mov	 eax, DWORD PTR _this$[ebp]
+  0000c	8b 48 04	 mov	 ecx, DWORD PTR [eax+4]
+  0000f	8b 14 cd 00 00
+	00 00		 mov	 edx, DWORD PTR ?s_tetrominos@Tetromino@gameplay@core@@2QBV123@B[ecx*8]
+  00016	8b 04 cd 04 00
+	00 00		 mov	 eax, DWORD PTR ?s_tetrominos@Tetromino@gameplay@core@@2QBV123@B[ecx*8+4]
+  0001d	89 55 e8	 mov	 DWORD PTR _tetromino$[ebp], edx
+  00020	89 45 ec	 mov	 DWORD PTR _tetromino$[ebp+4], eax
+
+; 62   :     
+; 63   :     for (i32 row = 0; row < tetromino.GetSide(); ++row)
+
+  00023	c7 45 f8 00 00
+	00 00		 mov	 DWORD PTR _row$2[ebp], 0
+  0002a	eb 09		 jmp	 SHORT $LN4@DrawPiece
+$LN2@DrawPiece:
+  0002c	8b 4d f8	 mov	 ecx, DWORD PTR _row$2[ebp]
+  0002f	83 c1 01	 add	 ecx, 1
+  00032	89 4d f8	 mov	 DWORD PTR _row$2[ebp], ecx
+$LN4@DrawPiece:
+  00035	8d 4d e8	 lea	 ecx, DWORD PTR _tetromino$[ebp]
+  00038	e8 00 00 00 00	 call	 ?GetSide@Tetromino@gameplay@core@@QBEHXZ ; core::gameplay::Tetromino::GetSide
+  0003d	39 45 f8	 cmp	 DWORD PTR _row$2[ebp], eax
+  00040	7d 78		 jge	 SHORT $LN1@DrawPiece
+
+; 64   :     {
+; 65   :         for (i32 col = 0; col < tetromino.GetSide(); ++col)
+
+  00042	c7 45 fc 00 00
+	00 00		 mov	 DWORD PTR _col$3[ebp], 0
+  00049	eb 09		 jmp	 SHORT $LN7@DrawPiece
+$LN5@DrawPiece:
+  0004b	8b 55 fc	 mov	 edx, DWORD PTR _col$3[ebp]
+  0004e	83 c2 01	 add	 edx, 1
+  00051	89 55 fc	 mov	 DWORD PTR _col$3[ebp], edx
+$LN7@DrawPiece:
+  00054	8d 4d e8	 lea	 ecx, DWORD PTR _tetromino$[ebp]
+  00057	e8 00 00 00 00	 call	 ?GetSide@Tetromino@gameplay@core@@QBEHXZ ; core::gameplay::Tetromino::GetSide
+  0005c	39 45 fc	 cmp	 DWORD PTR _col$3[ebp], eax
+  0005f	7d 54		 jge	 SHORT $LN6@DrawPiece
+
+; 66   :         {
+; 67   :             i32 value = tetromino.GetValue(row, col, m_rotation);
+
+  00061	8b 45 f4	 mov	 eax, DWORD PTR _this$[ebp]
+  00064	8b 48 10	 mov	 ecx, DWORD PTR [eax+16]
+  00067	51		 push	 ecx
+  00068	8b 55 fc	 mov	 edx, DWORD PTR _col$3[ebp]
+  0006b	52		 push	 edx
+  0006c	8b 45 f8	 mov	 eax, DWORD PTR _row$2[ebp]
+  0006f	50		 push	 eax
+  00070	8d 4d e8	 lea	 ecx, DWORD PTR _tetromino$[ebp]
+  00073	e8 00 00 00 00	 call	 ?GetValue@Tetromino@gameplay@core@@QAEEHHH@Z ; core::gameplay::Tetromino::GetValue
+  00078	0f b6 c8	 movzx	 ecx, al
+  0007b	89 4d f0	 mov	 DWORD PTR _value$1[ebp], ecx
+
+; 68   :             if (value)
+
+  0007e	83 7d f0 00	 cmp	 DWORD PTR _value$1[ebp], 0
+  00082	74 2f		 je	 SHORT $LN8@DrawPiece
+
+; 69   :             {
+; 70   :                 m_board->DrawCell(row + m_rowOffset, col + m_colOffset, value, t_xOffset, t_yOffset, outline);
+
+  00084	0f b6 55 10	 movzx	 edx, BYTE PTR _outline$[ebp]
+  00088	52		 push	 edx
+  00089	8b 45 0c	 mov	 eax, DWORD PTR _t_yOffset$[ebp]
+  0008c	50		 push	 eax
+  0008d	8b 4d 08	 mov	 ecx, DWORD PTR _t_xOffset$[ebp]
+  00090	51		 push	 ecx
+  00091	8b 55 f0	 mov	 edx, DWORD PTR _value$1[ebp]
+  00094	52		 push	 edx
+  00095	8b 45 f4	 mov	 eax, DWORD PTR _this$[ebp]
+  00098	8b 4d fc	 mov	 ecx, DWORD PTR _col$3[ebp]
+  0009b	03 48 0c	 add	 ecx, DWORD PTR [eax+12]
+  0009e	51		 push	 ecx
+  0009f	8b 55 f4	 mov	 edx, DWORD PTR _this$[ebp]
+  000a2	8b 45 f8	 mov	 eax, DWORD PTR _row$2[ebp]
+  000a5	03 42 08	 add	 eax, DWORD PTR [edx+8]
+  000a8	50		 push	 eax
+  000a9	8b 4d f4	 mov	 ecx, DWORD PTR _this$[ebp]
+  000ac	8b 09		 mov	 ecx, DWORD PTR [ecx]
+  000ae	e8 00 00 00 00	 call	 ?DrawCell@Board@gameplay@core@@QAEXHHHHH_N@Z ; core::gameplay::Board::DrawCell
+$LN8@DrawPiece:
+
+; 71   :             }
+; 72   :         }
+
+  000b3	eb 96		 jmp	 SHORT $LN5@DrawPiece
+$LN6@DrawPiece:
+
+; 73   :     }
+
+  000b5	e9 72 ff ff ff	 jmp	 $LN2@DrawPiece
+$LN1@DrawPiece:
+
+; 74   : }
+
+  000ba	8b e5		 mov	 esp, ebp
+  000bc	5d		 pop	 ebp
+  000bd	c2 0c 00	 ret	 12			; 0000000cH
+?DrawPiece@Piece@gameplay@core@@QAEXHH_N@Z ENDP		; core::gameplay::Piece::DrawPiece
+_TEXT	ENDS
+; Function compile flags: /Odtp
+; File c:\dev\tetris\src\piece.cpp
+_TEXT	SEGMENT
+tv132 = -8						; size = 4
+_this$ = -4						; size = 4
+_t_gameState$ = 8					; size = 4
+?SpawnNewPiece@Piece@gameplay@core@@QAEXPAUGameState@@@Z PROC ; core::gameplay::Piece::SpawnNewPiece
+; _this$ = ecx
+
+; 51   : {
+
+  00000	55		 push	 ebp
+  00001	8b ec		 mov	 ebp, esp
+  00003	83 ec 08	 sub	 esp, 8
+  00006	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
+
+; 52   :     m_tetrominoIndex = random_int(0, Tetromino::s_numberOfTetrominos - 1);
+
+  00009	6a 06		 push	 6
+  0000b	6a 00		 push	 0
+  0000d	e8 00 00 00 00	 call	 ?random_int@@YAHHH@Z	; random_int
+  00012	83 c4 08	 add	 esp, 8
+  00015	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  00018	89 41 04	 mov	 DWORD PTR [ecx+4], eax
+
+; 53   :     m_colOffset = m_board->GetBoardCols() / 2 - 1;
+
+  0001b	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
+  0001e	8b 0a		 mov	 ecx, DWORD PTR [edx]
+  00020	e8 00 00 00 00	 call	 ?GetBoardCols@Board@gameplay@core@@QBEHXZ ; core::gameplay::Board::GetBoardCols
+  00025	99		 cdq
+  00026	2b c2		 sub	 eax, edx
+  00028	d1 f8		 sar	 eax, 1
+  0002a	83 e8 01	 sub	 eax, 1
+  0002d	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  00030	89 41 0c	 mov	 DWORD PTR [ecx+12], eax
+
+; 54   :     m_rowOffset = 0;
+
+  00033	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
+  00036	c7 42 08 00 00
+	00 00		 mov	 DWORD PTR [edx+8], 0
+
+; 55   :     m_rotation = 0;
+
+  0003d	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
+  00040	c7 40 10 00 00
+	00 00		 mov	 DWORD PTR [eax+16], 0
+
+; 56   :     t_gameState->nextDropTime = t_gameState->time + GetTimeToNextDrop(t_gameState->level);
+
+  00047	8b 4d 08	 mov	 ecx, DWORD PTR _t_gameState$[ebp]
+  0004a	8b 51 68	 mov	 edx, DWORD PTR [ecx+104]
+  0004d	52		 push	 edx
+  0004e	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  00051	e8 00 00 00 00	 call	 ?GetTimeToNextDrop@Piece@gameplay@core@@QAEMH@Z ; core::gameplay::Piece::GetTimeToNextDrop
+  00056	d9 5d f8	 fstp	 DWORD PTR tv132[ebp]
+  00059	8b 45 08	 mov	 eax, DWORD PTR _t_gameState$[ebp]
+  0005c	f3 0f 10 45 f8	 movss	 xmm0, DWORD PTR tv132[ebp]
+  00061	f3 0f 58 40 7c	 addss	 xmm0, DWORD PTR [eax+124]
+  00066	8b 4d 08	 mov	 ecx, DWORD PTR _t_gameState$[ebp]
+  00069	f3 0f 11 41 74	 movss	 DWORD PTR [ecx+116], xmm0
+
+; 57   : }
+
+  0006e	8b e5		 mov	 esp, ebp
+  00070	5d		 pop	 ebp
+  00071	c2 04 00	 ret	 4
+?SpawnNewPiece@Piece@gameplay@core@@QAEXPAUGameState@@@Z ENDP ; core::gameplay::Piece::SpawnNewPiece
+_TEXT	ENDS
+; Function compile flags: /Odtp
+; File c:\dev\tetris\src\piece.cpp
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+tv75 = -16						; size = 4
+_targetSecondsPerFrame$ = -12				; size = 4
+_level$ = -8						; size = 4
+tv65 = -4						; size = 4
+_t_level$ = 8						; size = 4
+?GetTimeToNextDrop@Piece@gameplay@core@@QAEMH@Z PROC	; core::gameplay::Piece::GetTimeToNextDrop
+; _this$ = ecx
+
+; 44   : {
+
+  00000	55		 push	 ebp
+  00001	8b ec		 mov	 ebp, esp
+  00003	83 ec 14	 sub	 esp, 20			; 00000014H
+  00006	89 4d ec	 mov	 DWORD PTR _this$[ebp], ecx
+
+; 45   :     i32 level = MIN(29, t_level);
+
+  00009	83 7d 08 1d	 cmp	 DWORD PTR _t_level$[ebp], 29 ; 0000001dH
+  0000d	7e 09		 jle	 SHORT $LN3@GetTimeToN
+  0000f	c7 45 fc 1d 00
+	00 00		 mov	 DWORD PTR tv65[ebp], 29	; 0000001dH
+  00016	eb 06		 jmp	 SHORT $LN4@GetTimeToN
+$LN3@GetTimeToN:
+  00018	8b 45 08	 mov	 eax, DWORD PTR _t_level$[ebp]
+  0001b	89 45 fc	 mov	 DWORD PTR tv65[ebp], eax
+$LN4@GetTimeToN:
+  0001e	8b 4d fc	 mov	 ecx, DWORD PTR tv65[ebp]
+  00021	89 4d f8	 mov	 DWORD PTR _level$[ebp], ecx
+
+; 46   :     f32 targetSecondsPerFrame = 1.0f / 60.0f;
+
+  00024	f3 0f 10 05 00
+	00 00 00	 movss	 xmm0, DWORD PTR __real@3c888889
+  0002c	f3 0f 11 45 f4	 movss	 DWORD PTR _targetSecondsPerFrame$[ebp], xmm0
+
+; 47   :     return FRAMES_PER_DROP[level] * targetSecondsPerFrame;
+
+  00031	8b 55 f8	 mov	 edx, DWORD PTR _level$[ebp]
+  00034	f3 0f 2a 04 95
+	00 00 00 00	 cvtsi2ss xmm0, DWORD PTR ?FRAMES_PER_DROP@@3QBHB[edx*4]
+  0003d	f3 0f 59 45 f4	 mulss	 xmm0, DWORD PTR _targetSecondsPerFrame$[ebp]
+  00042	f3 0f 11 45 f0	 movss	 DWORD PTR tv75[ebp], xmm0
+  00047	d9 45 f0	 fld	 DWORD PTR tv75[ebp]
+
+; 48   : }
+
+  0004a	8b e5		 mov	 esp, ebp
+  0004c	5d		 pop	 ebp
+  0004d	c2 04 00	 ret	 4
+?GetTimeToNextDrop@Piece@gameplay@core@@QAEMH@Z ENDP	; core::gameplay::Piece::GetTimeToNextDrop
+_TEXT	ENDS
 ; Function compile flags: /Odtp
 ; File c:\dev\tetris\src\piece.cpp
 _TEXT	SEGMENT
 _this$ = -4						; size = 4
-?SpawnNewPiece@Piece@gameplay@core@@QAEXXZ PROC		; core::gameplay::Piece::SpawnNewPiece
+?IsPieceValid@Piece@gameplay@core@@QAE_NXZ PROC		; core::gameplay::Piece::IsPieceValid
 ; _this$ = ecx
 
-; 6    : {
+; 39   : {
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
   00003	51		 push	 ecx
   00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
 
-; 7    :     
-; 8    : }
+; 40   :     return true;
 
-  00007	8b e5		 mov	 esp, ebp
-  00009	5d		 pop	 ebp
-  0000a	c3		 ret	 0
-?SpawnNewPiece@Piece@gameplay@core@@QAEXXZ ENDP		; core::gameplay::Piece::SpawnNewPiece
+  00007	b0 01		 mov	 al, 1
+
+; 41   : }
+
+  00009	8b e5		 mov	 esp, ebp
+  0000b	5d		 pop	 ebp
+  0000c	c3		 ret	 0
+?IsPieceValid@Piece@gameplay@core@@QAE_NXZ ENDP		; core::gameplay::Piece::IsPieceValid
+_TEXT	ENDS
+; Function compile flags: /Odtp
+; File c:\dev\tetris\src\board.hpp
+;	COMDAT ?GetBoardCols@Board@gameplay@core@@QBEHXZ
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+?GetBoardCols@Board@gameplay@core@@QBEHXZ PROC		; core::gameplay::Board::GetBoardCols, COMDAT
+; _this$ = ecx
+
+; 46   :             inline i32 GetBoardCols()        const { return m_boardCols; }
+
+  00000	55		 push	 ebp
+  00001	8b ec		 mov	 ebp, esp
+  00003	51		 push	 ecx
+  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
+  00007	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
+  0000a	8b 40 08	 mov	 eax, DWORD PTR [eax+8]
+  0000d	8b e5		 mov	 esp, ebp
+  0000f	5d		 pop	 ebp
+  00010	c3		 ret	 0
+?GetBoardCols@Board@gameplay@core@@QBEHXZ ENDP		; core::gameplay::Board::GetBoardCols
+_TEXT	ENDS
+; Function compile flags: /Odtp
+; File c:\dev\tetris\src\tetromino.hpp
+;	COMDAT ?GetSide@Tetromino@gameplay@core@@QBEHXZ
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+?GetSide@Tetromino@gameplay@core@@QBEHXZ PROC		; core::gameplay::Tetromino::GetSide, COMDAT
+; _this$ = ecx
+
+; 28   :             inline i32 GetSide() const { return m_side; }
+
+  00000	55		 push	 ebp
+  00001	8b ec		 mov	 ebp, esp
+  00003	51		 push	 ecx
+  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
+  00007	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
+  0000a	8b 40 04	 mov	 eax, DWORD PTR [eax+4]
+  0000d	8b e5		 mov	 esp, ebp
+  0000f	5d		 pop	 ebp
+  00010	c3		 ret	 0
+?GetSide@Tetromino@gameplay@core@@QBEHXZ ENDP		; core::gameplay::Tetromino::GetSide
+_TEXT	ENDS
+; Function compile flags: /Odtp
+; File c:\dev\tetris\src\utils.h
+;	COMDAT ?random_int@@YAHHH@Z
+_TEXT	SEGMENT
+_min$ = 8						; size = 4
+_max$ = 12						; size = 4
+?random_int@@YAHHH@Z PROC				; random_int, COMDAT
+
+; 31   : {
+
+  00000	55		 push	 ebp
+  00001	8b ec		 mov	 ebp, esp
+  00003	56		 push	 esi
+
+; 32   :     return min + rand() / (RAND_MAX / (max - min + 1) + 1);
+
+  00004	e8 00 00 00 00	 call	 _rand
+  00009	8b c8		 mov	 ecx, eax
+  0000b	8b 75 0c	 mov	 esi, DWORD PTR _max$[ebp]
+  0000e	2b 75 08	 sub	 esi, DWORD PTR _min$[ebp]
+  00011	83 c6 01	 add	 esi, 1
+  00014	b8 ff 7f 00 00	 mov	 eax, 32767		; 00007fffH
+  00019	99		 cdq
+  0001a	f7 fe		 idiv	 esi
+  0001c	8b f0		 mov	 esi, eax
+  0001e	83 c6 01	 add	 esi, 1
+  00021	8b c1		 mov	 eax, ecx
+  00023	99		 cdq
+  00024	f7 fe		 idiv	 esi
+  00026	03 45 08	 add	 eax, DWORD PTR _min$[ebp]
+
+; 33   : }
+
+  00029	5e		 pop	 esi
+  0002a	5d		 pop	 ebp
+  0002b	c3		 ret	 0
+?random_int@@YAHHH@Z ENDP				; random_int
 _TEXT	ENDS
 END
