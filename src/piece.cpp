@@ -35,7 +35,12 @@ static const i32 FRAMES_PER_DROP[] = {
     1
 };
 
-bool Piece::IsPieceValid()
+bool Piece::IsValid()
+{
+    return true;
+}
+
+bool Piece::SoftDrop()
 {
     return true;
 }

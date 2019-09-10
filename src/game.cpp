@@ -6,6 +6,7 @@
 
 using namespace core;
 using namespace core::graphics;
+using namespace core::gameplay;
 
 Game::Game(const char *t_title, i32 t_xPos, i32 t_yPos, i32 t_windowWidth, i32 t_windowHeight, const char *t_fontName, i32 t_fontSize)
 {
@@ -156,7 +157,37 @@ void Game::UpdateGameStart()
 
 void Game::UpdateGamePlay()
 {
+    Piece piece = *(m_game.piece);
     
+    if (m_input.dleft > 0)
+    {
+        piece.SetColOffset(piece.GetColOffset() - 1);
+    }
+    
+    if (m_input.dright > 0)
+    {
+        piece.SetColOffset(piece.GetColOffset() + 1);
+    }
+    
+    if (m_input.dup > 0)
+    {
+        piece.SetRotation(piece.GetRotation() + 1);
+    }
+    
+    if (piece.IsValid())
+    {
+        *(m_game.piece) = piece;
+    }
+    
+    if (m_input.ddown > 0)
+    {
+        m_game.piece->SoftDrop();
+    }
+    
+    if (m_input.dspace > 0)
+    {
+        while (m_game.piece->SoftDrop());
+    }
 }
 
 void Game::UpdateGameLine()
@@ -166,7 +197,10 @@ void Game::UpdateGameLine()
 
 void Game::UpdateGameOver()
 {
-    
+    if (m_input.denter > 0)
+    {
+        m_game.phase = GAME_PHASE_START;
+    }
 }
 
 void Game::Update()
@@ -210,12 +244,14 @@ void Game::Render()
     {
         case GAME_PHASE_START:
         {
-            
+            i32 xPos = BOARD_COLS * BOARD_GRID_SIZE / 2;
+            i32 yPos = (BOARD_ROWS * BOARD_GRID_SIZE + yMargin) / 2;
+            Graphics::Instance()->DrawText(m_font, "Press Enter to start", xPos, yPos, TEXT_ALIGN_CENTER, Palette::s_highlightColor);
         } break;
         
         case GAME_PHASE_PLAY:
         {
-            
+            m_game.piece->DrawPiece(0, yMargin);
         } break;
         
         case GAME_PHASE_LINE:
