@@ -41,6 +41,7 @@ namespace core
             bool IsRowEmpty(i32 t_row);
             
             void FindLines(GameStats *t_stats);
+            void ClearLines(GameStats *t_stats);
             
             inline void Clear() { m_boardData.Clear(); }
             

@@ -96,3 +96,9 @@ void Board::FindLines(GameStats *t_stats)
     }
     t_stats->pendingLineCount = count;
 }
+
+void Board::ClearLines(GameStats *t_stats)
+{
+    
+    
+}

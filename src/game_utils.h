@@ -71,4 +71,9 @@ struct InputState
     i8 dz;
 };
 
+i32 ComputePoints(GameStats *t_stats)
+{
+    
+}
+
 #endif

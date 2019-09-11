@@ -211,7 +211,13 @@ void Game::UpdateGamePlay()
 
 void Game::UpdateGameLine()
 {
-    
+    if (m_game.time.time >= m_game.time.highlightEndTime)
+    {
+        m_game.board->ClearLines(m_game.stats);
+        m_game.stats.lineCount += m_game.stats.pendingLineCount;
+        m_game.stats.points += ComputePoints(m_game.stats);
+        
+    }
 }
 
 void Game::UpdateGameOver()
@@ -270,7 +276,17 @@ void Game::Render()
         
         case GAME_PHASE_PLAY:
         {
+            // Haven't done with rendering part yet 
             m_game.piece->DrawPiece(0, yMargin);
+            
+            Piece piece = *(m_game.piece);
+            
+            while (piece.IsValid())
+            {
+                piece.SetRowOffset(piece.GetRowOffset() + 1);
+            }
+            piece.SetRowOffset(piece.GetRowOffset() - 1);
+            piece.DrawPiece(0, yMargin, true);
         } break;
         
         case GAME_PHASE_LINE:
