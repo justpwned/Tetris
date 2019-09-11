@@ -1,7 +1,7 @@
 #ifndef GAME_UTILS_H
 #define GAME_UTILS_H
 
-#include "utils.h"
+#include "common_utils.h"
 
 #define BOARD_COLS 10         // WIDTH
 #define BOARD_ROWS 22         // HEIGHT
@@ -26,23 +26,30 @@ enum GamePhase
     GAME_PHASE_TOTAL
 };
 
-struct GameState
+struct GameStats
 {
-    core::gameplay::Board *board;
-    i32 lines[BOARD_ROWS]; // Move lines to board class later
-    
-    core::gameplay::Piece *piece;
-    
-    GamePhase phase;
-    
+    bool lines[BOARD_ROWS];
+    i32 pendingLineCount;
     i32 startLevel;
     i32 level;
     i32 lineCount;
     i32 points;
-    
+};
+
+struct GameTime
+{
     f32 nextDropTime;
     f32 highlightEndTime;
     f32 time;
+};
+
+struct GameState
+{
+    core::gameplay::Board *board;
+    core::gameplay::Piece *piece;
+    GamePhase phase;
+    GameStats stats;
+    GameTime time;
 };
 
 struct InputState
@@ -53,6 +60,7 @@ struct InputState
     u8 down;
     u8 space;
     u8 enter;
+    u8 z;
     
     i8 dleft;
     i8 dright;
@@ -60,6 +68,7 @@ struct InputState
     i8 ddown;
     i8 dspace;
     i8 denter;
+    i8 dz;
 };
 
 #endif

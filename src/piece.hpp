@@ -14,6 +14,8 @@ namespace core
             private:
             
             Board *m_board;
+            GameTime *m_time;
+            GameStats *m_stats;
             
             i32 m_tetrominoIndex;
             i32 m_rowOffset;
@@ -24,13 +26,15 @@ namespace core
             
             Piece() {}
             
-            Piece(Board *t_board, i32 t_tetrominoIndex, i32 t_rowOffset, i32 t_colOffset, i32 t_rotation)
-                : m_board(t_board), m_tetrominoIndex(t_tetrominoIndex), m_rowOffset(t_rowOffset), m_colOffset(t_colOffset), m_rotation(t_rotation) {}
+            Piece(Board *t_board, GameTime *t_time, GameStats *t_stats, i32 t_tetrominoIndex, i32 t_rowOffset, i32 t_colOffset, i32 t_rotation)
+                : m_board(t_board), m_time(t_time), m_stats(t_stats), m_tetrominoIndex(t_tetrominoIndex), m_rowOffset(t_rowOffset), m_colOffset(t_colOffset), m_rotation(t_rotation) {}
             
             bool IsValid();
+            void MergeWithBoard();
+            void HardDrop();
             bool SoftDrop();
             f32 GetTimeToNextDrop(i32 t_level);
-            void SpawnNewPiece(GameState *t_gameState);
+            void SpawnNewPiece();
             void DrawPiece(i32 t_xOffset, i32 t_yOffset, bool outline = false);
             
             inline i32 GetTetrominoIndex() const { return m_tetrominoIndex; }

@@ -1,7 +1,7 @@
 #ifndef VECTOR_H
 #define VECTOR_H
 
-#include "../utils.h"
+#include "utils.h"
 
 namespace core
 {

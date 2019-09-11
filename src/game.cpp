@@ -80,7 +80,7 @@ Game::Game(const char *t_title, i32 t_xPos, i32 t_yPos, i32 t_windowWidth, i32 t
     m_game = {};
     m_game.board = new gameplay::Board(BOARD_ROWS, BOARD_COLS, BOARD_VISIBLE_ROWS, BOARD_GRID_SIZE);
     
-    m_game.piece = new gameplay::Piece(m_game.board, 0, 0, 0, 0);
+    m_game.piece = new gameplay::Piece(m_game.board, &m_game.time, &m_game.stats, 0, 0, 0, 0);
     
     m_input = {};
     
@@ -89,7 +89,7 @@ Game::Game(const char *t_title, i32 t_xPos, i32 t_yPos, i32 t_windowWidth, i32 t
 
 void Game::HandleEvents()
 {
-    m_game.time = SDL_GetTicks() / 1000.0f;
+    m_game.time.time = SDL_GetTicks() / 1000.0f;
     
     SDL_Event e;
     while (SDL_PollEvent(&e))
@@ -121,6 +121,7 @@ void Game::HandleInput()
         m_input.down   = keyStates[SDL_SCANCODE_DOWN];
         m_input.space  = keyStates[SDL_SCANCODE_SPACE];
         m_input.enter  = keyStates[SDL_SCANCODE_RETURN];
+        m_input.z      = keyStates[SDL_SCANCODE_Z];
         
         m_input.dleft  = m_input.left - prevInput.left;
         m_input.dright = m_input.right - prevInput.right;
@@ -128,6 +129,7 @@ void Game::HandleInput()
         m_input.ddown  = m_input.down - prevInput.down;
         m_input.dspace = m_input.space - prevInput.space;
         m_input.denter = m_input.enter - prevInput.enter;
+        m_input.dz      = m_input.z - prevInput.z;
     }
 }
 
@@ -135,21 +137,21 @@ void Game::UpdateGameStart()
 {
     if (m_input.dup > 0)
     {
-        ++m_game.startLevel;
+        ++m_game.stats.startLevel;
     }
     
-    if (m_input.ddown > 0 && m_game.startLevel > 0)
+    if (m_input.ddown > 0 && m_game.stats.startLevel > 0)
     {
-        --m_game.startLevel;
+        --m_game.stats.startLevel;
     }
     
     if (m_input.denter > 0)
     {
         m_game.board->Clear();
-        m_game.level = m_game.startLevel;
-        m_game.lineCount = 0;
-        m_game.points = 0;
-        m_game.piece->SpawnNewPiece(&m_game);
+        m_game.stats.level = m_game.stats.startLevel;
+        m_game.stats.lineCount = 0;
+        m_game.stats.points = 0;
+        m_game.piece->SpawnNewPiece();
         m_game.phase = GAME_PHASE_PLAY;
     }
     
@@ -184,9 +186,26 @@ void Game::UpdateGamePlay()
         m_game.piece->SoftDrop();
     }
     
-    if (m_input.dspace > 0)
+    if (m_input.dz > 0)
     {
-        while (m_game.piece->SoftDrop());
+        m_game.piece->HardDrop();
+    }
+    
+    while (m_game.time.time >= m_game.time.nextDropTime)
+    {
+        m_game.piece->SoftDrop();
+    }
+    
+    m_game.board->FindLines(&m_game.stats);
+    if (m_game.stats.pendingLineCount > 0)
+    {
+        m_game.phase = GAME_PHASE_LINE;
+        m_game.time.highlightEndTime = m_game.time.time + 0.5f;
+    }
+    
+    if (!m_game.board->IsRowEmpty(0))
+    {
+        m_game.phase = GAME_PHASE_OVER;
     }
 }
 

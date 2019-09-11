@@ -4,7 +4,6 @@
 #include "SDL.h"
 #include "SDL_ttf.h"
 #include "graphics\graphics.hpp"
-#include "utils.h"
 #include "board.hpp"
 #include "piece.hpp"
 #include "game_utils.h"

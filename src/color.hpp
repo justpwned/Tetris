@@ -1,7 +1,7 @@
 #ifndef COLOR_H
 #define COLOR_H
 
-#include "utils.h"
+#include "common_utils.h"
 
 namespace core
 {

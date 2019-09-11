@@ -1,7 +1,7 @@
 #ifndef TETROMINO_HPP
 #define TETROMINO_HPP
 
-#include "utils.h"
+#include "common_utils.h"
 
 namespace core
 {

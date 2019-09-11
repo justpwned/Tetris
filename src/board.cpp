@@ -54,3 +54,45 @@ void Board::DrawBoard(i32 t_xOffset, i32 t_yOffset)
         }
     }
 }
+
+bool Board::IsRowFilled(i32 t_row)
+{
+    for (i32 col = 0; col < m_boardCols; ++col)
+    {
+        if (!GetCellValue(t_row, col))
+        {
+            return false;
+        }
+    }
+    
+    return true;
+}
+
+bool Board::IsRowEmpty(i32 t_row)
+{
+    for (i32 col = 0; col < m_boardCols; ++col)
+    {
+        if (GetCellValue(t_row, col))
+        {
+            return false;
+        }
+    }
+    
+    return true;
+}
+
+void Board::FindLines(GameStats *t_stats)
+{
+    i32 count = 0;
+    for (i32 row = 0; row < m_boardRows; ++row)
+    {
+        bool isFilled = IsRowFilled(row);
+        t_stats->lines[row] = isFilled;
+        
+        if (isFilled)
+        {
+            ++count;
+        }
+    }
+    t_stats->pendingLineCount = count;
+}

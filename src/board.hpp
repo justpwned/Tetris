@@ -2,9 +2,10 @@
 #define BOARD_HPP
 
 #include "SDL.h"
-#include "utils.h"
+#include "common_utils.h"
 #include "math\matrix.hpp"
 #include "tetromino.hpp"
+#include "game_utils.h"
 
 namespace core
 {
@@ -32,16 +33,22 @@ namespace core
             
             void DrawCell(i32 t_row, i32 t_col, i32 t_value, i32 t_xOffset, i32 t_yOffset, bool t_outline = false);
             
-            void DrawPiece(i32 t_xOffset, i32 t_yOffset, bool outline = false);
+            void DrawPiece(i32 t_xOffset, i32 t_yOffset, bool t_outline = false);
             
             void DrawBoard(i32 t_xOffset, i32 t_yOffset);
+            
+            bool IsRowFilled(i32 t_row);
+            bool IsRowEmpty(i32 t_row);
+            
+            void FindLines(GameStats *t_stats);
             
             inline void Clear() { m_boardData.Clear(); }
             
             inline void SetCellValue(i32 t_row, i32 t_col, i32 t_value) 
             { m_boardData.SetValue(t_row, t_col, t_value); }
             
-            inline i32 GetCellValue(i32 t_row, i32 t_col) const { return m_boardData.GetValue(t_row, t_col); }
+            inline i32 GetCellValue(i32 t_row, i32 t_col) const 
+            { return m_boardData.GetValue(t_row, t_col); }
             
             inline i32 GetBoardCols()        const { return m_boardCols; }
             inline i32 GetBoardRows()        const { return m_boardRows; }
