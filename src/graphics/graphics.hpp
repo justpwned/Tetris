@@ -40,6 +40,7 @@ namespace core
             void DrawRect(i32 t_x, i32 t_y, i32 t_width, i32 t_height, Color t_color);
             void DrawText(TTF_Font *t_font, const char *t_text, i32 t_x, i32 t_y,
                           TextAlign t_alignment, Color t_color);
+            void FillBackground(Color t_color);
         };
     }
 }

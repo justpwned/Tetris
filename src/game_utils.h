@@ -14,6 +14,7 @@ namespace core
     {
         class Board;
         class Piece;
+        class Stats;
     }
 }
 
@@ -24,16 +25,6 @@ enum GamePhase
     GAME_PHASE_LINE,
     GAME_PHASE_OVER,
     GAME_PHASE_TOTAL
-};
-
-struct GameStats
-{
-    bool lines[BOARD_ROWS];
-    i32 pendingLineCount;
-    i32 startLevel;
-    i32 level;
-    i32 lineCount;
-    i32 points;
 };
 
 struct GameTime
@@ -47,8 +38,9 @@ struct GameState
 {
     core::gameplay::Board *board;
     core::gameplay::Piece *piece;
+    core::gameplay::Stats *stats;
+    
     GamePhase phase;
-    GameStats stats;
     GameTime time;
 };
 
@@ -70,10 +62,5 @@ struct InputState
     i8 denter;
     i8 dz;
 };
-
-i32 ComputePoints(GameStats *t_stats)
-{
-    
-}
 
 #endif

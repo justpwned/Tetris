@@ -2,39 +2,6 @@
 
 using namespace core::gameplay;
 
-static const i32 FRAMES_PER_DROP[] = {
-    48,
-    43,
-    38,
-    33,
-    28,
-    23,
-    18,
-    13,
-    8,
-    6,
-    5,
-    5,
-    5,
-    4,
-    4,
-    4,
-    3,
-    3,
-    3,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    1
-};
-
 bool Piece::IsValid()
 {
     Tetromino tetromino = Tetromino::s_tetrominos[m_tetrominoIndex];
@@ -94,18 +61,12 @@ bool Piece::SoftDrop()
         --m_rowOffset;
         MergeWithBoard();
         SpawnNewPiece();
+        
         return false;
     }
     
-    m_time->nextDropTime = m_time->time + GetTimeToNextDrop(m_stats->level);
+    m_time->nextDropTime = m_time->time + m_stats->GetTimeToNextDrop();
     return true;
-}
-
-f32 Piece::GetTimeToNextDrop(i32 t_level)
-{
-    i32 level = MIN(29, t_level);
-    f32 targetSecondsPerFrame = 1.0f / 60.0f;
-    return FRAMES_PER_DROP[level] * targetSecondsPerFrame;
 }
 
 void Piece::SpawnNewPiece()
@@ -114,7 +75,7 @@ void Piece::SpawnNewPiece()
     m_colOffset = m_board->GetBoardCols() / 2 - 1;
     m_rowOffset = 0;
     m_rotation = 0;
-    m_time->nextDropTime = m_time->time + GetTimeToNextDrop(m_stats->level);
+    m_time->nextDropTime = m_time->time + m_stats->GetTimeToNextDrop();
 }
 
 void Piece::DrawPiece(i32 t_xOffset, i32 t_yOffset, bool outline)

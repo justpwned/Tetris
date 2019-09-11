@@ -6,6 +6,7 @@
 #include "math\matrix.hpp"
 #include "tetromino.hpp"
 #include "game_utils.h"
+#include "stats.hpp"
 
 namespace core
 {
@@ -40,8 +41,8 @@ namespace core
             bool IsRowFilled(i32 t_row);
             bool IsRowEmpty(i32 t_row);
             
-            void FindLines(GameStats *t_stats);
-            void ClearLines(GameStats *t_stats);
+            void FindLines(Stats *t_stats);
+            void ClearLines(Stats *t_stats);
             
             inline void Clear() { m_boardData.Clear(); }
             

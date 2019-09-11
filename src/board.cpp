@@ -81,24 +81,44 @@ bool Board::IsRowEmpty(i32 t_row)
     return true;
 }
 
-void Board::FindLines(GameStats *t_stats)
+void Board::FindLines(Stats *t_stats)
 {
     i32 count = 0;
     for (i32 row = 0; row < m_boardRows; ++row)
     {
         bool isFilled = IsRowFilled(row);
-        t_stats->lines[row] = isFilled;
+        t_stats->GetLines()[row] = isFilled;
         
         if (isFilled)
         {
             ++count;
         }
     }
-    t_stats->pendingLineCount = count;
+    t_stats->SetPendingLineCount(count);
 }
 
-void Board::ClearLines(GameStats *t_stats)
+void Board::ClearLines(Stats *t_stats)
 {
-    
-    
+    i32 srcRow = m_boardRows - 1;
+    for (i32 destRow = m_boardRows - 1; destRow >= 0; --destRow)
+    {
+        while (srcRow >= 0 && t_stats->GetLines()[srcRow])
+        {
+            --srcRow;
+        }
+        
+        if (srcRow < 0)
+        {
+            m_boardData.SetElements(0, destRow * m_boardCols, 0);
+        }
+        else
+        {
+            if (srcRow != destRow)
+            {
+                m_boardData.CopyElements(destRow * m_boardCols, srcRow * m_boardCols, m_boardCols);
+            }
+            
+            --srcRow;
+        }
+    }
 }

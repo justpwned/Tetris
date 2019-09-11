@@ -15,6 +15,12 @@ Graphics* Graphics::Instance()
     return s_instance;
 }
 
+void Graphics::FillBackground(Color t_color)
+{
+    SDL_SetRenderDrawColor(m_renderer, t_color.r, t_color.g, t_color.b, t_color.a);
+    SDL_RenderClear(m_renderer);
+}
+
 void Graphics::DrawFillRect(i32 t_x, i32 t_y, i32 t_width, i32 t_height, Color t_color)
 {
     SDL_Rect rect = { t_x, t_y, t_width, t_height };

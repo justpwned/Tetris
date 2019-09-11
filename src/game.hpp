@@ -6,6 +6,7 @@
 #include "graphics\graphics.hpp"
 #include "board.hpp"
 #include "piece.hpp"
+#include "stats.hpp"
 #include "game_utils.h"
 
 namespace core
@@ -33,6 +34,11 @@ namespace core
         void UpdateGameOver();
         
         // Rendering methods
+        void RenderGameStart(i32 t_xOffset, i32 t_yOffset);
+        void RenderGamePlay(i32 t_xOffset, i32 t_yOffset);
+        void RenderGameLine(i32 t_xOffset, i32 t_yOffset);
+        void RenderGameOver(i32 t_xOffset, i32 t_yOffset);
+        void RenderGameStats(i32 t_xOffset, i32 t_yOffset);
         
         public:
         

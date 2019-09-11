@@ -80,7 +80,8 @@ Game::Game(const char *t_title, i32 t_xPos, i32 t_yPos, i32 t_windowWidth, i32 t
     m_game = {};
     m_game.board = new gameplay::Board(BOARD_ROWS, BOARD_COLS, BOARD_VISIBLE_ROWS, BOARD_GRID_SIZE);
     
-    m_game.piece = new gameplay::Piece(m_game.board, &m_game.time, &m_game.stats, 0, 0, 0, 0);
+    m_game.stats = new gameplay::Stats();
+    m_game.piece = new gameplay::Piece(m_game.board, &m_game.time, m_game.stats, 0, 0, 0, 0);
     
     m_input = {};
     
@@ -129,7 +130,7 @@ void Game::HandleInput()
         m_input.ddown  = m_input.down - prevInput.down;
         m_input.dspace = m_input.space - prevInput.space;
         m_input.denter = m_input.enter - prevInput.enter;
-        m_input.dz      = m_input.z - prevInput.z;
+        m_input.dz     = m_input.z - prevInput.z;
     }
 }
 
@@ -137,20 +138,20 @@ void Game::UpdateGameStart()
 {
     if (m_input.dup > 0)
     {
-        ++m_game.stats.startLevel;
+        m_game.stats->SetStartLevel(m_game.stats->GetStartLevel() + 1);
     }
     
-    if (m_input.ddown > 0 && m_game.stats.startLevel > 0)
+    if (m_input.ddown > 0 && m_game.stats->GetStartLevel() > 0)
     {
-        --m_game.stats.startLevel;
+        m_game.stats->SetStartLevel(m_game.stats->GetStartLevel() - 1);
     }
     
     if (m_input.denter > 0)
     {
         m_game.board->Clear();
-        m_game.stats.level = m_game.stats.startLevel;
-        m_game.stats.lineCount = 0;
-        m_game.stats.points = 0;
+        m_game.stats->SetLevel(m_game.stats->GetStartLevel());
+        m_game.stats->SetLineCount(0);
+        m_game.stats->SetPoints(0);
         m_game.piece->SpawnNewPiece();
         m_game.phase = GAME_PHASE_PLAY;
     }
@@ -196,11 +197,11 @@ void Game::UpdateGamePlay()
         m_game.piece->SoftDrop();
     }
     
-    m_game.board->FindLines(&m_game.stats);
-    if (m_game.stats.pendingLineCount > 0)
+    m_game.board->FindLines(m_game.stats);
+    if (m_game.stats->GetPendingLineCount() > 0)
     {
         m_game.phase = GAME_PHASE_LINE;
-        m_game.time.highlightEndTime = m_game.time.time + 0.5f;
+        m_game.time.highlightEndTime = m_game.time.time + 0.35f;
     }
     
     if (!m_game.board->IsRowEmpty(0))
@@ -214,9 +215,16 @@ void Game::UpdateGameLine()
     if (m_game.time.time >= m_game.time.highlightEndTime)
     {
         m_game.board->ClearLines(m_game.stats);
-        m_game.stats.lineCount += m_game.stats.pendingLineCount;
-        m_game.stats.points += ComputePoints(m_game.stats);
+        m_game.stats->SetLineCount(m_game.stats->GetLineCount() +
+                                   m_game.stats->GetPendingLineCount());
+        m_game.stats->ComputePoints();
         
+        if (m_game.stats->GetLineCount() >= m_game.stats->GetLinesForNextLevel())
+        {
+            m_game.stats->SetLevel(m_game.stats->GetLevel() + 1);
+        }
+        
+        m_game.phase = GAME_PHASE_PLAY;
     }
 }
 
@@ -254,51 +262,105 @@ void Game::Update()
     }
 }
 
-void Game::Render()
+void Game::RenderGameStart(i32 t_xOffset, i32 t_yOffset)
 {
-    SDL_SetRenderDrawColor(m_renderer, 100, 100, 100, 255);
-    SDL_RenderClear(m_renderer);
+    i32 xPos = BOARD_COLS * BOARD_GRID_SIZE / 2;
+    i32 yPos = (BOARD_ROWS * BOARD_GRID_SIZE + t_yOffset) / 2;
+    Graphics::Instance()->DrawText(m_font, "Press Enter to start", xPos, yPos, TEXT_ALIGN_CENTER, Palette::s_highlightColor);
     
     char buffer[4096];
+    snprintf(buffer, sizeof(buffer), "STARTING LEVEL: %d", m_game.stats->GetStartLevel());
+    Graphics::Instance()->DrawText(m_font, buffer, xPos, yPos + 30, TEXT_ALIGN_CENTER, Palette::s_highlightColor);
+}
+
+void Game::RenderGamePlay(i32 t_xOffset, i32 t_yOffset)
+{
+    m_game.piece->DrawPiece(0, t_yOffset);
+    
+    Piece piece = *(m_game.piece);
+    
+    while (piece.IsValid())
+    {
+        piece.SetRowOffset(piece.GetRowOffset() + 1);
+    }
+    piece.SetRowOffset(piece.GetRowOffset() - 1);
+    piece.DrawPiece(0, t_yOffset, true);
+}
+
+void Game::RenderGameLine(i32 t_xOffset, i32 t_yOffset)
+{
+    for (i32 row = 0; row < BOARD_ROWS; ++row)
+    {
+        if (m_game.stats->GetLines()[row])
+        {
+            i32 xPos = 0;
+            i32 yPos = row * BOARD_GRID_SIZE + t_yOffset;
+            Graphics::Instance()->DrawFillRect(xPos, yPos, BOARD_COLS * BOARD_GRID_SIZE, BOARD_GRID_SIZE, Palette::s_highlightColor);
+        }
+    }
+}
+
+void Game::RenderGameOver(i32 t_xOffset, i32 t_yOffset)
+{
+    i32 xPos = BOARD_COLS * BOARD_GRID_SIZE / 2;
+    i32 yPos = (BOARD_ROWS * BOARD_GRID_SIZE + t_yOffset) / 2;
+    Graphics::Instance()->DrawText(m_font, "GAME OVER", xPos, yPos, TEXT_ALIGN_CENTER, Palette::s_highlightColor);
+}
+
+void Game::RenderGameStats(i32 t_xOffset, i32 t_yOffset)
+{
+    char buffer[4096];
+    
+    i32 xPos = 5;
+    i32 yPos = 20;
+    
+    snprintf(buffer, sizeof(buffer), "LEVEL: %d", m_game.stats->GetLevel());
+    Graphics::Instance()->DrawText(m_font, buffer, xPos, yPos, TEXT_ALIGN_LEFT, Palette::s_highlightColor);
+    
+    yPos += 30;
+    snprintf(buffer, sizeof(buffer), "LINES: %d", m_game.stats->GetLineCount());
+    Graphics::Instance()->DrawText(m_font, buffer, xPos, yPos, TEXT_ALIGN_LEFT, Palette::s_highlightColor);
+    
+    yPos += 30;
+    snprintf(buffer, sizeof(buffer), "POINTS: %d", m_game.stats->GetPoints());
+    Graphics::Instance()->DrawText(m_font, buffer, xPos, yPos, TEXT_ALIGN_LEFT, Palette::s_highlightColor);
+}
+
+void Game::Render()
+{
+    Color backColor(100, 100, 100, 255);
+    
+    Graphics::Instance()->FillBackground(backColor);
     
     i32 yMargin = (BOARD_ROWS - BOARD_VISIBLE_ROWS) * BOARD_GRID_SIZE;
-    
     m_game.board->DrawBoard(0, yMargin);
     
     switch (m_game.phase)
     {
         case GAME_PHASE_START:
         {
-            i32 xPos = BOARD_COLS * BOARD_GRID_SIZE / 2;
-            i32 yPos = (BOARD_ROWS * BOARD_GRID_SIZE + yMargin) / 2;
-            Graphics::Instance()->DrawText(m_font, "Press Enter to start", xPos, yPos, TEXT_ALIGN_CENTER, Palette::s_highlightColor);
+            RenderGameStart(0, yMargin);
         } break;
         
         case GAME_PHASE_PLAY:
         {
-            // Haven't done with rendering part yet 
-            m_game.piece->DrawPiece(0, yMargin);
-            
-            Piece piece = *(m_game.piece);
-            
-            while (piece.IsValid())
-            {
-                piece.SetRowOffset(piece.GetRowOffset() + 1);
-            }
-            piece.SetRowOffset(piece.GetRowOffset() - 1);
-            piece.DrawPiece(0, yMargin, true);
+            RenderGamePlay(0, yMargin);
         } break;
         
         case GAME_PHASE_LINE:
         {
-            
+            RenderGameLine(0, yMargin);
         } break;
         
         case GAME_PHASE_OVER:
         {
-            
+            RenderGameOver(0, yMargin);
         } break;
     }
+    
+    Graphics::Instance()->DrawFillRect(0, yMargin, BOARD_COLS * BOARD_GRID_SIZE,(BOARD_ROWS - BOARD_VISIBLE_ROWS) * BOARD_GRID_SIZE, backColor);
+    
+    RenderGameStats(0, 0);
 }
 
 void Game::MainLoop()
