@@ -42,6 +42,8 @@ struct GameState
     
     GamePhase phase;
     GameTime time;
+    
+    u32 seed;
 };
 
 struct InputState

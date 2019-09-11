@@ -16,7 +16,6 @@ set FilesToCompile=..\src\main.cpp ..\src\game.cpp ..\src\graphics\graphics.cpp 
 REM Debug build
 cl %DebugCompilerOptions% %IncludeDirectories% %FilesToCompile% /link %LinkerOptions% 
 
-
 popd
 
 REM Compiler Flags:

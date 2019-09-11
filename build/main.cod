@@ -10,9 +10,9 @@ INCLUDELIB LIBCMT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG53481 DB	'novem.ttf', 00H
+$SG53482 DB	'novem.ttf', 00H
 	ORG $+2
-$SG53482 DB	'Tetris', 00H
+$SG53483 DB	'Tetris', 00H
 CONST	ENDS
 PUBLIC	??0Game@core@@QAE@PBDHH0H@Z			; core::Game::Game
 PUBLIC	_wmain
@@ -24,7 +24,7 @@ EXTRN	___security_cookie:DWORD
 ; Function compile flags: /Odtp
 ; File c:\dev\tetris\src\main.cpp
 _TEXT	SEGMENT
-_game$ = -72						; size = 68
+_game$ = -76						; size = 72
 __$ArrayPad$ = -4					; size = 4
 _argc$ = 8						; size = 4
 _argv$ = 12						; size = 4
@@ -34,7 +34,7 @@ _wmain	PROC
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
-  00003	83 ec 48	 sub	 esp, 72			; 00000048H
+  00003	83 ec 4c	 sub	 esp, 76			; 0000004cH
   00006	a1 00 00 00 00	 mov	 eax, DWORD PTR ___security_cookie
   0000b	33 c5		 xor	 eax, ebp
   0000d	89 45 fc	 mov	 DWORD PTR __$ArrayPad$[ebp], eax
@@ -42,21 +42,21 @@ _wmain	PROC
 ; 8    :     Game game("Tetris", 300, 720, "novem.ttf", 24);
 
   00010	6a 18		 push	 24			; 00000018H
-  00012	68 00 00 00 00	 push	 OFFSET $SG53481
+  00012	68 00 00 00 00	 push	 OFFSET $SG53482
   00017	68 d0 02 00 00	 push	 720			; 000002d0H
   0001c	68 2c 01 00 00	 push	 300			; 0000012cH
-  00021	68 00 00 00 00	 push	 OFFSET $SG53482
-  00026	8d 4d b8	 lea	 ecx, DWORD PTR _game$[ebp]
+  00021	68 00 00 00 00	 push	 OFFSET $SG53483
+  00026	8d 4d b4	 lea	 ecx, DWORD PTR _game$[ebp]
   00029	e8 00 00 00 00	 call	 ??0Game@core@@QAE@PBDHH0H@Z ; core::Game::Game
 
 ; 9    :     game.MainLoop();
 
-  0002e	8d 4d b8	 lea	 ecx, DWORD PTR _game$[ebp]
+  0002e	8d 4d b4	 lea	 ecx, DWORD PTR _game$[ebp]
   00031	e8 00 00 00 00	 call	 ?MainLoop@Game@core@@QAEXXZ ; core::Game::MainLoop
 
 ; 10   :     game.Clean();
 
-  00036	8d 4d b8	 lea	 ecx, DWORD PTR _game$[ebp]
+  00036	8d 4d b4	 lea	 ecx, DWORD PTR _game$[ebp]
   00039	e8 00 00 00 00	 call	 ?Clean@Game@core@@QAEXXZ ; core::Game::Clean
 
 ; 11   :     

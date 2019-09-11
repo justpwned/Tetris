@@ -85,7 +85,9 @@ Game::Game(const char *t_title, i32 t_xPos, i32 t_yPos, i32 t_windowWidth, i32 t
     
     m_input = {};
     
-    srand((u32)time(NULL));
+    m_game.seed = (u32)time(0);
+    srand(m_game.seed);
+    std::cout << "Game seed: " << m_game.seed << "\n";
 }
 
 void Game::HandleEvents()
