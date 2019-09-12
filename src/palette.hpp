@@ -5,7 +5,7 @@
 
 namespace core
 {
-    static class Palette
+    class Palette
     {
         public:
         
