@@ -8,6 +8,7 @@
 #include "piece.hpp"
 #include "stats.hpp"
 #include "game_utils.h"
+#include "menu.hpp"
 
 namespace core
 {

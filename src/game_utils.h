@@ -16,6 +16,8 @@ namespace core
         class Piece;
         class Stats;
     }
+    
+    class Menu;
 }
 
 enum GamePhase
@@ -24,6 +26,8 @@ enum GamePhase
     GAME_PHASE_PLAY,
     GAME_PHASE_LINE,
     GAME_PHASE_OVER,
+    GAME_PHASE_MENU,
+    GAME_PHASE_HIGHSCORES,
     GAME_PHASE_TOTAL
 };
 
@@ -39,6 +43,7 @@ struct GameState
     core::gameplay::Board *board;
     core::gameplay::Piece *piece;
     core::gameplay::Stats *stats;
+    core::Menu *menu;
     
     GamePhase phase;
     GameTime time;

@@ -3,6 +3,7 @@
 
 #include "game.hpp"
 #include "palette.hpp"
+#include "ui\button.hpp"
 
 using namespace core;
 using namespace core::graphics;
@@ -77,13 +78,13 @@ Game::Game(const char *t_title, i32 t_xPos, i32 t_yPos, i32 t_windowWidth, i32 t
     
     Graphics::Instance()->SetRenderer(m_renderer);
     
+    m_input = {};
+    
     m_game = {};
     m_game.board = new gameplay::Board(BOARD_ROWS, BOARD_COLS, BOARD_VISIBLE_ROWS, BOARD_GRID_SIZE);
-    
-    m_game.stats = new gameplay::Stats();
-    m_game.piece = new gameplay::Piece(m_game.board, &m_game.time, m_game.stats, 0, 0, 0, 0);
-    
-    m_input = {};
+    m_game.stats = new Stats();
+    m_game.piece = new Piece(m_game.board, &m_game.time, m_game.stats, 0, 0, 0, 0);
+    m_game.menu = new Menu(&m_input);
     
     m_game.seed = (u32)time(0);
     srand(m_game.seed);
@@ -261,6 +262,11 @@ void Game::Update()
         {
             UpdateGameOver();
         } break;
+        
+        case GAME_PHASE_MENU:
+        {
+            m_game.menu->Update();
+        } break;
     }
 }
 
@@ -273,6 +279,9 @@ void Game::RenderGameStart(i32 t_xOffset, i32 t_yOffset)
     char buffer[4096];
     snprintf(buffer, sizeof(buffer), "STARTING LEVEL: %d", m_game.stats->GetStartLevel());
     Graphics::Instance()->DrawText(m_font, buffer, xPos, yPos + 30, TEXT_ALIGN_CENTER, Palette::s_highlightColor);
+    
+    ui::Button button(200, 400, m_font, "Test button", ui::BUTTON_OUT_FOCUS, Color(0xfc, 0xba, 0x03), Color(0xad, 0x7f, 0x00), Palette::s_highlightColor);
+    button.Render(100, 100);
 }
 
 void Game::RenderGamePlay(i32 t_xOffset, i32 t_yOffset)
@@ -357,6 +366,11 @@ void Game::Render()
         case GAME_PHASE_OVER:
         {
             RenderGameOver(0, yMargin);
+        } break;
+        
+        case GAME_PHASE_MENU:
+        {
+            m_game.menu->Render(0, 0);
         } break;
     }
     

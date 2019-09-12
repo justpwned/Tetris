@@ -10,57 +10,58 @@ INCLUDELIB LIBCMT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG54100 DB	'SDL has been initialized successfully', 0aH, 00H
+$SG54200 DB	'SDL has been initialized successfully', 0aH, 00H
 	ORG $+1
-$SG54103 DB	'SDL window has been created successfully', 0aH, 00H
+$SG54203 DB	'SDL window has been created successfully', 0aH, 00H
 	ORG $+2
-$SG54106 DB	'SDL renderer has been created successfully', 0aH, 00H
-$SG54107 DB	0aH, 00H
+$SG54206 DB	'SDL renderer has been created successfully', 0aH, 00H
+$SG54207 DB	0aH, 00H
 	ORG $+2
-$SG54108 DB	'Renderer could not be created. SDL error: ', 00H
+$SG54208 DB	'Renderer could not be created. SDL error: ', 00H
 	ORG $+1
-$SG54109 DB	0aH, 00H
+$SG54209 DB	0aH, 00H
 	ORG $+2
-$SG54110 DB	'Window could not be created. SDL error: ', 00H
+$SG54210 DB	'Window could not be created. SDL error: ', 00H
 	ORG $+3
-$SG54111 DB	0aH, 00H
+$SG54211 DB	0aH, 00H
 	ORG $+2
-$SG54112 DB	'Unable to intialize SDL. SDL error: ', 00H
+$SG54212 DB	'Unable to intialize SDL. SDL error: ', 00H
 	ORG $+3
-$SG54115 DB	'SDL_TTF has been initialized successfully', 0aH, 00H
+$SG54215 DB	'SDL_TTF has been initialized successfully', 0aH, 00H
 	ORG $+1
-$SG54118 DB	') has been loaded', 0aH, 00H
+$SG54218 DB	') has been loaded', 0aH, 00H
 	ORG $+1
-$SG54119 DB	'(', 00H
+$SG54219 DB	'(', 00H
 	ORG $+2
-$SG54120 DB	'Font ', 00H
+$SG54220 DB	'Font ', 00H
 	ORG $+2
-$SG54121 DB	') has not been loaded', 0aH, 00H
+$SG54221 DB	') has not been loaded', 0aH, 00H
 	ORG $+1
-$SG54122 DB	'(', 00H
+$SG54222 DB	'(', 00H
 	ORG $+2
-$SG54123 DB	'Font ', 00H
+$SG54223 DB	'Font ', 00H
 	ORG $+2
-$SG54124 DB	0aH, 00H
+$SG54224 DB	0aH, 00H
 	ORG $+2
-$SG54125 DB	'Unable to initialize SDL_TTF. SDL_TTF error: ', 00H
+$SG54225 DB	'Unable to initialize SDL_TTF. SDL_TTF error: ', 00H
 	ORG $+2
-$SG54129 DB	0aH, 00H
+$SG54230 DB	0aH, 00H
 	ORG $+2
-$SG54130 DB	'Game seed: ', 00H
-$SG54194 DB	'Press Enter to start', 00H
+$SG54231 DB	'Game seed: ', 00H
+$SG54302 DB	'Press Enter to start', 00H
 	ORG $+3
-$SG54195 DB	'STARTING LEVEL: %d', 00H
+$SG54303 DB	'STARTING LEVEL: %d', 00H
 	ORG $+1
-$SG54225 DB	'GAME OVER', 00H
+$SG54304 DB	'Test button', 00H
+$SG54334 DB	'GAME OVER', 00H
 	ORG $+2
-$SG54237 DB	'LEVEL: %d', 00H
+$SG54346 DB	'LEVEL: %d', 00H
 	ORG $+2
-$SG54238 DB	'LINES: %d', 00H
+$SG54347 DB	'LINES: %d', 00H
 	ORG $+2
-$SG54239 DB	'POINTS: %d', 00H
+$SG54348 DB	'POINTS: %d', 00H
 	ORG $+1
-$SG54266 DB	'Closing the game. Cleaning up all the mess...', 0aH, 00H
+$SG54376 DB	'Closing the game. Cleaning up all the mess...', 0aH, 00H
 CONST	ENDS
 PUBLIC	??2@YAPAXIPAX@Z					; operator new
 PUBLIC	_fabsl
@@ -257,6 +258,7 @@ PUBLIC	?width@ios_base@std@@QAE_J_J@Z			; std::ios_base::width
 PUBLIC	?getloc@ios_base@std@@QBE?AVlocale@2@XZ		; std::ios_base::getloc
 PUBLIC	??0Color@core@@QAE@ABV01@@Z			; core::Color::Color
 PUBLIC	??0Color@core@@QAE@EEEE@Z			; core::Color::Color
+PUBLIC	??0Color@core@@QAE@EEE@Z			; core::Color::Color
 PUBLIC	?SetRenderer@Graphics@graphics@core@@QAEXPAUSDL_Renderer@@@Z ; core::graphics::Graphics::SetRenderer
 PUBLIC	?_Get_data@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAV?$_Vector_val@U?$_Simple_types@H@std@@@2@XZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Get_data
 PUBLIC	?_Myfirst@?$_Vector_alloc@U?$_Vec_base_types@HV?$allocator@H@std@@@std@@@std@@QAEAAPAHXZ ; std::_Vector_alloc<std::_Vec_base_types<int,std::allocator<int> > >::_Myfirst
@@ -288,6 +290,8 @@ PUBLIC	?GetRotation@Piece@gameplay@core@@QBEHXZ	; core::gameplay::Piece::GetRota
 PUBLIC	?SetRowOffset@Piece@gameplay@core@@QAEXH@Z	; core::gameplay::Piece::SetRowOffset
 PUBLIC	?SetColOffset@Piece@gameplay@core@@QAEXH@Z	; core::gameplay::Piece::SetColOffset
 PUBLIC	?SetRotation@Piece@gameplay@core@@QAEXH@Z	; core::gameplay::Piece::SetRotation
+PUBLIC	??0Button@ui@core@@QAE@HHPAU_TTF_Font@@PBDW4ButtonState@12@VColor@2@33@Z ; core::ui::Button::Button
+PUBLIC	??0Menu@core@@QAE@PAUInputState@@@Z		; core::Menu::Menu
 PUBLIC	?UpdateGameStart@Game@core@@AAEXXZ		; core::Game::UpdateGameStart
 PUBLIC	?UpdateGamePlay@Game@core@@AAEXXZ		; core::Game::UpdateGamePlay
 PUBLIC	?UpdateGameLine@Game@core@@AAEXXZ		; core::Game::UpdateGameLine
@@ -643,6 +647,9 @@ EXTRN	?HardDrop@Piece@gameplay@core@@QAEXXZ:PROC	; core::gameplay::Piece::HardDr
 EXTRN	?SoftDrop@Piece@gameplay@core@@QAE_NXZ:PROC	; core::gameplay::Piece::SoftDrop
 EXTRN	?SpawnNewPiece@Piece@gameplay@core@@QAEXXZ:PROC	; core::gameplay::Piece::SpawnNewPiece
 EXTRN	?DrawPiece@Piece@gameplay@core@@QAEXHH_N@Z:PROC	; core::gameplay::Piece::DrawPiece
+EXTRN	?Render@Button@ui@core@@QAEXHH@Z:PROC		; core::ui::Button::Render
+EXTRN	?Update@Menu@core@@QAEXXZ:PROC			; core::Menu::Update
+EXTRN	?Render@Menu@core@@QAEXHH@Z:PROC		; core::Menu::Render
 EXTRN	??_E?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@MAEPAXI@Z:PROC ; std::num_put<char,std::ostreambuf_iterator<char,std::char_traits<char> > >::`vector deleting destructor'
 EXTRN	??_E?$numpunct@D@std@@MAEPAXI@Z:PROC		; std::numpunct<char>::`vector deleting destructor'
 EXTRN	@__security_check_cookie@4:PROC
@@ -1975,8 +1982,10 @@ __unwindtable$??0Game@core@@QAE@PBDHHHH0H@Z DD 0ffffffffH
 	DD	FLAT:__unwindfunclet$??0Game@core@@QAE@PBDHHHH0H@Z$1
 	DD	0ffffffffH
 	DD	FLAT:__unwindfunclet$??0Game@core@@QAE@PBDHHHH0H@Z$2
+	DD	0ffffffffH
+	DD	FLAT:__unwindfunclet$??0Game@core@@QAE@PBDHHHH0H@Z$3
 __ehfuncinfo$??0Game@core@@QAE@PBDHHHH0H@Z DD 019930522H
-	DD	03H
+	DD	04H
 	DD	FLAT:__unwindtable$??0Game@core@@QAE@PBDHHHH0H@Z
 	DD	2 DUP(00H)
 	DD	2 DUP(00H)
@@ -12020,14 +12029,14 @@ _this$ = -4						; size = 4
 ?Running@Game@core@@QBE_NXZ PROC			; core::Game::Running, COMDAT
 ; _this$ = ecx
 
-; 60   :         inline bool Running()              const { return m_running; }
+; 61   :         inline bool Running()              const { return m_running; }
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
   00003	51		 push	 ecx
   00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
   00007	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  0000a	8a 40 44	 mov	 al, BYTE PTR [eax+68]
+  0000a	8a 40 48	 mov	 al, BYTE PTR [eax+72]
   0000d	8b e5		 mov	 esp, ebp
   0000f	5d		 pop	 ebp
   00010	c3		 ret	 0
@@ -12041,14 +12050,14 @@ _this$ = -4						; size = 4
 ?Quit@Game@core@@QAEXXZ PROC				; core::Game::Quit, COMDAT
 ; _this$ = ecx
 
-; 58   :         inline void Quit() { m_running = false; }
+; 59   :         inline void Quit() { m_running = false; }
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
   00003	51		 push	 ecx
   00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
   00007	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  0000a	c6 40 44 00	 mov	 BYTE PTR [eax+68], 0
+  0000a	c6 40 48 00	 mov	 BYTE PTR [eax+72], 0
   0000e	8b e5		 mov	 esp, ebp
   00010	5d		 pop	 ebp
   00011	c3		 ret	 0
@@ -12061,21 +12070,21 @@ _this$ = -4						; size = 4
 ?Clean@Game@core@@QAEXXZ PROC				; core::Game::Clean
 ; _this$ = ecx
 
-; 383  : {
+; 397  : {
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
   00003	51		 push	 ecx
   00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
 
-; 384  :     std::cout << "Closing the game. Cleaning up all the mess...\n";
+; 398  :     std::cout << "Closing the game. Cleaning up all the mess...\n";
 
-  00007	68 00 00 00 00	 push	 OFFSET $SG54266
+  00007	68 00 00 00 00	 push	 OFFSET $SG54376
   0000c	68 00 00 00 00	 push	 OFFSET ?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cout
   00011	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
   00016	83 c4 08	 add	 esp, 8
 
-; 385  :     SDL_DestroyRenderer(m_renderer);
+; 399  :     SDL_DestroyRenderer(m_renderer);
 
   00019	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
   0001c	8b 48 0c	 mov	 ecx, DWORD PTR [eax+12]
@@ -12083,7 +12092,7 @@ _this$ = -4						; size = 4
   00020	e8 00 00 00 00	 call	 _SDL_DestroyRenderer
   00025	83 c4 04	 add	 esp, 4
 
-; 386  :     SDL_DestroyWindow(m_window);
+; 400  :     SDL_DestroyWindow(m_window);
 
   00028	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
   0002b	8b 42 08	 mov	 eax, DWORD PTR [edx+8]
@@ -12091,23 +12100,23 @@ _this$ = -4						; size = 4
   0002f	e8 00 00 00 00	 call	 _SDL_DestroyWindow
   00034	83 c4 04	 add	 esp, 4
 
-; 387  :     TTF_CloseFont(m_font);
+; 401  :     TTF_CloseFont(m_font);
 
   00037	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  0003a	8b 51 40	 mov	 edx, DWORD PTR [ecx+64]
+  0003a	8b 51 44	 mov	 edx, DWORD PTR [ecx+68]
   0003d	52		 push	 edx
   0003e	e8 00 00 00 00	 call	 _TTF_CloseFont
   00043	83 c4 04	 add	 esp, 4
 
-; 388  :     TTF_Quit();
+; 402  :     TTF_Quit();
 
   00046	e8 00 00 00 00	 call	 _TTF_Quit
 
-; 389  :     SDL_Quit();
+; 403  :     SDL_Quit();
 
   0004b	e8 00 00 00 00	 call	 _SDL_Quit
 
-; 390  : }
+; 404  : }
 
   00050	8b e5		 mov	 esp, ebp
   00052	5d		 pop	 ebp
@@ -12121,7 +12130,7 @@ _this$ = -4						; size = 4
 ?MainLoop@Game@core@@QAEXXZ PROC			; core::Game::MainLoop
 ; _this$ = ecx
 
-; 369  : {
+; 383  : {
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
@@ -12129,7 +12138,7 @@ _this$ = -4						; size = 4
   00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
 $LN2@MainLoop:
 
-; 370  :     while (Running())
+; 384  :     while (Running())
 
   00007	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
   0000a	e8 00 00 00 00	 call	 ?Running@Game@core@@QBE_NXZ ; core::Game::Running
@@ -12137,30 +12146,30 @@ $LN2@MainLoop:
   00012	85 c0		 test	 eax, eax
   00014	74 31		 je	 SHORT $LN1@MainLoop
 
-; 371  :     {
-; 372  :         HandleEvents();
+; 385  :     {
+; 386  :         HandleEvents();
 
   00016	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
   00019	e8 00 00 00 00	 call	 ?HandleEvents@Game@core@@QAEXXZ ; core::Game::HandleEvents
 
-; 373  :         HandleInput();
+; 387  :         HandleInput();
 
   0001e	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
   00021	e8 00 00 00 00	 call	 ?HandleInput@Game@core@@QAEXXZ ; core::Game::HandleInput
 
-; 374  :         
-; 375  :         Update();
+; 388  :         
+; 389  :         Update();
 
   00026	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
   00029	e8 00 00 00 00	 call	 ?Update@Game@core@@QAEXXZ ; core::Game::Update
 
-; 376  :         Render();
+; 390  :         Render();
 
   0002e	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
   00031	e8 00 00 00 00	 call	 ?Render@Game@core@@QAEXXZ ; core::Game::Render
 
-; 377  :         
-; 378  :         SDL_RenderPresent(m_renderer);
+; 391  :         
+; 392  :         SDL_RenderPresent(m_renderer);
 
   00036	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
   00039	8b 51 0c	 mov	 edx, DWORD PTR [ecx+12]
@@ -12168,12 +12177,12 @@ $LN2@MainLoop:
   0003d	e8 00 00 00 00	 call	 _SDL_RenderPresent
   00042	83 c4 04	 add	 esp, 4
 
-; 379  :     }
+; 393  :     }
 
   00045	eb c0		 jmp	 SHORT $LN2@MainLoop
 $LN1@MainLoop:
 
-; 380  : }
+; 394  : }
 
   00047	8b e5		 mov	 esp, ebp
   00049	5d		 pop	 ebp
@@ -12190,14 +12199,14 @@ _this$ = -4						; size = 4
 ?Render@Game@core@@QAEXXZ PROC				; core::Game::Render
 ; _this$ = ecx
 
-; 332  : {
+; 341  : {
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
   00003	83 ec 10	 sub	 esp, 16			; 00000010H
   00006	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
 
-; 333  :     Color backColor(100, 100, 100, 255);
+; 342  :     Color backColor(100, 100, 100, 255);
 
   00009	68 ff 00 00 00	 push	 255			; 000000ffH
   0000e	6a 64		 push	 100			; 00000064H
@@ -12206,8 +12215,8 @@ _this$ = -4						; size = 4
   00014	8d 4d f0	 lea	 ecx, DWORD PTR _backColor$[ebp]
   00017	e8 00 00 00 00	 call	 ??0Color@core@@QAE@EEEE@Z ; core::Color::Color
 
-; 334  :     
-; 335  :     Graphics::Instance()->FillBackground(backColor);
+; 343  :     
+; 344  :     Graphics::Instance()->FillBackground(backColor);
 
   0001c	51		 push	 ecx
   0001d	8b cc		 mov	 ecx, esp
@@ -12218,13 +12227,13 @@ _this$ = -4						; size = 4
   0002d	8b c8		 mov	 ecx, eax
   0002f	e8 00 00 00 00	 call	 ?FillBackground@Graphics@graphics@core@@QAEXVColor@3@@Z ; core::graphics::Graphics::FillBackground
 
-; 336  :     
-; 337  :     i32 yMargin = (BOARD_ROWS - BOARD_VISIBLE_ROWS) * BOARD_GRID_SIZE;
+; 345  :     
+; 346  :     i32 yMargin = (BOARD_ROWS - BOARD_VISIBLE_ROWS) * BOARD_GRID_SIZE;
 
   00034	c7 45 f8 3c 00
 	00 00		 mov	 DWORD PTR _yMargin$[ebp], 60 ; 0000003cH
 
-; 338  :     m_game.board->DrawBoard(0, yMargin);
+; 347  :     m_game.board->DrawBoard(0, yMargin);
 
   0003b	8b 4d f8	 mov	 ecx, DWORD PTR _yMargin$[ebp]
   0003e	51		 push	 ecx
@@ -12233,23 +12242,23 @@ _this$ = -4						; size = 4
   00044	8b 4a 10	 mov	 ecx, DWORD PTR [edx+16]
   00047	e8 00 00 00 00	 call	 ?DrawBoard@Board@gameplay@core@@QAEXHH@Z ; core::gameplay::Board::DrawBoard
 
-; 339  :     
-; 340  :     switch (m_game.phase)
+; 348  :     
+; 349  :     switch (m_game.phase)
 
   0004c	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  0004f	8b 48 1c	 mov	 ecx, DWORD PTR [eax+28]
+  0004f	8b 48 20	 mov	 ecx, DWORD PTR [eax+32]
   00052	89 4d f4	 mov	 DWORD PTR tv88[ebp], ecx
-  00055	83 7d f4 03	 cmp	 DWORD PTR tv88[ebp], 3
-  00059	77 48		 ja	 SHORT $LN2@Render
+  00055	83 7d f4 04	 cmp	 DWORD PTR tv88[ebp], 4
+  00059	77 59		 ja	 SHORT $LN2@Render
   0005b	8b 55 f4	 mov	 edx, DWORD PTR tv88[ebp]
   0005e	ff 24 95 00 00
-	00 00		 jmp	 DWORD PTR $LN9@Render[edx*4]
+	00 00		 jmp	 DWORD PTR $LN10@Render[edx*4]
 $LN4@Render:
 
-; 341  :     {
-; 342  :         case GAME_PHASE_START:
-; 343  :         {
-; 344  :             RenderGameStart(0, yMargin);
+; 350  :     {
+; 351  :         case GAME_PHASE_START:
+; 352  :         {
+; 353  :             RenderGameStart(0, yMargin);
 
   00065	8b 45 f8	 mov	 eax, DWORD PTR _yMargin$[ebp]
   00068	50		 push	 eax
@@ -12257,15 +12266,15 @@ $LN4@Render:
   0006b	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
   0006e	e8 00 00 00 00	 call	 ?RenderGameStart@Game@core@@AAEXHH@Z ; core::Game::RenderGameStart
 
-; 345  :         } break;
+; 354  :         } break;
 
-  00073	eb 2e		 jmp	 SHORT $LN2@Render
+  00073	eb 3f		 jmp	 SHORT $LN2@Render
 $LN5@Render:
 
-; 346  :         
-; 347  :         case GAME_PHASE_PLAY:
-; 348  :         {
-; 349  :             RenderGamePlay(0, yMargin);
+; 355  :         
+; 356  :         case GAME_PHASE_PLAY:
+; 357  :         {
+; 358  :             RenderGamePlay(0, yMargin);
 
   00075	8b 4d f8	 mov	 ecx, DWORD PTR _yMargin$[ebp]
   00078	51		 push	 ecx
@@ -12273,15 +12282,15 @@ $LN5@Render:
   0007b	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
   0007e	e8 00 00 00 00	 call	 ?RenderGamePlay@Game@core@@AAEXHH@Z ; core::Game::RenderGamePlay
 
-; 350  :         } break;
+; 359  :         } break;
 
-  00083	eb 1e		 jmp	 SHORT $LN2@Render
+  00083	eb 2f		 jmp	 SHORT $LN2@Render
 $LN6@Render:
 
-; 351  :         
-; 352  :         case GAME_PHASE_LINE:
-; 353  :         {
-; 354  :             RenderGameLine(0, yMargin);
+; 360  :         
+; 361  :         case GAME_PHASE_LINE:
+; 362  :         {
+; 363  :             RenderGameLine(0, yMargin);
 
   00085	8b 55 f8	 mov	 edx, DWORD PTR _yMargin$[ebp]
   00088	52		 push	 edx
@@ -12289,60 +12298,78 @@ $LN6@Render:
   0008b	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
   0008e	e8 00 00 00 00	 call	 ?RenderGameLine@Game@core@@AAEXHH@Z ; core::Game::RenderGameLine
 
-; 355  :         } break;
+; 364  :         } break;
 
-  00093	eb 0e		 jmp	 SHORT $LN2@Render
+  00093	eb 1f		 jmp	 SHORT $LN2@Render
 $LN7@Render:
 
-; 356  :         
-; 357  :         case GAME_PHASE_OVER:
-; 358  :         {
-; 359  :             RenderGameOver(0, yMargin);
+; 365  :         
+; 366  :         case GAME_PHASE_OVER:
+; 367  :         {
+; 368  :             RenderGameOver(0, yMargin);
 
   00095	8b 45 f8	 mov	 eax, DWORD PTR _yMargin$[ebp]
   00098	50		 push	 eax
   00099	6a 00		 push	 0
   0009b	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
   0009e	e8 00 00 00 00	 call	 ?RenderGameOver@Game@core@@AAEXHH@Z ; core::Game::RenderGameOver
+
+; 369  :         } break;
+
+  000a3	eb 0f		 jmp	 SHORT $LN2@Render
+$LN8@Render:
+
+; 370  :         
+; 371  :         case GAME_PHASE_MENU:
+; 372  :         {
+; 373  :             m_game.menu->Render(0, 0);
+
+  000a5	6a 00		 push	 0
+  000a7	6a 00		 push	 0
+  000a9	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  000ac	8b 49 1c	 mov	 ecx, DWORD PTR [ecx+28]
+  000af	e8 00 00 00 00	 call	 ?Render@Menu@core@@QAEXHH@Z ; core::Menu::Render
 $LN2@Render:
 
-; 360  :         } break;
-; 361  :     }
-; 362  :     
-; 363  :     Graphics::Instance()->DrawFillRect(0, yMargin, BOARD_COLS * BOARD_GRID_SIZE,(BOARD_ROWS - BOARD_VISIBLE_ROWS) * BOARD_GRID_SIZE, backColor);
+; 374  :         } break;
+; 375  :     }
+; 376  :     
+; 377  :     Graphics::Instance()->DrawFillRect(0, yMargin, BOARD_COLS * BOARD_GRID_SIZE,(BOARD_ROWS - BOARD_VISIBLE_ROWS) * BOARD_GRID_SIZE, backColor);
 
-  000a3	51		 push	 ecx
-  000a4	8b cc		 mov	 ecx, esp
-  000a6	8d 55 f0	 lea	 edx, DWORD PTR _backColor$[ebp]
-  000a9	52		 push	 edx
-  000aa	e8 00 00 00 00	 call	 ??0Color@core@@QAE@ABV01@@Z ; core::Color::Color
-  000af	6a 3c		 push	 60			; 0000003cH
-  000b1	68 2c 01 00 00	 push	 300			; 0000012cH
-  000b6	8b 45 f8	 mov	 eax, DWORD PTR _yMargin$[ebp]
-  000b9	50		 push	 eax
-  000ba	6a 00		 push	 0
-  000bc	e8 00 00 00 00	 call	 ?Instance@Graphics@graphics@core@@SAPAV123@XZ ; core::graphics::Graphics::Instance
-  000c1	8b c8		 mov	 ecx, eax
-  000c3	e8 00 00 00 00	 call	 ?DrawFillRect@Graphics@graphics@core@@QAEXHHHHVColor@3@@Z ; core::graphics::Graphics::DrawFillRect
+  000b4	51		 push	 ecx
+  000b5	8b cc		 mov	 ecx, esp
+  000b7	8d 55 f0	 lea	 edx, DWORD PTR _backColor$[ebp]
+  000ba	52		 push	 edx
+  000bb	e8 00 00 00 00	 call	 ??0Color@core@@QAE@ABV01@@Z ; core::Color::Color
+  000c0	6a 3c		 push	 60			; 0000003cH
+  000c2	68 2c 01 00 00	 push	 300			; 0000012cH
+  000c7	8b 45 f8	 mov	 eax, DWORD PTR _yMargin$[ebp]
+  000ca	50		 push	 eax
+  000cb	6a 00		 push	 0
+  000cd	e8 00 00 00 00	 call	 ?Instance@Graphics@graphics@core@@SAPAV123@XZ ; core::graphics::Graphics::Instance
+  000d2	8b c8		 mov	 ecx, eax
+  000d4	e8 00 00 00 00	 call	 ?DrawFillRect@Graphics@graphics@core@@QAEXHHHHVColor@3@@Z ; core::graphics::Graphics::DrawFillRect
 
-; 364  :     
-; 365  :     RenderGameStats(0, 0);
+; 378  :     
+; 379  :     RenderGameStats(0, 0);
 
-  000c8	6a 00		 push	 0
-  000ca	6a 00		 push	 0
-  000cc	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  000cf	e8 00 00 00 00	 call	 ?RenderGameStats@Game@core@@AAEXHH@Z ; core::Game::RenderGameStats
+  000d9	6a 00		 push	 0
+  000db	6a 00		 push	 0
+  000dd	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  000e0	e8 00 00 00 00	 call	 ?RenderGameStats@Game@core@@AAEXHH@Z ; core::Game::RenderGameStats
 
-; 366  : }
+; 380  : }
 
-  000d4	8b e5		 mov	 esp, ebp
-  000d6	5d		 pop	 ebp
-  000d7	c3		 ret	 0
-$LN9@Render:
-  000d8	00 00 00 00	 DD	 $LN4@Render
-  000dc	00 00 00 00	 DD	 $LN5@Render
-  000e0	00 00 00 00	 DD	 $LN6@Render
-  000e4	00 00 00 00	 DD	 $LN7@Render
+  000e5	8b e5		 mov	 esp, ebp
+  000e7	5d		 pop	 ebp
+  000e8	c3		 ret	 0
+  000e9	0f 1f 00	 npad	 3
+$LN10@Render:
+  000ec	00 00 00 00	 DD	 $LN4@Render
+  000f0	00 00 00 00	 DD	 $LN5@Render
+  000f4	00 00 00 00	 DD	 $LN6@Render
+  000f8	00 00 00 00	 DD	 $LN7@Render
+  000fc	00 00 00 00	 DD	 $LN8@Render
 ?Render@Game@core@@QAEXXZ ENDP				; core::Game::Render
 _TEXT	ENDS
 ; Function compile flags: /Odtp
@@ -12353,85 +12380,101 @@ _this$ = -4						; size = 4
 ?Update@Game@core@@QAEXXZ PROC				; core::Game::Update
 ; _this$ = ecx
 
-; 242  : {
+; 243  : {
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
   00003	83 ec 08	 sub	 esp, 8
   00006	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
 
-; 243  :     switch (m_game.phase)
+; 244  :     switch (m_game.phase)
 
   00009	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  0000c	8b 48 1c	 mov	 ecx, DWORD PTR [eax+28]
+  0000c	8b 48 20	 mov	 ecx, DWORD PTR [eax+32]
   0000f	89 4d f8	 mov	 DWORD PTR tv66[ebp], ecx
-  00012	83 7d f8 03	 cmp	 DWORD PTR tv66[ebp], 3
-  00016	77 30		 ja	 SHORT $LN1@Update
+  00012	83 7d f8 04	 cmp	 DWORD PTR tv66[ebp], 4
+  00016	77 3d		 ja	 SHORT $LN1@Update
   00018	8b 55 f8	 mov	 edx, DWORD PTR tv66[ebp]
   0001b	ff 24 95 00 00
-	00 00		 jmp	 DWORD PTR $LN9@Update[edx*4]
+	00 00		 jmp	 DWORD PTR $LN10@Update[edx*4]
 $LN4@Update:
 
-; 244  :     {
-; 245  :         case GAME_PHASE_START:
-; 246  :         {
-; 247  :             UpdateGameStart();
+; 245  :     {
+; 246  :         case GAME_PHASE_START:
+; 247  :         {
+; 248  :             UpdateGameStart();
 
   00022	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
   00025	e8 00 00 00 00	 call	 ?UpdateGameStart@Game@core@@AAEXXZ ; core::Game::UpdateGameStart
 
-; 248  :         } break;
+; 249  :         } break;
 
-  0002a	eb 1c		 jmp	 SHORT $LN1@Update
+  0002a	eb 29		 jmp	 SHORT $LN1@Update
 $LN5@Update:
 
-; 249  :         
-; 250  :         case GAME_PHASE_PLAY:
-; 251  :         {
-; 252  :             UpdateGamePlay();
+; 250  :         
+; 251  :         case GAME_PHASE_PLAY:
+; 252  :         {
+; 253  :             UpdateGamePlay();
 
   0002c	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
   0002f	e8 00 00 00 00	 call	 ?UpdateGamePlay@Game@core@@AAEXXZ ; core::Game::UpdateGamePlay
 
-; 253  :         } break;
+; 254  :         } break;
 
-  00034	eb 12		 jmp	 SHORT $LN1@Update
+  00034	eb 1f		 jmp	 SHORT $LN1@Update
 $LN6@Update:
 
-; 254  :         
-; 255  :         case GAME_PHASE_LINE:
-; 256  :         {
-; 257  :             UpdateGameLine();
+; 255  :         
+; 256  :         case GAME_PHASE_LINE:
+; 257  :         {
+; 258  :             UpdateGameLine();
 
   00036	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
   00039	e8 00 00 00 00	 call	 ?UpdateGameLine@Game@core@@AAEXXZ ; core::Game::UpdateGameLine
 
-; 258  :         } break;
+; 259  :         } break;
 
-  0003e	eb 08		 jmp	 SHORT $LN1@Update
+  0003e	eb 15		 jmp	 SHORT $LN1@Update
 $LN7@Update:
 
-; 259  :         
-; 260  :         case GAME_PHASE_OVER:
-; 261  :         {
-; 262  :             UpdateGameOver();
+; 260  :         
+; 261  :         case GAME_PHASE_OVER:
+; 262  :         {
+; 263  :             UpdateGameOver();
 
   00040	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
   00043	e8 00 00 00 00	 call	 ?UpdateGameOver@Game@core@@AAEXXZ ; core::Game::UpdateGameOver
+
+; 264  :         } break;
+
+  00048	eb 0b		 jmp	 SHORT $LN1@Update
+$LN8@Update:
+
+; 265  :         
+; 266  :         case GAME_PHASE_MENU:
+; 267  :         {
+; 268  :             m_game.menu->Update();
+
+  0004a	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
+  0004d	8b 48 1c	 mov	 ecx, DWORD PTR [eax+28]
+  00050	e8 00 00 00 00	 call	 ?Update@Menu@core@@QAEXXZ ; core::Menu::Update
 $LN1@Update:
 
-; 263  :         } break;
-; 264  :     }
-; 265  : }
+; 269  :         } break;
+; 270  :     }
+; 271  : }
 
-  00048	8b e5		 mov	 esp, ebp
-  0004a	5d		 pop	 ebp
-  0004b	c3		 ret	 0
-$LN9@Update:
-  0004c	00 00 00 00	 DD	 $LN4@Update
-  00050	00 00 00 00	 DD	 $LN5@Update
-  00054	00 00 00 00	 DD	 $LN6@Update
-  00058	00 00 00 00	 DD	 $LN7@Update
+  00055	8b e5		 mov	 esp, ebp
+  00057	5d		 pop	 ebp
+  00058	c3		 ret	 0
+  00059	0f 1f 00	 npad	 3
+$LN10@Update:
+  0005c	00 00 00 00	 DD	 $LN4@Update
+  00060	00 00 00 00	 DD	 $LN5@Update
+  00064	00 00 00 00	 DD	 $LN6@Update
+  00068	00 00 00 00	 DD	 $LN7@Update
+  0006c	00 00 00 00	 DD	 $LN8@Update
 ?Update@Game@core@@QAEXXZ ENDP				; core::Game::Update
 _TEXT	ENDS
 ; Function compile flags: /Odtp
@@ -12445,7 +12488,7 @@ __$ArrayPad$ = -4					; size = 4
 ?HandleInput@Game@core@@QAEXXZ PROC			; core::Game::HandleInput
 ; _this$ = ecx
 
-; 108  : {
+; 109  : {
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
@@ -12455,8 +12498,8 @@ __$ArrayPad$ = -4					; size = 4
   0000d	89 45 fc	 mov	 DWORD PTR __$ArrayPad$[ebp], eax
   00010	89 4d e8	 mov	 DWORD PTR _this$[ebp], ecx
 
-; 109  :     i32 keyCount;
-; 110  :     const u8 *keyStates = SDL_GetKeyboardState(&keyCount);
+; 110  :     i32 keyCount;
+; 111  :     const u8 *keyStates = SDL_GetKeyboardState(&keyCount);
 
   00013	8d 45 e0	 lea	 eax, DWORD PTR _keyCount$[ebp]
   00016	50		 push	 eax
@@ -12464,15 +12507,15 @@ __$ArrayPad$ = -4					; size = 4
   0001c	83 c4 04	 add	 esp, 4
   0001f	89 45 e4	 mov	 DWORD PTR _keyStates$[ebp], eax
 
-; 111  :     
-; 112  :     if (keyStates)
+; 112  :     
+; 113  :     if (keyStates)
 
   00022	83 7d e4 00	 cmp	 DWORD PTR _keyStates$[ebp], 0
   00026	0f 84 4b 01 00
 	00		 je	 $LN1@HandleInpu
 
-; 113  :     {
-; 114  :         if (keyStates[SDL_SCANCODE_ESCAPE])
+; 114  :     {
+; 115  :         if (keyStates[SDL_SCANCODE_ESCAPE])
 
   0002c	b9 01 00 00 00	 mov	 ecx, 1
   00031	6b d1 29	 imul	 edx, ecx, 41
@@ -12481,19 +12524,19 @@ __$ArrayPad$ = -4					; size = 4
   0003b	85 c9		 test	 ecx, ecx
   0003d	74 08		 je	 SHORT $LN3@HandleInpu
 
-; 115  :         {
-; 116  :             Quit();
+; 116  :         {
+; 117  :             Quit();
 
   0003f	8b 4d e8	 mov	 ecx, DWORD PTR _this$[ebp]
   00042	e8 00 00 00 00	 call	 ?Quit@Game@core@@QAEXXZ	; core::Game::Quit
 $LN3@HandleInpu:
 
-; 117  :         }
-; 118  :         
-; 119  :         InputState prevInput = m_input;
+; 118  :         }
+; 119  :         
+; 120  :         InputState prevInput = m_input;
 
   00047	8b 55 e8	 mov	 edx, DWORD PTR _this$[ebp]
-  0004a	83 c2 30	 add	 edx, 48			; 00000030H
+  0004a	83 c2 34	 add	 edx, 52			; 00000034H
   0004d	8b 02		 mov	 eax, DWORD PTR [edx]
   0004f	89 45 ec	 mov	 DWORD PTR _prevInput$1[ebp], eax
   00052	8b 4a 04	 mov	 ecx, DWORD PTR [edx+4]
@@ -12503,137 +12546,137 @@ $LN3@HandleInpu:
   0005e	66 8b 4a 0c	 mov	 cx, WORD PTR [edx+12]
   00062	66 89 4d f8	 mov	 WORD PTR _prevInput$1[ebp+12], cx
 
-; 120  :         
-; 121  :         m_input.left   = keyStates[SDL_SCANCODE_LEFT];
+; 121  :         
+; 122  :         m_input.left   = keyStates[SDL_SCANCODE_LEFT];
 
   00066	ba 01 00 00 00	 mov	 edx, 1
   0006b	6b c2 50	 imul	 eax, edx, 80
   0006e	8b 4d e8	 mov	 ecx, DWORD PTR _this$[ebp]
   00071	8b 55 e4	 mov	 edx, DWORD PTR _keyStates$[ebp]
   00074	8a 04 02	 mov	 al, BYTE PTR [edx+eax]
-  00077	88 41 30	 mov	 BYTE PTR [ecx+48], al
+  00077	88 41 34	 mov	 BYTE PTR [ecx+52], al
 
-; 122  :         m_input.right  = keyStates[SDL_SCANCODE_RIGHT];
+; 123  :         m_input.right  = keyStates[SDL_SCANCODE_RIGHT];
 
   0007a	b9 01 00 00 00	 mov	 ecx, 1
   0007f	6b d1 4f	 imul	 edx, ecx, 79
   00082	8b 45 e8	 mov	 eax, DWORD PTR _this$[ebp]
   00085	8b 4d e4	 mov	 ecx, DWORD PTR _keyStates$[ebp]
   00088	8a 14 11	 mov	 dl, BYTE PTR [ecx+edx]
-  0008b	88 50 31	 mov	 BYTE PTR [eax+49], dl
+  0008b	88 50 35	 mov	 BYTE PTR [eax+53], dl
 
-; 123  :         m_input.up     = keyStates[SDL_SCANCODE_UP];
+; 124  :         m_input.up     = keyStates[SDL_SCANCODE_UP];
 
   0008e	b8 01 00 00 00	 mov	 eax, 1
   00093	6b c8 52	 imul	 ecx, eax, 82
   00096	8b 55 e8	 mov	 edx, DWORD PTR _this$[ebp]
   00099	8b 45 e4	 mov	 eax, DWORD PTR _keyStates$[ebp]
   0009c	8a 0c 08	 mov	 cl, BYTE PTR [eax+ecx]
-  0009f	88 4a 32	 mov	 BYTE PTR [edx+50], cl
+  0009f	88 4a 36	 mov	 BYTE PTR [edx+54], cl
 
-; 124  :         m_input.down   = keyStates[SDL_SCANCODE_DOWN];
+; 125  :         m_input.down   = keyStates[SDL_SCANCODE_DOWN];
 
   000a2	ba 01 00 00 00	 mov	 edx, 1
   000a7	6b c2 51	 imul	 eax, edx, 81
   000aa	8b 4d e8	 mov	 ecx, DWORD PTR _this$[ebp]
   000ad	8b 55 e4	 mov	 edx, DWORD PTR _keyStates$[ebp]
   000b0	8a 04 02	 mov	 al, BYTE PTR [edx+eax]
-  000b3	88 41 33	 mov	 BYTE PTR [ecx+51], al
+  000b3	88 41 37	 mov	 BYTE PTR [ecx+55], al
 
-; 125  :         m_input.space  = keyStates[SDL_SCANCODE_SPACE];
+; 126  :         m_input.space  = keyStates[SDL_SCANCODE_SPACE];
 
   000b6	b9 01 00 00 00	 mov	 ecx, 1
   000bb	6b d1 2c	 imul	 edx, ecx, 44
   000be	8b 45 e8	 mov	 eax, DWORD PTR _this$[ebp]
   000c1	8b 4d e4	 mov	 ecx, DWORD PTR _keyStates$[ebp]
   000c4	8a 14 11	 mov	 dl, BYTE PTR [ecx+edx]
-  000c7	88 50 34	 mov	 BYTE PTR [eax+52], dl
+  000c7	88 50 38	 mov	 BYTE PTR [eax+56], dl
 
-; 126  :         m_input.enter  = keyStates[SDL_SCANCODE_RETURN];
+; 127  :         m_input.enter  = keyStates[SDL_SCANCODE_RETURN];
 
   000ca	b8 01 00 00 00	 mov	 eax, 1
   000cf	6b c8 28	 imul	 ecx, eax, 40
   000d2	8b 55 e8	 mov	 edx, DWORD PTR _this$[ebp]
   000d5	8b 45 e4	 mov	 eax, DWORD PTR _keyStates$[ebp]
   000d8	8a 0c 08	 mov	 cl, BYTE PTR [eax+ecx]
-  000db	88 4a 35	 mov	 BYTE PTR [edx+53], cl
+  000db	88 4a 39	 mov	 BYTE PTR [edx+57], cl
 
-; 127  :         m_input.z      = keyStates[SDL_SCANCODE_Z];
+; 128  :         m_input.z      = keyStates[SDL_SCANCODE_Z];
 
   000de	ba 01 00 00 00	 mov	 edx, 1
   000e3	6b c2 1d	 imul	 eax, edx, 29
   000e6	8b 4d e8	 mov	 ecx, DWORD PTR _this$[ebp]
   000e9	8b 55 e4	 mov	 edx, DWORD PTR _keyStates$[ebp]
   000ec	8a 04 02	 mov	 al, BYTE PTR [edx+eax]
-  000ef	88 41 36	 mov	 BYTE PTR [ecx+54], al
+  000ef	88 41 3a	 mov	 BYTE PTR [ecx+58], al
 
-; 128  :         
-; 129  :         m_input.dleft  = m_input.left - prevInput.left;
+; 129  :         
+; 130  :         m_input.dleft  = m_input.left - prevInput.left;
 
   000f2	8b 4d e8	 mov	 ecx, DWORD PTR _this$[ebp]
-  000f5	0f b6 51 30	 movzx	 edx, BYTE PTR [ecx+48]
+  000f5	0f b6 51 34	 movzx	 edx, BYTE PTR [ecx+52]
   000f9	0f b6 45 ec	 movzx	 eax, BYTE PTR _prevInput$1[ebp]
   000fd	2b d0		 sub	 edx, eax
   000ff	8b 4d e8	 mov	 ecx, DWORD PTR _this$[ebp]
-  00102	88 51 37	 mov	 BYTE PTR [ecx+55], dl
+  00102	88 51 3b	 mov	 BYTE PTR [ecx+59], dl
 
-; 130  :         m_input.dright = m_input.right - prevInput.right;
+; 131  :         m_input.dright = m_input.right - prevInput.right;
 
   00105	8b 55 e8	 mov	 edx, DWORD PTR _this$[ebp]
-  00108	0f b6 42 31	 movzx	 eax, BYTE PTR [edx+49]
+  00108	0f b6 42 35	 movzx	 eax, BYTE PTR [edx+53]
   0010c	0f b6 4d ed	 movzx	 ecx, BYTE PTR _prevInput$1[ebp+1]
   00110	2b c1		 sub	 eax, ecx
   00112	8b 55 e8	 mov	 edx, DWORD PTR _this$[ebp]
-  00115	88 42 38	 mov	 BYTE PTR [edx+56], al
+  00115	88 42 3c	 mov	 BYTE PTR [edx+60], al
 
-; 131  :         m_input.dup    = m_input.up - prevInput.up;
+; 132  :         m_input.dup    = m_input.up - prevInput.up;
 
   00118	8b 45 e8	 mov	 eax, DWORD PTR _this$[ebp]
-  0011b	0f b6 48 32	 movzx	 ecx, BYTE PTR [eax+50]
+  0011b	0f b6 48 36	 movzx	 ecx, BYTE PTR [eax+54]
   0011f	0f b6 55 ee	 movzx	 edx, BYTE PTR _prevInput$1[ebp+2]
   00123	2b ca		 sub	 ecx, edx
   00125	8b 45 e8	 mov	 eax, DWORD PTR _this$[ebp]
-  00128	88 48 39	 mov	 BYTE PTR [eax+57], cl
+  00128	88 48 3d	 mov	 BYTE PTR [eax+61], cl
 
-; 132  :         m_input.ddown  = m_input.down - prevInput.down;
+; 133  :         m_input.ddown  = m_input.down - prevInput.down;
 
   0012b	8b 4d e8	 mov	 ecx, DWORD PTR _this$[ebp]
-  0012e	0f b6 51 33	 movzx	 edx, BYTE PTR [ecx+51]
+  0012e	0f b6 51 37	 movzx	 edx, BYTE PTR [ecx+55]
   00132	0f b6 45 ef	 movzx	 eax, BYTE PTR _prevInput$1[ebp+3]
   00136	2b d0		 sub	 edx, eax
   00138	8b 4d e8	 mov	 ecx, DWORD PTR _this$[ebp]
-  0013b	88 51 3a	 mov	 BYTE PTR [ecx+58], dl
+  0013b	88 51 3e	 mov	 BYTE PTR [ecx+62], dl
 
-; 133  :         m_input.dspace = m_input.space - prevInput.space;
+; 134  :         m_input.dspace = m_input.space - prevInput.space;
 
   0013e	8b 55 e8	 mov	 edx, DWORD PTR _this$[ebp]
-  00141	0f b6 42 34	 movzx	 eax, BYTE PTR [edx+52]
+  00141	0f b6 42 38	 movzx	 eax, BYTE PTR [edx+56]
   00145	0f b6 4d f0	 movzx	 ecx, BYTE PTR _prevInput$1[ebp+4]
   00149	2b c1		 sub	 eax, ecx
   0014b	8b 55 e8	 mov	 edx, DWORD PTR _this$[ebp]
-  0014e	88 42 3b	 mov	 BYTE PTR [edx+59], al
+  0014e	88 42 3f	 mov	 BYTE PTR [edx+63], al
 
-; 134  :         m_input.denter = m_input.enter - prevInput.enter;
+; 135  :         m_input.denter = m_input.enter - prevInput.enter;
 
   00151	8b 45 e8	 mov	 eax, DWORD PTR _this$[ebp]
-  00154	0f b6 48 35	 movzx	 ecx, BYTE PTR [eax+53]
+  00154	0f b6 48 39	 movzx	 ecx, BYTE PTR [eax+57]
   00158	0f b6 55 f1	 movzx	 edx, BYTE PTR _prevInput$1[ebp+5]
   0015c	2b ca		 sub	 ecx, edx
   0015e	8b 45 e8	 mov	 eax, DWORD PTR _this$[ebp]
-  00161	88 48 3c	 mov	 BYTE PTR [eax+60], cl
+  00161	88 48 40	 mov	 BYTE PTR [eax+64], cl
 
-; 135  :         m_input.dz     = m_input.z - prevInput.z;
+; 136  :         m_input.dz     = m_input.z - prevInput.z;
 
   00164	8b 4d e8	 mov	 ecx, DWORD PTR _this$[ebp]
-  00167	0f b6 51 36	 movzx	 edx, BYTE PTR [ecx+54]
+  00167	0f b6 51 3a	 movzx	 edx, BYTE PTR [ecx+58]
   0016b	0f b6 45 f2	 movzx	 eax, BYTE PTR _prevInput$1[ebp+6]
   0016f	2b d0		 sub	 edx, eax
   00171	8b 4d e8	 mov	 ecx, DWORD PTR _this$[ebp]
-  00174	88 51 3d	 mov	 BYTE PTR [ecx+61], dl
+  00174	88 51 41	 mov	 BYTE PTR [ecx+65], dl
 $LN1@HandleInpu:
 
-; 136  :     }
-; 137  : }
+; 137  :     }
+; 138  : }
 
   00177	8b 4d fc	 mov	 ecx, DWORD PTR __$ArrayPad$[ebp]
   0017a	33 cd		 xor	 ecx, ebp
@@ -12654,7 +12697,7 @@ __$ArrayPad$ = -4					; size = 4
 ?HandleEvents@Game@core@@QAEXXZ PROC			; core::Game::HandleEvents
 ; _this$ = ecx
 
-; 94   : {
+; 95   : {
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
@@ -12664,7 +12707,7 @@ __$ArrayPad$ = -4					; size = 4
   0000d	89 45 fc	 mov	 DWORD PTR __$ArrayPad$[ebp], eax
   00010	89 4d bc	 mov	 DWORD PTR _this$[ebp], ecx
 
-; 95   :     m_game.time.time = SDL_GetTicks() / 1000.0f;
+; 96   :     m_game.time.time = SDL_GetTicks() / 1000.0f;
 
   00013	e8 00 00 00 00	 call	 _SDL_GetTicks
   00018	89 45 c0	 mov	 DWORD PTR tv76[ebp], eax
@@ -12678,12 +12721,12 @@ __$ArrayPad$ = -4					; size = 4
   00039	f3 0f 5e 05 00
 	00 00 00	 divss	 xmm0, DWORD PTR __real@447a0000
   00041	8b 4d bc	 mov	 ecx, DWORD PTR _this$[ebp]
-  00044	f3 0f 11 41 28	 movss	 DWORD PTR [ecx+40], xmm0
+  00044	f3 0f 11 41 2c	 movss	 DWORD PTR [ecx+44], xmm0
 $LN2@HandleEven:
 
-; 96   :     
-; 97   :     SDL_Event e;
-; 98   :     while (SDL_PollEvent(&e))
+; 97   :     
+; 98   :     SDL_Event e;
+; 99   :     while (SDL_PollEvent(&e))
 
   00049	8d 55 c4	 lea	 edx, DWORD PTR _e$[ebp]
   0004c	52		 push	 edx
@@ -12692,27 +12735,27 @@ $LN2@HandleEven:
   00055	85 c0		 test	 eax, eax
   00057	74 13		 je	 SHORT $LN3@HandleEven
 
-; 99   :     {
-; 100  :         if (e.type == SDL_QUIT)
+; 100  :     {
+; 101  :         if (e.type == SDL_QUIT)
 
   00059	81 7d c4 00 01
 	00 00		 cmp	 DWORD PTR _e$[ebp], 256	; 00000100H
   00060	75 08		 jne	 SHORT $LN4@HandleEven
 
-; 101  :         {
-; 102  :             Quit();
+; 102  :         {
+; 103  :             Quit();
 
   00062	8b 4d bc	 mov	 ecx, DWORD PTR _this$[ebp]
   00065	e8 00 00 00 00	 call	 ?Quit@Game@core@@QAEXXZ	; core::Game::Quit
 $LN4@HandleEven:
 
-; 103  :         }
-; 104  :     }
+; 104  :         }
+; 105  :     }
 
   0006a	eb dd		 jmp	 SHORT $LN2@HandleEven
 $LN3@HandleEven:
 
-; 105  : }
+; 106  : }
 
   0006c	8b 4d fc	 mov	 ecx, DWORD PTR __$ArrayPad$[ebp]
   0006f	33 cd		 xor	 ecx, ebp
@@ -12725,18 +12768,21 @@ _TEXT	ENDS
 ; Function compile flags: /Odtp
 ; File c:\dev\tetris\src\game.cpp
 _TEXT	SEGMENT
-$T2 = -104						; size = 4
-$T3 = -100						; size = 4
-$T4 = -96						; size = 4
-tv269 = -92						; size = 4
-$T5 = -88						; size = 4
-tv243 = -84						; size = 4
-$T6 = -80						; size = 4
-tv230 = -76						; size = 4
-$T7 = -72						; size = 4
-_this$ = -68						; size = 4
-$T8 = -64						; size = 32
-$T9 = -32						; size = 14
+$T2 = -120						; size = 4
+$T3 = -116						; size = 4
+$T4 = -112						; size = 4
+$T5 = -108						; size = 4
+tv288 = -104						; size = 4
+$T6 = -100						; size = 4
+tv273 = -96						; size = 4
+$T7 = -92						; size = 4
+tv247 = -88						; size = 4
+$T8 = -84						; size = 4
+tv234 = -80						; size = 4
+$T9 = -76						; size = 4
+_this$ = -72						; size = 4
+$T10 = -68						; size = 36
+$T11 = -32						; size = 14
 __$ArrayPad$ = -16					; size = 4
 __$EHRec$ = -12						; size = 12
 _t_title$ = 8						; size = 4
@@ -12749,7 +12795,7 @@ _t_fontSize$ = 32					; size = 4
 ??0Game@core@@QAE@PBDHHHH0H@Z PROC			; core::Game::Game
 ; _this$ = ecx
 
-; 12   : {
+; 13   : {
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
@@ -12758,7 +12804,7 @@ _t_fontSize$ = 32					; size = 4
   0000a	64 a1 00 00 00
 	00		 mov	 eax, DWORD PTR fs:0
   00010	50		 push	 eax
-  00011	83 ec 5c	 sub	 esp, 92			; 0000005cH
+  00011	83 ec 6c	 sub	 esp, 108		; 0000006cH
   00014	a1 00 00 00 00	 mov	 eax, DWORD PTR ___security_cookie
   00019	33 c5		 xor	 eax, ebp
   0001b	89 45 f0	 mov	 DWORD PTR __$ArrayPad$[ebp], eax
@@ -12768,9 +12814,9 @@ _t_fontSize$ = 32					; size = 4
   00021	8d 45 f4	 lea	 eax, DWORD PTR __$EHRec$[ebp]
   00024	64 a3 00 00 00
 	00		 mov	 DWORD PTR fs:0, eax
-  0002a	89 4d bc	 mov	 DWORD PTR _this$[ebp], ecx
+  0002a	89 4d b8	 mov	 DWORD PTR _this$[ebp], ecx
 
-; 13   :     if (!SDL_Init(SDL_INIT_EVERYTHING))
+; 14   :     if (!SDL_Init(SDL_INIT_EVERYTHING))
 
   0002d	68 31 f2 00 00	 push	 62001			; 0000f231H
   00032	e8 00 00 00 00	 call	 _SDL_Init
@@ -12779,16 +12825,16 @@ _t_fontSize$ = 32					; size = 4
   0003c	0f 85 fb 00 00
 	00		 jne	 $LN2@Game
 
-; 14   :     {
-; 15   :         std::cout << "SDL has been initialized successfully\n";
+; 15   :     {
+; 16   :         std::cout << "SDL has been initialized successfully\n";
 
-  00042	68 00 00 00 00	 push	 OFFSET $SG54100
+  00042	68 00 00 00 00	 push	 OFFSET $SG54200
   00047	68 00 00 00 00	 push	 OFFSET ?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cout
   0004c	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
   00051	83 c4 08	 add	 esp, 8
 
-; 16   :         
-; 17   :         m_window = SDL_CreateWindow(t_title, t_xPos, t_yPos, t_windowWidth,
+; 17   :         
+; 18   :         m_window = SDL_CreateWindow(t_title, t_xPos, t_yPos, t_windowWidth,
 
   00054	6a 06		 push	 6
   00056	8b 45 18	 mov	 eax, DWORD PTR _t_windowHeight$[ebp]
@@ -12803,68 +12849,68 @@ _t_fontSize$ = 32					; size = 4
   00069	51		 push	 ecx
   0006a	e8 00 00 00 00	 call	 _SDL_CreateWindow
   0006f	83 c4 18	 add	 esp, 24			; 00000018H
-  00072	8b 55 bc	 mov	 edx, DWORD PTR _this$[ebp]
+  00072	8b 55 b8	 mov	 edx, DWORD PTR _this$[ebp]
   00075	89 42 08	 mov	 DWORD PTR [edx+8], eax
 
-; 18   :                                     t_windowHeight, SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN);
-; 19   :         
-; 20   :         if (m_window)
+; 19   :                                     t_windowHeight, SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN);
+; 20   :         
+; 21   :         if (m_window)
 
-  00078	8b 45 bc	 mov	 eax, DWORD PTR _this$[ebp]
+  00078	8b 45 b8	 mov	 eax, DWORD PTR _this$[ebp]
   0007b	83 78 08 00	 cmp	 DWORD PTR [eax+8], 0
   0007f	0f 84 80 00 00
 	00		 je	 $LN4@Game
 
-; 21   :         {
-; 22   :             std::cout << "SDL window has been created successfully\n";
+; 22   :         {
+; 23   :             std::cout << "SDL window has been created successfully\n";
 
-  00085	68 00 00 00 00	 push	 OFFSET $SG54103
+  00085	68 00 00 00 00	 push	 OFFSET $SG54203
   0008a	68 00 00 00 00	 push	 OFFSET ?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cout
   0008f	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
   00094	83 c4 08	 add	 esp, 8
 
-; 23   :             
-; 24   :             m_renderer = SDL_CreateRenderer(m_window, -1, 
+; 24   :             
+; 25   :             m_renderer = SDL_CreateRenderer(m_window, -1, 
 
   00097	6a 06		 push	 6
   00099	6a ff		 push	 -1
-  0009b	8b 4d bc	 mov	 ecx, DWORD PTR _this$[ebp]
+  0009b	8b 4d b8	 mov	 ecx, DWORD PTR _this$[ebp]
   0009e	8b 51 08	 mov	 edx, DWORD PTR [ecx+8]
   000a1	52		 push	 edx
   000a2	e8 00 00 00 00	 call	 _SDL_CreateRenderer
   000a7	83 c4 0c	 add	 esp, 12			; 0000000cH
-  000aa	8b 4d bc	 mov	 ecx, DWORD PTR _this$[ebp]
+  000aa	8b 4d b8	 mov	 ecx, DWORD PTR _this$[ebp]
   000ad	89 41 0c	 mov	 DWORD PTR [ecx+12], eax
 
-; 25   :                                             SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-; 26   :             
-; 27   :             if (m_renderer)
+; 26   :                                             SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+; 27   :             
+; 28   :             if (m_renderer)
 
-  000b0	8b 55 bc	 mov	 edx, DWORD PTR _this$[ebp]
+  000b0	8b 55 b8	 mov	 edx, DWORD PTR _this$[ebp]
   000b3	83 7a 0c 00	 cmp	 DWORD PTR [edx+12], 0
   000b7	74 14		 je	 SHORT $LN6@Game
 
-; 28   :             {
-; 29   :                 std::cout << "SDL renderer has been created successfully\n";
+; 29   :             {
+; 30   :                 std::cout << "SDL renderer has been created successfully\n";
 
-  000b9	68 00 00 00 00	 push	 OFFSET $SG54106
+  000b9	68 00 00 00 00	 push	 OFFSET $SG54206
   000be	68 00 00 00 00	 push	 OFFSET ?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cout
   000c3	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
   000c8	83 c4 08	 add	 esp, 8
 
-; 30   :             }
-; 31   :             else
+; 31   :             }
+; 32   :             else
 
   000cb	eb 36		 jmp	 SHORT $LN7@Game
 $LN6@Game:
 
-; 32   :             {
-; 33   :                 std::cerr << "Renderer could not be created. SDL error: " 
+; 33   :             {
+; 34   :                 std::cerr << "Renderer could not be created. SDL error: " 
 
-  000cd	68 00 00 00 00	 push	 OFFSET $SG54107
+  000cd	68 00 00 00 00	 push	 OFFSET $SG54207
   000d2	e8 00 00 00 00	 call	 _SDL_GetError
   000d7	50		 push	 eax
-  000d8	68 00 00 00 00	 push	 OFFSET $SG54108
+  000d8	68 00 00 00 00	 push	 OFFSET $SG54208
   000dd	68 00 00 00 00	 push	 OFFSET ?cerr@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cerr
   000e2	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
   000e7	83 c4 08	 add	 esp, 8
@@ -12875,27 +12921,27 @@ $LN6@Game:
   000f4	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
   000f9	83 c4 08	 add	 esp, 8
 
-; 34   :                     << SDL_GetError() << "\n";
-; 35   :                 exit(1);
+; 35   :                     << SDL_GetError() << "\n";
+; 36   :                 exit(1);
 
   000fc	6a 01		 push	 1
   000fe	e8 00 00 00 00	 call	 _exit
 $LN7@Game:
 
-; 36   :             }
-; 37   :         }
-; 38   :         else
+; 37   :             }
+; 38   :         }
+; 39   :         else
 
   00103	eb 36		 jmp	 SHORT $LN5@Game
 $LN4@Game:
 
-; 39   :         {
-; 40   :             std::cerr << "Window could not be created. SDL error: " << SDL_GetError() << "\n";
+; 40   :         {
+; 41   :             std::cerr << "Window could not be created. SDL error: " << SDL_GetError() << "\n";
 
-  00105	68 00 00 00 00	 push	 OFFSET $SG54109
+  00105	68 00 00 00 00	 push	 OFFSET $SG54209
   0010a	e8 00 00 00 00	 call	 _SDL_GetError
   0010f	50		 push	 eax
-  00110	68 00 00 00 00	 push	 OFFSET $SG54110
+  00110	68 00 00 00 00	 push	 OFFSET $SG54210
   00115	68 00 00 00 00	 push	 OFFSET ?cerr@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cerr
   0011a	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
   0011f	83 c4 08	 add	 esp, 8
@@ -12906,26 +12952,26 @@ $LN4@Game:
   0012c	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
   00131	83 c4 08	 add	 esp, 8
 
-; 41   :             exit(1);
+; 42   :             exit(1);
 
   00134	6a 01		 push	 1
   00136	e8 00 00 00 00	 call	 _exit
 $LN5@Game:
 
-; 42   :         }
-; 43   :     }
-; 44   :     else
+; 43   :         }
+; 44   :     }
+; 45   :     else
 
   0013b	eb 36		 jmp	 SHORT $LN3@Game
 $LN2@Game:
 
-; 45   :     {
-; 46   :         std::cerr << "Unable to intialize SDL. SDL error: " << SDL_GetError() << "\n";
+; 46   :     {
+; 47   :         std::cerr << "Unable to intialize SDL. SDL error: " << SDL_GetError() << "\n";
 
-  0013d	68 00 00 00 00	 push	 OFFSET $SG54111
+  0013d	68 00 00 00 00	 push	 OFFSET $SG54211
   00142	e8 00 00 00 00	 call	 _SDL_GetError
   00147	50		 push	 eax
-  00148	68 00 00 00 00	 push	 OFFSET $SG54112
+  00148	68 00 00 00 00	 push	 OFFSET $SG54212
   0014d	68 00 00 00 00	 push	 OFFSET ?cerr@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cerr
   00152	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
   00157	83 c4 08	 add	 esp, 8
@@ -12936,31 +12982,31 @@ $LN2@Game:
   00164	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
   00169	83 c4 08	 add	 esp, 8
 
-; 47   :         exit(1);
+; 48   :         exit(1);
 
   0016c	6a 01		 push	 1
   0016e	e8 00 00 00 00	 call	 _exit
 $LN3@Game:
 
-; 48   :     }
-; 49   :     
-; 50   :     if (!TTF_Init())
+; 49   :     }
+; 50   :     
+; 51   :     if (!TTF_Init())
 
   00173	e8 00 00 00 00	 call	 _TTF_Init
   00178	85 c0		 test	 eax, eax
   0017a	0f 85 c8 00 00
 	00		 jne	 $LN8@Game
 
-; 51   :     {
-; 52   :         std::cout << "SDL_TTF has been initialized successfully\n";
+; 52   :     {
+; 53   :         std::cout << "SDL_TTF has been initialized successfully\n";
 
-  00180	68 00 00 00 00	 push	 OFFSET $SG54115
+  00180	68 00 00 00 00	 push	 OFFSET $SG54215
   00185	68 00 00 00 00	 push	 OFFSET ?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cout
   0018a	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
   0018f	83 c4 08	 add	 esp, 8
 
-; 53   :         
-; 54   :         m_font = TTF_OpenFont(t_fontName, t_fontSize);
+; 54   :         
+; 55   :         m_font = TTF_OpenFont(t_fontName, t_fontSize);
 
   00192	8b 45 20	 mov	 eax, DWORD PTR _t_fontSize$[ebp]
   00195	50		 push	 eax
@@ -12968,26 +13014,26 @@ $LN3@Game:
   00199	51		 push	 ecx
   0019a	e8 00 00 00 00	 call	 _TTF_OpenFont
   0019f	83 c4 08	 add	 esp, 8
-  001a2	8b 55 bc	 mov	 edx, DWORD PTR _this$[ebp]
-  001a5	89 42 40	 mov	 DWORD PTR [edx+64], eax
+  001a2	8b 55 b8	 mov	 edx, DWORD PTR _this$[ebp]
+  001a5	89 42 44	 mov	 DWORD PTR [edx+68], eax
 
-; 55   :         
-; 56   :         if (m_font)
+; 56   :         
+; 57   :         if (m_font)
 
-  001a8	8b 45 bc	 mov	 eax, DWORD PTR _this$[ebp]
-  001ab	83 78 40 00	 cmp	 DWORD PTR [eax+64], 0
+  001a8	8b 45 b8	 mov	 eax, DWORD PTR _this$[ebp]
+  001ab	83 78 44 00	 cmp	 DWORD PTR [eax+68], 0
   001af	74 48		 je	 SHORT $LN10@Game
 
-; 57   :         {
-; 58   :             std::cout << "Font " << t_fontName << "(" << t_fontSize 
+; 58   :         {
+; 59   :             std::cout << "Font " << t_fontName << "(" << t_fontSize 
 
-  001b1	68 00 00 00 00	 push	 OFFSET $SG54118
+  001b1	68 00 00 00 00	 push	 OFFSET $SG54218
   001b6	8b 4d 20	 mov	 ecx, DWORD PTR _t_fontSize$[ebp]
   001b9	51		 push	 ecx
-  001ba	68 00 00 00 00	 push	 OFFSET $SG54119
+  001ba	68 00 00 00 00	 push	 OFFSET $SG54219
   001bf	8b 55 1c	 mov	 edx, DWORD PTR _t_fontName$[ebp]
   001c2	52		 push	 edx
-  001c3	68 00 00 00 00	 push	 OFFSET $SG54120
+  001c3	68 00 00 00 00	 push	 OFFSET $SG54220
   001c8	68 00 00 00 00	 push	 OFFSET ?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cout
   001cd	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
   001d2	83 c4 08	 add	 esp, 8
@@ -13003,23 +13049,23 @@ $LN3@Game:
   001ef	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
   001f4	83 c4 08	 add	 esp, 8
 
-; 59   :                 << ") has been loaded\n";
-; 60   :         }
-; 61   :         else
+; 60   :                 << ") has been loaded\n";
+; 61   :         }
+; 62   :         else
 
   001f7	eb 4d		 jmp	 SHORT $LN11@Game
 $LN10@Game:
 
-; 62   :         {
-; 63   :             std::cerr << "Font " << t_fontName << "(" << t_fontSize 
+; 63   :         {
+; 64   :             std::cerr << "Font " << t_fontName << "(" << t_fontSize 
 
-  001f9	68 00 00 00 00	 push	 OFFSET $SG54121
+  001f9	68 00 00 00 00	 push	 OFFSET $SG54221
   001fe	8b 45 20	 mov	 eax, DWORD PTR _t_fontSize$[ebp]
   00201	50		 push	 eax
-  00202	68 00 00 00 00	 push	 OFFSET $SG54122
+  00202	68 00 00 00 00	 push	 OFFSET $SG54222
   00207	8b 4d 1c	 mov	 ecx, DWORD PTR _t_fontName$[ebp]
   0020a	51		 push	 ecx
-  0020b	68 00 00 00 00	 push	 OFFSET $SG54123
+  0020b	68 00 00 00 00	 push	 OFFSET $SG54223
   00210	68 00 00 00 00	 push	 OFFSET ?cerr@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cerr
   00215	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
   0021a	83 c4 08	 add	 esp, 8
@@ -13035,27 +13081,27 @@ $LN10@Game:
   00237	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
   0023c	83 c4 08	 add	 esp, 8
 
-; 64   :                 << ") has not been loaded\n";
-; 65   :             exit(1);
+; 65   :                 << ") has not been loaded\n";
+; 66   :             exit(1);
 
   0023f	6a 01		 push	 1
   00241	e8 00 00 00 00	 call	 _exit
 $LN11@Game:
 
-; 66   :         }
-; 67   :     }
-; 68   :     else
+; 67   :         }
+; 68   :     }
+; 69   :     else
 
   00246	eb 36		 jmp	 SHORT $LN9@Game
 $LN8@Game:
 
-; 69   :     {
-; 70   :         std::cerr << "Unable to initialize SDL_TTF. SDL_TTF error: " << TTF_GetError() << "\n";
+; 70   :     {
+; 71   :         std::cerr << "Unable to initialize SDL_TTF. SDL_TTF error: " << TTF_GetError() << "\n";
 
-  00248	68 00 00 00 00	 push	 OFFSET $SG54124
+  00248	68 00 00 00 00	 push	 OFFSET $SG54224
   0024d	e8 00 00 00 00	 call	 _SDL_GetError
   00252	50		 push	 eax
-  00253	68 00 00 00 00	 push	 OFFSET $SG54125
+  00253	68 00 00 00 00	 push	 OFFSET $SG54225
   00258	68 00 00 00 00	 push	 OFFSET ?cerr@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cerr
   0025d	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
   00262	83 c4 08	 add	 esp, 8
@@ -13066,257 +13112,293 @@ $LN8@Game:
   0026f	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
   00274	83 c4 08	 add	 esp, 8
 
-; 71   :         exit(1);
+; 72   :         exit(1);
 
   00277	6a 01		 push	 1
   00279	e8 00 00 00 00	 call	 _exit
 $LN9@Game:
 
-; 72   :     }
-; 73   :     
-; 74   :     m_gameWidth = t_windowWidth;
+; 73   :     }
+; 74   :     
+; 75   :     m_gameWidth = t_windowWidth;
 
-  0027e	8b 55 bc	 mov	 edx, DWORD PTR _this$[ebp]
+  0027e	8b 55 b8	 mov	 edx, DWORD PTR _this$[ebp]
   00281	8b 45 14	 mov	 eax, DWORD PTR _t_windowWidth$[ebp]
   00284	89 02		 mov	 DWORD PTR [edx], eax
 
-; 75   :     m_gameHeight = t_windowHeight;
+; 76   :     m_gameHeight = t_windowHeight;
 
-  00286	8b 4d bc	 mov	 ecx, DWORD PTR _this$[ebp]
+  00286	8b 4d b8	 mov	 ecx, DWORD PTR _this$[ebp]
   00289	8b 55 18	 mov	 edx, DWORD PTR _t_windowHeight$[ebp]
   0028c	89 51 04	 mov	 DWORD PTR [ecx+4], edx
 
-; 76   :     m_running = true;
+; 77   :     m_running = true;
 
-  0028f	8b 45 bc	 mov	 eax, DWORD PTR _this$[ebp]
-  00292	c6 40 44 01	 mov	 BYTE PTR [eax+68], 1
+  0028f	8b 45 b8	 mov	 eax, DWORD PTR _this$[ebp]
+  00292	c6 40 48 01	 mov	 BYTE PTR [eax+72], 1
 
-; 77   :     
-; 78   :     Graphics::Instance()->SetRenderer(m_renderer);
+; 78   :     
+; 79   :     Graphics::Instance()->SetRenderer(m_renderer);
 
-  00296	8b 4d bc	 mov	 ecx, DWORD PTR _this$[ebp]
+  00296	8b 4d b8	 mov	 ecx, DWORD PTR _this$[ebp]
   00299	8b 51 0c	 mov	 edx, DWORD PTR [ecx+12]
   0029c	52		 push	 edx
   0029d	e8 00 00 00 00	 call	 ?Instance@Graphics@graphics@core@@SAPAV123@XZ ; core::graphics::Graphics::Instance
   002a2	8b c8		 mov	 ecx, eax
   002a4	e8 00 00 00 00	 call	 ?SetRenderer@Graphics@graphics@core@@QAEXPAUSDL_Renderer@@@Z ; core::graphics::Graphics::SetRenderer
 
-; 79   :     
-; 80   :     m_game = {};
+; 80   :     
+; 81   :     m_input = {};
 
   002a9	33 c0		 xor	 eax, eax
-  002ab	89 45 c0	 mov	 DWORD PTR $T8[ebp], eax
-  002ae	89 45 c4	 mov	 DWORD PTR $T8[ebp+4], eax
-  002b1	89 45 c8	 mov	 DWORD PTR $T8[ebp+8], eax
-  002b4	89 45 cc	 mov	 DWORD PTR $T8[ebp+12], eax
-  002b7	89 45 d0	 mov	 DWORD PTR $T8[ebp+16], eax
-  002ba	89 45 d4	 mov	 DWORD PTR $T8[ebp+20], eax
-  002bd	89 45 d8	 mov	 DWORD PTR $T8[ebp+24], eax
-  002c0	89 45 dc	 mov	 DWORD PTR $T8[ebp+28], eax
-  002c3	8b 7d bc	 mov	 edi, DWORD PTR _this$[ebp]
-  002c6	83 c7 10	 add	 edi, 16			; 00000010H
-  002c9	b9 08 00 00 00	 mov	 ecx, 8
-  002ce	8d 75 c0	 lea	 esi, DWORD PTR $T8[ebp]
-  002d1	f3 a5		 rep movsd
-
-; 81   :     m_game.board = new gameplay::Board(BOARD_ROWS, BOARD_COLS, BOARD_VISIBLE_ROWS, BOARD_GRID_SIZE);
-
-  002d3	6a 28		 push	 40			; 00000028H
-  002d5	e8 00 00 00 00	 call	 ??2@YAPAXI@Z		; operator new
-  002da	83 c4 04	 add	 esp, 4
-  002dd	89 45 b8	 mov	 DWORD PTR $T7[ebp], eax
-  002e0	c7 45 fc 00 00
-	00 00		 mov	 DWORD PTR __$EHRec$[ebp+8], 0
-  002e7	83 7d b8 00	 cmp	 DWORD PTR $T7[ebp], 0
-  002eb	74 15		 je	 SHORT $LN13@Game
-  002ed	6a 1e		 push	 30			; 0000001eH
-  002ef	6a 14		 push	 20			; 00000014H
-  002f1	6a 0a		 push	 10			; 0000000aH
-  002f3	6a 16		 push	 22			; 00000016H
-  002f5	8b 4d b8	 mov	 ecx, DWORD PTR $T7[ebp]
-  002f8	e8 00 00 00 00	 call	 ??0Board@gameplay@core@@QAE@HHHH@Z ; core::gameplay::Board::Board
-  002fd	89 45 b4	 mov	 DWORD PTR tv230[ebp], eax
-  00300	eb 07		 jmp	 SHORT $LN14@Game
-$LN13@Game:
-  00302	c7 45 b4 00 00
-	00 00		 mov	 DWORD PTR tv230[ebp], 0
-$LN14@Game:
-  00309	8b 4d b4	 mov	 ecx, DWORD PTR tv230[ebp]
-  0030c	89 4d a0	 mov	 DWORD PTR $T4[ebp], ecx
-  0030f	c7 45 fc ff ff
-	ff ff		 mov	 DWORD PTR __$EHRec$[ebp+8], -1
-  00316	8b 55 bc	 mov	 edx, DWORD PTR _this$[ebp]
-  00319	8b 45 a0	 mov	 eax, DWORD PTR $T4[ebp]
-  0031c	89 42 10	 mov	 DWORD PTR [edx+16], eax
+  002ab	89 45 e0	 mov	 DWORD PTR $T11[ebp], eax
+  002ae	89 45 e4	 mov	 DWORD PTR $T11[ebp+4], eax
+  002b1	89 45 e8	 mov	 DWORD PTR $T11[ebp+8], eax
+  002b4	66 89 45 ec	 mov	 WORD PTR $T11[ebp+12], ax
+  002b8	8b 4d b8	 mov	 ecx, DWORD PTR _this$[ebp]
+  002bb	83 c1 34	 add	 ecx, 52			; 00000034H
+  002be	8b 55 e0	 mov	 edx, DWORD PTR $T11[ebp]
+  002c1	89 11		 mov	 DWORD PTR [ecx], edx
+  002c3	8b 45 e4	 mov	 eax, DWORD PTR $T11[ebp+4]
+  002c6	89 41 04	 mov	 DWORD PTR [ecx+4], eax
+  002c9	8b 55 e8	 mov	 edx, DWORD PTR $T11[ebp+8]
+  002cc	89 51 08	 mov	 DWORD PTR [ecx+8], edx
+  002cf	66 8b 45 ec	 mov	 ax, WORD PTR $T11[ebp+12]
+  002d3	66 89 41 0c	 mov	 WORD PTR [ecx+12], ax
 
 ; 82   :     
-; 83   :     m_game.stats = new gameplay::Stats();
+; 83   :     m_game = {};
 
-  0031f	6a 2c		 push	 44			; 0000002cH
-  00321	e8 00 00 00 00	 call	 ??2@YAPAXI@Z		; operator new
-  00326	83 c4 04	 add	 esp, 4
-  00329	89 45 b0	 mov	 DWORD PTR $T6[ebp], eax
-  0032c	c7 45 fc 01 00
+  002d7	33 c9		 xor	 ecx, ecx
+  002d9	89 4d bc	 mov	 DWORD PTR $T10[ebp], ecx
+  002dc	89 4d c0	 mov	 DWORD PTR $T10[ebp+4], ecx
+  002df	89 4d c4	 mov	 DWORD PTR $T10[ebp+8], ecx
+  002e2	89 4d c8	 mov	 DWORD PTR $T10[ebp+12], ecx
+  002e5	89 4d cc	 mov	 DWORD PTR $T10[ebp+16], ecx
+  002e8	89 4d d0	 mov	 DWORD PTR $T10[ebp+20], ecx
+  002eb	89 4d d4	 mov	 DWORD PTR $T10[ebp+24], ecx
+  002ee	89 4d d8	 mov	 DWORD PTR $T10[ebp+28], ecx
+  002f1	89 4d dc	 mov	 DWORD PTR $T10[ebp+32], ecx
+  002f4	8b 7d b8	 mov	 edi, DWORD PTR _this$[ebp]
+  002f7	83 c7 10	 add	 edi, 16			; 00000010H
+  002fa	b9 09 00 00 00	 mov	 ecx, 9
+  002ff	8d 75 bc	 lea	 esi, DWORD PTR $T10[ebp]
+  00302	f3 a5		 rep movsd
+
+; 84   :     m_game.board = new gameplay::Board(BOARD_ROWS, BOARD_COLS, BOARD_VISIBLE_ROWS, BOARD_GRID_SIZE);
+
+  00304	6a 28		 push	 40			; 00000028H
+  00306	e8 00 00 00 00	 call	 ??2@YAPAXI@Z		; operator new
+  0030b	83 c4 04	 add	 esp, 4
+  0030e	89 45 b4	 mov	 DWORD PTR $T9[ebp], eax
+  00311	c7 45 fc 00 00
+	00 00		 mov	 DWORD PTR __$EHRec$[ebp+8], 0
+  00318	83 7d b4 00	 cmp	 DWORD PTR $T9[ebp], 0
+  0031c	74 15		 je	 SHORT $LN13@Game
+  0031e	6a 1e		 push	 30			; 0000001eH
+  00320	6a 14		 push	 20			; 00000014H
+  00322	6a 0a		 push	 10			; 0000000aH
+  00324	6a 16		 push	 22			; 00000016H
+  00326	8b 4d b4	 mov	 ecx, DWORD PTR $T9[ebp]
+  00329	e8 00 00 00 00	 call	 ??0Board@gameplay@core@@QAE@HHHH@Z ; core::gameplay::Board::Board
+  0032e	89 45 b0	 mov	 DWORD PTR tv234[ebp], eax
+  00331	eb 07		 jmp	 SHORT $LN14@Game
+$LN13@Game:
+  00333	c7 45 b0 00 00
+	00 00		 mov	 DWORD PTR tv234[ebp], 0
+$LN14@Game:
+  0033a	8b 55 b0	 mov	 edx, DWORD PTR tv234[ebp]
+  0033d	89 55 94	 mov	 DWORD PTR $T5[ebp], edx
+  00340	c7 45 fc ff ff
+	ff ff		 mov	 DWORD PTR __$EHRec$[ebp+8], -1
+  00347	8b 45 b8	 mov	 eax, DWORD PTR _this$[ebp]
+  0034a	8b 4d 94	 mov	 ecx, DWORD PTR $T5[ebp]
+  0034d	89 48 10	 mov	 DWORD PTR [eax+16], ecx
+
+; 85   :     m_game.stats = new Stats();
+
+  00350	6a 2c		 push	 44			; 0000002cH
+  00352	e8 00 00 00 00	 call	 ??2@YAPAXI@Z		; operator new
+  00357	83 c4 04	 add	 esp, 4
+  0035a	89 45 ac	 mov	 DWORD PTR $T8[ebp], eax
+  0035d	c7 45 fc 01 00
 	00 00		 mov	 DWORD PTR __$EHRec$[ebp+8], 1
-  00333	83 7d b0 00	 cmp	 DWORD PTR $T6[ebp], 0
-  00337	74 0d		 je	 SHORT $LN15@Game
-  00339	8b 4d b0	 mov	 ecx, DWORD PTR $T6[ebp]
-  0033c	e8 00 00 00 00	 call	 ??0Stats@gameplay@core@@QAE@XZ ; core::gameplay::Stats::Stats
-  00341	89 45 ac	 mov	 DWORD PTR tv243[ebp], eax
-  00344	eb 07		 jmp	 SHORT $LN16@Game
+  00364	83 7d ac 00	 cmp	 DWORD PTR $T8[ebp], 0
+  00368	74 0d		 je	 SHORT $LN15@Game
+  0036a	8b 4d ac	 mov	 ecx, DWORD PTR $T8[ebp]
+  0036d	e8 00 00 00 00	 call	 ??0Stats@gameplay@core@@QAE@XZ ; core::gameplay::Stats::Stats
+  00372	89 45 a8	 mov	 DWORD PTR tv247[ebp], eax
+  00375	eb 07		 jmp	 SHORT $LN16@Game
 $LN15@Game:
-  00346	c7 45 ac 00 00
-	00 00		 mov	 DWORD PTR tv243[ebp], 0
+  00377	c7 45 a8 00 00
+	00 00		 mov	 DWORD PTR tv247[ebp], 0
 $LN16@Game:
-  0034d	8b 4d ac	 mov	 ecx, DWORD PTR tv243[ebp]
-  00350	89 4d 9c	 mov	 DWORD PTR $T3[ebp], ecx
-  00353	c7 45 fc ff ff
+  0037e	8b 55 a8	 mov	 edx, DWORD PTR tv247[ebp]
+  00381	89 55 90	 mov	 DWORD PTR $T4[ebp], edx
+  00384	c7 45 fc ff ff
 	ff ff		 mov	 DWORD PTR __$EHRec$[ebp+8], -1
-  0035a	8b 55 bc	 mov	 edx, DWORD PTR _this$[ebp]
-  0035d	8b 45 9c	 mov	 eax, DWORD PTR $T3[ebp]
-  00360	89 42 18	 mov	 DWORD PTR [edx+24], eax
+  0038b	8b 45 b8	 mov	 eax, DWORD PTR _this$[ebp]
+  0038e	8b 4d 90	 mov	 ecx, DWORD PTR $T4[ebp]
+  00391	89 48 18	 mov	 DWORD PTR [eax+24], ecx
 
-; 84   :     m_game.piece = new gameplay::Piece(m_game.board, &m_game.time, m_game.stats, 0, 0, 0, 0);
+; 86   :     m_game.piece = new Piece(m_game.board, &m_game.time, m_game.stats, 0, 0, 0, 0);
 
-  00363	6a 1c		 push	 28			; 0000001cH
-  00365	e8 00 00 00 00	 call	 ??2@YAPAXI@Z		; operator new
-  0036a	83 c4 04	 add	 esp, 4
-  0036d	89 45 a8	 mov	 DWORD PTR $T5[ebp], eax
-  00370	c7 45 fc 02 00
+  00394	6a 1c		 push	 28			; 0000001cH
+  00396	e8 00 00 00 00	 call	 ??2@YAPAXI@Z		; operator new
+  0039b	83 c4 04	 add	 esp, 4
+  0039e	89 45 a4	 mov	 DWORD PTR $T7[ebp], eax
+  003a1	c7 45 fc 02 00
 	00 00		 mov	 DWORD PTR __$EHRec$[ebp+8], 2
-  00377	83 7d a8 00	 cmp	 DWORD PTR $T5[ebp], 0
-  0037b	74 2a		 je	 SHORT $LN17@Game
-  0037d	6a 00		 push	 0
-  0037f	6a 00		 push	 0
-  00381	6a 00		 push	 0
-  00383	6a 00		 push	 0
-  00385	8b 4d bc	 mov	 ecx, DWORD PTR _this$[ebp]
-  00388	8b 51 18	 mov	 edx, DWORD PTR [ecx+24]
-  0038b	52		 push	 edx
-  0038c	8b 45 bc	 mov	 eax, DWORD PTR _this$[ebp]
-  0038f	83 c0 20	 add	 eax, 32			; 00000020H
-  00392	50		 push	 eax
-  00393	8b 4d bc	 mov	 ecx, DWORD PTR _this$[ebp]
-  00396	8b 51 10	 mov	 edx, DWORD PTR [ecx+16]
-  00399	52		 push	 edx
-  0039a	8b 4d a8	 mov	 ecx, DWORD PTR $T5[ebp]
-  0039d	e8 00 00 00 00	 call	 ??0Piece@gameplay@core@@QAE@PAVBoard@12@PAUGameTime@@PAVStats@12@HHHH@Z ; core::gameplay::Piece::Piece
-  003a2	89 45 a4	 mov	 DWORD PTR tv269[ebp], eax
-  003a5	eb 07		 jmp	 SHORT $LN18@Game
+  003a8	83 7d a4 00	 cmp	 DWORD PTR $T7[ebp], 0
+  003ac	74 2a		 je	 SHORT $LN17@Game
+  003ae	6a 00		 push	 0
+  003b0	6a 00		 push	 0
+  003b2	6a 00		 push	 0
+  003b4	6a 00		 push	 0
+  003b6	8b 55 b8	 mov	 edx, DWORD PTR _this$[ebp]
+  003b9	8b 42 18	 mov	 eax, DWORD PTR [edx+24]
+  003bc	50		 push	 eax
+  003bd	8b 4d b8	 mov	 ecx, DWORD PTR _this$[ebp]
+  003c0	83 c1 24	 add	 ecx, 36			; 00000024H
+  003c3	51		 push	 ecx
+  003c4	8b 55 b8	 mov	 edx, DWORD PTR _this$[ebp]
+  003c7	8b 42 10	 mov	 eax, DWORD PTR [edx+16]
+  003ca	50		 push	 eax
+  003cb	8b 4d a4	 mov	 ecx, DWORD PTR $T7[ebp]
+  003ce	e8 00 00 00 00	 call	 ??0Piece@gameplay@core@@QAE@PAVBoard@12@PAUGameTime@@PAVStats@12@HHHH@Z ; core::gameplay::Piece::Piece
+  003d3	89 45 a0	 mov	 DWORD PTR tv273[ebp], eax
+  003d6	eb 07		 jmp	 SHORT $LN18@Game
 $LN17@Game:
-  003a7	c7 45 a4 00 00
-	00 00		 mov	 DWORD PTR tv269[ebp], 0
+  003d8	c7 45 a0 00 00
+	00 00		 mov	 DWORD PTR tv273[ebp], 0
 $LN18@Game:
-  003ae	8b 45 a4	 mov	 eax, DWORD PTR tv269[ebp]
-  003b1	89 45 98	 mov	 DWORD PTR $T2[ebp], eax
-  003b4	c7 45 fc ff ff
+  003df	8b 4d a0	 mov	 ecx, DWORD PTR tv273[ebp]
+  003e2	89 4d 8c	 mov	 DWORD PTR $T3[ebp], ecx
+  003e5	c7 45 fc ff ff
 	ff ff		 mov	 DWORD PTR __$EHRec$[ebp+8], -1
-  003bb	8b 4d bc	 mov	 ecx, DWORD PTR _this$[ebp]
-  003be	8b 55 98	 mov	 edx, DWORD PTR $T2[ebp]
-  003c1	89 51 14	 mov	 DWORD PTR [ecx+20], edx
+  003ec	8b 55 b8	 mov	 edx, DWORD PTR _this$[ebp]
+  003ef	8b 45 8c	 mov	 eax, DWORD PTR $T3[ebp]
+  003f2	89 42 14	 mov	 DWORD PTR [edx+20], eax
 
-; 85   :     
-; 86   :     m_input = {};
+; 87   :     m_game.menu = new Menu(&m_input);
 
-  003c4	33 c0		 xor	 eax, eax
-  003c6	89 45 e0	 mov	 DWORD PTR $T9[ebp], eax
-  003c9	89 45 e4	 mov	 DWORD PTR $T9[ebp+4], eax
-  003cc	89 45 e8	 mov	 DWORD PTR $T9[ebp+8], eax
-  003cf	66 89 45 ec	 mov	 WORD PTR $T9[ebp+12], ax
-  003d3	8b 4d bc	 mov	 ecx, DWORD PTR _this$[ebp]
-  003d6	83 c1 30	 add	 ecx, 48			; 00000030H
-  003d9	8b 55 e0	 mov	 edx, DWORD PTR $T9[ebp]
-  003dc	89 11		 mov	 DWORD PTR [ecx], edx
-  003de	8b 45 e4	 mov	 eax, DWORD PTR $T9[ebp+4]
-  003e1	89 41 04	 mov	 DWORD PTR [ecx+4], eax
-  003e4	8b 55 e8	 mov	 edx, DWORD PTR $T9[ebp+8]
-  003e7	89 51 08	 mov	 DWORD PTR [ecx+8], edx
-  003ea	66 8b 45 ec	 mov	 ax, WORD PTR $T9[ebp+12]
-  003ee	66 89 41 0c	 mov	 WORD PTR [ecx+12], ax
+  003f5	6a 04		 push	 4
+  003f7	e8 00 00 00 00	 call	 ??2@YAPAXI@Z		; operator new
+  003fc	83 c4 04	 add	 esp, 4
+  003ff	89 45 9c	 mov	 DWORD PTR $T6[ebp], eax
+  00402	c7 45 fc 03 00
+	00 00		 mov	 DWORD PTR __$EHRec$[ebp+8], 3
+  00409	83 7d 9c 00	 cmp	 DWORD PTR $T6[ebp], 0
+  0040d	74 14		 je	 SHORT $LN19@Game
+  0040f	8b 4d b8	 mov	 ecx, DWORD PTR _this$[ebp]
+  00412	83 c1 34	 add	 ecx, 52			; 00000034H
+  00415	51		 push	 ecx
+  00416	8b 4d 9c	 mov	 ecx, DWORD PTR $T6[ebp]
+  00419	e8 00 00 00 00	 call	 ??0Menu@core@@QAE@PAUInputState@@@Z ; core::Menu::Menu
+  0041e	89 45 98	 mov	 DWORD PTR tv288[ebp], eax
+  00421	eb 07		 jmp	 SHORT $LN20@Game
+$LN19@Game:
+  00423	c7 45 98 00 00
+	00 00		 mov	 DWORD PTR tv288[ebp], 0
+$LN20@Game:
+  0042a	8b 55 98	 mov	 edx, DWORD PTR tv288[ebp]
+  0042d	89 55 88	 mov	 DWORD PTR $T2[ebp], edx
+  00430	c7 45 fc ff ff
+	ff ff		 mov	 DWORD PTR __$EHRec$[ebp+8], -1
+  00437	8b 45 b8	 mov	 eax, DWORD PTR _this$[ebp]
+  0043a	8b 4d 88	 mov	 ecx, DWORD PTR $T2[ebp]
+  0043d	89 48 1c	 mov	 DWORD PTR [eax+28], ecx
 
-; 87   :     
-; 88   :     m_game.seed = (u32)time(0);
+; 88   :     
+; 89   :     m_game.seed = (u32)time(0);
 
-  003f2	6a 00		 push	 0
-  003f4	e8 00 00 00 00	 call	 _time
-  003f9	83 c4 04	 add	 esp, 4
-  003fc	8b 4d bc	 mov	 ecx, DWORD PTR _this$[ebp]
-  003ff	89 41 2c	 mov	 DWORD PTR [ecx+44], eax
+  00440	6a 00		 push	 0
+  00442	e8 00 00 00 00	 call	 _time
+  00447	83 c4 04	 add	 esp, 4
+  0044a	8b 55 b8	 mov	 edx, DWORD PTR _this$[ebp]
+  0044d	89 42 30	 mov	 DWORD PTR [edx+48], eax
 
-; 89   :     srand(m_game.seed);
+; 90   :     srand(m_game.seed);
 
-  00402	8b 55 bc	 mov	 edx, DWORD PTR _this$[ebp]
-  00405	8b 42 2c	 mov	 eax, DWORD PTR [edx+44]
-  00408	50		 push	 eax
-  00409	e8 00 00 00 00	 call	 _srand
-  0040e	83 c4 04	 add	 esp, 4
+  00450	8b 45 b8	 mov	 eax, DWORD PTR _this$[ebp]
+  00453	8b 48 30	 mov	 ecx, DWORD PTR [eax+48]
+  00456	51		 push	 ecx
+  00457	e8 00 00 00 00	 call	 _srand
+  0045c	83 c4 04	 add	 esp, 4
 
-; 90   :     std::cout << "Game seed: " << m_game.seed << "\n";
+; 91   :     std::cout << "Game seed: " << m_game.seed << "\n";
 
-  00411	68 00 00 00 00	 push	 OFFSET $SG54129
-  00416	8b 4d bc	 mov	 ecx, DWORD PTR _this$[ebp]
-  00419	8b 51 2c	 mov	 edx, DWORD PTR [ecx+44]
-  0041c	52		 push	 edx
-  0041d	68 00 00 00 00	 push	 OFFSET $SG54130
-  00422	68 00 00 00 00	 push	 OFFSET ?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cout
-  00427	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
-  0042c	83 c4 08	 add	 esp, 8
-  0042f	8b c8		 mov	 ecx, eax
-  00431	e8 00 00 00 00	 call	 ??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@I@Z ; std::basic_ostream<char,std::char_traits<char> >::operator<<
-  00436	50		 push	 eax
-  00437	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
-  0043c	83 c4 08	 add	 esp, 8
+  0045f	68 00 00 00 00	 push	 OFFSET $SG54230
+  00464	8b 55 b8	 mov	 edx, DWORD PTR _this$[ebp]
+  00467	8b 42 30	 mov	 eax, DWORD PTR [edx+48]
+  0046a	50		 push	 eax
+  0046b	68 00 00 00 00	 push	 OFFSET $SG54231
+  00470	68 00 00 00 00	 push	 OFFSET ?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cout
+  00475	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
+  0047a	83 c4 08	 add	 esp, 8
+  0047d	8b c8		 mov	 ecx, eax
+  0047f	e8 00 00 00 00	 call	 ??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@I@Z ; std::basic_ostream<char,std::char_traits<char> >::operator<<
+  00484	50		 push	 eax
+  00485	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
+  0048a	83 c4 08	 add	 esp, 8
 
-; 91   : }
+; 92   : }
 
-  0043f	8b 45 bc	 mov	 eax, DWORD PTR _this$[ebp]
+  0048d	8b 45 b8	 mov	 eax, DWORD PTR _this$[ebp]
 $LN12@Game:
-  00442	8b 4d f4	 mov	 ecx, DWORD PTR __$EHRec$[ebp]
-  00445	64 89 0d 00 00
+  00490	8b 4d f4	 mov	 ecx, DWORD PTR __$EHRec$[ebp]
+  00493	64 89 0d 00 00
 	00 00		 mov	 DWORD PTR fs:0, ecx
-  0044c	59		 pop	 ecx
-  0044d	5f		 pop	 edi
-  0044e	5e		 pop	 esi
-  0044f	8b 4d f0	 mov	 ecx, DWORD PTR __$ArrayPad$[ebp]
-  00452	33 cd		 xor	 ecx, ebp
-  00454	e8 00 00 00 00	 call	 @__security_check_cookie@4
-  00459	8b e5		 mov	 esp, ebp
-  0045b	5d		 pop	 ebp
-  0045c	c2 1c 00	 ret	 28			; 0000001cH
+  0049a	59		 pop	 ecx
+  0049b	5f		 pop	 edi
+  0049c	5e		 pop	 esi
+  0049d	8b 4d f0	 mov	 ecx, DWORD PTR __$ArrayPad$[ebp]
+  004a0	33 cd		 xor	 ecx, ebp
+  004a2	e8 00 00 00 00	 call	 @__security_check_cookie@4
+  004a7	8b e5		 mov	 esp, ebp
+  004a9	5d		 pop	 ebp
+  004aa	c2 1c 00	 ret	 28			; 0000001cH
 _TEXT	ENDS
 text$x	SEGMENT
 __unwindfunclet$??0Game@core@@QAE@PBDHHHH0H@Z$0:
   00000	6a 28		 push	 40			; 00000028H
-  00002	8b 45 b8	 mov	 eax, DWORD PTR $T7[ebp]
+  00002	8b 45 b4	 mov	 eax, DWORD PTR $T9[ebp]
   00005	50		 push	 eax
   00006	e8 00 00 00 00	 call	 ??3@YAXPAXI@Z		; operator delete
   0000b	83 c4 08	 add	 esp, 8
   0000e	c3		 ret	 0
 __unwindfunclet$??0Game@core@@QAE@PBDHHHH0H@Z$1:
   0000f	6a 2c		 push	 44			; 0000002cH
-  00011	8b 45 b0	 mov	 eax, DWORD PTR $T6[ebp]
+  00011	8b 45 ac	 mov	 eax, DWORD PTR $T8[ebp]
   00014	50		 push	 eax
   00015	e8 00 00 00 00	 call	 ??3@YAXPAXI@Z		; operator delete
   0001a	83 c4 08	 add	 esp, 8
   0001d	c3		 ret	 0
 __unwindfunclet$??0Game@core@@QAE@PBDHHHH0H@Z$2:
   0001e	6a 1c		 push	 28			; 0000001cH
-  00020	8b 45 a8	 mov	 eax, DWORD PTR $T5[ebp]
+  00020	8b 45 a4	 mov	 eax, DWORD PTR $T7[ebp]
   00023	50		 push	 eax
   00024	e8 00 00 00 00	 call	 ??3@YAXPAXI@Z		; operator delete
   00029	83 c4 08	 add	 esp, 8
   0002c	c3		 ret	 0
+__unwindfunclet$??0Game@core@@QAE@PBDHHHH0H@Z$3:
+  0002d	6a 04		 push	 4
+  0002f	8b 45 9c	 mov	 eax, DWORD PTR $T6[ebp]
+  00032	50		 push	 eax
+  00033	e8 00 00 00 00	 call	 ??3@YAXPAXI@Z		; operator delete
+  00038	83 c4 08	 add	 esp, 8
+  0003b	c3		 ret	 0
 __ehhandler$??0Game@core@@QAE@PBDHHHH0H@Z:
-  0002d	8b 54 24 08	 mov	 edx, DWORD PTR [esp+8]
-  00031	8d 42 0c	 lea	 eax, DWORD PTR [edx+12]
-  00034	8b 4a 98	 mov	 ecx, DWORD PTR [edx-104]
-  00037	33 c8		 xor	 ecx, eax
-  00039	e8 00 00 00 00	 call	 @__security_check_cookie@4
-  0003e	8b 4a fc	 mov	 ecx, DWORD PTR [edx-4]
-  00041	33 c8		 xor	 ecx, eax
-  00043	e8 00 00 00 00	 call	 @__security_check_cookie@4
-  00048	b8 00 00 00 00	 mov	 eax, OFFSET __ehfuncinfo$??0Game@core@@QAE@PBDHHHH0H@Z
-  0004d	e9 00 00 00 00	 jmp	 ___CxxFrameHandler3
+  0003c	8b 54 24 08	 mov	 edx, DWORD PTR [esp+8]
+  00040	8d 42 0c	 lea	 eax, DWORD PTR [edx+12]
+  00043	8b 4a 88	 mov	 ecx, DWORD PTR [edx-120]
+  00046	33 c8		 xor	 ecx, eax
+  00048	e8 00 00 00 00	 call	 @__security_check_cookie@4
+  0004d	8b 4a fc	 mov	 ecx, DWORD PTR [edx-4]
+  00050	33 c8		 xor	 ecx, eax
+  00052	e8 00 00 00 00	 call	 @__security_check_cookie@4
+  00057	b8 00 00 00 00	 mov	 eax, OFFSET __ehfuncinfo$??0Game@core@@QAE@PBDHHHH0H@Z
+  0005c	e9 00 00 00 00	 jmp	 ___CxxFrameHandler3
 text$x	ENDS
 ??0Game@core@@QAE@PBDHHHH0H@Z ENDP			; core::Game::Game
 ; Function compile flags: /Odtp
@@ -13332,7 +13414,7 @@ _t_yOffset$ = 12					; size = 4
 ?RenderGameStats@Game@core@@AAEXHH@Z PROC		; core::Game::RenderGameStats
 ; _this$ = ecx
 
-; 313  : {
+; 322  : {
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
@@ -13344,27 +13426,27 @@ _t_yOffset$ = 12					; size = 4
   00017	89 8d f4 ef ff
 	ff		 mov	 DWORD PTR _this$[ebp], ecx
 
-; 314  :     char buffer[4096];
-; 315  :     
-; 316  :     i32 xPos = 5;
+; 323  :     char buffer[4096];
+; 324  :     
+; 325  :     i32 xPos = 5;
 
   0001d	c7 85 f0 ef ff
 	ff 05 00 00 00	 mov	 DWORD PTR _xPos$[ebp], 5
 
-; 317  :     i32 yPos = 20;
+; 326  :     i32 yPos = 20;
 
   00027	c7 85 f8 ef ff
 	ff 14 00 00 00	 mov	 DWORD PTR _yPos$[ebp], 20 ; 00000014H
 
-; 318  :     
-; 319  :     snprintf(buffer, sizeof(buffer), "LEVEL: %d", m_game.stats->GetLevel());
+; 327  :     
+; 328  :     snprintf(buffer, sizeof(buffer), "LEVEL: %d", m_game.stats->GetLevel());
 
   00031	8b 85 f4 ef ff
 	ff		 mov	 eax, DWORD PTR _this$[ebp]
   00037	8b 48 18	 mov	 ecx, DWORD PTR [eax+24]
   0003a	e8 00 00 00 00	 call	 ?GetLevel@Stats@gameplay@core@@QAEHXZ ; core::gameplay::Stats::GetLevel
   0003f	50		 push	 eax
-  00040	68 00 00 00 00	 push	 OFFSET $SG54237
+  00040	68 00 00 00 00	 push	 OFFSET $SG54346
   00045	68 00 10 00 00	 push	 4096			; 00001000H
   0004a	8d 8d fc ef ff
 	ff		 lea	 ecx, DWORD PTR _buffer$[ebp]
@@ -13372,7 +13454,7 @@ _t_yOffset$ = 12					; size = 4
   00051	e8 00 00 00 00	 call	 _snprintf
   00056	83 c4 10	 add	 esp, 16			; 00000010H
 
-; 320  :     Graphics::Instance()->DrawText(m_font, buffer, xPos, yPos, TEXT_ALIGN_LEFT, Palette::s_highlightColor);
+; 329  :     Graphics::Instance()->DrawText(m_font, buffer, xPos, yPos, TEXT_ALIGN_LEFT, Palette::s_highlightColor);
 
   00059	51		 push	 ecx
   0005a	8b cc		 mov	 ecx, esp
@@ -13390,14 +13472,14 @@ _t_yOffset$ = 12					; size = 4
   0007c	51		 push	 ecx
   0007d	8b 95 f4 ef ff
 	ff		 mov	 edx, DWORD PTR _this$[ebp]
-  00083	8b 42 40	 mov	 eax, DWORD PTR [edx+64]
+  00083	8b 42 44	 mov	 eax, DWORD PTR [edx+68]
   00086	50		 push	 eax
   00087	e8 00 00 00 00	 call	 ?Instance@Graphics@graphics@core@@SAPAV123@XZ ; core::graphics::Graphics::Instance
   0008c	8b c8		 mov	 ecx, eax
   0008e	e8 00 00 00 00	 call	 ?DrawText@Graphics@graphics@core@@QAEXPAU_TTF_Font@@PBDHHW4TextAlign@23@VColor@3@@Z ; core::graphics::Graphics::DrawText
 
-; 321  :     
-; 322  :     yPos += 30;
+; 330  :     
+; 331  :     yPos += 30;
 
   00093	8b 8d f8 ef ff
 	ff		 mov	 ecx, DWORD PTR _yPos$[ebp]
@@ -13405,14 +13487,14 @@ _t_yOffset$ = 12					; size = 4
   0009c	89 8d f8 ef ff
 	ff		 mov	 DWORD PTR _yPos$[ebp], ecx
 
-; 323  :     snprintf(buffer, sizeof(buffer), "LINES: %d", m_game.stats->GetLineCount());
+; 332  :     snprintf(buffer, sizeof(buffer), "LINES: %d", m_game.stats->GetLineCount());
 
   000a2	8b 95 f4 ef ff
 	ff		 mov	 edx, DWORD PTR _this$[ebp]
   000a8	8b 4a 18	 mov	 ecx, DWORD PTR [edx+24]
   000ab	e8 00 00 00 00	 call	 ?GetLineCount@Stats@gameplay@core@@QAEHXZ ; core::gameplay::Stats::GetLineCount
   000b0	50		 push	 eax
-  000b1	68 00 00 00 00	 push	 OFFSET $SG54238
+  000b1	68 00 00 00 00	 push	 OFFSET $SG54347
   000b6	68 00 10 00 00	 push	 4096			; 00001000H
   000bb	8d 85 fc ef ff
 	ff		 lea	 eax, DWORD PTR _buffer$[ebp]
@@ -13420,7 +13502,7 @@ _t_yOffset$ = 12					; size = 4
   000c2	e8 00 00 00 00	 call	 _snprintf
   000c7	83 c4 10	 add	 esp, 16			; 00000010H
 
-; 324  :     Graphics::Instance()->DrawText(m_font, buffer, xPos, yPos, TEXT_ALIGN_LEFT, Palette::s_highlightColor);
+; 333  :     Graphics::Instance()->DrawText(m_font, buffer, xPos, yPos, TEXT_ALIGN_LEFT, Palette::s_highlightColor);
 
   000ca	51		 push	 ecx
   000cb	8b cc		 mov	 ecx, esp
@@ -13438,14 +13520,14 @@ _t_yOffset$ = 12					; size = 4
   000ed	50		 push	 eax
   000ee	8b 8d f4 ef ff
 	ff		 mov	 ecx, DWORD PTR _this$[ebp]
-  000f4	8b 51 40	 mov	 edx, DWORD PTR [ecx+64]
+  000f4	8b 51 44	 mov	 edx, DWORD PTR [ecx+68]
   000f7	52		 push	 edx
   000f8	e8 00 00 00 00	 call	 ?Instance@Graphics@graphics@core@@SAPAV123@XZ ; core::graphics::Graphics::Instance
   000fd	8b c8		 mov	 ecx, eax
   000ff	e8 00 00 00 00	 call	 ?DrawText@Graphics@graphics@core@@QAEXPAU_TTF_Font@@PBDHHW4TextAlign@23@VColor@3@@Z ; core::graphics::Graphics::DrawText
 
-; 325  :     
-; 326  :     yPos += 30;
+; 334  :     
+; 335  :     yPos += 30;
 
   00104	8b 85 f8 ef ff
 	ff		 mov	 eax, DWORD PTR _yPos$[ebp]
@@ -13453,14 +13535,14 @@ _t_yOffset$ = 12					; size = 4
   0010d	89 85 f8 ef ff
 	ff		 mov	 DWORD PTR _yPos$[ebp], eax
 
-; 327  :     snprintf(buffer, sizeof(buffer), "POINTS: %d", m_game.stats->GetPoints());
+; 336  :     snprintf(buffer, sizeof(buffer), "POINTS: %d", m_game.stats->GetPoints());
 
   00113	8b 8d f4 ef ff
 	ff		 mov	 ecx, DWORD PTR _this$[ebp]
   00119	8b 49 18	 mov	 ecx, DWORD PTR [ecx+24]
   0011c	e8 00 00 00 00	 call	 ?GetPoints@Stats@gameplay@core@@QAEHXZ ; core::gameplay::Stats::GetPoints
   00121	50		 push	 eax
-  00122	68 00 00 00 00	 push	 OFFSET $SG54239
+  00122	68 00 00 00 00	 push	 OFFSET $SG54348
   00127	68 00 10 00 00	 push	 4096			; 00001000H
   0012c	8d 95 fc ef ff
 	ff		 lea	 edx, DWORD PTR _buffer$[ebp]
@@ -13468,7 +13550,7 @@ _t_yOffset$ = 12					; size = 4
   00133	e8 00 00 00 00	 call	 _snprintf
   00138	83 c4 10	 add	 esp, 16			; 00000010H
 
-; 328  :     Graphics::Instance()->DrawText(m_font, buffer, xPos, yPos, TEXT_ALIGN_LEFT, Palette::s_highlightColor);
+; 337  :     Graphics::Instance()->DrawText(m_font, buffer, xPos, yPos, TEXT_ALIGN_LEFT, Palette::s_highlightColor);
 
   0013b	51		 push	 ecx
   0013c	8b cc		 mov	 ecx, esp
@@ -13486,13 +13568,13 @@ _t_yOffset$ = 12					; size = 4
   0015e	52		 push	 edx
   0015f	8b 85 f4 ef ff
 	ff		 mov	 eax, DWORD PTR _this$[ebp]
-  00165	8b 48 40	 mov	 ecx, DWORD PTR [eax+64]
+  00165	8b 48 44	 mov	 ecx, DWORD PTR [eax+68]
   00168	51		 push	 ecx
   00169	e8 00 00 00 00	 call	 ?Instance@Graphics@graphics@core@@SAPAV123@XZ ; core::graphics::Graphics::Instance
   0016e	8b c8		 mov	 ecx, eax
   00170	e8 00 00 00 00	 call	 ?DrawText@Graphics@graphics@core@@QAEXPAU_TTF_Font@@PBDHHW4TextAlign@23@VColor@3@@Z ; core::graphics::Graphics::DrawText
 
-; 329  : }
+; 338  : }
 
   00175	8b 4d fc	 mov	 ecx, DWORD PTR __$ArrayPad$[ebp]
   00178	33 cd		 xor	 ecx, ebp
@@ -13513,19 +13595,19 @@ _t_yOffset$ = 12					; size = 4
 ?RenderGameOver@Game@core@@AAEXHH@Z PROC		; core::Game::RenderGameOver
 ; _this$ = ecx
 
-; 306  : {
+; 315  : {
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
   00003	83 ec 0c	 sub	 esp, 12			; 0000000cH
   00006	89 4d f4	 mov	 DWORD PTR _this$[ebp], ecx
 
-; 307  :     i32 xPos = BOARD_COLS * BOARD_GRID_SIZE / 2;
+; 316  :     i32 xPos = BOARD_COLS * BOARD_GRID_SIZE / 2;
 
   00009	c7 45 f8 96 00
 	00 00		 mov	 DWORD PTR _xPos$[ebp], 150 ; 00000096H
 
-; 308  :     i32 yPos = (BOARD_ROWS * BOARD_GRID_SIZE + t_yOffset) / 2;
+; 317  :     i32 yPos = (BOARD_ROWS * BOARD_GRID_SIZE + t_yOffset) / 2;
 
   00010	8b 45 0c	 mov	 eax, DWORD PTR _t_yOffset$[ebp]
   00013	05 94 02 00 00	 add	 eax, 660		; 00000294H
@@ -13534,7 +13616,7 @@ _t_yOffset$ = 12					; size = 4
   0001b	d1 f8		 sar	 eax, 1
   0001d	89 45 fc	 mov	 DWORD PTR _yPos$[ebp], eax
 
-; 309  :     Graphics::Instance()->DrawText(m_font, "GAME OVER", xPos, yPos, TEXT_ALIGN_CENTER, Palette::s_highlightColor);
+; 318  :     Graphics::Instance()->DrawText(m_font, "GAME OVER", xPos, yPos, TEXT_ALIGN_CENTER, Palette::s_highlightColor);
 
   00020	51		 push	 ecx
   00021	8b cc		 mov	 ecx, esp
@@ -13545,15 +13627,15 @@ _t_yOffset$ = 12					; size = 4
   00032	50		 push	 eax
   00033	8b 4d f8	 mov	 ecx, DWORD PTR _xPos$[ebp]
   00036	51		 push	 ecx
-  00037	68 00 00 00 00	 push	 OFFSET $SG54225
+  00037	68 00 00 00 00	 push	 OFFSET $SG54334
   0003c	8b 55 f4	 mov	 edx, DWORD PTR _this$[ebp]
-  0003f	8b 42 40	 mov	 eax, DWORD PTR [edx+64]
+  0003f	8b 42 44	 mov	 eax, DWORD PTR [edx+68]
   00042	50		 push	 eax
   00043	e8 00 00 00 00	 call	 ?Instance@Graphics@graphics@core@@SAPAV123@XZ ; core::graphics::Graphics::Instance
   00048	8b c8		 mov	 ecx, eax
   0004a	e8 00 00 00 00	 call	 ?DrawText@Graphics@graphics@core@@QAEXPAU_TTF_Font@@PBDHHW4TextAlign@23@VColor@3@@Z ; core::graphics::Graphics::DrawText
 
-; 310  : }
+; 319  : }
 
   0004f	8b e5		 mov	 esp, ebp
   00051	5d		 pop	 ebp
@@ -13572,14 +13654,14 @@ _t_yOffset$ = 12					; size = 4
 ?RenderGameLine@Game@core@@AAEXHH@Z PROC		; core::Game::RenderGameLine
 ; _this$ = ecx
 
-; 293  : {
+; 302  : {
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
   00003	83 ec 10	 sub	 esp, 16			; 00000010H
   00006	89 4d f8	 mov	 DWORD PTR _this$[ebp], ecx
 
-; 294  :     for (i32 row = 0; row < BOARD_ROWS; ++row)
+; 303  :     for (i32 row = 0; row < BOARD_ROWS; ++row)
 
   00009	c7 45 fc 00 00
 	00 00		 mov	 DWORD PTR _row$3[ebp], 0
@@ -13592,8 +13674,8 @@ $LN4@RenderGame:
   0001b	83 7d fc 16	 cmp	 DWORD PTR _row$3[ebp], 22 ; 00000016H
   0001f	7d 51		 jge	 SHORT $LN1@RenderGame
 
-; 295  :     {
-; 296  :         if (m_game.stats->GetLines()[row])
+; 304  :     {
+; 305  :         if (m_game.stats->GetLines()[row])
 
   00021	8b 4d f8	 mov	 ecx, DWORD PTR _this$[ebp]
   00024	8b 49 18	 mov	 ecx, DWORD PTR [ecx+24]
@@ -13603,19 +13685,19 @@ $LN4@RenderGame:
   00033	85 c0		 test	 eax, eax
   00035	74 39		 je	 SHORT $LN5@RenderGame
 
-; 297  :         {
-; 298  :             i32 xPos = 0;
+; 306  :         {
+; 307  :             i32 xPos = 0;
 
   00037	c7 45 f0 00 00
 	00 00		 mov	 DWORD PTR _xPos$1[ebp], 0
 
-; 299  :             i32 yPos = row * BOARD_GRID_SIZE + t_yOffset;
+; 308  :             i32 yPos = row * BOARD_GRID_SIZE + t_yOffset;
 
   0003e	6b 4d fc 1e	 imul	 ecx, DWORD PTR _row$3[ebp], 30
   00042	03 4d 0c	 add	 ecx, DWORD PTR _t_yOffset$[ebp]
   00045	89 4d f4	 mov	 DWORD PTR _yPos$2[ebp], ecx
 
-; 300  :             Graphics::Instance()->DrawFillRect(xPos, yPos, BOARD_COLS * BOARD_GRID_SIZE, BOARD_GRID_SIZE, Palette::s_highlightColor);
+; 309  :             Graphics::Instance()->DrawFillRect(xPos, yPos, BOARD_COLS * BOARD_GRID_SIZE, BOARD_GRID_SIZE, Palette::s_highlightColor);
 
   00048	51		 push	 ecx
   00049	8b cc		 mov	 ecx, esp
@@ -13632,13 +13714,13 @@ $LN4@RenderGame:
   0006b	e8 00 00 00 00	 call	 ?DrawFillRect@Graphics@graphics@core@@QAEXHHHHVColor@3@@Z ; core::graphics::Graphics::DrawFillRect
 $LN5@RenderGame:
 
-; 301  :         }
-; 302  :     }
+; 310  :         }
+; 311  :     }
 
   00070	eb a0		 jmp	 SHORT $LN2@RenderGame
 $LN1@RenderGame:
 
-; 303  : }
+; 312  : }
 
   00072	8b e5		 mov	 esp, ebp
   00074	5d		 pop	 ebp
@@ -13655,7 +13737,7 @@ _t_yOffset$ = 12					; size = 4
 ?RenderGamePlay@Game@core@@AAEXHH@Z PROC		; core::Game::RenderGamePlay
 ; _this$ = ecx
 
-; 279  : {
+; 288  : {
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
@@ -13664,7 +13746,7 @@ _t_yOffset$ = 12					; size = 4
   00007	57		 push	 edi
   00008	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
 
-; 280  :     m_game.piece->DrawPiece(0, t_yOffset);
+; 289  :     m_game.piece->DrawPiece(0, t_yOffset);
 
   0000b	6a 00		 push	 0
   0000d	8b 45 0c	 mov	 eax, DWORD PTR _t_yOffset$[ebp]
@@ -13674,8 +13756,8 @@ _t_yOffset$ = 12					; size = 4
   00016	8b 49 14	 mov	 ecx, DWORD PTR [ecx+20]
   00019	e8 00 00 00 00	 call	 ?DrawPiece@Piece@gameplay@core@@QAEXHH_N@Z ; core::gameplay::Piece::DrawPiece
 
-; 281  :     
-; 282  :     Piece piece = *(m_game.piece);
+; 290  :     
+; 291  :     Piece piece = *(m_game.piece);
 
   0001e	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
   00021	b9 07 00 00 00	 mov	 ecx, 7
@@ -13684,8 +13766,8 @@ _t_yOffset$ = 12					; size = 4
   0002c	f3 a5		 rep movsd
 $LN2@RenderGame:
 
-; 283  :     
-; 284  :     while (piece.IsValid())
+; 292  :     
+; 293  :     while (piece.IsValid())
 
   0002e	8d 4d e0	 lea	 ecx, DWORD PTR _piece$[ebp]
   00031	e8 00 00 00 00	 call	 ?IsValid@Piece@gameplay@core@@QAE_NXZ ; core::gameplay::Piece::IsValid
@@ -13693,8 +13775,8 @@ $LN2@RenderGame:
   00039	85 c0		 test	 eax, eax
   0003b	74 16		 je	 SHORT $LN3@RenderGame
 
-; 285  :     {
-; 286  :         piece.SetRowOffset(piece.GetRowOffset() + 1);
+; 294  :     {
+; 295  :         piece.SetRowOffset(piece.GetRowOffset() + 1);
 
   0003d	8d 4d e0	 lea	 ecx, DWORD PTR _piece$[ebp]
   00040	e8 00 00 00 00	 call	 ?GetRowOffset@Piece@gameplay@core@@QBEHXZ ; core::gameplay::Piece::GetRowOffset
@@ -13703,12 +13785,12 @@ $LN2@RenderGame:
   00049	8d 4d e0	 lea	 ecx, DWORD PTR _piece$[ebp]
   0004c	e8 00 00 00 00	 call	 ?SetRowOffset@Piece@gameplay@core@@QAEXH@Z ; core::gameplay::Piece::SetRowOffset
 
-; 287  :     }
+; 296  :     }
 
   00051	eb db		 jmp	 SHORT $LN2@RenderGame
 $LN3@RenderGame:
 
-; 288  :     piece.SetRowOffset(piece.GetRowOffset() - 1);
+; 297  :     piece.SetRowOffset(piece.GetRowOffset() - 1);
 
   00053	8d 4d e0	 lea	 ecx, DWORD PTR _piece$[ebp]
   00056	e8 00 00 00 00	 call	 ?GetRowOffset@Piece@gameplay@core@@QBEHXZ ; core::gameplay::Piece::GetRowOffset
@@ -13717,7 +13799,7 @@ $LN3@RenderGame:
   0005f	8d 4d e0	 lea	 ecx, DWORD PTR _piece$[ebp]
   00062	e8 00 00 00 00	 call	 ?SetRowOffset@Piece@gameplay@core@@QAEXH@Z ; core::gameplay::Piece::SetRowOffset
 
-; 289  :     piece.DrawPiece(0, t_yOffset, true);
+; 298  :     piece.DrawPiece(0, t_yOffset, true);
 
   00067	6a 01		 push	 1
   00069	8b 4d 0c	 mov	 ecx, DWORD PTR _t_yOffset$[ebp]
@@ -13726,7 +13808,7 @@ $LN3@RenderGame:
   0006f	8d 4d e0	 lea	 ecx, DWORD PTR _piece$[ebp]
   00072	e8 00 00 00 00	 call	 ?DrawPiece@Piece@gameplay@core@@QAEXHH_N@Z ; core::gameplay::Piece::DrawPiece
 
-; 290  : }
+; 299  : }
 
   00077	5f		 pop	 edi
   00078	5e		 pop	 esi
@@ -13738,6 +13820,7 @@ _TEXT	ENDS
 ; Function compile flags: /Odtp
 ; File c:\dev\tetris\src\game.cpp
 _TEXT	SEGMENT
+_button$ = -4144					; size = 32
 _xPos$ = -4112						; size = 4
 _yPos$ = -4108						; size = 4
 _this$ = -4104						; size = 4
@@ -13748,11 +13831,11 @@ _t_yOffset$ = 12					; size = 4
 ?RenderGameStart@Game@core@@AAEXHH@Z PROC		; core::Game::RenderGameStart
 ; _this$ = ecx
 
-; 268  : {
+; 274  : {
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
-  00003	b8 10 10 00 00	 mov	 eax, 4112		; 00001010H
+  00003	b8 30 10 00 00	 mov	 eax, 4144		; 00001030H
   00008	e8 00 00 00 00	 call	 __chkstk
   0000d	a1 00 00 00 00	 mov	 eax, DWORD PTR ___security_cookie
   00012	33 c5		 xor	 eax, ebp
@@ -13760,12 +13843,12 @@ _t_yOffset$ = 12					; size = 4
   00017	89 8d f8 ef ff
 	ff		 mov	 DWORD PTR _this$[ebp], ecx
 
-; 269  :     i32 xPos = BOARD_COLS * BOARD_GRID_SIZE / 2;
+; 275  :     i32 xPos = BOARD_COLS * BOARD_GRID_SIZE / 2;
 
   0001d	c7 85 f0 ef ff
 	ff 96 00 00 00	 mov	 DWORD PTR _xPos$[ebp], 150 ; 00000096H
 
-; 270  :     i32 yPos = (BOARD_ROWS * BOARD_GRID_SIZE + t_yOffset) / 2;
+; 276  :     i32 yPos = (BOARD_ROWS * BOARD_GRID_SIZE + t_yOffset) / 2;
 
   00027	8b 45 0c	 mov	 eax, DWORD PTR _t_yOffset$[ebp]
   0002a	05 94 02 00 00	 add	 eax, 660		; 00000294H
@@ -13775,7 +13858,7 @@ _t_yOffset$ = 12					; size = 4
   00034	89 85 f4 ef ff
 	ff		 mov	 DWORD PTR _yPos$[ebp], eax
 
-; 271  :     Graphics::Instance()->DrawText(m_font, "Press Enter to start", xPos, yPos, TEXT_ALIGN_CENTER, Palette::s_highlightColor);
+; 277  :     Graphics::Instance()->DrawText(m_font, "Press Enter to start", xPos, yPos, TEXT_ALIGN_CENTER, Palette::s_highlightColor);
 
   0003a	51		 push	 ecx
   0003b	8b cc		 mov	 ecx, esp
@@ -13788,25 +13871,25 @@ _t_yOffset$ = 12					; size = 4
   00050	8b 8d f0 ef ff
 	ff		 mov	 ecx, DWORD PTR _xPos$[ebp]
   00056	51		 push	 ecx
-  00057	68 00 00 00 00	 push	 OFFSET $SG54194
+  00057	68 00 00 00 00	 push	 OFFSET $SG54302
   0005c	8b 95 f8 ef ff
 	ff		 mov	 edx, DWORD PTR _this$[ebp]
-  00062	8b 42 40	 mov	 eax, DWORD PTR [edx+64]
+  00062	8b 42 44	 mov	 eax, DWORD PTR [edx+68]
   00065	50		 push	 eax
   00066	e8 00 00 00 00	 call	 ?Instance@Graphics@graphics@core@@SAPAV123@XZ ; core::graphics::Graphics::Instance
   0006b	8b c8		 mov	 ecx, eax
   0006d	e8 00 00 00 00	 call	 ?DrawText@Graphics@graphics@core@@QAEXPAU_TTF_Font@@PBDHHW4TextAlign@23@VColor@3@@Z ; core::graphics::Graphics::DrawText
 
-; 272  :     
-; 273  :     char buffer[4096];
-; 274  :     snprintf(buffer, sizeof(buffer), "STARTING LEVEL: %d", m_game.stats->GetStartLevel());
+; 278  :     
+; 279  :     char buffer[4096];
+; 280  :     snprintf(buffer, sizeof(buffer), "STARTING LEVEL: %d", m_game.stats->GetStartLevel());
 
   00072	8b 8d f8 ef ff
 	ff		 mov	 ecx, DWORD PTR _this$[ebp]
   00078	8b 49 18	 mov	 ecx, DWORD PTR [ecx+24]
   0007b	e8 00 00 00 00	 call	 ?GetStartLevel@Stats@gameplay@core@@QAEHXZ ; core::gameplay::Stats::GetStartLevel
   00080	50		 push	 eax
-  00081	68 00 00 00 00	 push	 OFFSET $SG54195
+  00081	68 00 00 00 00	 push	 OFFSET $SG54303
   00086	68 00 10 00 00	 push	 4096			; 00001000H
   0008b	8d 95 fc ef ff
 	ff		 lea	 edx, DWORD PTR _buffer$[ebp]
@@ -13814,7 +13897,7 @@ _t_yOffset$ = 12					; size = 4
   00092	e8 00 00 00 00	 call	 _snprintf
   00097	83 c4 10	 add	 esp, 16			; 00000010H
 
-; 275  :     Graphics::Instance()->DrawText(m_font, buffer, xPos, yPos + 30, TEXT_ALIGN_CENTER, Palette::s_highlightColor);
+; 281  :     Graphics::Instance()->DrawText(m_font, buffer, xPos, yPos + 30, TEXT_ALIGN_CENTER, Palette::s_highlightColor);
 
   0009a	51		 push	 ecx
   0009b	8b cc		 mov	 ecx, esp
@@ -13833,20 +13916,59 @@ _t_yOffset$ = 12					; size = 4
   000c0	52		 push	 edx
   000c1	8b 85 f8 ef ff
 	ff		 mov	 eax, DWORD PTR _this$[ebp]
-  000c7	8b 48 40	 mov	 ecx, DWORD PTR [eax+64]
+  000c7	8b 48 44	 mov	 ecx, DWORD PTR [eax+68]
   000ca	51		 push	 ecx
   000cb	e8 00 00 00 00	 call	 ?Instance@Graphics@graphics@core@@SAPAV123@XZ ; core::graphics::Graphics::Instance
   000d0	8b c8		 mov	 ecx, eax
   000d2	e8 00 00 00 00	 call	 ?DrawText@Graphics@graphics@core@@QAEXPAU_TTF_Font@@PBDHHW4TextAlign@23@VColor@3@@Z ; core::graphics::Graphics::DrawText
 
-; 276  : }
+; 282  :     
+; 283  :     ui::Button button(200, 400, m_font, "Test button", ui::BUTTON_OUT_FOCUS, Color(0xfc, 0xba, 0x03), Color(0xad, 0x7f, 0x00), Palette::s_highlightColor);
 
-  000d7	8b 4d fc	 mov	 ecx, DWORD PTR __$ArrayPad$[ebp]
-  000da	33 cd		 xor	 ecx, ebp
-  000dc	e8 00 00 00 00	 call	 @__security_check_cookie@4
-  000e1	8b e5		 mov	 esp, ebp
-  000e3	5d		 pop	 ebp
-  000e4	c2 08 00	 ret	 8
+  000d7	51		 push	 ecx
+  000d8	8b cc		 mov	 ecx, esp
+  000da	68 00 00 00 00	 push	 OFFSET ?s_highlightColor@Palette@core@@2VColor@2@B ; core::Palette::s_highlightColor
+  000df	e8 00 00 00 00	 call	 ??0Color@core@@QAE@ABV01@@Z ; core::Color::Color
+  000e4	51		 push	 ecx
+  000e5	8b cc		 mov	 ecx, esp
+  000e7	6a 00		 push	 0
+  000e9	6a 7f		 push	 127			; 0000007fH
+  000eb	68 ad 00 00 00	 push	 173			; 000000adH
+  000f0	e8 00 00 00 00	 call	 ??0Color@core@@QAE@EEE@Z ; core::Color::Color
+  000f5	51		 push	 ecx
+  000f6	8b cc		 mov	 ecx, esp
+  000f8	6a 03		 push	 3
+  000fa	68 ba 00 00 00	 push	 186			; 000000baH
+  000ff	68 fc 00 00 00	 push	 252			; 000000fcH
+  00104	e8 00 00 00 00	 call	 ??0Color@core@@QAE@EEE@Z ; core::Color::Color
+  00109	6a 00		 push	 0
+  0010b	68 00 00 00 00	 push	 OFFSET $SG54304
+  00110	8b 95 f8 ef ff
+	ff		 mov	 edx, DWORD PTR _this$[ebp]
+  00116	8b 42 44	 mov	 eax, DWORD PTR [edx+68]
+  00119	50		 push	 eax
+  0011a	68 90 01 00 00	 push	 400			; 00000190H
+  0011f	68 c8 00 00 00	 push	 200			; 000000c8H
+  00124	8d 8d d0 ef ff
+	ff		 lea	 ecx, DWORD PTR _button$[ebp]
+  0012a	e8 00 00 00 00	 call	 ??0Button@ui@core@@QAE@HHPAU_TTF_Font@@PBDW4ButtonState@12@VColor@2@33@Z ; core::ui::Button::Button
+
+; 284  :     button.Render(100, 100);
+
+  0012f	6a 64		 push	 100			; 00000064H
+  00131	6a 64		 push	 100			; 00000064H
+  00133	8d 8d d0 ef ff
+	ff		 lea	 ecx, DWORD PTR _button$[ebp]
+  00139	e8 00 00 00 00	 call	 ?Render@Button@ui@core@@QAEXHH@Z ; core::ui::Button::Render
+
+; 285  : }
+
+  0013e	8b 4d fc	 mov	 ecx, DWORD PTR __$ArrayPad$[ebp]
+  00141	33 cd		 xor	 ecx, ebp
+  00143	e8 00 00 00 00	 call	 @__security_check_cookie@4
+  00148	8b e5		 mov	 esp, ebp
+  0014a	5d		 pop	 ebp
+  0014b	c2 08 00	 ret	 8
 ?RenderGameStart@Game@core@@AAEXHH@Z ENDP		; core::Game::RenderGameStart
 _TEXT	ENDS
 ; Function compile flags: /Odtp
@@ -13856,30 +13978,30 @@ _this$ = -4						; size = 4
 ?UpdateGameOver@Game@core@@AAEXXZ PROC			; core::Game::UpdateGameOver
 ; _this$ = ecx
 
-; 234  : {
+; 235  : {
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
   00003	51		 push	 ecx
   00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
 
-; 235  :     if (m_input.denter > 0)
+; 236  :     if (m_input.denter > 0)
 
   00007	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  0000a	0f be 48 3c	 movsx	 ecx, BYTE PTR [eax+60]
+  0000a	0f be 48 40	 movsx	 ecx, BYTE PTR [eax+64]
   0000e	85 c9		 test	 ecx, ecx
   00010	7e 0a		 jle	 SHORT $LN1@UpdateGame
 
-; 236  :     {
-; 237  :         m_game.phase = GAME_PHASE_START;
+; 237  :     {
+; 238  :         m_game.phase = GAME_PHASE_START;
 
   00012	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
-  00015	c7 42 1c 00 00
-	00 00		 mov	 DWORD PTR [edx+28], 0
+  00015	c7 42 20 00 00
+	00 00		 mov	 DWORD PTR [edx+32], 0
 $LN1@UpdateGame:
 
-; 238  :     }
-; 239  : }
+; 239  :     }
+; 240  : }
 
   0001c	8b e5		 mov	 esp, ebp
   0001e	5d		 pop	 ebp
@@ -13893,7 +14015,7 @@ _this$ = -4						; size = 4
 ?UpdateGameLine@Game@core@@AAEXXZ PROC			; core::Game::UpdateGameLine
 ; _this$ = ecx
 
-; 216  : {
+; 217  : {
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
@@ -13901,17 +14023,17 @@ _this$ = -4						; size = 4
   00004	56		 push	 esi
   00005	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
 
-; 217  :     if (m_game.time.time >= m_game.time.highlightEndTime)
+; 218  :     if (m_game.time.time >= m_game.time.highlightEndTime)
 
   00008	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
   0000b	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  0000e	f3 0f 10 40 28	 movss	 xmm0, DWORD PTR [eax+40]
-  00013	0f 2f 41 24	 comiss	 xmm0, DWORD PTR [ecx+36]
+  0000e	f3 0f 10 40 2c	 movss	 xmm0, DWORD PTR [eax+44]
+  00013	0f 2f 41 28	 comiss	 xmm0, DWORD PTR [ecx+40]
   00017	0f 82 83 00 00
 	00		 jb	 $LN2@UpdateGame
 
-; 218  :     {
-; 219  :         m_game.board->ClearLines(m_game.stats);
+; 219  :     {
+; 220  :         m_game.board->ClearLines(m_game.stats);
 
   0001d	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
   00020	8b 42 18	 mov	 eax, DWORD PTR [edx+24]
@@ -13920,7 +14042,7 @@ _this$ = -4						; size = 4
   00027	8b 49 10	 mov	 ecx, DWORD PTR [ecx+16]
   0002a	e8 00 00 00 00	 call	 ?ClearLines@Board@gameplay@core@@QAEXPAVStats@23@@Z ; core::gameplay::Board::ClearLines
 
-; 220  :         m_game.stats->SetLineCount(m_game.stats->GetLineCount() +
+; 221  :         m_game.stats->SetLineCount(m_game.stats->GetLineCount() +
 
   0002f	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
   00032	8b 4a 18	 mov	 ecx, DWORD PTR [edx+24]
@@ -13935,15 +14057,15 @@ _this$ = -4						; size = 4
   0004d	8b 49 18	 mov	 ecx, DWORD PTR [ecx+24]
   00050	e8 00 00 00 00	 call	 ?SetLineCount@Stats@gameplay@core@@QAEXH@Z ; core::gameplay::Stats::SetLineCount
 
-; 221  :                                    m_game.stats->GetPendingLineCount());
-; 222  :         m_game.stats->ComputePoints();
+; 222  :                                    m_game.stats->GetPendingLineCount());
+; 223  :         m_game.stats->ComputePoints();
 
   00055	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
   00058	8b 4a 18	 mov	 ecx, DWORD PTR [edx+24]
   0005b	e8 00 00 00 00	 call	 ?ComputePoints@Stats@gameplay@core@@QAEXXZ ; core::gameplay::Stats::ComputePoints
 
-; 223  :         
-; 224  :         if (m_game.stats->GetLineCount() >= m_game.stats->GetLinesForNextLevel())
+; 224  :         
+; 225  :         if (m_game.stats->GetLineCount() >= m_game.stats->GetLinesForNextLevel())
 
   00060	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
   00063	8b 48 18	 mov	 ecx, DWORD PTR [eax+24]
@@ -13955,8 +14077,8 @@ _this$ = -4						; size = 4
   00078	3b f0		 cmp	 esi, eax
   0007a	7c 1a		 jl	 SHORT $LN3@UpdateGame
 
-; 225  :         {
-; 226  :             m_game.stats->SetLevel(m_game.stats->GetLevel() + 1);
+; 226  :         {
+; 227  :             m_game.stats->SetLevel(m_game.stats->GetLevel() + 1);
 
   0007c	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
   0007f	8b 4a 18	 mov	 ecx, DWORD PTR [edx+24]
@@ -13968,17 +14090,17 @@ _this$ = -4						; size = 4
   00091	e8 00 00 00 00	 call	 ?SetLevel@Stats@gameplay@core@@QAEXH@Z ; core::gameplay::Stats::SetLevel
 $LN3@UpdateGame:
 
-; 227  :         }
-; 228  :         
-; 229  :         m_game.phase = GAME_PHASE_PLAY;
+; 228  :         }
+; 229  :         
+; 230  :         m_game.phase = GAME_PHASE_PLAY;
 
   00096	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  00099	c7 41 1c 01 00
-	00 00		 mov	 DWORD PTR [ecx+28], 1
+  00099	c7 41 20 01 00
+	00 00		 mov	 DWORD PTR [ecx+32], 1
 $LN2@UpdateGame:
 
-; 230  :     }
-; 231  : }
+; 231  :     }
+; 232  : }
 
   000a0	5e		 pop	 esi
   000a1	8b e5		 mov	 esp, ebp
@@ -13994,7 +14116,7 @@ _this$ = -4						; size = 4
 ?UpdateGamePlay@Game@core@@AAEXXZ PROC			; core::Game::UpdateGamePlay
 ; _this$ = ecx
 
-; 164  : {
+; 165  : {
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
@@ -14003,7 +14125,7 @@ _this$ = -4						; size = 4
   00007	57		 push	 edi
   00008	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
 
-; 165  :     Piece piece = *(m_game.piece);
+; 166  :     Piece piece = *(m_game.piece);
 
   0000b	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
   0000e	b9 07 00 00 00	 mov	 ecx, 7
@@ -14011,16 +14133,16 @@ _this$ = -4						; size = 4
   00016	8d 7d e0	 lea	 edi, DWORD PTR _piece$[ebp]
   00019	f3 a5		 rep movsd
 
-; 166  :     
-; 167  :     if (m_input.dleft > 0)
+; 167  :     
+; 168  :     if (m_input.dleft > 0)
 
   0001b	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  0001e	0f be 51 37	 movsx	 edx, BYTE PTR [ecx+55]
+  0001e	0f be 51 3b	 movsx	 edx, BYTE PTR [ecx+59]
   00022	85 d2		 test	 edx, edx
   00024	7e 14		 jle	 SHORT $LN4@UpdateGame
 
-; 168  :     {
-; 169  :         piece.SetColOffset(piece.GetColOffset() - 1);
+; 169  :     {
+; 170  :         piece.SetColOffset(piece.GetColOffset() - 1);
 
   00026	8d 4d e0	 lea	 ecx, DWORD PTR _piece$[ebp]
   00029	e8 00 00 00 00	 call	 ?GetColOffset@Piece@gameplay@core@@QBEHXZ ; core::gameplay::Piece::GetColOffset
@@ -14030,17 +14152,17 @@ _this$ = -4						; size = 4
   00035	e8 00 00 00 00	 call	 ?SetColOffset@Piece@gameplay@core@@QAEXH@Z ; core::gameplay::Piece::SetColOffset
 $LN4@UpdateGame:
 
-; 170  :     }
-; 171  :     
-; 172  :     if (m_input.dright > 0)
+; 171  :     }
+; 172  :     
+; 173  :     if (m_input.dright > 0)
 
   0003a	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  0003d	0f be 48 38	 movsx	 ecx, BYTE PTR [eax+56]
+  0003d	0f be 48 3c	 movsx	 ecx, BYTE PTR [eax+60]
   00041	85 c9		 test	 ecx, ecx
   00043	7e 14		 jle	 SHORT $LN5@UpdateGame
 
-; 173  :     {
-; 174  :         piece.SetColOffset(piece.GetColOffset() + 1);
+; 174  :     {
+; 175  :         piece.SetColOffset(piece.GetColOffset() + 1);
 
   00045	8d 4d e0	 lea	 ecx, DWORD PTR _piece$[ebp]
   00048	e8 00 00 00 00	 call	 ?GetColOffset@Piece@gameplay@core@@QBEHXZ ; core::gameplay::Piece::GetColOffset
@@ -14050,17 +14172,17 @@ $LN4@UpdateGame:
   00054	e8 00 00 00 00	 call	 ?SetColOffset@Piece@gameplay@core@@QAEXH@Z ; core::gameplay::Piece::SetColOffset
 $LN5@UpdateGame:
 
-; 175  :     }
-; 176  :     
-; 177  :     if (m_input.dup > 0)
+; 176  :     }
+; 177  :     
+; 178  :     if (m_input.dup > 0)
 
   00059	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
-  0005c	0f be 42 39	 movsx	 eax, BYTE PTR [edx+57]
+  0005c	0f be 42 3d	 movsx	 eax, BYTE PTR [edx+61]
   00060	85 c0		 test	 eax, eax
   00062	7e 14		 jle	 SHORT $LN6@UpdateGame
 
-; 178  :     {
-; 179  :         piece.SetRotation(piece.GetRotation() + 1);
+; 179  :     {
+; 180  :         piece.SetRotation(piece.GetRotation() + 1);
 
   00064	8d 4d e0	 lea	 ecx, DWORD PTR _piece$[ebp]
   00067	e8 00 00 00 00	 call	 ?GetRotation@Piece@gameplay@core@@QBEHXZ ; core::gameplay::Piece::GetRotation
@@ -14070,9 +14192,9 @@ $LN5@UpdateGame:
   00073	e8 00 00 00 00	 call	 ?SetRotation@Piece@gameplay@core@@QAEXH@Z ; core::gameplay::Piece::SetRotation
 $LN6@UpdateGame:
 
-; 180  :     }
-; 181  :     
-; 182  :     if (piece.IsValid())
+; 181  :     }
+; 182  :     
+; 183  :     if (piece.IsValid())
 
   00078	8d 4d e0	 lea	 ecx, DWORD PTR _piece$[ebp]
   0007b	e8 00 00 00 00	 call	 ?IsValid@Piece@gameplay@core@@QAE_NXZ ; core::gameplay::Piece::IsValid
@@ -14080,8 +14202,8 @@ $LN6@UpdateGame:
   00083	85 c9		 test	 ecx, ecx
   00085	74 10		 je	 SHORT $LN7@UpdateGame
 
-; 183  :     {
-; 184  :         *(m_game.piece) = piece;
+; 184  :     {
+; 185  :         *(m_game.piece) = piece;
 
   00087	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
   0008a	b9 07 00 00 00	 mov	 ecx, 7
@@ -14090,64 +14212,64 @@ $LN6@UpdateGame:
   00095	f3 a5		 rep movsd
 $LN7@UpdateGame:
 
-; 185  :     }
-; 186  :     
-; 187  :     if (m_input.ddown > 0)
+; 186  :     }
+; 187  :     
+; 188  :     if (m_input.ddown > 0)
 
   00097	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  0009a	0f be 48 3a	 movsx	 ecx, BYTE PTR [eax+58]
+  0009a	0f be 48 3e	 movsx	 ecx, BYTE PTR [eax+62]
   0009e	85 c9		 test	 ecx, ecx
   000a0	7e 0b		 jle	 SHORT $LN8@UpdateGame
 
-; 188  :     {
-; 189  :         m_game.piece->SoftDrop();
+; 189  :     {
+; 190  :         m_game.piece->SoftDrop();
 
   000a2	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
   000a5	8b 4a 14	 mov	 ecx, DWORD PTR [edx+20]
   000a8	e8 00 00 00 00	 call	 ?SoftDrop@Piece@gameplay@core@@QAE_NXZ ; core::gameplay::Piece::SoftDrop
 $LN8@UpdateGame:
 
-; 190  :     }
-; 191  :     
-; 192  :     if (m_input.dz > 0)
+; 191  :     }
+; 192  :     
+; 193  :     if (m_input.dz > 0)
 
   000ad	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  000b0	0f be 48 3d	 movsx	 ecx, BYTE PTR [eax+61]
+  000b0	0f be 48 41	 movsx	 ecx, BYTE PTR [eax+65]
   000b4	85 c9		 test	 ecx, ecx
   000b6	7e 0b		 jle	 SHORT $LN9@UpdateGame
 
-; 193  :     {
-; 194  :         m_game.piece->HardDrop();
+; 194  :     {
+; 195  :         m_game.piece->HardDrop();
 
   000b8	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
   000bb	8b 4a 14	 mov	 ecx, DWORD PTR [edx+20]
   000be	e8 00 00 00 00	 call	 ?HardDrop@Piece@gameplay@core@@QAEXXZ ; core::gameplay::Piece::HardDrop
 $LN9@UpdateGame:
 
-; 195  :     }
-; 196  :     
-; 197  :     while (m_game.time.time >= m_game.time.nextDropTime)
+; 196  :     }
+; 197  :     
+; 198  :     while (m_game.time.time >= m_game.time.nextDropTime)
 
   000c3	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
   000c6	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  000c9	f3 0f 10 40 28	 movss	 xmm0, DWORD PTR [eax+40]
-  000ce	0f 2f 41 20	 comiss	 xmm0, DWORD PTR [ecx+32]
+  000c9	f3 0f 10 40 2c	 movss	 xmm0, DWORD PTR [eax+44]
+  000ce	0f 2f 41 24	 comiss	 xmm0, DWORD PTR [ecx+36]
   000d2	72 0d		 jb	 SHORT $LN3@UpdateGame
 
-; 198  :     {
-; 199  :         m_game.piece->SoftDrop();
+; 199  :     {
+; 200  :         m_game.piece->SoftDrop();
 
   000d4	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
   000d7	8b 4a 14	 mov	 ecx, DWORD PTR [edx+20]
   000da	e8 00 00 00 00	 call	 ?SoftDrop@Piece@gameplay@core@@QAE_NXZ ; core::gameplay::Piece::SoftDrop
 
-; 200  :     }
+; 201  :     }
 
   000df	eb e2		 jmp	 SHORT $LN9@UpdateGame
 $LN3@UpdateGame:
 
-; 201  :     
-; 202  :     m_game.board->FindLines(m_game.stats);
+; 202  :     
+; 203  :     m_game.board->FindLines(m_game.stats);
 
   000e1	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
   000e4	8b 48 18	 mov	 ecx, DWORD PTR [eax+24]
@@ -14156,7 +14278,7 @@ $LN3@UpdateGame:
   000eb	8b 4a 10	 mov	 ecx, DWORD PTR [edx+16]
   000ee	e8 00 00 00 00	 call	 ?FindLines@Board@gameplay@core@@QAEXPAVStats@23@@Z ; core::gameplay::Board::FindLines
 
-; 203  :     if (m_game.stats->GetPendingLineCount() > 0)
+; 204  :     if (m_game.stats->GetPendingLineCount() > 0)
 
   000f3	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
   000f6	8b 48 18	 mov	 ecx, DWORD PTR [eax+24]
@@ -14164,26 +14286,26 @@ $LN3@UpdateGame:
   000fe	85 c0		 test	 eax, eax
   00100	7e 22		 jle	 SHORT $LN10@UpdateGame
 
-; 204  :     {
-; 205  :         m_game.phase = GAME_PHASE_LINE;
+; 205  :     {
+; 206  :         m_game.phase = GAME_PHASE_LINE;
 
   00102	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  00105	c7 41 1c 02 00
-	00 00		 mov	 DWORD PTR [ecx+28], 2
+  00105	c7 41 20 02 00
+	00 00		 mov	 DWORD PTR [ecx+32], 2
 
-; 206  :         m_game.time.highlightEndTime = m_game.time.time + 0.35f;
+; 207  :         m_game.time.highlightEndTime = m_game.time.time + 0.35f;
 
   0010c	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
-  0010f	f3 0f 10 42 28	 movss	 xmm0, DWORD PTR [edx+40]
+  0010f	f3 0f 10 42 2c	 movss	 xmm0, DWORD PTR [edx+44]
   00114	f3 0f 58 05 00
 	00 00 00	 addss	 xmm0, DWORD PTR __real@3eb33333
   0011c	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  0011f	f3 0f 11 40 24	 movss	 DWORD PTR [eax+36], xmm0
+  0011f	f3 0f 11 40 28	 movss	 DWORD PTR [eax+40], xmm0
 $LN10@UpdateGame:
 
-; 207  :     }
-; 208  :     
-; 209  :     if (!m_game.board->IsRowEmpty(0))
+; 208  :     }
+; 209  :     
+; 210  :     if (!m_game.board->IsRowEmpty(0))
 
   00124	6a 00		 push	 0
   00126	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
@@ -14193,16 +14315,16 @@ $LN10@UpdateGame:
   00134	85 d2		 test	 edx, edx
   00136	75 0a		 jne	 SHORT $LN11@UpdateGame
 
-; 210  :     {
-; 211  :         m_game.phase = GAME_PHASE_OVER;
+; 211  :     {
+; 212  :         m_game.phase = GAME_PHASE_OVER;
 
   00138	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  0013b	c7 40 1c 03 00
-	00 00		 mov	 DWORD PTR [eax+28], 3
+  0013b	c7 40 20 03 00
+	00 00		 mov	 DWORD PTR [eax+32], 3
 $LN11@UpdateGame:
 
-; 212  :     }
-; 213  : }
+; 213  :     }
+; 214  : }
 
   00142	5f		 pop	 edi
   00143	5e		 pop	 esi
@@ -14218,22 +14340,22 @@ _this$ = -4						; size = 4
 ?UpdateGameStart@Game@core@@AAEXXZ PROC			; core::Game::UpdateGameStart
 ; _this$ = ecx
 
-; 140  : {
+; 141  : {
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
   00003	51		 push	 ecx
   00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
 
-; 141  :     if (m_input.dup > 0)
+; 142  :     if (m_input.dup > 0)
 
   00007	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  0000a	0f be 48 39	 movsx	 ecx, BYTE PTR [eax+57]
+  0000a	0f be 48 3d	 movsx	 ecx, BYTE PTR [eax+61]
   0000e	85 c9		 test	 ecx, ecx
   00010	7e 1a		 jle	 SHORT $LN2@UpdateGame
 
-; 142  :     {
-; 143  :         m_game.stats->SetStartLevel(m_game.stats->GetStartLevel() + 1);
+; 143  :     {
+; 144  :         m_game.stats->SetStartLevel(m_game.stats->GetStartLevel() + 1);
 
   00012	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
   00015	8b 4a 18	 mov	 ecx, DWORD PTR [edx+24]
@@ -14245,12 +14367,12 @@ _this$ = -4						; size = 4
   00027	e8 00 00 00 00	 call	 ?SetStartLevel@Stats@gameplay@core@@QAEXH@Z ; core::gameplay::Stats::SetStartLevel
 $LN2@UpdateGame:
 
-; 144  :     }
-; 145  :     
-; 146  :     if (m_input.ddown > 0 && m_game.stats->GetStartLevel() > 0)
+; 145  :     }
+; 146  :     
+; 147  :     if (m_input.ddown > 0 && m_game.stats->GetStartLevel() > 0)
 
   0002c	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  0002f	0f be 51 3a	 movsx	 edx, BYTE PTR [ecx+58]
+  0002f	0f be 51 3e	 movsx	 edx, BYTE PTR [ecx+62]
   00033	85 d2		 test	 edx, edx
   00035	7e 29		 jle	 SHORT $LN3@UpdateGame
   00037	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
@@ -14259,8 +14381,8 @@ $LN2@UpdateGame:
   00042	85 c0		 test	 eax, eax
   00044	7e 1a		 jle	 SHORT $LN3@UpdateGame
 
-; 147  :     {
-; 148  :         m_game.stats->SetStartLevel(m_game.stats->GetStartLevel() - 1);
+; 148  :     {
+; 149  :         m_game.stats->SetStartLevel(m_game.stats->GetStartLevel() - 1);
 
   00046	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
   00049	8b 49 18	 mov	 ecx, DWORD PTR [ecx+24]
@@ -14272,23 +14394,23 @@ $LN2@UpdateGame:
   0005b	e8 00 00 00 00	 call	 ?SetStartLevel@Stats@gameplay@core@@QAEXH@Z ; core::gameplay::Stats::SetStartLevel
 $LN3@UpdateGame:
 
-; 149  :     }
-; 150  :     
-; 151  :     if (m_input.denter > 0)
+; 150  :     }
+; 151  :     
+; 152  :     if (m_input.denter > 0)
 
   00060	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
-  00063	0f be 48 3c	 movsx	 ecx, BYTE PTR [eax+60]
+  00063	0f be 48 40	 movsx	 ecx, BYTE PTR [eax+64]
   00067	85 c9		 test	 ecx, ecx
   00069	7e 51		 jle	 SHORT $LN1@UpdateGame
 
-; 152  :     {
-; 153  :         m_game.board->Clear();
+; 153  :     {
+; 154  :         m_game.board->Clear();
 
   0006b	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
   0006e	8b 4a 10	 mov	 ecx, DWORD PTR [edx+16]
   00071	e8 00 00 00 00	 call	 ?Clear@Board@gameplay@core@@QAEXXZ ; core::gameplay::Board::Clear
 
-; 154  :         m_game.stats->SetLevel(m_game.stats->GetStartLevel());
+; 155  :         m_game.stats->SetLevel(m_game.stats->GetStartLevel());
 
   00076	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
   00079	8b 48 18	 mov	 ecx, DWORD PTR [eax+24]
@@ -14298,41 +14420,129 @@ $LN3@UpdateGame:
   00085	8b 49 18	 mov	 ecx, DWORD PTR [ecx+24]
   00088	e8 00 00 00 00	 call	 ?SetLevel@Stats@gameplay@core@@QAEXH@Z ; core::gameplay::Stats::SetLevel
 
-; 155  :         m_game.stats->SetLineCount(0);
+; 156  :         m_game.stats->SetLineCount(0);
 
   0008d	6a 00		 push	 0
   0008f	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
   00092	8b 4a 18	 mov	 ecx, DWORD PTR [edx+24]
   00095	e8 00 00 00 00	 call	 ?SetLineCount@Stats@gameplay@core@@QAEXH@Z ; core::gameplay::Stats::SetLineCount
 
-; 156  :         m_game.stats->SetPoints(0);
+; 157  :         m_game.stats->SetPoints(0);
 
   0009a	6a 00		 push	 0
   0009c	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
   0009f	8b 48 18	 mov	 ecx, DWORD PTR [eax+24]
   000a2	e8 00 00 00 00	 call	 ?SetPoints@Stats@gameplay@core@@QAEXH@Z ; core::gameplay::Stats::SetPoints
 
-; 157  :         m_game.piece->SpawnNewPiece();
+; 158  :         m_game.piece->SpawnNewPiece();
 
   000a7	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
   000aa	8b 49 14	 mov	 ecx, DWORD PTR [ecx+20]
   000ad	e8 00 00 00 00	 call	 ?SpawnNewPiece@Piece@gameplay@core@@QAEXXZ ; core::gameplay::Piece::SpawnNewPiece
 
-; 158  :         m_game.phase = GAME_PHASE_PLAY;
+; 159  :         m_game.phase = GAME_PHASE_PLAY;
 
   000b2	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
-  000b5	c7 42 1c 01 00
-	00 00		 mov	 DWORD PTR [edx+28], 1
+  000b5	c7 42 20 01 00
+	00 00		 mov	 DWORD PTR [edx+32], 1
 $LN1@UpdateGame:
 
-; 159  :     }
-; 160  :     
-; 161  : }
+; 160  :     }
+; 161  :     
+; 162  : }
 
   000bc	8b e5		 mov	 esp, ebp
   000be	5d		 pop	 ebp
   000bf	c3		 ret	 0
 ?UpdateGameStart@Game@core@@AAEXXZ ENDP			; core::Game::UpdateGameStart
+_TEXT	ENDS
+; Function compile flags: /Odtp
+; File c:\dev\tetris\src\menu.hpp
+;	COMDAT ??0Menu@core@@QAE@PAUInputState@@@Z
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+_t_input$ = 8						; size = 4
+??0Menu@core@@QAE@PAUInputState@@@Z PROC		; core::Menu::Menu, COMDAT
+; _this$ = ecx
+
+; 27   :         Menu(InputState *t_input)
+
+  00000	55		 push	 ebp
+  00001	8b ec		 mov	 ebp, esp
+  00003	51		 push	 ecx
+  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
+
+; 28   :             : m_input(t_input) {}
+
+  00007	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
+  0000a	8b 4d 08	 mov	 ecx, DWORD PTR _t_input$[ebp]
+  0000d	89 08		 mov	 DWORD PTR [eax], ecx
+  0000f	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
+  00012	8b e5		 mov	 esp, ebp
+  00014	5d		 pop	 ebp
+  00015	c2 04 00	 ret	 4
+??0Menu@core@@QAE@PAUInputState@@@Z ENDP		; core::Menu::Menu
+_TEXT	ENDS
+; Function compile flags: /Odtp
+; File c:\dev\tetris\src\ui\button.hpp
+;	COMDAT ??0Button@ui@core@@QAE@HHPAU_TTF_Font@@PBDW4ButtonState@12@VColor@2@33@Z
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+_t_width$ = 8						; size = 4
+_t_height$ = 12						; size = 4
+_t_font$ = 16						; size = 4
+_t_label$ = 20						; size = 4
+_t_initialState$ = 24					; size = 4
+_t_colorOutFocus$ = 28					; size = 4
+_t_colorInFocus$ = 32					; size = 4
+_t_textColor$ = 36					; size = 4
+??0Button@ui@core@@QAE@HHPAU_TTF_Font@@PBDW4ButtonState@12@VColor@2@33@Z PROC ; core::ui::Button::Button, COMDAT
+; _this$ = ecx
+
+; 37   :             Button(i32 t_width, i32 t_height, TTF_Font *t_font, const char *t_label, ButtonState t_initialState, Color t_colorOutFocus, Color t_colorInFocus, Color t_textColor)
+
+  00000	55		 push	 ebp
+  00001	8b ec		 mov	 ebp, esp
+  00003	51		 push	 ecx
+  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
+
+; 38   :                 : m_buttonWidth(t_width), m_buttonHeight(t_height), m_buttonFont(t_font), m_buttonLabel(t_label), m_state(t_initialState), m_colorOutFocus(t_colorOutFocus), m_colorInFocus(t_colorInFocus), m_buttonTextColor(t_textColor) {}
+
+  00007	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
+  0000a	8b 4d 08	 mov	 ecx, DWORD PTR _t_width$[ebp]
+  0000d	89 08		 mov	 DWORD PTR [eax], ecx
+  0000f	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
+  00012	8b 45 0c	 mov	 eax, DWORD PTR _t_height$[ebp]
+  00015	89 42 04	 mov	 DWORD PTR [edx+4], eax
+  00018	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  0001b	8b 55 10	 mov	 edx, DWORD PTR _t_font$[ebp]
+  0001e	89 51 08	 mov	 DWORD PTR [ecx+8], edx
+  00021	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
+  00024	8b 4d 14	 mov	 ecx, DWORD PTR _t_label$[ebp]
+  00027	89 48 0c	 mov	 DWORD PTR [eax+12], ecx
+  0002a	8d 55 24	 lea	 edx, DWORD PTR _t_textColor$[ebp]
+  0002d	52		 push	 edx
+  0002e	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  00031	83 c1 10	 add	 ecx, 16			; 00000010H
+  00034	e8 00 00 00 00	 call	 ??0Color@core@@QAE@ABV01@@Z ; core::Color::Color
+  00039	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
+  0003c	8b 4d 18	 mov	 ecx, DWORD PTR _t_initialState$[ebp]
+  0003f	89 48 14	 mov	 DWORD PTR [eax+20], ecx
+  00042	8d 55 1c	 lea	 edx, DWORD PTR _t_colorOutFocus$[ebp]
+  00045	52		 push	 edx
+  00046	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  00049	83 c1 18	 add	 ecx, 24			; 00000018H
+  0004c	e8 00 00 00 00	 call	 ??0Color@core@@QAE@ABV01@@Z ; core::Color::Color
+  00051	8d 45 20	 lea	 eax, DWORD PTR _t_colorInFocus$[ebp]
+  00054	50		 push	 eax
+  00055	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  00058	83 c1 1c	 add	 ecx, 28			; 0000001cH
+  0005b	e8 00 00 00 00	 call	 ??0Color@core@@QAE@ABV01@@Z ; core::Color::Color
+  00060	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
+  00063	8b e5		 mov	 esp, ebp
+  00065	5d		 pop	 ebp
+  00066	c2 20 00	 ret	 32			; 00000020H
+??0Button@ui@core@@QAE@HHPAU_TTF_Font@@PBDW4ButtonState@12@VColor@2@33@Z ENDP ; core::ui::Button::Button
 _TEXT	ENDS
 ; Function compile flags: /Odtp
 ; File c:\dev\tetris\src\piece.hpp
@@ -15264,6 +15474,56 @@ _t_renderer$ = 8					; size = 4
   00011	5d		 pop	 ebp
   00012	c2 04 00	 ret	 4
 ?SetRenderer@Graphics@graphics@core@@QAEXPAUSDL_Renderer@@@Z ENDP ; core::graphics::Graphics::SetRenderer
+_TEXT	ENDS
+; Function compile flags: /Odtp
+; File c:\dev\tetris\src\color.hpp
+;	COMDAT ??0Color@core@@QAE@EEE@Z
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+_r$ = 8							; size = 1
+_g$ = 12						; size = 1
+_b$ = 16						; size = 1
+??0Color@core@@QAE@EEE@Z PROC				; core::Color::Color, COMDAT
+; _this$ = ecx
+
+; 32   :         Color(u8 r, u8 g, u8 b)
+
+  00000	55		 push	 ebp
+  00001	8b ec		 mov	 ebp, esp
+  00003	51		 push	 ecx
+  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
+
+; 33   :         {
+; 34   :             this->r = r;
+
+  00007	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
+  0000a	8a 4d 08	 mov	 cl, BYTE PTR _r$[ebp]
+  0000d	88 08		 mov	 BYTE PTR [eax], cl
+
+; 35   :             this->g = g;
+
+  0000f	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
+  00012	8a 45 0c	 mov	 al, BYTE PTR _g$[ebp]
+  00015	88 42 01	 mov	 BYTE PTR [edx+1], al
+
+; 36   :             this->b = b;
+
+  00018	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  0001b	8a 55 10	 mov	 dl, BYTE PTR _b$[ebp]
+  0001e	88 51 02	 mov	 BYTE PTR [ecx+2], dl
+
+; 37   :             this->a = 255;
+
+  00021	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
+  00024	c6 40 03 ff	 mov	 BYTE PTR [eax+3], 255	; 000000ffH
+
+; 38   :         }
+
+  00028	8b 45 fc	 mov	 eax, DWORD PTR _this$[ebp]
+  0002b	8b e5		 mov	 esp, ebp
+  0002d	5d		 pop	 ebp
+  0002e	c2 0c 00	 ret	 12			; 0000000cH
+??0Color@core@@QAE@EEE@Z ENDP				; core::Color::Color
 _TEXT	ENDS
 ; Function compile flags: /Odtp
 ; File c:\dev\tetris\src\color.hpp
