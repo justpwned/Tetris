@@ -17,13 +17,13 @@ set IncludeDirectories=/I "..\dependencies\SDL2_ttf\include" /I "..\dependencies
 if not exist ..\build mkdir ..\build
 pushd ..\build
 
-set FilesToCompile=..\src\main.cpp ..\src\game.cpp ..\src\graphics\graphics.cpp ..\src\board.cpp ..\src\palette.cpp ..\src\tetromino.cpp ..\src\piece.cpp ..\src\stats.cpp
+set FilesToCompile=..\src\main.cpp ..\src\game.cpp ..\src\graphics\graphics.cpp ..\src\board.cpp ..\src\palette.cpp ..\src\tetromino.cpp ..\src\piece.cpp ..\src\stats.cpp ..\src\menu.cpp ..\src\ui\button.cpp
 
 REM Debug build
-REM cl %DebugCompilerOptions% %IncludeDirectories% %FilesToCompile% /link %DebugLinkerOptions%
+cl %DebugCompilerOptions% %IncludeDirectories% %FilesToCompile% /link %DebugLinkerOptions%
 
 REM Release build
-cl %ReleaseCompilerOptions% %IncludeDirectories% %FilesToCompile% /link %ReleaseLinkerOptions%
+REM cl %ReleaseCompilerOptions% %IncludeDirectories% %FilesToCompile% /link %ReleaseLinkerOptions%
 
 popd
 

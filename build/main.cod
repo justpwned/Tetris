@@ -10,9 +10,9 @@ INCLUDELIB LIBCMT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG53580 DB	'novem.ttf', 00H
+$SG53578 DB	'novem.ttf', 00H
 	ORG $+2
-$SG53581 DB	'Tetris', 00H
+$SG53579 DB	'Tetris', 00H
 CONST	ENDS
 PUBLIC	??0Game@core@@QAE@PBDHH0H@Z			; core::Game::Game
 PUBLIC	_wmain
@@ -26,8 +26,6 @@ EXTRN	___security_cookie:DWORD
 _TEXT	SEGMENT
 _game$ = -80						; size = 76
 __$ArrayPad$ = -4					; size = 4
-_argc$ = 8						; size = 4
-_argv$ = 12						; size = 4
 _wmain	PROC
 
 ; 7    : {
@@ -42,10 +40,10 @@ _wmain	PROC
 ; 8    :     Game game("Tetris", 300, 720, "novem.ttf", 24);
 
   00010	6a 18		 push	 24			; 00000018H
-  00012	68 00 00 00 00	 push	 OFFSET $SG53580
+  00012	68 00 00 00 00	 push	 OFFSET $SG53578
   00017	68 d0 02 00 00	 push	 720			; 000002d0H
   0001c	68 2c 01 00 00	 push	 300			; 0000012cH
-  00021	68 00 00 00 00	 push	 OFFSET $SG53581
+  00021	68 00 00 00 00	 push	 OFFSET $SG53579
   00026	8d 4d b0	 lea	 ecx, DWORD PTR _game$[ebp]
   00029	e8 00 00 00 00	 call	 ??0Game@core@@QAE@PBDHH0H@Z ; core::Game::Game
 
