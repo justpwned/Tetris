@@ -1,20 +1,29 @@
 @echo off
 
-set DebugCompilerOptions=-Fetetris.exe -Oi -WX -W4 -EHsc -wd4100 -wd4189 -wd4201 -wd4505 -wd4456 -wd4996 -wd4091 -wd4101 -nologo -Zi -FAsc 
+set DebugCompilerOptions=-FeTetrisDebug.exe -Oi -WX -W4 -EHsc -wd4100 -wd4189 -wd4201 -wd4505 -wd4456 -wd4996 -wd4091 -wd4101 -nologo -Zi -FAsc 
 
-set ReleaseCompilerOptions=-O2 -WX -W4 -EHsc -wd4100 -wd4189 -wd4201 -wd4505 -wd4456 -wd4996 -nologo -FAsc
+set ReleaseCompilerOptions=-FeTetrisRelease.exe -O2 -WX -W4 -EHsc -wd4100 -wd4189 -wd4201 -wd4505 -wd4456 -wd4996 -nologo -FAsc
 
-set LinkerOptions=-opt:ref SDL2.lib SDL2_ttf.lib /LIBPATH:..\dependencies\SDL2\lib\x86 /LIBPATH:..\dependencies\SDL2_ttf\lib\x86 /SUBSYSTEM:CONSOLE
+REM -------------------------------------------------------------------------------
+
+set DebugLinkerOptions=-opt:ref SDL2.lib SDL2_ttf.lib /LIBPATH:..\dependencies\SDL2\lib\x86 /LIBPATH:..\dependencies\SDL2_ttf\lib\x86 /SUBSYSTEM:CONSOLE
+
+set ReleaseLinkerOptions=-opt:ref SDL2.lib SDL2main.lib SDL2_ttf.lib /LIBPATH:..\dependencies\SDL2\lib\x86 /LIBPATH:..\dependencies\SDL2_ttf\lib\x86 /SUBSYSTEM:WINDOWS
+
+REM -------------------------------------------------------------------------------
 
 set IncludeDirectories=/I "..\dependencies\SDL2_ttf\include" /I "..\dependencies\SDL2\include"
 
 if not exist ..\build mkdir ..\build
 pushd ..\build
 
-set FilesToCompile=..\src\main.cpp ..\src\game.cpp ..\src\graphics\graphics.cpp ..\src\board.cpp ..\src\palette.cpp ..\src\tetromino.cpp ..\src\piece.cpp ..\src\stats.cpp ..\src\menu.cpp ..\src\ui\button.cpp
+set FilesToCompile=..\src\main.cpp ..\src\game.cpp ..\src\graphics\graphics.cpp ..\src\board.cpp ..\src\palette.cpp ..\src\tetromino.cpp ..\src\piece.cpp ..\src\stats.cpp
 
 REM Debug build
-cl %DebugCompilerOptions% %IncludeDirectories% %FilesToCompile% /link %LinkerOptions% 
+REM cl %DebugCompilerOptions% %IncludeDirectories% %FilesToCompile% /link %DebugLinkerOptions%
+
+REM Release build
+cl %ReleaseCompilerOptions% %IncludeDirectories% %FilesToCompile% /link %ReleaseLinkerOptions%
 
 popd
 
