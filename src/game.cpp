@@ -3,7 +3,7 @@
 
 #include "game.hpp"
 #include "palette.hpp"
-#include "ui\button.hpp"
+#include "menu.hpp"
 
 using namespace core;
 using namespace core::graphics;
@@ -84,7 +84,7 @@ Game::Game(const char *t_title, i32 t_xPos, i32 t_yPos, i32 t_windowWidth, i32 t
     m_game.board = new gameplay::Board(BOARD_ROWS, BOARD_COLS, BOARD_VISIBLE_ROWS, BOARD_GRID_SIZE);
     m_game.stats = new Stats();
     m_game.piece = new Piece(m_game.board, &m_game.time, m_game.stats, 0, 0, 0, 0);
-    m_game.menu = new Menu(&m_input);
+    m_game.menu = new Menu(&m_input, m_font);
     
     m_game.seed = (u32)time(0);
     srand(m_game.seed);
@@ -235,7 +235,7 @@ void Game::UpdateGameOver()
 {
     if (m_input.denter > 0)
     {
-        m_game.phase = GAME_PHASE_START;
+        m_game.phase = GAME_PHASE_MENU;
     }
 }
 
@@ -243,6 +243,11 @@ void Game::Update()
 {
     switch (m_game.phase)
     {
+        case GAME_PHASE_MENU:
+        {
+            m_game.phase = m_game.menu->Update();
+        } break;
+        
         case GAME_PHASE_START:
         {
             UpdateGameStart();
@@ -263,9 +268,9 @@ void Game::Update()
             UpdateGameOver();
         } break;
         
-        case GAME_PHASE_MENU:
+        case GAME_PHASE_EXIT:
         {
-            m_game.menu->Update();
+            Quit();
         } break;
     }
 }
@@ -280,12 +285,13 @@ void Game::RenderGameStart(i32 t_xOffset, i32 t_yOffset)
     snprintf(buffer, sizeof(buffer), "STARTING LEVEL: %d", m_game.stats->GetStartLevel());
     Graphics::Instance()->DrawText(m_font, buffer, xPos, yPos + 30, TEXT_ALIGN_CENTER, Palette::s_highlightColor);
     
-    ui::Button button(200, 400, m_font, "Test button", ui::BUTTON_OUT_FOCUS, Color(0xfc, 0xba, 0x03), Color(0xad, 0x7f, 0x00), Palette::s_highlightColor);
-    button.Render(100, 100);
+    Graphics::Instance()->DrawFillRect(0, t_yOffset, BOARD_COLS * BOARD_GRID_SIZE,(BOARD_ROWS - BOARD_VISIBLE_ROWS) * BOARD_GRID_SIZE, Palette::s_backColor);
+    RenderGameStats(0, 0);
 }
 
 void Game::RenderGamePlay(i32 t_xOffset, i32 t_yOffset)
 {
+    m_game.board->DrawBoard(0, t_yOffset);
     m_game.piece->DrawPiece(0, t_yOffset);
     
     Piece piece = *(m_game.piece);
@@ -296,10 +302,15 @@ void Game::RenderGamePlay(i32 t_xOffset, i32 t_yOffset)
     }
     piece.SetRowOffset(piece.GetRowOffset() - 1);
     piece.DrawPiece(0, t_yOffset, true);
+    
+    Graphics::Instance()->DrawFillRect(0, t_yOffset, BOARD_COLS * BOARD_GRID_SIZE,(BOARD_ROWS - BOARD_VISIBLE_ROWS) * BOARD_GRID_SIZE, Palette::s_backColor);
+    RenderGameStats(0, 0);
 }
 
 void Game::RenderGameLine(i32 t_xOffset, i32 t_yOffset)
 {
+    m_game.board->DrawBoard(0, t_yOffset);
+    
     for (i32 row = 0; row < BOARD_ROWS; ++row)
     {
         if (m_game.stats->GetLines()[row])
@@ -309,6 +320,9 @@ void Game::RenderGameLine(i32 t_xOffset, i32 t_yOffset)
             Graphics::Instance()->DrawFillRect(xPos, yPos, BOARD_COLS * BOARD_GRID_SIZE, BOARD_GRID_SIZE, Palette::s_highlightColor);
         }
     }
+    
+    Graphics::Instance()->DrawFillRect(0, t_yOffset, BOARD_COLS * BOARD_GRID_SIZE,(BOARD_ROWS - BOARD_VISIBLE_ROWS) * BOARD_GRID_SIZE, Palette::s_backColor);
+    RenderGameStats(0, 0);
 }
 
 void Game::RenderGameOver(i32 t_xOffset, i32 t_yOffset)
@@ -316,6 +330,9 @@ void Game::RenderGameOver(i32 t_xOffset, i32 t_yOffset)
     i32 xPos = BOARD_COLS * BOARD_GRID_SIZE / 2;
     i32 yPos = (BOARD_ROWS * BOARD_GRID_SIZE + t_yOffset) / 2;
     Graphics::Instance()->DrawText(m_font, "GAME OVER", xPos, yPos, TEXT_ALIGN_CENTER, Palette::s_highlightColor);
+    
+    Graphics::Instance()->DrawFillRect(0, t_yOffset, BOARD_COLS * BOARD_GRID_SIZE,(BOARD_ROWS - BOARD_VISIBLE_ROWS) * BOARD_GRID_SIZE, Palette::s_backColor);
+    RenderGameStats(0, 0);
 }
 
 void Game::RenderGameStats(i32 t_xOffset, i32 t_yOffset)
@@ -339,15 +356,16 @@ void Game::RenderGameStats(i32 t_xOffset, i32 t_yOffset)
 
 void Game::Render()
 {
-    Color backColor(100, 100, 100, 255);
-    
-    Graphics::Instance()->FillBackground(backColor);
-    
+    Graphics::Instance()->FillBackground(Palette::s_backColor);
     i32 yMargin = (BOARD_ROWS - BOARD_VISIBLE_ROWS) * BOARD_GRID_SIZE;
-    m_game.board->DrawBoard(0, yMargin);
     
     switch (m_game.phase)
     {
+        case GAME_PHASE_MENU:
+        {
+            m_game.menu->Render(m_gameWidth / 2, 200, BUTTON_ALIGN_CENTER);
+        } break;
+        
         case GAME_PHASE_START:
         {
             RenderGameStart(0, yMargin);
@@ -367,16 +385,7 @@ void Game::Render()
         {
             RenderGameOver(0, yMargin);
         } break;
-        
-        case GAME_PHASE_MENU:
-        {
-            m_game.menu->Render(0, 0);
-        } break;
     }
-    
-    Graphics::Instance()->DrawFillRect(0, yMargin, BOARD_COLS * BOARD_GRID_SIZE,(BOARD_ROWS - BOARD_VISIBLE_ROWS) * BOARD_GRID_SIZE, backColor);
-    
-    RenderGameStats(0, 0);
 }
 
 void Game::MainLoop()

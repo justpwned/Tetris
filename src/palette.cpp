@@ -36,3 +36,4 @@ const Color Palette::s_dark[Palette::s_size] = {
 };
 
 const Color Palette::s_highlightColor(255, 255, 255, 255);
+const Color Palette::s_backColor(100, 100, 100, 255);

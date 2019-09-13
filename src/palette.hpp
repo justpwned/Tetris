@@ -16,6 +16,7 @@ namespace core
         static const Color s_dark[Palette::s_size];
         
         static const Color s_highlightColor;
+        static const Color s_backColor;
     };
 }
 

@@ -14,11 +14,13 @@ PUBLIC	?s_base@Palette@core@@2QBVColor@2@B		; core::Palette::s_base
 PUBLIC	?s_light@Palette@core@@2QBVColor@2@B		; core::Palette::s_light
 PUBLIC	?s_dark@Palette@core@@2QBVColor@2@B		; core::Palette::s_dark
 PUBLIC	?s_highlightColor@Palette@core@@2VColor@2@B	; core::Palette::s_highlightColor
+PUBLIC	?s_backColor@Palette@core@@2VColor@2@B		; core::Palette::s_backColor
 _BSS	SEGMENT
 ?s_base@Palette@core@@2QBVColor@2@B DD 08H DUP (?)	; core::Palette::s_base
 ?s_light@Palette@core@@2QBVColor@2@B DD 08H DUP (?)	; core::Palette::s_light
 ?s_dark@Palette@core@@2QBVColor@2@B DD 08H DUP (?)	; core::Palette::s_dark
 ?s_highlightColor@Palette@core@@2VColor@2@B DD 01H DUP (?) ; core::Palette::s_highlightColor
+?s_backColor@Palette@core@@2VColor@2@B DD 01H DUP (?)	; core::Palette::s_backColor
 _BSS	ENDS
 CRT$XCU	SEGMENT
 ??s_base$initializer$@Palette@core@@2P6AXXZA@@3P6AXXZA DD FLAT:??__E?s_base@Palette@core@@2QBVColor@2@B@@YAXXZ ; ??s_base$initializer$@Palette@core@@2P6AXXZA@@3P6AXXZA
@@ -32,6 +34,29 @@ CRT$XCU	ENDS
 CRT$XCU	SEGMENT
 ??s_highlightColor$initializer$@Palette@core@@2P6AXXZA@@3P6AXXZA DD FLAT:??__E?s_highlightColor@Palette@core@@2VColor@2@B@@YAXXZ ; ??s_highlightColor$initializer$@Palette@core@@2P6AXXZA@@3P6AXXZA
 CRT$XCU	ENDS
+CRT$XCU	SEGMENT
+??s_backColor$initializer$@Palette@core@@2P6AXXZA@@3P6AXXZA DD FLAT:??__E?s_backColor@Palette@core@@2VColor@2@B@@YAXXZ ; ??s_backColor$initializer$@Palette@core@@2P6AXXZA@@3P6AXXZA
+CRT$XCU	ENDS
+; Function compile flags: /Odtp
+; File c:\dev\tetris\src\palette.cpp
+;	COMDAT ??__E?s_backColor@Palette@core@@2VColor@2@B@@YAXXZ
+text$di	SEGMENT
+??__E?s_backColor@Palette@core@@2VColor@2@B@@YAXXZ PROC	; `dynamic initializer for 'core::Palette::s_backColor'', COMDAT
+
+; 39   : const Color Palette::s_backColor(100, 100, 100, 255);
+
+  00000	55		 push	 ebp
+  00001	8b ec		 mov	 ebp, esp
+  00003	68 ff 00 00 00	 push	 255			; 000000ffH
+  00008	6a 64		 push	 100			; 00000064H
+  0000a	6a 64		 push	 100			; 00000064H
+  0000c	6a 64		 push	 100			; 00000064H
+  0000e	b9 00 00 00 00	 mov	 ecx, OFFSET ?s_backColor@Palette@core@@2VColor@2@B ; core::Palette::s_backColor
+  00013	e8 00 00 00 00	 call	 ??0Color@core@@QAE@EEEE@Z ; core::Color::Color
+  00018	5d		 pop	 ebp
+  00019	c3		 ret	 0
+??__E?s_backColor@Palette@core@@2VColor@2@B@@YAXXZ ENDP	; `dynamic initializer for 'core::Palette::s_backColor''
+text$di	ENDS
 ; Function compile flags: /Odtp
 ; File c:\dev\tetris\src\palette.cpp
 ;	COMDAT ??__E?s_highlightColor@Palette@core@@2VColor@2@B@@YAXXZ

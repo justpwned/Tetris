@@ -19,9 +19,9 @@ EXTRN	?DrawText@Graphics@graphics@core@@QAEXPAU_TTF_Font@@PBDHHW4TextAlign@23@VC
 ; File c:\dev\tetris\src\ui\button.cpp
 _TEXT	SEGMENT
 _textWidth$ = -32					; size = 4
-_textHeight$ = -28					; size = 4
-_xPos$ = -24						; size = 4
-_yPos$ = -20						; size = 4
+_xPos$ = -28						; size = 4
+_yPos$ = -24						; size = 4
+_textHeight$ = -20					; size = 4
 _color$ = -16						; size = 4
 $T1 = -12						; size = 4
 tv70 = -8						; size = 4
@@ -84,7 +84,7 @@ $LN4@Render:
 ; 13   :     i32 textWidth, textHeight;
 ; 14   :     TTF_SizeText(m_buttonFont, m_buttonLabel, &textWidth, &textHeight);
 
-  00065	8d 45 e4	 lea	 eax, DWORD PTR _textHeight$[ebp]
+  00065	8d 45 ec	 lea	 eax, DWORD PTR _textHeight$[ebp]
   00068	50		 push	 eax
   00069	8d 4d e0	 lea	 ecx, DWORD PTR _textWidth$[ebp]
   0006c	51		 push	 ecx
@@ -105,46 +105,52 @@ $LN4@Render:
   00089	2b c2		 sub	 eax, edx
   0008b	d1 f8		 sar	 eax, 1
   0008d	03 45 08	 add	 eax, DWORD PTR _t_xOffset$[ebp]
-  00090	89 45 e8	 mov	 DWORD PTR _xPos$[ebp], eax
+  00090	89 45 e4	 mov	 DWORD PTR _xPos$[ebp], eax
 
-; 16   :     i32 yPos = t_yOffset + m_buttonHeight / 2;
+; 16   :     i32 yPos = t_yOffset + m_buttonHeight / 2 - textHeight / 2;
 
   00093	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
   00096	8b 41 04	 mov	 eax, DWORD PTR [ecx+4]
   00099	99		 cdq
   0009a	2b c2		 sub	 eax, edx
-  0009c	d1 f8		 sar	 eax, 1
-  0009e	03 45 0c	 add	 eax, DWORD PTR _t_yOffset$[ebp]
-  000a1	89 45 ec	 mov	 DWORD PTR _yPos$[ebp], eax
+  0009c	8b c8		 mov	 ecx, eax
+  0009e	d1 f9		 sar	 ecx, 1
+  000a0	03 4d 0c	 add	 ecx, DWORD PTR _t_yOffset$[ebp]
+  000a3	8b 45 ec	 mov	 eax, DWORD PTR _textHeight$[ebp]
+  000a6	99		 cdq
+  000a7	2b c2		 sub	 eax, edx
+  000a9	d1 f8		 sar	 eax, 1
+  000ab	2b c8		 sub	 ecx, eax
+  000ad	89 4d e8	 mov	 DWORD PTR _yPos$[ebp], ecx
 
 ; 17   :     Graphics::Instance()->DrawText(m_buttonFont, m_buttonLabel, xPos, yPos, TEXT_ALIGN_CENTER, m_buttonTextColor);
 
-  000a4	51		 push	 ecx
-  000a5	8b cc		 mov	 ecx, esp
-  000a7	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
-  000aa	83 c2 10	 add	 edx, 16			; 00000010H
-  000ad	52		 push	 edx
-  000ae	e8 00 00 00 00	 call	 ??0Color@core@@QAE@ABV01@@Z ; core::Color::Color
-  000b3	6a 01		 push	 1
-  000b5	8b 45 ec	 mov	 eax, DWORD PTR _yPos$[ebp]
-  000b8	50		 push	 eax
-  000b9	8b 4d e8	 mov	 ecx, DWORD PTR _xPos$[ebp]
-  000bc	51		 push	 ecx
-  000bd	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
-  000c0	8b 42 0c	 mov	 eax, DWORD PTR [edx+12]
-  000c3	50		 push	 eax
-  000c4	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
-  000c7	8b 51 08	 mov	 edx, DWORD PTR [ecx+8]
-  000ca	52		 push	 edx
-  000cb	e8 00 00 00 00	 call	 ?Instance@Graphics@graphics@core@@SAPAV123@XZ ; core::graphics::Graphics::Instance
-  000d0	8b c8		 mov	 ecx, eax
-  000d2	e8 00 00 00 00	 call	 ?DrawText@Graphics@graphics@core@@QAEXPAU_TTF_Font@@PBDHHW4TextAlign@23@VColor@3@@Z ; core::graphics::Graphics::DrawText
+  000b0	51		 push	 ecx
+  000b1	8b cc		 mov	 ecx, esp
+  000b3	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
+  000b6	83 c2 10	 add	 edx, 16			; 00000010H
+  000b9	52		 push	 edx
+  000ba	e8 00 00 00 00	 call	 ??0Color@core@@QAE@ABV01@@Z ; core::Color::Color
+  000bf	6a 01		 push	 1
+  000c1	8b 45 e8	 mov	 eax, DWORD PTR _yPos$[ebp]
+  000c4	50		 push	 eax
+  000c5	8b 4d e4	 mov	 ecx, DWORD PTR _xPos$[ebp]
+  000c8	51		 push	 ecx
+  000c9	8b 55 fc	 mov	 edx, DWORD PTR _this$[ebp]
+  000cc	8b 42 0c	 mov	 eax, DWORD PTR [edx+12]
+  000cf	50		 push	 eax
+  000d0	8b 4d fc	 mov	 ecx, DWORD PTR _this$[ebp]
+  000d3	8b 51 08	 mov	 edx, DWORD PTR [ecx+8]
+  000d6	52		 push	 edx
+  000d7	e8 00 00 00 00	 call	 ?Instance@Graphics@graphics@core@@SAPAV123@XZ ; core::graphics::Graphics::Instance
+  000dc	8b c8		 mov	 ecx, eax
+  000de	e8 00 00 00 00	 call	 ?DrawText@Graphics@graphics@core@@QAEXPAU_TTF_Font@@PBDHHW4TextAlign@23@VColor@3@@Z ; core::graphics::Graphics::DrawText
 
 ; 18   : }
 
-  000d7	8b e5		 mov	 esp, ebp
-  000d9	5d		 pop	 ebp
-  000da	c2 08 00	 ret	 8
+  000e3	8b e5		 mov	 esp, ebp
+  000e5	5d		 pop	 ebp
+  000e6	c2 08 00	 ret	 8
 ?Render@Button@ui@core@@QAEXHH@Z ENDP			; core::ui::Button::Render
 _TEXT	ENDS
 ; Function compile flags: /Odtp
