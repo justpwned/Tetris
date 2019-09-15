@@ -10,13 +10,13 @@ INCLUDELIB LIBCMT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG45923 DB	'Play', 00H
+$SG45927 DB	'Play', 00H
 	ORG $+3
-$SG45924 DB	'Highscores', 00H
+$SG45928 DB	'Highscores', 00H
 	ORG $+1
-$SG45925 DB	'Info', 00H
+$SG45929 DB	'Info', 00H
 	ORG $+3
-$SG45926 DB	'Exit', 00H
+$SG45930 DB	'Exit', 00H
 CONST	ENDS
 PUBLIC	??0Color@core@@QAE@ABV01@@Z			; core::Color::Color
 PUBLIC	??0Color@core@@QAE@EEE@Z			; core::Color::Color
@@ -2762,7 +2762,7 @@ _t_font$ = 12						; size = 4
   000ca	52		 push	 edx
   000cb	e8 00 00 00 00	 call	 ??0Color@core@@QAE@ABV01@@Z ; core::Color::Color
   000d0	6a 00		 push	 0
-  000d2	68 00 00 00 00	 push	 OFFSET $SG45923
+  000d2	68 00 00 00 00	 push	 OFFSET $SG45927
   000d7	8b 45 0c	 mov	 eax, DWORD PTR _t_font$[ebp]
   000da	50		 push	 eax
   000db	6a 3c		 push	 60			; 0000003cH
@@ -2797,7 +2797,7 @@ _t_font$ = 12						; size = 4
   0011d	52		 push	 edx
   0011e	e8 00 00 00 00	 call	 ??0Color@core@@QAE@ABV01@@Z ; core::Color::Color
   00123	6a 00		 push	 0
-  00125	68 00 00 00 00	 push	 OFFSET $SG45924
+  00125	68 00 00 00 00	 push	 OFFSET $SG45928
   0012a	8b 45 0c	 mov	 eax, DWORD PTR _t_font$[ebp]
   0012d	50		 push	 eax
   0012e	6a 3c		 push	 60			; 0000003cH
@@ -2833,7 +2833,7 @@ _t_font$ = 12						; size = 4
   00173	52		 push	 edx
   00174	e8 00 00 00 00	 call	 ??0Color@core@@QAE@ABV01@@Z ; core::Color::Color
   00179	6a 00		 push	 0
-  0017b	68 00 00 00 00	 push	 OFFSET $SG45925
+  0017b	68 00 00 00 00	 push	 OFFSET $SG45929
   00180	8b 45 0c	 mov	 eax, DWORD PTR _t_font$[ebp]
   00183	50		 push	 eax
   00184	6a 3c		 push	 60			; 0000003cH
@@ -2869,7 +2869,7 @@ _t_font$ = 12						; size = 4
   001c9	52		 push	 edx
   001ca	e8 00 00 00 00	 call	 ??0Color@core@@QAE@ABV01@@Z ; core::Color::Color
   001cf	6a 00		 push	 0
-  001d1	68 00 00 00 00	 push	 OFFSET $SG45926
+  001d1	68 00 00 00 00	 push	 OFFSET $SG45930
   001d6	8b 45 0c	 mov	 eax, DWORD PTR _t_font$[ebp]
   001d9	50		 push	 eax
   001da	6a 3c		 push	 60			; 0000003cH

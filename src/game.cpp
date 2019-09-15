@@ -112,7 +112,7 @@ void Game::HandleInput()
     
     if (keyStates)
     {
-        if (keyStates[SDL_SCANCODE_ESCAPE])
+        if (keyStates[SDL_SCANCODE_Q])
         {
             Quit();
         }
@@ -248,6 +248,16 @@ void Game::Update()
             m_game.phase = m_game.menu->Update();
         } break;
         
+        case GAME_PHASE_HIGHSCORES:
+        {
+            //m_game.phase = m_game.highscores->Update();
+        } break;
+        
+        case GAME_PHASE_INFO:
+        {
+            //m_game.phase = m_game.info->Update();
+        } break;
+        
         case GAME_PHASE_START:
         {
             UpdateGameStart();
@@ -364,6 +374,16 @@ void Game::Render()
         case GAME_PHASE_MENU:
         {
             m_game.menu->Render(m_gameWidth / 2, 200, BUTTON_ALIGN_CENTER);
+        } break;
+        
+        case GAME_PHASE_HIGHSCORES:
+        {
+            //m_game.phase = m_game.highscores->Render(0, 0);
+        } break;
+        
+        case GAME_PHASE_INFO:
+        {
+            //m_game.phase = m_game.info->Render(0, 0);
         } break;
         
         case GAME_PHASE_START:
