@@ -2,7 +2,7 @@
 #define STATS_HPP
 
 #include "common_utils.h"
-#include "game_utils.h"
+#include "game_utils.hpp"
 
 namespace core
 {

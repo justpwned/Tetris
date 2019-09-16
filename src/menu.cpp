@@ -1,6 +1,5 @@
 #include "menu.hpp"
 #include "palette.hpp"
-#include "game_utils.h"
 
 using namespace core;
 using namespace core::ui;

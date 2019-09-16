@@ -2,7 +2,7 @@
 #define MENU_HPP
 
 #include "SDL_ttf.h"
-#include "game_utils.h"
+#include "game_utils.hpp"
 #include "ui/button.hpp"
 #include <vector>
 

@@ -1,6 +1,6 @@
 #include "button.hpp"
 #include "../graphics/graphics.hpp"
-#include "..\palette.hpp"
+#include "../palette.hpp"
 
 using namespace core::ui;
 using namespace core::graphics;

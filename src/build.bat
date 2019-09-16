@@ -1,16 +1,7 @@
 @echo off
 
-set arg1=%1
-
 if not exist ..\build mkdir ..\build
 pushd ..\build
-
-if "%arg1%" == "clean" (
-	del *.exe
-	del *.obj
-	del *.pdb
-	del *.cod 
-) ELSE (
 
 set DebugCompilerOptions=-Fetetris.exe -Oi -WX -W4 -EHsc -wd4100 -wd4189 -wd4201 -wd4505 -wd4456 -wd4996 -wd4091 -wd4101 -nologo -Zi -FAsc 
 
@@ -26,15 +17,13 @@ REM ----------------------------------------------------------------------------
 
 set IncludeDirectories=/I "..\dependencies\SDL2_ttf\include" /I "..\dependencies\SDL2\include"
 
-set FilesToCompile=..\src\main.cpp ..\src\game.cpp ..\src\graphics\graphics.cpp ..\src\board.cpp ..\src\palette.cpp ..\src\tetromino.cpp ..\src\piece.cpp ..\src\stats.cpp ..\src\menu.cpp ..\src\ui\button.cpp
+set FilesToCompile=..\src\main.cpp ..\src\game.cpp ..\src\graphics\graphics.cpp ..\src\board.cpp ..\src\palette.cpp ..\src\tetromino.cpp ..\src\piece.cpp ..\src\stats.cpp ..\src\menu.cpp ..\src\ui\button.cpp ..\src\info.cpp ..\src\highscores.cpp
 
 REM Debug build
 cl %DebugCompilerOptions% %IncludeDirectories% %FilesToCompile% /link %DebugLinkerOptions%
 
 REM Release build
 REM cl %ReleaseCompilerOptions% %IncludeDirectories% %FilesToCompile% /link %ReleaseLinkerOptions%
-
-)
 
 popd
 

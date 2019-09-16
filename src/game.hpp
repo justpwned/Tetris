@@ -7,7 +7,7 @@
 #include "board.hpp"
 #include "piece.hpp"
 #include "stats.hpp"
-#include "game_utils.h"
+#include "game_utils.hpp"
 
 namespace core
 {
@@ -23,6 +23,7 @@ namespace core
         
         GameState m_game;
         InputState m_input;
+        
         TTF_Font *m_font;
         
         bool m_running;
@@ -42,11 +43,11 @@ namespace core
         
         public:
         
-        Game(const char *t_title, i32 t_xPos, i32 t_yPos, i32 t_windowWidth, i32 t_windowHeight, const char *t_fontName, i32 t_fontSize);
+        Game(const char *t_title, i32 t_xPos, i32 t_yPos, i32 t_windowWidth, i32 t_windowHeight, const char *t_fontName);
         
-        Game(const char *t_title, i32 t_windowWidth, i32 t_windowHeight, const char *t_fontName, i32 t_fontSize) 
+        Game(const char *t_title, i32 t_windowWidth, i32 t_windowHeight, const char *t_fontName) 
             : Game(t_title, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 
-                   t_windowWidth, t_windowHeight, t_fontName, t_fontSize) {}
+                   t_windowWidth, t_windowHeight, t_fontName) {}
         
         void HandleEvents();
         void HandleInput();

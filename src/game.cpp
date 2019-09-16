@@ -4,12 +4,14 @@
 #include "game.hpp"
 #include "palette.hpp"
 #include "menu.hpp"
+#include "info.hpp"
+#include "highscores.hpp"
 
 using namespace core;
 using namespace core::graphics;
 using namespace core::gameplay;
 
-Game::Game(const char *t_title, i32 t_xPos, i32 t_yPos, i32 t_windowWidth, i32 t_windowHeight, const char *t_fontName, i32 t_fontSize)
+Game::Game(const char *t_title, i32 t_xPos, i32 t_yPos, i32 t_windowWidth, i32 t_windowHeight, const char *t_fontName)
 {
     if (!SDL_Init(SDL_INIT_EVERYTHING))
     {
@@ -52,17 +54,15 @@ Game::Game(const char *t_title, i32 t_xPos, i32 t_yPos, i32 t_windowWidth, i32 t
     {
         std::cout << "SDL_TTF has been initialized successfully\n";
         
-        m_font = TTF_OpenFont(t_fontName, t_fontSize);
+        m_font = TTF_OpenFont(t_fontName, 24);
         
         if (m_font)
         {
-            std::cout << "Font " << t_fontName << "(" << t_fontSize 
-                << ") has been loaded\n";
+            std::cout << "Font " << t_fontName << " has been loaded\n";
         }
         else
         {
-            std::cerr << "Font " << t_fontName << "(" << t_fontSize 
-                << ") has not been loaded\n";
+            std::cerr << "Font " << t_fontName << " has not been loaded\n";
             exit(1);
         }
     }
@@ -85,6 +85,9 @@ Game::Game(const char *t_title, i32 t_xPos, i32 t_yPos, i32 t_windowWidth, i32 t
     m_game.stats = new Stats();
     m_game.piece = new Piece(m_game.board, &m_game.time, m_game.stats, 0, 0, 0, 0);
     m_game.menu = new Menu(&m_input, m_font);
+    m_game.info = new Info(&m_input, m_font, "info.txt");
+    m_game.highscores = new Highscores(&m_input, m_font, "highscores.data");
+    m_game.highscores->LoadRecords();
     
     m_game.seed = (u32)time(0);
     srand(m_game.seed);
@@ -119,21 +122,23 @@ void Game::HandleInput()
         
         InputState prevInput = m_input;
         
-        m_input.left   = keyStates[SDL_SCANCODE_LEFT];
-        m_input.right  = keyStates[SDL_SCANCODE_RIGHT];
-        m_input.up     = keyStates[SDL_SCANCODE_UP];
-        m_input.down   = keyStates[SDL_SCANCODE_DOWN];
-        m_input.space  = keyStates[SDL_SCANCODE_SPACE];
-        m_input.enter  = keyStates[SDL_SCANCODE_RETURN];
-        m_input.z      = keyStates[SDL_SCANCODE_Z];
+        m_input.left    = keyStates[SDL_SCANCODE_LEFT];
+        m_input.right   = keyStates[SDL_SCANCODE_RIGHT];
+        m_input.up      = keyStates[SDL_SCANCODE_UP];
+        m_input.down    = keyStates[SDL_SCANCODE_DOWN];
+        m_input.space   = keyStates[SDL_SCANCODE_SPACE];
+        m_input.enter   = keyStates[SDL_SCANCODE_RETURN];
+        m_input.z       = keyStates[SDL_SCANCODE_Z];
+        m_input.escape  = keyStates[SDL_SCANCODE_ESCAPE];
         
-        m_input.dleft  = m_input.left - prevInput.left;
-        m_input.dright = m_input.right - prevInput.right;
-        m_input.dup    = m_input.up - prevInput.up;
-        m_input.ddown  = m_input.down - prevInput.down;
-        m_input.dspace = m_input.space - prevInput.space;
-        m_input.denter = m_input.enter - prevInput.enter;
-        m_input.dz     = m_input.z - prevInput.z;
+        m_input.dleft   = m_input.left - prevInput.left;
+        m_input.dright  = m_input.right - prevInput.right;
+        m_input.dup     = m_input.up - prevInput.up;
+        m_input.ddown   = m_input.down - prevInput.down;
+        m_input.dspace  = m_input.space - prevInput.space;
+        m_input.denter  = m_input.enter - prevInput.enter;
+        m_input.dz      = m_input.z - prevInput.z;
+        m_input.descape = m_input.escape - prevInput.escape;
     }
 }
 
@@ -195,6 +200,11 @@ void Game::UpdateGamePlay()
         m_game.piece->HardDrop();
     }
     
+    if (m_input.descape > 0)
+    {
+        m_game.phase = GAME_PHASE_MENU;
+    }
+    
     while (m_game.time.time >= m_game.time.nextDropTime)
     {
         m_game.piece->SoftDrop();
@@ -250,12 +260,12 @@ void Game::Update()
         
         case GAME_PHASE_HIGHSCORES:
         {
-            //m_game.phase = m_game.highscores->Update();
+            m_game.phase = m_game.highscores->Update();
         } break;
         
         case GAME_PHASE_INFO:
         {
-            //m_game.phase = m_game.info->Update();
+            m_game.phase = m_game.info->Update();
         } break;
         
         case GAME_PHASE_START:
@@ -378,12 +388,12 @@ void Game::Render()
         
         case GAME_PHASE_HIGHSCORES:
         {
-            //m_game.phase = m_game.highscores->Render(0, 0);
+            m_game.highscores->Render(m_gameWidth / 2, 200);
         } break;
         
         case GAME_PHASE_INFO:
         {
-            //m_game.phase = m_game.info->Render(0, 0);
+            m_game.info->Render(m_gameWidth / 2, 200);
         } break;
         
         case GAME_PHASE_START:

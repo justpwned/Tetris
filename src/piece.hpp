@@ -3,7 +3,7 @@
 
 #include "board.hpp"
 #include "tetromino.hpp"
-#include "game_utils.h"
+#include "game_utils.hpp"
 #include "stats.hpp"
 
 namespace core

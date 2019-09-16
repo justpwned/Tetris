@@ -7,8 +7,6 @@
 #define BUTTON_WIDTH 160
 #define BUTTON_HEIGHT 60
 
-
-
 namespace core
 {
     namespace ui

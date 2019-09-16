@@ -1,0 +1,82 @@
+#ifndef GAME_UTILS_HPP
+#define GAME_UTILS_HPP
+
+#include "common_utils.h"
+
+#define BOARD_COLS 10         // WIDTH
+#define BOARD_ROWS 22         // HEIGHT
+#define BOARD_VISIBLE_ROWS 20 // VISIBLE HEIGHT
+#define BOARD_GRID_SIZE 30
+
+namespace core
+{
+    namespace gameplay
+    {
+        class Board;
+        class Piece;
+        class Stats;
+    }
+    
+    class Menu;
+    class Highscores;
+    class Info;
+}
+
+enum GamePhase
+{
+    GAME_PHASE_MENU,
+    GAME_PHASE_START,
+    GAME_PHASE_PLAY,
+    GAME_PHASE_LINE,
+    GAME_PHASE_OVER,
+    GAME_PHASE_HIGHSCORES,
+    GAME_PHASE_INFO,
+    GAME_PHASE_EXIT,
+    GAME_PHASE_TOTAL
+};
+
+struct GameTime
+{
+    f32 nextDropTime;
+    f32 highlightEndTime;
+    f32 time;
+};
+
+struct GameState
+{
+    core::gameplay::Board *board;
+    core::gameplay::Piece *piece;
+    core::gameplay::Stats *stats;
+    
+    core::Menu *menu;
+    core::Highscores *highscores;
+    core::Info *info;
+    
+    GamePhase phase;
+    GameTime time;
+    
+    u32 seed;
+};
+
+struct InputState
+{
+    u8 left;
+    u8 right;
+    u8 up;
+    u8 down;
+    u8 space;
+    u8 enter;
+    u8 z;
+    u8 escape;
+    
+    i8 dleft;
+    i8 dright;
+    i8 dup;
+    i8 ddown;
+    i8 dspace;
+    i8 denter;
+    i8 dz;
+    i8 descape;
+};
+
+#endif
