@@ -10,9 +10,9 @@ INCLUDELIB LIBCMT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG57400 DB	0aH, 00H
+$SG57405 DB	0aH, 00H
 	ORG $+2
-$SG57401 DB	'Unable to open file: ', 00H
+$SG57406 DB	'Unable to open file: ', 00H
 CONST	ENDS
 PUBLIC	??2@YAPAXIPAX@Z					; operator new
 PUBLIC	??0exception@std@@QAE@QBD@Z			; std::exception::exception
@@ -15353,10 +15353,10 @@ $LN4@Info:
 ; 26   :     {
 ; 27   :         std::cerr << "Unable to open file: " << t_filename << "\n";
 
-  000d3	68 00 00 00 00	 push	 OFFSET $SG57400
+  000d3	68 00 00 00 00	 push	 OFFSET $SG57405
   000d8	8b 45 10	 mov	 eax, DWORD PTR _t_filename$[ebp]
   000db	50		 push	 eax
-  000dc	68 00 00 00 00	 push	 OFFSET $SG57401
+  000dc	68 00 00 00 00	 push	 OFFSET $SG57406
   000e1	68 00 00 00 00	 push	 OFFSET ?cerr@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cerr
   000e6	e8 00 00 00 00	 call	 ??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >
   000eb	83 c4 08	 add	 esp, 8

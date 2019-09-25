@@ -2,6 +2,7 @@
 #define GAME_UTILS_HPP
 
 #include "common_utils.h"
+#include <string>
 
 #define BOARD_COLS 10         // WIDTH
 #define BOARD_ROWS 22         // HEIGHT
@@ -50,6 +51,7 @@ struct GameState
     
     core::Menu *menu;
     core::Highscores *highscores;
+    std::string highscoreName;
     core::Info *info;
     
     GamePhase phase;

@@ -2,6 +2,7 @@
 #define HIGHSCORES_HPP
 
 #include <vector>
+#include <cstring>
 #include "game_utils.hpp"
 #include "SDL_ttf.h"
 
@@ -24,19 +25,18 @@ namespace core
         TTF_Font *m_font;
         const char *m_filename;
         
-        i32 m_numberOfRecords = 5;
-        std::vector<HighscoreHeader*> m_records = std::vector<HighscoreHeader*>(m_numberOfRecords);
+        size_t m_numberOfRecords = 5;
+        std::vector<HighscoreHeader*> m_records = std::vector<HighscoreHeader*>();
         
         public:
         
         Highscores() {}
-        
-        Highscores(InputState *t_input, TTF_Font *t_font, const char *t_filename) 
-            : m_input(t_input), m_font(t_font), m_filename(t_filename) {}
+        Highscores(InputState *t_input, TTF_Font *t_font, const char *t_filename);
         
         void LoadRecords();
         void DumpRecords();
         bool WriteRecord(const char *t_name, i32 t_score);
+        bool IsHighscore(i32 t_score);
         
         GamePhase Update();
         void Render(i32 t_xOffset, i32 t_yOffset);

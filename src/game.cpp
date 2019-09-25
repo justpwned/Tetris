@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib>
 #include <time.h>
 
 #include "game.hpp"
@@ -104,6 +105,39 @@ void Game::HandleEvents()
         if (e.type == SDL_QUIT)
         {
             Quit();
+        }
+        else if (e.type == SDL_KEYDOWN)
+        {
+            if (SDL_IsTextInputActive())
+            {
+                if (e.key.keysym.sym == SDLK_RETURN && m_game.highscoreName.length() > 0)
+                {
+                    m_game.highscores->WriteRecord(m_game.highscoreName.c_str(), m_game.stats->GetPoints());
+                    SDL_StopTextInput();
+                }
+                else if(e.key.keysym.sym == SDLK_BACKSPACE && m_game.highscoreName.length() > 0)
+                {
+                    m_game.highscoreName.pop_back();
+                }
+                else if(e.key.keysym.sym == SDLK_c && SDL_GetModState() & KMOD_CTRL)
+                {
+                    SDL_SetClipboardText(m_game.highscoreName.c_str());
+                }
+                else if(e.key.keysym.sym == SDLK_v && SDL_GetModState() & KMOD_CTRL)
+                {
+                    m_game.highscoreName= SDL_GetClipboardText();
+                }
+            }
+        }
+        else if (e.type == SDL_TEXTINPUT)
+        {
+            if (!(SDL_GetModState() & KMOD_CTRL && (e.text.text[ 0 ] == 'c' || e.text.text[ 0 ] == 'C' || e.text.text[ 0 ] == 'v' || e.text.text[ 0 ] == 'V')))
+            {
+                if (m_game.highscoreName.length() < 12)
+                {
+                    m_game.highscoreName += e.text.text;
+                }
+            }
         }
     }
 }
@@ -219,6 +253,12 @@ void Game::UpdateGamePlay()
     
     if (!m_game.board->IsRowEmpty(0))
     {
+        i32 score = m_game.stats->GetPoints();
+        if (m_game.highscores->IsHighscore(score))
+        {
+            SDL_StartTextInput();
+        }
+        
         m_game.phase = GAME_PHASE_OVER;
     }
 }
@@ -351,7 +391,7 @@ void Game::RenderGameOver(i32 t_xOffset, i32 t_yOffset)
     i32 yPos = (BOARD_ROWS * BOARD_GRID_SIZE + t_yOffset) / 2;
     Graphics::Instance()->DrawText(m_font, "GAME OVER", xPos, yPos, TEXT_ALIGN_CENTER, Palette::s_highlightColor);
     
-    Graphics::Instance()->DrawFillRect(0, t_yOffset, BOARD_COLS * BOARD_GRID_SIZE,(BOARD_ROWS - BOARD_VISIBLE_ROWS) * BOARD_GRID_SIZE, Palette::s_backColor);
+    Graphics::Instance()->DrawFillRect(0 , t_yOffset, BOARD_COLS * BOARD_GRID_SIZE,(BOARD_ROWS - BOARD_VISIBLE_ROWS) * BOARD_GRID_SIZE, Palette::s_backColor);
     RenderGameStats(0, 0);
 }
 

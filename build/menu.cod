@@ -10,14 +10,21 @@ INCLUDELIB LIBCMT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG45929 DB	'Play', 00H
+$SG56198 DB	'Play', 00H
 	ORG $+3
-$SG45930 DB	'Highscores', 00H
+$SG56199 DB	'Highscores', 00H
 	ORG $+1
-$SG45931 DB	'Info', 00H
+$SG56200 DB	'Info', 00H
 	ORG $+3
-$SG45932 DB	'Exit', 00H
+$SG56201 DB	'Exit', 00H
 CONST	ENDS
+PUBLIC	??2@YAPAXIPAX@Z					; operator new
+PUBLIC	?max@?$numeric_limits@H@std@@SAHXZ		; std::numeric_limits<int>::max
+PUBLIC	?_Orphan_all@_Container_base0@std@@QAEXXZ	; std::_Container_base0::_Orphan_all
+PUBLIC	?_Swap_all@_Container_base0@std@@QAEXAAU12@@Z	; std::_Container_base0::_Swap_all
+PUBLIC	?_Allocate@_Default_allocate_traits@std@@SAPAXI@Z ; std::_Default_allocate_traits::_Allocate
+PUBLIC	?_Adjust_manually_vector_aligned@std@@YAXAAPAXAAI@Z ; std::_Adjust_manually_vector_aligned
+PUBLIC	??$_Min_value@I@std@@YAABIABI0@Z		; std::_Min_value<unsigned int>
 PUBLIC	??0Color@core@@QAE@ABV01@@Z			; core::Color::Color
 PUBLIC	??0Color@core@@QAE@EEE@Z			; core::Color::Color
 PUBLIC	??0Button@ui@core@@QAE@HHPAU_TTF_Font@@PBDW4ButtonState@12@VColor@2@33@Z ; core::ui::Button::Button
@@ -26,12 +33,6 @@ PUBLIC	?GetHeight@Button@ui@core@@QBEHXZ		; core::ui::Button::GetHeight
 PUBLIC	?SetState@Button@ui@core@@QAEXW4ButtonState@23@@Z ; core::ui::Button::SetState
 PUBLIC	??0Button@ui@core@@QAE@ABV012@@Z		; core::ui::Button::Button
 PUBLIC	??0Button@ui@core@@QAE@$$QAV012@@Z		; core::ui::Button::Button
-PUBLIC	??2@YAPAXIPAX@Z					; operator new
-PUBLIC	?max@?$numeric_limits@H@std@@SAHXZ		; std::numeric_limits<int>::max
-PUBLIC	?_Orphan_all@_Container_base0@std@@QAEXXZ	; std::_Container_base0::_Orphan_all
-PUBLIC	?_Swap_all@_Container_base0@std@@QAEXAAU12@@Z	; std::_Container_base0::_Swap_all
-PUBLIC	?_Allocate@_Default_allocate_traits@std@@SAPAXI@Z ; std::_Default_allocate_traits::_Allocate
-PUBLIC	?_Adjust_manually_vector_aligned@std@@YAXAAPAXAAI@Z ; std::_Adjust_manually_vector_aligned
 PUBLIC	??0?$allocator@VButton@ui@core@@@std@@QAE@XZ	; std::allocator<core::ui::Button>::allocator<core::ui::Button>
 PUBLIC	?deallocate@?$allocator@VButton@ui@core@@@std@@QAEXQAVButton@ui@core@@I@Z ; std::allocator<core::ui::Button>::deallocate
 PUBLIC	?allocate@?$allocator@VButton@ui@core@@@std@@QAEPAVButton@ui@core@@I@Z ; std::allocator<core::ui::Button>::allocate
@@ -89,14 +90,14 @@ PUBLIC	??$addressof@V?$vector@VButton@ui@core@@V?$allocator@VButton@ui@core@@@st
 PUBLIC	??$move@AAV?$vector@VButton@ui@core@@V?$allocator@VButton@ui@core@@@std@@@std@@@std@@YA$$QAV?$vector@VButton@ui@core@@V?$allocator@VButton@ui@core@@@std@@@0@AAV10@@Z ; std::move<std::vector<core::ui::Button,std::allocator<core::ui::Button> > &>
 PUBLIC	??$_Pocma@V?$allocator@VButton@ui@core@@@std@@@std@@YAXAAV?$allocator@VButton@ui@core@@@0@0@Z ; std::_Pocma<std::allocator<core::ui::Button> >
 PUBLIC	??$?0$$V@?$_Compressed_pair@V?$allocator@VButton@ui@core@@@std@@V?$_Vector_val@U?$_Simple_types@VButton@ui@core@@@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z ; std::_Compressed_pair<std::allocator<core::ui::Button>,std::_Vector_val<std::_Simple_types<core::ui::Button> >,1>::_Compressed_pair<std::allocator<core::ui::Button>,std::_Vector_val<std::_Simple_types<core::ui::Button> >,1><>
-PUBLIC	??$_Destroy_range@V?$allocator@VButton@ui@core@@@std@@@std@@YAXPAVButton@ui@core@@0AAV?$allocator@VButton@ui@core@@@0@@Z ; std::_Destroy_range<std::allocator<core::ui::Button> >
+PUBLIC	??$_Allocate@$07U_Default_allocate_traits@std@@$0A@@std@@YAPAXI@Z ; std::_Allocate<8,std::_Default_allocate_traits,0>
 PUBLIC	??$_Deallocate@$07$0A@@std@@YAXPAXI@Z		; std::_Deallocate<8,0>
+PUBLIC	??$_Destroy_range@V?$allocator@VButton@ui@core@@@std@@@std@@YAXPAVButton@ui@core@@0AAV?$allocator@VButton@ui@core@@@0@@Z ; std::_Destroy_range<std::allocator<core::ui::Button> >
 PUBLIC	??$_Pocma@V?$allocator@VButton@ui@core@@@std@@@std@@YAXAAV?$allocator@VButton@ui@core@@@0@0U?$integral_constant@_N$00@0@@Z ; std::_Pocma<std::allocator<core::ui::Button> >
+PUBLIC	??$_Allocate_manually_vector_aligned@U_Default_allocate_traits@std@@@std@@YAPAXI@Z ; std::_Allocate_manually_vector_aligned<std::_Default_allocate_traits>
 PUBLIC	??$_Destroy_range1@V?$allocator@VButton@ui@core@@@std@@@std@@YAXPAVButton@ui@core@@0AAV?$allocator@VButton@ui@core@@@0@U?$integral_constant@_N$00@0@@Z ; std::_Destroy_range1<std::allocator<core::ui::Button> >
 PUBLIC	??$_Uninitialized_move@PAVButton@ui@core@@PAV123@V?$allocator@VButton@ui@core@@@std@@@std@@YAPAVButton@ui@core@@QAV123@0PAV123@AAV?$allocator@VButton@ui@core@@@0@@Z ; std::_Uninitialized_move<core::ui::Button *,core::ui::Button *,std::allocator<core::ui::Button> >
-PUBLIC	??$_Min_value@I@std@@YAABIABI0@Z		; std::_Min_value<unsigned int>
 PUBLIC	??$_Get_size_of_n@$0CA@@std@@YAII@Z		; std::_Get_size_of_n<32>
-PUBLIC	??$_Allocate@$07U_Default_allocate_traits@std@@$0A@@std@@YAPAXI@Z ; std::_Allocate<8,std::_Default_allocate_traits,0>
 PUBLIC	??$_Uninitialized_copy@PAVButton@ui@core@@PAV123@V?$allocator@VButton@ui@core@@@std@@@std@@YAPAVButton@ui@core@@QAV123@0PAV123@AAV?$allocator@VButton@ui@core@@@0@@Z ; std::_Uninitialized_copy<core::ui::Button *,core::ui::Button *,std::allocator<core::ui::Button> >
 PUBLIC	??$move@AAV?$allocator@VButton@ui@core@@@std@@@std@@YA$$QAV?$allocator@VButton@ui@core@@@0@AAV10@@Z ; std::move<std::allocator<core::ui::Button> &>
 PUBLIC	??$_Get_unwrapped@VButton@ui@core@@@std@@YAPAVButton@ui@core@@QAV123@@Z ; std::_Get_unwrapped<core::ui::Button>
@@ -107,7 +108,6 @@ PUBLIC	??$_Ptr_move_cat@VButton@ui@core@@V123@@std@@YA?AU_General_ptr_iterator_t
 PUBLIC	??$_Uninitialized_move_al_unchecked@PAVButton@ui@core@@PAV123@V?$allocator@VButton@ui@core@@@std@@@std@@YAPAVButton@ui@core@@PAV123@QAV123@1AAV?$allocator@VButton@ui@core@@@0@U_General_ptr_iterator_tag@0@U_Unused_parameter@0@@Z ; std::_Uninitialized_move_al_unchecked<core::ui::Button *,core::ui::Button *,std::allocator<core::ui::Button> >
 PUBLIC	??$?0U?$integral_constant@_N$00@std@@@_Unused_parameter@std@@QAE@$$QAU?$integral_constant@_N$00@1@@Z ; std::_Unused_parameter::_Unused_parameter<std::integral_constant<bool,1> >
 PUBLIC	??$_Seek_wrapped@VButton@ui@core@@@std@@YAXAAPAVButton@ui@core@@QAV123@@Z ; std::_Seek_wrapped<core::ui::Button>
-PUBLIC	??$_Allocate_manually_vector_aligned@U_Default_allocate_traits@std@@@std@@YAPAXI@Z ; std::_Allocate_manually_vector_aligned<std::_Default_allocate_traits>
 PUBLIC	??$_Ptr_copy_cat@VButton@ui@core@@V123@@std@@YA?AU_General_ptr_iterator_tag@0@ABQAVButton@ui@core@@0@Z ; std::_Ptr_copy_cat<core::ui::Button,core::ui::Button>
 PUBLIC	??$_Uninitialized_copy_al_unchecked@PAVButton@ui@core@@PAV123@V?$allocator@VButton@ui@core@@@std@@@std@@YAPAVButton@ui@core@@PAV123@QAV123@1AAV?$allocator@VButton@ui@core@@@0@U_General_ptr_iterator_tag@0@U_Unused_parameter@0@@Z ; std::_Uninitialized_copy_al_unchecked<core::ui::Button *,core::ui::Button *,std::allocator<core::ui::Button> >
 PUBLIC	??0?$_Uninitialized_backout_al@PAVButton@ui@core@@V?$allocator@VButton@ui@core@@@std@@@std@@QAE@PAVButton@ui@core@@AAV?$allocator@VButton@ui@core@@@1@@Z ; std::_Uninitialized_backout_al<core::ui::Button *,std::allocator<core::ui::Button> >::_Uninitialized_backout_al<core::ui::Button *,std::allocator<core::ui::Button> >
@@ -123,8 +123,8 @@ PUBLIC	__xmm@41f00000000000000000000000000000
 EXTRN	??2@YAPAXI@Z:PROC				; operator new
 EXTRN	??3@YAXPAXI@Z:PROC				; operator delete
 EXTRN	__invalid_parameter_noinfo_noreturn:PROC
-EXTRN	?Render@Button@ui@core@@QAEXHH@Z:PROC		; core::ui::Button::Render
 EXTRN	?_Xlength_error@std@@YAXPBD@Z:PROC		; std::_Xlength_error
+EXTRN	?Render@Button@ui@core@@QAEXHH@Z:PROC		; core::ui::Button::Render
 EXTRN	@__security_check_cookie@4:PROC
 EXTRN	__CxxThrowException@8:PROC
 EXTRN	___CxxFrameHandler3:PROC
@@ -689,98 +689,6 @@ ___formal$ = 12						; size = 4
 ??$_Ptr_copy_cat@VButton@ui@core@@V123@@std@@YA?AU_General_ptr_iterator_tag@0@ABQAVButton@ui@core@@0@Z ENDP ; std::_Ptr_copy_cat<core::ui::Button,core::ui::Button>
 _TEXT	ENDS
 ; Function compile flags: /Odtp
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xmemory0
-;	COMDAT ??$_Allocate_manually_vector_aligned@U_Default_allocate_traits@std@@@std@@YAPAXI@Z
-_TEXT	SEGMENT
-__Ptr$ = -12						; size = 4
-__Ptr_container$ = -8					; size = 4
-__Block_size$ = -4					; size = 4
-__Bytes$ = 8						; size = 4
-??$_Allocate_manually_vector_aligned@U_Default_allocate_traits@std@@@std@@YAPAXI@Z PROC ; std::_Allocate_manually_vector_aligned<std::_Default_allocate_traits>, COMDAT
-
-; 92   : 	{	// allocate _Bytes manually aligned to at least _Big_allocation_alignment
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	83 ec 0c	 sub	 esp, 12			; 0000000cH
-
-; 93   : 	size_t _Block_size = _Non_user_size + _Bytes;
-
-  00006	8b 45 08	 mov	 eax, DWORD PTR __Bytes$[ebp]
-  00009	83 c0 23	 add	 eax, 35			; 00000023H
-  0000c	89 45 fc	 mov	 DWORD PTR __Block_size$[ebp], eax
-
-; 94   : 	if (_Block_size <= _Bytes)
-
-  0000f	8b 4d fc	 mov	 ecx, DWORD PTR __Block_size$[ebp]
-  00012	3b 4d 08	 cmp	 ecx, DWORD PTR __Bytes$[ebp]
-  00015	77 07		 ja	 SHORT $LN8@Allocate_m
-
-; 95   : 		{	// add overflow, try allocating all of memory and assume the
-; 96   : 			// allocation function will throw bad_alloc
-; 97   : 		_Block_size = static_cast<size_t>(-1);
-
-  00017	c7 45 fc ff ff
-	ff ff		 mov	 DWORD PTR __Block_size$[ebp], -1
-$LN8@Allocate_m:
-
-; 98   : 		}
-; 99   : 
-; 100  : 	const uintptr_t _Ptr_container = reinterpret_cast<uintptr_t>(_Traits::_Allocate(_Block_size));
-
-  0001e	8b 55 fc	 mov	 edx, DWORD PTR __Block_size$[ebp]
-  00021	52		 push	 edx
-  00022	e8 00 00 00 00	 call	 ?_Allocate@_Default_allocate_traits@std@@SAPAXI@Z ; std::_Default_allocate_traits::_Allocate
-  00027	83 c4 04	 add	 esp, 4
-  0002a	89 45 f8	 mov	 DWORD PTR __Ptr_container$[ebp], eax
-$LN4@Allocate_m:
-
-; 101  : 	_STL_VERIFY(_Ptr_container != 0, "invalid argument");	// validate even in release since we're doing p[-1]
-
-  0002d	83 7d f8 00	 cmp	 DWORD PTR __Ptr_container$[ebp], 0
-  00031	74 02		 je	 SHORT $LN7@Allocate_m
-  00033	eb 09		 jmp	 SHORT $LN2@Allocate_m
-$LN7@Allocate_m:
-  00035	e8 00 00 00 00	 call	 __invalid_parameter_noinfo_noreturn
-  0003a	33 c0		 xor	 eax, eax
-  0003c	75 f7		 jne	 SHORT $LN7@Allocate_m
-$LN2@Allocate_m:
-  0003e	33 c9		 xor	 ecx, ecx
-  00040	75 eb		 jne	 SHORT $LN4@Allocate_m
-
-; 102  : 	void * const _Ptr = reinterpret_cast<void *>((_Ptr_container + _Non_user_size)
-; 103  : 		& ~(_Big_allocation_alignment - 1));
-
-  00042	8b 55 f8	 mov	 edx, DWORD PTR __Ptr_container$[ebp]
-  00045	83 c2 23	 add	 edx, 35			; 00000023H
-  00048	83 e2 e0	 and	 edx, -32		; ffffffe0H
-  0004b	89 55 f4	 mov	 DWORD PTR __Ptr$[ebp], edx
-
-; 104  : 	static_cast<uintptr_t *>(_Ptr)[-1] = _Ptr_container;
-
-  0004e	b8 04 00 00 00	 mov	 eax, 4
-  00053	6b c8 ff	 imul	 ecx, eax, -1
-  00056	8b 55 f4	 mov	 edx, DWORD PTR __Ptr$[ebp]
-  00059	8b 45 f8	 mov	 eax, DWORD PTR __Ptr_container$[ebp]
-  0005c	89 04 0a	 mov	 DWORD PTR [edx+ecx], eax
-
-; 105  : 
-; 106  :   #ifdef _DEBUG
-; 107  : 	static_cast<uintptr_t *>(_Ptr)[-2] = _Big_allocation_sentinel;
-; 108  :   #endif /* _DEBUG */
-; 109  : 	return (_Ptr);
-
-  0005f	8b 45 f4	 mov	 eax, DWORD PTR __Ptr$[ebp]
-$LN11@Allocate_m:
-
-; 110  : 	}
-
-  00062	8b e5		 mov	 esp, ebp
-  00064	5d		 pop	 ebp
-  00065	c3		 ret	 0
-??$_Allocate_manually_vector_aligned@U_Default_allocate_traits@std@@@std@@YAPAXI@Z ENDP ; std::_Allocate_manually_vector_aligned<std::_Default_allocate_traits>
-_TEXT	ENDS
-; Function compile flags: /Odtp
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xutility
 ;	COMDAT ??$_Seek_wrapped@VButton@ui@core@@@std@@YAXAAPAVButton@ui@core@@QAV123@@Z
 _TEXT	SEGMENT
@@ -1192,66 +1100,6 @@ __Al$ = 20						; size = 4
 _TEXT	ENDS
 ; Function compile flags: /Odtp
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xmemory0
-;	COMDAT ??$_Allocate@$07U_Default_allocate_traits@std@@$0A@@std@@YAPAXI@Z
-_TEXT	SEGMENT
-__Bytes$ = 8						; size = 4
-??$_Allocate@$07U_Default_allocate_traits@std@@$0A@@std@@YAPAXI@Z PROC ; std::_Allocate<8,std::_Default_allocate_traits,0>, COMDAT
-
-; 180  : 	{	// allocate _Bytes when !_HAS_ALIGNED_NEW || _Align <= __STDCPP_DEFAULT_NEW_ALIGNMENT__
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-
-; 181  :  #if defined(_M_IX86) || defined(_M_X64)
-; 182  : 	if (_Bytes >= _Big_allocation_threshold)
-
-  00003	81 7d 08 00 10
-	00 00		 cmp	 DWORD PTR __Bytes$[ebp], 4096 ; 00001000H
-  0000a	72 0e		 jb	 SHORT $LN2@Allocate
-
-; 183  : 		{	// boost the alignment of big allocations to help autovectorization
-; 184  : 		return (_Allocate_manually_vector_aligned<_Traits>(_Bytes));
-
-  0000c	8b 45 08	 mov	 eax, DWORD PTR __Bytes$[ebp]
-  0000f	50		 push	 eax
-  00010	e8 00 00 00 00	 call	 ??$_Allocate_manually_vector_aligned@U_Default_allocate_traits@std@@@std@@YAPAXI@Z ; std::_Allocate_manually_vector_aligned<std::_Default_allocate_traits>
-  00015	83 c4 04	 add	 esp, 4
-  00018	eb 16		 jmp	 SHORT $LN1@Allocate
-$LN2@Allocate:
-
-; 185  : 		}
-; 186  :  #endif /* defined(_M_IX86) || defined(_M_X64) */
-; 187  : 
-; 188  : 	if (_Bytes != 0)
-
-  0001a	83 7d 08 00	 cmp	 DWORD PTR __Bytes$[ebp], 0
-  0001e	74 0e		 je	 SHORT $LN3@Allocate
-
-; 189  : 		{
-; 190  : 		return (_Traits::_Allocate(_Bytes));
-
-  00020	8b 4d 08	 mov	 ecx, DWORD PTR __Bytes$[ebp]
-  00023	51		 push	 ecx
-  00024	e8 00 00 00 00	 call	 ?_Allocate@_Default_allocate_traits@std@@SAPAXI@Z ; std::_Default_allocate_traits::_Allocate
-  00029	83 c4 04	 add	 esp, 4
-  0002c	eb 02		 jmp	 SHORT $LN1@Allocate
-$LN3@Allocate:
-
-; 191  : 		}
-; 192  : 
-; 193  : 	return (nullptr);
-
-  0002e	33 c0		 xor	 eax, eax
-$LN1@Allocate:
-
-; 194  : 	}
-
-  00030	5d		 pop	 ebp
-  00031	c3		 ret	 0
-??$_Allocate@$07U_Default_allocate_traits@std@@$0A@@std@@YAPAXI@Z ENDP ; std::_Allocate<8,std::_Default_allocate_traits,0>
-_TEXT	ENDS
-; Function compile flags: /Odtp
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xmemory0
 ;	COMDAT ??$_Get_size_of_n@$0CA@@std@@YAII@Z
 _TEXT	SEGMENT
 __Max_possible$ = -8					; size = 4
@@ -1302,47 +1150,6 @@ $LN2@Get_size_o:
   0002b	5d		 pop	 ebp
   0002c	c3		 ret	 0
 ??$_Get_size_of_n@$0CA@@std@@YAII@Z ENDP		; std::_Get_size_of_n<32>
-_TEXT	ENDS
-; Function compile flags: /Odtp
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\utility
-;	COMDAT ??$_Min_value@I@std@@YAABIABI0@Z
-_TEXT	SEGMENT
-$T1 = -8						; size = 4
-tv65 = -4						; size = 4
-__Left$ = 8						; size = 4
-__Right$ = 12						; size = 4
-??$_Min_value@I@std@@YAABIABI0@Z PROC			; std::_Min_value<unsigned int>, COMDAT
-
-; 23   : 	{	// return smaller of _Left and _Right
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	83 ec 08	 sub	 esp, 8
-
-; 24   : 	return (_Right < _Left ? _Right : _Left);
-
-  00006	8b 45 0c	 mov	 eax, DWORD PTR __Right$[ebp]
-  00009	8b 4d 08	 mov	 ecx, DWORD PTR __Left$[ebp]
-  0000c	8b 10		 mov	 edx, DWORD PTR [eax]
-  0000e	3b 11		 cmp	 edx, DWORD PTR [ecx]
-  00010	73 08		 jae	 SHORT $LN3@Min_value
-  00012	8b 45 0c	 mov	 eax, DWORD PTR __Right$[ebp]
-  00015	89 45 fc	 mov	 DWORD PTR tv65[ebp], eax
-  00018	eb 06		 jmp	 SHORT $LN4@Min_value
-$LN3@Min_value:
-  0001a	8b 4d 08	 mov	 ecx, DWORD PTR __Left$[ebp]
-  0001d	89 4d fc	 mov	 DWORD PTR tv65[ebp], ecx
-$LN4@Min_value:
-  00020	8b 55 fc	 mov	 edx, DWORD PTR tv65[ebp]
-  00023	89 55 f8	 mov	 DWORD PTR $T1[ebp], edx
-  00026	8b 45 f8	 mov	 eax, DWORD PTR $T1[ebp]
-
-; 25   : 	}
-
-  00029	8b e5		 mov	 esp, ebp
-  0002b	5d		 pop	 ebp
-  0002c	c3		 ret	 0
-??$_Min_value@I@std@@YAABIABI0@Z ENDP			; std::_Min_value<unsigned int>
 _TEXT	ENDS
 ; Function compile flags: /Odtp
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xmemory
@@ -1467,6 +1274,98 @@ ___formal$ = 20						; size = 1
 _TEXT	ENDS
 ; Function compile flags: /Odtp
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xmemory0
+;	COMDAT ??$_Allocate_manually_vector_aligned@U_Default_allocate_traits@std@@@std@@YAPAXI@Z
+_TEXT	SEGMENT
+__Ptr$ = -12						; size = 4
+__Ptr_container$ = -8					; size = 4
+__Block_size$ = -4					; size = 4
+__Bytes$ = 8						; size = 4
+??$_Allocate_manually_vector_aligned@U_Default_allocate_traits@std@@@std@@YAPAXI@Z PROC ; std::_Allocate_manually_vector_aligned<std::_Default_allocate_traits>, COMDAT
+
+; 92   : 	{	// allocate _Bytes manually aligned to at least _Big_allocation_alignment
+
+  00000	55		 push	 ebp
+  00001	8b ec		 mov	 ebp, esp
+  00003	83 ec 0c	 sub	 esp, 12			; 0000000cH
+
+; 93   : 	size_t _Block_size = _Non_user_size + _Bytes;
+
+  00006	8b 45 08	 mov	 eax, DWORD PTR __Bytes$[ebp]
+  00009	83 c0 23	 add	 eax, 35			; 00000023H
+  0000c	89 45 fc	 mov	 DWORD PTR __Block_size$[ebp], eax
+
+; 94   : 	if (_Block_size <= _Bytes)
+
+  0000f	8b 4d fc	 mov	 ecx, DWORD PTR __Block_size$[ebp]
+  00012	3b 4d 08	 cmp	 ecx, DWORD PTR __Bytes$[ebp]
+  00015	77 07		 ja	 SHORT $LN8@Allocate_m
+
+; 95   : 		{	// add overflow, try allocating all of memory and assume the
+; 96   : 			// allocation function will throw bad_alloc
+; 97   : 		_Block_size = static_cast<size_t>(-1);
+
+  00017	c7 45 fc ff ff
+	ff ff		 mov	 DWORD PTR __Block_size$[ebp], -1
+$LN8@Allocate_m:
+
+; 98   : 		}
+; 99   : 
+; 100  : 	const uintptr_t _Ptr_container = reinterpret_cast<uintptr_t>(_Traits::_Allocate(_Block_size));
+
+  0001e	8b 55 fc	 mov	 edx, DWORD PTR __Block_size$[ebp]
+  00021	52		 push	 edx
+  00022	e8 00 00 00 00	 call	 ?_Allocate@_Default_allocate_traits@std@@SAPAXI@Z ; std::_Default_allocate_traits::_Allocate
+  00027	83 c4 04	 add	 esp, 4
+  0002a	89 45 f8	 mov	 DWORD PTR __Ptr_container$[ebp], eax
+$LN4@Allocate_m:
+
+; 101  : 	_STL_VERIFY(_Ptr_container != 0, "invalid argument");	// validate even in release since we're doing p[-1]
+
+  0002d	83 7d f8 00	 cmp	 DWORD PTR __Ptr_container$[ebp], 0
+  00031	74 02		 je	 SHORT $LN7@Allocate_m
+  00033	eb 09		 jmp	 SHORT $LN2@Allocate_m
+$LN7@Allocate_m:
+  00035	e8 00 00 00 00	 call	 __invalid_parameter_noinfo_noreturn
+  0003a	33 c0		 xor	 eax, eax
+  0003c	75 f7		 jne	 SHORT $LN7@Allocate_m
+$LN2@Allocate_m:
+  0003e	33 c9		 xor	 ecx, ecx
+  00040	75 eb		 jne	 SHORT $LN4@Allocate_m
+
+; 102  : 	void * const _Ptr = reinterpret_cast<void *>((_Ptr_container + _Non_user_size)
+; 103  : 		& ~(_Big_allocation_alignment - 1));
+
+  00042	8b 55 f8	 mov	 edx, DWORD PTR __Ptr_container$[ebp]
+  00045	83 c2 23	 add	 edx, 35			; 00000023H
+  00048	83 e2 e0	 and	 edx, -32		; ffffffe0H
+  0004b	89 55 f4	 mov	 DWORD PTR __Ptr$[ebp], edx
+
+; 104  : 	static_cast<uintptr_t *>(_Ptr)[-1] = _Ptr_container;
+
+  0004e	b8 04 00 00 00	 mov	 eax, 4
+  00053	6b c8 ff	 imul	 ecx, eax, -1
+  00056	8b 55 f4	 mov	 edx, DWORD PTR __Ptr$[ebp]
+  00059	8b 45 f8	 mov	 eax, DWORD PTR __Ptr_container$[ebp]
+  0005c	89 04 0a	 mov	 DWORD PTR [edx+ecx], eax
+
+; 105  : 
+; 106  :   #ifdef _DEBUG
+; 107  : 	static_cast<uintptr_t *>(_Ptr)[-2] = _Big_allocation_sentinel;
+; 108  :   #endif /* _DEBUG */
+; 109  : 	return (_Ptr);
+
+  0005f	8b 45 f4	 mov	 eax, DWORD PTR __Ptr$[ebp]
+$LN11@Allocate_m:
+
+; 110  : 	}
+
+  00062	8b e5		 mov	 esp, ebp
+  00064	5d		 pop	 ebp
+  00065	c3		 ret	 0
+??$_Allocate_manually_vector_aligned@U_Default_allocate_traits@std@@@std@@YAPAXI@Z ENDP ; std::_Allocate_manually_vector_aligned<std::_Default_allocate_traits>
+_TEXT	ENDS
+; Function compile flags: /Odtp
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xmemory0
 ;	COMDAT ??$_Pocma@V?$allocator@VButton@ui@core@@@std@@@std@@YAXAAV?$allocator@VButton@ui@core@@@0@0U?$integral_constant@_N$00@0@@Z
 _TEXT	SEGMENT
 __Left$ = 8						; size = 4
@@ -1491,6 +1390,49 @@ ___formal$ = 16						; size = 1
   0000f	5d		 pop	 ebp
   00010	c3		 ret	 0
 ??$_Pocma@V?$allocator@VButton@ui@core@@@std@@@std@@YAXAAV?$allocator@VButton@ui@core@@@0@0U?$integral_constant@_N$00@0@@Z ENDP ; std::_Pocma<std::allocator<core::ui::Button> >
+_TEXT	ENDS
+; Function compile flags: /Odtp
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xmemory0
+;	COMDAT ??$_Destroy_range@V?$allocator@VButton@ui@core@@@std@@@std@@YAXPAVButton@ui@core@@0AAV?$allocator@VButton@ui@core@@@0@@Z
+_TEXT	SEGMENT
+$T1 = -1						; size = 1
+__First$ = 8						; size = 4
+__Last$ = 12						; size = 4
+__Al$ = 16						; size = 4
+??$_Destroy_range@V?$allocator@VButton@ui@core@@@std@@@std@@YAXPAVButton@ui@core@@0AAV?$allocator@VButton@ui@core@@@0@@Z PROC ; std::_Destroy_range<std::allocator<core::ui::Button> >, COMDAT
+
+; 1154 : 	{	// destroy [_First, _Last), choose optimization
+
+  00000	55		 push	 ebp
+  00001	8b ec		 mov	 ebp, esp
+  00003	51		 push	 ecx
+
+; 1155 : 		// note that this is an optimization for debug mode codegen;
+; 1156 : 		// in release mode the BE removes all of this
+; 1157 : 	using _Val = typename _Alloc::value_type;
+; 1158 : 	_Destroy_range1(_First, _Last, _Al, bool_constant<conjunction_v<
+
+  00004	33 c0		 xor	 eax, eax
+  00006	88 45 ff	 mov	 BYTE PTR $T1[ebp], al
+  00009	0f b6 4d ff	 movzx	 ecx, BYTE PTR $T1[ebp]
+  0000d	51		 push	 ecx
+  0000e	8b 55 10	 mov	 edx, DWORD PTR __Al$[ebp]
+  00011	52		 push	 edx
+  00012	8b 45 0c	 mov	 eax, DWORD PTR __Last$[ebp]
+  00015	50		 push	 eax
+  00016	8b 4d 08	 mov	 ecx, DWORD PTR __First$[ebp]
+  00019	51		 push	 ecx
+  0001a	e8 00 00 00 00	 call	 ??$_Destroy_range1@V?$allocator@VButton@ui@core@@@std@@@std@@YAXPAVButton@ui@core@@0AAV?$allocator@VButton@ui@core@@@0@U?$integral_constant@_N$00@0@@Z ; std::_Destroy_range1<std::allocator<core::ui::Button> >
+  0001f	83 c4 10	 add	 esp, 16			; 00000010H
+
+; 1159 : 		is_trivially_destructible<_Val>,
+; 1160 : 		_Uses_default_destroy<_Alloc, _Val *>>>{});
+; 1161 : 	}
+
+  00022	8b e5		 mov	 esp, ebp
+  00024	5d		 pop	 ebp
+  00025	c3		 ret	 0
+??$_Destroy_range@V?$allocator@VButton@ui@core@@@std@@@std@@YAXPAVButton@ui@core@@0AAV?$allocator@VButton@ui@core@@@0@@Z ENDP ; std::_Destroy_range<std::allocator<core::ui::Button> >
 _TEXT	ENDS
 ; Function compile flags: /Odtp
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xmemory0
@@ -1543,46 +1485,63 @@ $LN2@Deallocate:
 _TEXT	ENDS
 ; Function compile flags: /Odtp
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xmemory0
-;	COMDAT ??$_Destroy_range@V?$allocator@VButton@ui@core@@@std@@@std@@YAXPAVButton@ui@core@@0AAV?$allocator@VButton@ui@core@@@0@@Z
+;	COMDAT ??$_Allocate@$07U_Default_allocate_traits@std@@$0A@@std@@YAPAXI@Z
 _TEXT	SEGMENT
-$T1 = -1						; size = 1
-__First$ = 8						; size = 4
-__Last$ = 12						; size = 4
-__Al$ = 16						; size = 4
-??$_Destroy_range@V?$allocator@VButton@ui@core@@@std@@@std@@YAXPAVButton@ui@core@@0AAV?$allocator@VButton@ui@core@@@0@@Z PROC ; std::_Destroy_range<std::allocator<core::ui::Button> >, COMDAT
+__Bytes$ = 8						; size = 4
+??$_Allocate@$07U_Default_allocate_traits@std@@$0A@@std@@YAPAXI@Z PROC ; std::_Allocate<8,std::_Default_allocate_traits,0>, COMDAT
 
-; 1154 : 	{	// destroy [_First, _Last), choose optimization
+; 180  : 	{	// allocate _Bytes when !_HAS_ALIGNED_NEW || _Align <= __STDCPP_DEFAULT_NEW_ALIGNMENT__
 
   00000	55		 push	 ebp
   00001	8b ec		 mov	 ebp, esp
-  00003	51		 push	 ecx
 
-; 1155 : 		// note that this is an optimization for debug mode codegen;
-; 1156 : 		// in release mode the BE removes all of this
-; 1157 : 	using _Val = typename _Alloc::value_type;
-; 1158 : 	_Destroy_range1(_First, _Last, _Al, bool_constant<conjunction_v<
+; 181  :  #if defined(_M_IX86) || defined(_M_X64)
+; 182  : 	if (_Bytes >= _Big_allocation_threshold)
 
-  00004	33 c0		 xor	 eax, eax
-  00006	88 45 ff	 mov	 BYTE PTR $T1[ebp], al
-  00009	0f b6 4d ff	 movzx	 ecx, BYTE PTR $T1[ebp]
-  0000d	51		 push	 ecx
-  0000e	8b 55 10	 mov	 edx, DWORD PTR __Al$[ebp]
-  00011	52		 push	 edx
-  00012	8b 45 0c	 mov	 eax, DWORD PTR __Last$[ebp]
-  00015	50		 push	 eax
-  00016	8b 4d 08	 mov	 ecx, DWORD PTR __First$[ebp]
-  00019	51		 push	 ecx
-  0001a	e8 00 00 00 00	 call	 ??$_Destroy_range1@V?$allocator@VButton@ui@core@@@std@@@std@@YAXPAVButton@ui@core@@0AAV?$allocator@VButton@ui@core@@@0@U?$integral_constant@_N$00@0@@Z ; std::_Destroy_range1<std::allocator<core::ui::Button> >
-  0001f	83 c4 10	 add	 esp, 16			; 00000010H
+  00003	81 7d 08 00 10
+	00 00		 cmp	 DWORD PTR __Bytes$[ebp], 4096 ; 00001000H
+  0000a	72 0e		 jb	 SHORT $LN2@Allocate
 
-; 1159 : 		is_trivially_destructible<_Val>,
-; 1160 : 		_Uses_default_destroy<_Alloc, _Val *>>>{});
-; 1161 : 	}
+; 183  : 		{	// boost the alignment of big allocations to help autovectorization
+; 184  : 		return (_Allocate_manually_vector_aligned<_Traits>(_Bytes));
 
-  00022	8b e5		 mov	 esp, ebp
-  00024	5d		 pop	 ebp
-  00025	c3		 ret	 0
-??$_Destroy_range@V?$allocator@VButton@ui@core@@@std@@@std@@YAXPAVButton@ui@core@@0AAV?$allocator@VButton@ui@core@@@0@@Z ENDP ; std::_Destroy_range<std::allocator<core::ui::Button> >
+  0000c	8b 45 08	 mov	 eax, DWORD PTR __Bytes$[ebp]
+  0000f	50		 push	 eax
+  00010	e8 00 00 00 00	 call	 ??$_Allocate_manually_vector_aligned@U_Default_allocate_traits@std@@@std@@YAPAXI@Z ; std::_Allocate_manually_vector_aligned<std::_Default_allocate_traits>
+  00015	83 c4 04	 add	 esp, 4
+  00018	eb 16		 jmp	 SHORT $LN1@Allocate
+$LN2@Allocate:
+
+; 185  : 		}
+; 186  :  #endif /* defined(_M_IX86) || defined(_M_X64) */
+; 187  : 
+; 188  : 	if (_Bytes != 0)
+
+  0001a	83 7d 08 00	 cmp	 DWORD PTR __Bytes$[ebp], 0
+  0001e	74 0e		 je	 SHORT $LN3@Allocate
+
+; 189  : 		{
+; 190  : 		return (_Traits::_Allocate(_Bytes));
+
+  00020	8b 4d 08	 mov	 ecx, DWORD PTR __Bytes$[ebp]
+  00023	51		 push	 ecx
+  00024	e8 00 00 00 00	 call	 ?_Allocate@_Default_allocate_traits@std@@SAPAXI@Z ; std::_Default_allocate_traits::_Allocate
+  00029	83 c4 04	 add	 esp, 4
+  0002c	eb 02		 jmp	 SHORT $LN1@Allocate
+$LN3@Allocate:
+
+; 191  : 		}
+; 192  : 
+; 193  : 	return (nullptr);
+
+  0002e	33 c0		 xor	 eax, eax
+$LN1@Allocate:
+
+; 194  : 	}
+
+  00030	5d		 pop	 ebp
+  00031	c3		 ret	 0
+??$_Allocate@$07U_Default_allocate_traits@std@@$0A@@std@@YAPAXI@Z ENDP ; std::_Allocate<8,std::_Default_allocate_traits,0>
 _TEXT	ENDS
 ; Function compile flags: /Odtp
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xutility
@@ -2762,7 +2721,7 @@ _t_font$ = 12						; size = 4
   000ca	52		 push	 edx
   000cb	e8 00 00 00 00	 call	 ??0Color@core@@QAE@ABV01@@Z ; core::Color::Color
   000d0	6a 00		 push	 0
-  000d2	68 00 00 00 00	 push	 OFFSET $SG45929
+  000d2	68 00 00 00 00	 push	 OFFSET $SG56198
   000d7	8b 45 0c	 mov	 eax, DWORD PTR _t_font$[ebp]
   000da	50		 push	 eax
   000db	6a 3c		 push	 60			; 0000003cH
@@ -2797,7 +2756,7 @@ _t_font$ = 12						; size = 4
   0011d	52		 push	 edx
   0011e	e8 00 00 00 00	 call	 ??0Color@core@@QAE@ABV01@@Z ; core::Color::Color
   00123	6a 00		 push	 0
-  00125	68 00 00 00 00	 push	 OFFSET $SG45930
+  00125	68 00 00 00 00	 push	 OFFSET $SG56199
   0012a	8b 45 0c	 mov	 eax, DWORD PTR _t_font$[ebp]
   0012d	50		 push	 eax
   0012e	6a 3c		 push	 60			; 0000003cH
@@ -2833,7 +2792,7 @@ _t_font$ = 12						; size = 4
   00173	52		 push	 edx
   00174	e8 00 00 00 00	 call	 ??0Color@core@@QAE@ABV01@@Z ; core::Color::Color
   00179	6a 00		 push	 0
-  0017b	68 00 00 00 00	 push	 OFFSET $SG45931
+  0017b	68 00 00 00 00	 push	 OFFSET $SG56200
   00180	8b 45 0c	 mov	 eax, DWORD PTR _t_font$[ebp]
   00183	50		 push	 eax
   00184	6a 3c		 push	 60			; 0000003cH
@@ -2869,7 +2828,7 @@ _t_font$ = 12						; size = 4
   001c9	52		 push	 edx
   001ca	e8 00 00 00 00	 call	 ??0Color@core@@QAE@ABV01@@Z ; core::Color::Color
   001cf	6a 00		 push	 0
-  001d1	68 00 00 00 00	 push	 OFFSET $SG45932
+  001d1	68 00 00 00 00	 push	 OFFSET $SG56201
   001d6	8b 45 0c	 mov	 eax, DWORD PTR _t_font$[ebp]
   001d9	50		 push	 eax
   001da	6a 3c		 push	 60			; 0000003cH
@@ -4647,215 +4606,6 @@ _this$ = -4						; size = 4
 ??0?$allocator@VButton@ui@core@@@std@@QAE@XZ ENDP	; std::allocator<core::ui::Button>::allocator<core::ui::Button>
 _TEXT	ENDS
 ; Function compile flags: /Odtp
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xmemory0
-;	COMDAT ?_Adjust_manually_vector_aligned@std@@YAXAAPAXAAI@Z
-_TEXT	SEGMENT
-__Min_back_shift$ = -16					; size = 4
-__Ptr_user$ = -12					; size = 4
-__Ptr_container$ = -8					; size = 4
-__Back_shift$ = -4					; size = 4
-__Ptr$ = 8						; size = 4
-__Bytes$ = 12						; size = 4
-?_Adjust_manually_vector_aligned@std@@YAXAAPAXAAI@Z PROC ; std::_Adjust_manually_vector_aligned, COMDAT
-
-; 114  : 	{	// adjust parameters from _Allocate_manually_vector_aligned to pass to operator delete
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	83 ec 10	 sub	 esp, 16			; 00000010H
-
-; 115  : 	_Bytes += _Non_user_size;
-
-  00006	8b 45 0c	 mov	 eax, DWORD PTR __Bytes$[ebp]
-  00009	8b 08		 mov	 ecx, DWORD PTR [eax]
-  0000b	83 c1 23	 add	 ecx, 35			; 00000023H
-  0000e	8b 55 0c	 mov	 edx, DWORD PTR __Bytes$[ebp]
-  00011	89 0a		 mov	 DWORD PTR [edx], ecx
-
-; 116  : 
-; 117  : 	const uintptr_t * const _Ptr_user = reinterpret_cast<uintptr_t *>(_Ptr);
-
-  00013	8b 45 08	 mov	 eax, DWORD PTR __Ptr$[ebp]
-  00016	8b 08		 mov	 ecx, DWORD PTR [eax]
-  00018	89 4d f4	 mov	 DWORD PTR __Ptr_user$[ebp], ecx
-
-; 118  : 	const uintptr_t _Ptr_container = _Ptr_user[-1];
-
-  0001b	ba 04 00 00 00	 mov	 edx, 4
-  00020	6b c2 ff	 imul	 eax, edx, -1
-  00023	8b 4d f4	 mov	 ecx, DWORD PTR __Ptr_user$[ebp]
-  00026	8b 14 01	 mov	 edx, DWORD PTR [ecx+eax]
-  00029	89 55 f8	 mov	 DWORD PTR __Ptr_container$[ebp], edx
-
-; 119  : 
-; 120  : 	// If the following asserts, it likely means that we are performing
-; 121  : 	// an aligned delete on memory coming from an unaligned allocation.
-; 122  : 	_STL_ASSERT(_Ptr_user[-2] == _Big_allocation_sentinel, "invalid argument");
-; 123  : 
-; 124  : 	// Extra paranoia on aligned allocation/deallocation; ensure _Ptr_container is
-; 125  : 	// in range [_Min_back_shift, _Non_user_size]
-; 126  :   #ifdef _DEBUG
-; 127  : 	constexpr uintptr_t _Min_back_shift = 2 * sizeof(void *);
-; 128  :   #else /* ^^^ _DEBUG ^^^ // vvv !_DEBUG vvv */
-; 129  : 	constexpr uintptr_t _Min_back_shift = sizeof(void *);
-
-  0002c	c7 45 f0 04 00
-	00 00		 mov	 DWORD PTR __Min_back_shift$[ebp], 4
-
-; 130  :   #endif /* _DEBUG */
-; 131  : 	const uintptr_t _Back_shift = reinterpret_cast<uintptr_t>(_Ptr) - _Ptr_container;
-
-  00033	8b 45 08	 mov	 eax, DWORD PTR __Ptr$[ebp]
-  00036	8b 08		 mov	 ecx, DWORD PTR [eax]
-  00038	2b 4d f8	 sub	 ecx, DWORD PTR __Ptr_container$[ebp]
-  0003b	89 4d fc	 mov	 DWORD PTR __Back_shift$[ebp], ecx
-$LN4@Adjust_man:
-
-; 132  : 	_STL_VERIFY(_Back_shift >= _Min_back_shift && _Back_shift <= _Non_user_size, "invalid argument");
-
-  0003e	83 7d fc 04	 cmp	 DWORD PTR __Back_shift$[ebp], 4
-  00042	72 08		 jb	 SHORT $LN7@Adjust_man
-  00044	83 7d fc 23	 cmp	 DWORD PTR __Back_shift$[ebp], 35 ; 00000023H
-  00048	77 02		 ja	 SHORT $LN7@Adjust_man
-  0004a	eb 09		 jmp	 SHORT $LN2@Adjust_man
-$LN7@Adjust_man:
-  0004c	e8 00 00 00 00	 call	 __invalid_parameter_noinfo_noreturn
-  00051	33 d2		 xor	 edx, edx
-  00053	75 f7		 jne	 SHORT $LN7@Adjust_man
-$LN2@Adjust_man:
-  00055	33 c0		 xor	 eax, eax
-  00057	75 e5		 jne	 SHORT $LN4@Adjust_man
-
-; 133  : 	_Ptr = reinterpret_cast<void *>(_Ptr_container);
-
-  00059	8b 4d 08	 mov	 ecx, DWORD PTR __Ptr$[ebp]
-  0005c	8b 55 f8	 mov	 edx, DWORD PTR __Ptr_container$[ebp]
-  0005f	89 11		 mov	 DWORD PTR [ecx], edx
-$LN10@Adjust_man:
-
-; 134  : 	}
-
-  00061	8b e5		 mov	 esp, ebp
-  00063	5d		 pop	 ebp
-  00064	c3		 ret	 0
-?_Adjust_manually_vector_aligned@std@@YAXAAPAXAAI@Z ENDP ; std::_Adjust_manually_vector_aligned
-_TEXT	ENDS
-; Function compile flags: /Odtp
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xmemory0
-;	COMDAT ?_Allocate@_Default_allocate_traits@std@@SAPAXI@Z
-_TEXT	SEGMENT
-__Bytes$ = 8						; size = 4
-?_Allocate@_Default_allocate_traits@std@@SAPAXI@Z PROC	; std::_Default_allocate_traits::_Allocate, COMDAT
-
-; 51   : 		{
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-
-; 52   : 		return (::operator new(_Bytes));
-
-  00003	8b 45 08	 mov	 eax, DWORD PTR __Bytes$[ebp]
-  00006	50		 push	 eax
-  00007	e8 00 00 00 00	 call	 ??2@YAPAXI@Z		; operator new
-  0000c	83 c4 04	 add	 esp, 4
-
-; 53   : 		}
-
-  0000f	5d		 pop	 ebp
-  00010	c3		 ret	 0
-?_Allocate@_Default_allocate_traits@std@@SAPAXI@Z ENDP	; std::_Default_allocate_traits::_Allocate
-_TEXT	ENDS
-; Function compile flags: /Odtp
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xutility
-;	COMDAT ?_Swap_all@_Container_base0@std@@QAEXAAU12@@Z
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-___formal$ = 8						; size = 4
-?_Swap_all@_Container_base0@std@@QAEXAAU12@@Z PROC	; std::_Container_base0::_Swap_all, COMDAT
-; _this$ = ecx
-
-; 46   : 		{	// swap all iterators
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	51		 push	 ecx
-  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
-
-; 47   : 		}
-
-  00007	8b e5		 mov	 esp, ebp
-  00009	5d		 pop	 ebp
-  0000a	c2 04 00	 ret	 4
-?_Swap_all@_Container_base0@std@@QAEXAAU12@@Z ENDP	; std::_Container_base0::_Swap_all
-_TEXT	ENDS
-; Function compile flags: /Odtp
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xutility
-;	COMDAT ?_Orphan_all@_Container_base0@std@@QAEXXZ
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-?_Orphan_all@_Container_base0@std@@QAEXXZ PROC		; std::_Container_base0::_Orphan_all, COMDAT
-; _this$ = ecx
-
-; 42   : 		{	// orphan all iterators
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-  00003	51		 push	 ecx
-  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
-
-; 43   : 		}
-
-  00007	8b e5		 mov	 esp, ebp
-  00009	5d		 pop	 ebp
-  0000a	c3		 ret	 0
-?_Orphan_all@_Container_base0@std@@QAEXXZ ENDP		; std::_Container_base0::_Orphan_all
-_TEXT	ENDS
-; Function compile flags: /Odtp
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\limits
-;	COMDAT ?max@?$numeric_limits@H@std@@SAHXZ
-_TEXT	SEGMENT
-?max@?$numeric_limits@H@std@@SAHXZ PROC			; std::numeric_limits<int>::max, COMDAT
-
-; 616  : 		{	// return maximum value
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-
-; 617  : 		return (INT_MAX);
-
-  00003	b8 ff ff ff 7f	 mov	 eax, 2147483647		; 7fffffffH
-
-; 618  : 		}
-
-  00008	5d		 pop	 ebp
-  00009	c3		 ret	 0
-?max@?$numeric_limits@H@std@@SAHXZ ENDP			; std::numeric_limits<int>::max
-_TEXT	ENDS
-; Function compile flags: /Odtp
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vcruntime_new.h
-;	COMDAT ??2@YAPAXIPAX@Z
-_TEXT	SEGMENT
-__Size$ = 8						; size = 4
-__Where$ = 12						; size = 4
-??2@YAPAXIPAX@Z PROC					; operator new, COMDAT
-
-; 185  :     {
-
-  00000	55		 push	 ebp
-  00001	8b ec		 mov	 ebp, esp
-
-; 186  :         (void)_Size;
-; 187  :         return _Where;
-
-  00003	8b 45 0c	 mov	 eax, DWORD PTR __Where$[ebp]
-
-; 188  :     }
-
-  00006	5d		 pop	 ebp
-  00007	c3		 ret	 0
-??2@YAPAXIPAX@Z ENDP					; operator new
-_TEXT	ENDS
-; Function compile flags: /Odtp
 ;	COMDAT ??0Button@ui@core@@QAE@$$QAV012@@Z
 _TEXT	SEGMENT
 _this$ = -4						; size = 4
@@ -5172,5 +4922,255 @@ _t_color$ = 8						; size = 4
   00016	5d		 pop	 ebp
   00017	c2 04 00	 ret	 4
 ??0Color@core@@QAE@ABV01@@Z ENDP			; core::Color::Color
+_TEXT	ENDS
+; Function compile flags: /Odtp
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\utility
+;	COMDAT ??$_Min_value@I@std@@YAABIABI0@Z
+_TEXT	SEGMENT
+$T1 = -8						; size = 4
+tv65 = -4						; size = 4
+__Left$ = 8						; size = 4
+__Right$ = 12						; size = 4
+??$_Min_value@I@std@@YAABIABI0@Z PROC			; std::_Min_value<unsigned int>, COMDAT
+
+; 23   : 	{	// return smaller of _Left and _Right
+
+  00000	55		 push	 ebp
+  00001	8b ec		 mov	 ebp, esp
+  00003	83 ec 08	 sub	 esp, 8
+
+; 24   : 	return (_Right < _Left ? _Right : _Left);
+
+  00006	8b 45 0c	 mov	 eax, DWORD PTR __Right$[ebp]
+  00009	8b 4d 08	 mov	 ecx, DWORD PTR __Left$[ebp]
+  0000c	8b 10		 mov	 edx, DWORD PTR [eax]
+  0000e	3b 11		 cmp	 edx, DWORD PTR [ecx]
+  00010	73 08		 jae	 SHORT $LN3@Min_value
+  00012	8b 45 0c	 mov	 eax, DWORD PTR __Right$[ebp]
+  00015	89 45 fc	 mov	 DWORD PTR tv65[ebp], eax
+  00018	eb 06		 jmp	 SHORT $LN4@Min_value
+$LN3@Min_value:
+  0001a	8b 4d 08	 mov	 ecx, DWORD PTR __Left$[ebp]
+  0001d	89 4d fc	 mov	 DWORD PTR tv65[ebp], ecx
+$LN4@Min_value:
+  00020	8b 55 fc	 mov	 edx, DWORD PTR tv65[ebp]
+  00023	89 55 f8	 mov	 DWORD PTR $T1[ebp], edx
+  00026	8b 45 f8	 mov	 eax, DWORD PTR $T1[ebp]
+
+; 25   : 	}
+
+  00029	8b e5		 mov	 esp, ebp
+  0002b	5d		 pop	 ebp
+  0002c	c3		 ret	 0
+??$_Min_value@I@std@@YAABIABI0@Z ENDP			; std::_Min_value<unsigned int>
+_TEXT	ENDS
+; Function compile flags: /Odtp
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xmemory0
+;	COMDAT ?_Adjust_manually_vector_aligned@std@@YAXAAPAXAAI@Z
+_TEXT	SEGMENT
+__Min_back_shift$ = -16					; size = 4
+__Ptr_user$ = -12					; size = 4
+__Ptr_container$ = -8					; size = 4
+__Back_shift$ = -4					; size = 4
+__Ptr$ = 8						; size = 4
+__Bytes$ = 12						; size = 4
+?_Adjust_manually_vector_aligned@std@@YAXAAPAXAAI@Z PROC ; std::_Adjust_manually_vector_aligned, COMDAT
+
+; 114  : 	{	// adjust parameters from _Allocate_manually_vector_aligned to pass to operator delete
+
+  00000	55		 push	 ebp
+  00001	8b ec		 mov	 ebp, esp
+  00003	83 ec 10	 sub	 esp, 16			; 00000010H
+
+; 115  : 	_Bytes += _Non_user_size;
+
+  00006	8b 45 0c	 mov	 eax, DWORD PTR __Bytes$[ebp]
+  00009	8b 08		 mov	 ecx, DWORD PTR [eax]
+  0000b	83 c1 23	 add	 ecx, 35			; 00000023H
+  0000e	8b 55 0c	 mov	 edx, DWORD PTR __Bytes$[ebp]
+  00011	89 0a		 mov	 DWORD PTR [edx], ecx
+
+; 116  : 
+; 117  : 	const uintptr_t * const _Ptr_user = reinterpret_cast<uintptr_t *>(_Ptr);
+
+  00013	8b 45 08	 mov	 eax, DWORD PTR __Ptr$[ebp]
+  00016	8b 08		 mov	 ecx, DWORD PTR [eax]
+  00018	89 4d f4	 mov	 DWORD PTR __Ptr_user$[ebp], ecx
+
+; 118  : 	const uintptr_t _Ptr_container = _Ptr_user[-1];
+
+  0001b	ba 04 00 00 00	 mov	 edx, 4
+  00020	6b c2 ff	 imul	 eax, edx, -1
+  00023	8b 4d f4	 mov	 ecx, DWORD PTR __Ptr_user$[ebp]
+  00026	8b 14 01	 mov	 edx, DWORD PTR [ecx+eax]
+  00029	89 55 f8	 mov	 DWORD PTR __Ptr_container$[ebp], edx
+
+; 119  : 
+; 120  : 	// If the following asserts, it likely means that we are performing
+; 121  : 	// an aligned delete on memory coming from an unaligned allocation.
+; 122  : 	_STL_ASSERT(_Ptr_user[-2] == _Big_allocation_sentinel, "invalid argument");
+; 123  : 
+; 124  : 	// Extra paranoia on aligned allocation/deallocation; ensure _Ptr_container is
+; 125  : 	// in range [_Min_back_shift, _Non_user_size]
+; 126  :   #ifdef _DEBUG
+; 127  : 	constexpr uintptr_t _Min_back_shift = 2 * sizeof(void *);
+; 128  :   #else /* ^^^ _DEBUG ^^^ // vvv !_DEBUG vvv */
+; 129  : 	constexpr uintptr_t _Min_back_shift = sizeof(void *);
+
+  0002c	c7 45 f0 04 00
+	00 00		 mov	 DWORD PTR __Min_back_shift$[ebp], 4
+
+; 130  :   #endif /* _DEBUG */
+; 131  : 	const uintptr_t _Back_shift = reinterpret_cast<uintptr_t>(_Ptr) - _Ptr_container;
+
+  00033	8b 45 08	 mov	 eax, DWORD PTR __Ptr$[ebp]
+  00036	8b 08		 mov	 ecx, DWORD PTR [eax]
+  00038	2b 4d f8	 sub	 ecx, DWORD PTR __Ptr_container$[ebp]
+  0003b	89 4d fc	 mov	 DWORD PTR __Back_shift$[ebp], ecx
+$LN4@Adjust_man:
+
+; 132  : 	_STL_VERIFY(_Back_shift >= _Min_back_shift && _Back_shift <= _Non_user_size, "invalid argument");
+
+  0003e	83 7d fc 04	 cmp	 DWORD PTR __Back_shift$[ebp], 4
+  00042	72 08		 jb	 SHORT $LN7@Adjust_man
+  00044	83 7d fc 23	 cmp	 DWORD PTR __Back_shift$[ebp], 35 ; 00000023H
+  00048	77 02		 ja	 SHORT $LN7@Adjust_man
+  0004a	eb 09		 jmp	 SHORT $LN2@Adjust_man
+$LN7@Adjust_man:
+  0004c	e8 00 00 00 00	 call	 __invalid_parameter_noinfo_noreturn
+  00051	33 d2		 xor	 edx, edx
+  00053	75 f7		 jne	 SHORT $LN7@Adjust_man
+$LN2@Adjust_man:
+  00055	33 c0		 xor	 eax, eax
+  00057	75 e5		 jne	 SHORT $LN4@Adjust_man
+
+; 133  : 	_Ptr = reinterpret_cast<void *>(_Ptr_container);
+
+  00059	8b 4d 08	 mov	 ecx, DWORD PTR __Ptr$[ebp]
+  0005c	8b 55 f8	 mov	 edx, DWORD PTR __Ptr_container$[ebp]
+  0005f	89 11		 mov	 DWORD PTR [ecx], edx
+$LN10@Adjust_man:
+
+; 134  : 	}
+
+  00061	8b e5		 mov	 esp, ebp
+  00063	5d		 pop	 ebp
+  00064	c3		 ret	 0
+?_Adjust_manually_vector_aligned@std@@YAXAAPAXAAI@Z ENDP ; std::_Adjust_manually_vector_aligned
+_TEXT	ENDS
+; Function compile flags: /Odtp
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xmemory0
+;	COMDAT ?_Allocate@_Default_allocate_traits@std@@SAPAXI@Z
+_TEXT	SEGMENT
+__Bytes$ = 8						; size = 4
+?_Allocate@_Default_allocate_traits@std@@SAPAXI@Z PROC	; std::_Default_allocate_traits::_Allocate, COMDAT
+
+; 51   : 		{
+
+  00000	55		 push	 ebp
+  00001	8b ec		 mov	 ebp, esp
+
+; 52   : 		return (::operator new(_Bytes));
+
+  00003	8b 45 08	 mov	 eax, DWORD PTR __Bytes$[ebp]
+  00006	50		 push	 eax
+  00007	e8 00 00 00 00	 call	 ??2@YAPAXI@Z		; operator new
+  0000c	83 c4 04	 add	 esp, 4
+
+; 53   : 		}
+
+  0000f	5d		 pop	 ebp
+  00010	c3		 ret	 0
+?_Allocate@_Default_allocate_traits@std@@SAPAXI@Z ENDP	; std::_Default_allocate_traits::_Allocate
+_TEXT	ENDS
+; Function compile flags: /Odtp
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xutility
+;	COMDAT ?_Swap_all@_Container_base0@std@@QAEXAAU12@@Z
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+___formal$ = 8						; size = 4
+?_Swap_all@_Container_base0@std@@QAEXAAU12@@Z PROC	; std::_Container_base0::_Swap_all, COMDAT
+; _this$ = ecx
+
+; 46   : 		{	// swap all iterators
+
+  00000	55		 push	 ebp
+  00001	8b ec		 mov	 ebp, esp
+  00003	51		 push	 ecx
+  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
+
+; 47   : 		}
+
+  00007	8b e5		 mov	 esp, ebp
+  00009	5d		 pop	 ebp
+  0000a	c2 04 00	 ret	 4
+?_Swap_all@_Container_base0@std@@QAEXAAU12@@Z ENDP	; std::_Container_base0::_Swap_all
+_TEXT	ENDS
+; Function compile flags: /Odtp
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xutility
+;	COMDAT ?_Orphan_all@_Container_base0@std@@QAEXXZ
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+?_Orphan_all@_Container_base0@std@@QAEXXZ PROC		; std::_Container_base0::_Orphan_all, COMDAT
+; _this$ = ecx
+
+; 42   : 		{	// orphan all iterators
+
+  00000	55		 push	 ebp
+  00001	8b ec		 mov	 ebp, esp
+  00003	51		 push	 ecx
+  00004	89 4d fc	 mov	 DWORD PTR _this$[ebp], ecx
+
+; 43   : 		}
+
+  00007	8b e5		 mov	 esp, ebp
+  00009	5d		 pop	 ebp
+  0000a	c3		 ret	 0
+?_Orphan_all@_Container_base0@std@@QAEXXZ ENDP		; std::_Container_base0::_Orphan_all
+_TEXT	ENDS
+; Function compile flags: /Odtp
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\limits
+;	COMDAT ?max@?$numeric_limits@H@std@@SAHXZ
+_TEXT	SEGMENT
+?max@?$numeric_limits@H@std@@SAHXZ PROC			; std::numeric_limits<int>::max, COMDAT
+
+; 616  : 		{	// return maximum value
+
+  00000	55		 push	 ebp
+  00001	8b ec		 mov	 ebp, esp
+
+; 617  : 		return (INT_MAX);
+
+  00003	b8 ff ff ff 7f	 mov	 eax, 2147483647		; 7fffffffH
+
+; 618  : 		}
+
+  00008	5d		 pop	 ebp
+  00009	c3		 ret	 0
+?max@?$numeric_limits@H@std@@SAHXZ ENDP			; std::numeric_limits<int>::max
+_TEXT	ENDS
+; Function compile flags: /Odtp
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vcruntime_new.h
+;	COMDAT ??2@YAPAXIPAX@Z
+_TEXT	SEGMENT
+__Size$ = 8						; size = 4
+__Where$ = 12						; size = 4
+??2@YAPAXIPAX@Z PROC					; operator new, COMDAT
+
+; 185  :     {
+
+  00000	55		 push	 ebp
+  00001	8b ec		 mov	 ebp, esp
+
+; 186  :         (void)_Size;
+; 187  :         return _Where;
+
+  00003	8b 45 0c	 mov	 eax, DWORD PTR __Where$[ebp]
+
+; 188  :     }
+
+  00006	5d		 pop	 ebp
+  00007	c3		 ret	 0
+??2@YAPAXIPAX@Z ENDP					; operator new
 _TEXT	ENDS
 END
