@@ -110,7 +110,7 @@ void Highscores::Render(i32 t_xOffset, i32 t_yOffset)
         if (header && header->score)
         {
             char buffer[32];
-            snprintf(buffer, sizeof(buffer), "%d. %s %d", i + 1, header->name, header->score);
+            snprintf(buffer, sizeof(buffer), "%d.%s %d", i + 1, header->name, header->score);
             Graphics::Instance()->DrawText(m_font, buffer, 30, t_yOffset, TEXT_ALIGN_LEFT, Palette::s_highlightColor);
             ++recordsShown;
         }

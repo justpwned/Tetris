@@ -89,6 +89,7 @@ Game::Game(const char *t_title, i32 t_xPos, i32 t_yPos, i32 t_windowWidth, i32 t
     m_game.info = new Info(&m_input, m_font, "info.txt");
     m_game.highscores = new Highscores(&m_input, m_font, "highscores.data");
     m_game.highscores->LoadRecords();
+    m_game.highscoreName.push_back(' ');
     
     m_game.seed = (u32)time(0);
     srand(m_game.seed);
@@ -115,7 +116,7 @@ void Game::HandleEvents()
                     m_game.highscores->WriteRecord(m_game.highscoreName.c_str(), m_game.stats->GetPoints());
                     SDL_StopTextInput();
                 }
-                else if(e.key.keysym.sym == SDLK_BACKSPACE && m_game.highscoreName.length() > 0)
+                else if(e.key.keysym.sym == SDLK_BACKSPACE && m_game.highscoreName.length() > 1)
                 {
                     m_game.highscoreName.pop_back();
                 }
@@ -133,7 +134,7 @@ void Game::HandleEvents()
         {
             if (!(SDL_GetModState() & KMOD_CTRL && (e.text.text[ 0 ] == 'c' || e.text.text[ 0 ] == 'C' || e.text.text[ 0 ] == 'v' || e.text.text[ 0 ] == 'V')))
             {
-                if (m_game.highscoreName.length() < 12)
+                if (m_game.highscoreName.length() < 14)
                 {
                     m_game.highscoreName += e.text.text;
                 }
@@ -389,9 +390,23 @@ void Game::RenderGameOver(i32 t_xOffset, i32 t_yOffset)
 {
     i32 xPos = BOARD_COLS * BOARD_GRID_SIZE / 2;
     i32 yPos = (BOARD_ROWS * BOARD_GRID_SIZE + t_yOffset) / 2;
+    
     Graphics::Instance()->DrawText(m_font, "GAME OVER", xPos, yPos, TEXT_ALIGN_CENTER, Palette::s_highlightColor);
     
+    if (m_game.highscores->IsHighscore(m_game.stats->GetPoints()))
+    {
+        yPos += 50;
+        Graphics::Instance()->DrawText(m_font, "New highscore!", xPos, yPos, TEXT_ALIGN_CENTER, Palette::s_highlightColor);
+        yPos += 30;
+        Graphics::Instance()->DrawText(m_font, "Enter your name:", xPos, yPos, TEXT_ALIGN_CENTER, Palette::s_highlightColor);
+        yPos += 30;
+        Graphics::Instance()->DrawText(m_font, m_game.highscoreName.c_str(), xPos, yPos, TEXT_ALIGN_CENTER, Palette::s_highlightColor);
+    }
+    
+    
     Graphics::Instance()->DrawFillRect(0 , t_yOffset, BOARD_COLS * BOARD_GRID_SIZE,(BOARD_ROWS - BOARD_VISIBLE_ROWS) * BOARD_GRID_SIZE, Palette::s_backColor);
+    
+    
     RenderGameStats(0, 0);
 }
 

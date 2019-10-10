@@ -6,7 +6,7 @@
 
 using namespace core;
 
-int wmain(int argc, char *argv[]) 
+int main(int argc, char *argv[]) 
 {
     Game game("Tetris", 300, 720, "novem.ttf");
     game.MainLoop();
