@@ -5,9 +5,9 @@ pushd ..\build
 
 set Config=Release
 
-set DebugCompilerOptions=-FeTetrisDebug.exe -Oi -WX -W4 -EHsc -wd4100 -wd4189 -wd4201 -wd4505 -wd4456 -wd4996 -wd4091 -wd4101 -nologo -Zi -FAsc 
+set DebugCompilerOptions=-FeTetris.exe -Oi -WX -W4 -EHsc -wd4100 -wd4189 -wd4201 -wd4505 -wd4456 -wd4996 -wd4091 -wd4101 -nologo -Zi -FAsc 
 
-set ReleaseCompilerOptions=-FeTetrisRelease.exe -O2 -WX -W4 -EHsc -wd4100 -wd4189 -wd4201 -wd4505 -wd4456 -wd4996 -nologo -FAsc
+set ReleaseCompilerOptions=-FeTetris.exe -O2 -WX -W4 -EHsc -wd4100 -wd4189 -wd4201 -wd4505 -wd4456 -wd4996 -nologo -FAsc
 
 REM -------------------------------------------------------------------------------
 
