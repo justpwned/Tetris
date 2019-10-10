@@ -1,0 +1,7 @@
+Controls
+Left - move piece left
+Right - move piece right
+Down - move piece down
+Up - rotate piece
+Z - hard drop
+Q - quit game
